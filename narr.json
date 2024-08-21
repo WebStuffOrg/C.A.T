@@ -1,0 +1,60 @@
+{   
+    "items" : [
+
+],
+    "narratives" : {
+        "geography" : {
+                    "europe" : ["https://commons.wikimedia.org/wiki/Category:Cat_with_a_quail,_mosaic_(from_Pompeii)#/media/File:MANNapoli_9993_mosaic_casa_del_fauno_cat_birds_ducks_Pompeii_Italy.jpg", 
+                                "https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/",
+                                "https://collections.vam.ac.uk/item/O137574/tournée-du-chat-noir-avec-poster-steinlen-théophile-alexandre/", 
+                                "https://collections.vam.ac.uk/item/O589130/the-cat-religious-card-unknown/",
+                                "https://www.metmuseum.org/art/collection/search/818473",
+                                "https://en.wikipedia.org/wiki/Study_for_the_Madonna_of_the_Cat", 
+                                "https://publicdomainreview.org/collection/d-a-rovinskiis-collection-of-russian-lubki-18th%E2%80%9319th-century/"],
+
+                    "asia" : ["https://www.rijksmuseum.nl/en/rijksstudio/subjects/dogs-and-cats/objects#/AK-NM-6520,0", 
+                              "https://collections.vam.ac.uk/item/O71571/shashthi-painting-unknown/",
+                              "https://commons.wikimedia.org/wiki/File:Kunisada-Nekomata-1847-02.jpg",
+                              "https://colbase.nich.go.jp/collection_items/tnm/A-10569-5470?locale=en"],
+
+                    "americas" : ["https://www.slam.org/collection/objects/1815/", 
+                                  "https://americanart.si.edu/artwork/cat-ball-toss-game-24541",
+                                  "https://en.wikipedia.org/wiki/25_Cats_Name_Sam_and_One_Blue_Pussy",
+                                  "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
+
+                    "africa" : ["https://collezioni.museoegizio.it/it-IT/material/Cat_901/?description=&inventoryNumber=&title=&cgt=&yearFrom=&yearTo=&materials=&provenance=&acquisition=&epoch=&dyn",
+                                "https://www.britishmuseum.org/collection/image/36573001",
+                                "https://commons.wikimedia.org/wiki/File:Sarcophagus_of_Prince_Thutmose%27s_cat_by_Madam_Rafaèle.jpg",
+                                "https://www.britishmuseum.org/collection/object/E_2013-2034-2761"]
+                },
+        "daily" : {
+                    "chilling" : ["https://www.rijksmuseum.nl/en/rijksstudio/subjects/dogs-and-cats/objects#/AK-NM-6520,0", 
+                                  "https://en.wikipedia.org/wiki/25_Cats_Name_Sam_and_One_Blue_Pussy",
+                                  "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
+
+                    "play" : ["https://americanart.si.edu/artwork/cat-ball-toss-game-24541",
+                              "https://collections.vam.ac.uk/item/O589130/the-cat-religious-card-unknown/",
+                              "https://www.britishmuseum.org/collection/object/E_2013-2034-2761"],
+
+                    "hunting" : ["https://commons.wikimedia.org/wiki/Category:Cat_with_a_quail,_mosaic_(from_Pompeii)#/media/File:MANNapoli_9993_mosaic_casa_del_fauno_cat_birds_ducks_Pompeii_Italy.jpg",
+                                 "https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/"]
+                },
+        "supernatural" : {
+                          "folklore" : ["https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/",
+                                        "https://commons.wikimedia.org/wiki/File:Kunisada-Nekomata-1847-02.jpg",
+                                        "https://colbase.nich.go.jp/collection_items/tnm/A-10569-5470?locale=en", 
+                                        "https://publicdomainreview.org/collection/d-a-rovinskiis-collection-of-russian-lubki-18th%E2%80%9319th-century/"],
+
+                          "superstition" : ["https://www.metmuseum.org/art/collection/search/818473", 
+                                            "https://collections.vam.ac.uk/item/O137574/tournée-du-chat-noir-avec-poster-steinlen-théophile-alexandre/",
+                                            "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
+
+                          "religion" : ["https://collezioni.museoegizio.it/it-IT/material/Cat_901/?description=&inventoryNumber=&title=&cgt=&yearFrom=&yearTo=&materials=&provenance=&acquisition=&epoch=&dyn", 
+                                        "https://collections.vam.ac.uk/item/O71571/shashthi-painting-unknown/",
+                                        "https://www.slam.org/collection/objects/1815/",
+                                        "https://www.britishmuseum.org/collection/image/36573001",
+                                        "https://en.wikipedia.org/wiki/Study_for_the_Madonna_of_the_Cat",
+                                        "https://commons.wikimedia.org/wiki/File:Sarcophagus_of_Prince_Thutmose%27s_cat_by_Madam_Rafaèle.jpg"]
+                         }
+    }
+}
