@@ -1,7 +1,6 @@
 /* Colors: E4A88C, C96638, 6B1A10, 67314B, D9D9D9 */
 /* Fonts: Nunito, trispace */
 body {
-    background-color: D9D9D9;
     font-family: Nunito;
     scroll-behavior: smooth;
 }
@@ -13,8 +12,9 @@ nav {
 }
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: black;
     font-family: trispace;
+    font-size: large;
 }
 .nav-item {
     margin: 0.5em;
@@ -32,54 +32,56 @@ nav {
 }
 main {
     display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-flow: column;
     width: 100vw;
     height: auto;
     padding: 5vh;
+    overflow-y: scroll;
 }
 #main-card {
     height: fit-content;
     background-color: D9D9D9;
     padding: 0;
-    border-style:double;
-    box-shadow: gray 0.3em 0.3em 0.3em 0.3em;
+    box-shadow: black 1px 0.3em 0.3em 0.3em;
     border-radius: 7.5px;
-    margin-left: 5vw;
-    margin-right: 5vw;
 }
 .card-header {
     background-color: C96638;
     text-align: center;
     padding: 0px;
     margin: 0px;
-    border: 0.5em black;
+    border-bottom: 5px solid #E4A88C;
     border-radius: 5px;
     box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: white;
+    color: black;
     font-family: trispace;
 }
+hr {
+    border-radius: 5px;
+    border: 1px solid #E4A88C; /* Remove default border */
+    height: 1vmin; /* Set the height (thickness) */
+    background-color: #C96638   ; /* Change color */
+    margin: 0px; /* Center horizontally with some vertical spacing */
+}
+
 img.img-fluid {
     align-self: center;
-    border: 1vmax solid black;
+    border: 4px solid black;
     border-radius: 5px;
+    margin: 1vw;
 }
 .description {
-    display: flex;            /* Ensures that label and data align horizontally */
-    border: 1px solid black;
     padding: 0.5em; 
     margin: 0px;
 }
-
-.label {
-    border-right: 1px solid black; /* Border between label and data */
-    padding-right: 0.5em;          /* Space between the label text and the border */
+#info-box {
+    border-radius: 5px;
 }
-
-.data {
-    padding-left: 0.5em;  /* Space between the data text and the label */
+div#info-box > p {
+    text-align: justify;
 }
 footer {
     background-color: black;
