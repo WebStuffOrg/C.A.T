@@ -1,14 +1,62 @@
 /* Colors: E4A88C, C96638, 6B1A10, 67314B, D9D9D9 */
 /* Fonts: Nunito, trispace */
+:root {
+    --primary-color: #E4A88C;
+    --secondary-color: #C96638;
+    --tertiary-color: #6B1A10;
+    --quaternary-color: #67314B;
+    --quinary-color: #D9D9D9;
+    font-family: Nunito;
+}
+
 body {
     font-family: Nunito;
     scroll-behavior: smooth;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+    font-family: trispace;
+    margin-bottom: 0px;
+}
+/* Navbars */
 nav {
-    background-color: #C96638;
-    height: 4em;
-    border: 0.5em double black;
+    height: fit-content;
     width: 100%;
+}
+#main-navbar {
+    background-color: #C96638;
+    border: 0.5em double black;
+}
+#narrative-header {
+    min-height: 10vmax;
+    height: fit-content;
+}
+#narrative-navbar-wrapper {
+    position: sticky;
+    top: 0;
+    padding: 0%;
+    margin: 0%;
+     z-index: 1000; 
+  }
+#narrative-navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: auto;
+    border-radius: 50px;
+    box-shadow: 0px 5px 5px 0px black;
+}
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+    width: 100%;
+}
+.dropdown-item {
+    color: white;
+    font-family: trispace;
+    font-size: large;
 }
 .nav-link {
     text-decoration: none;
@@ -19,71 +67,103 @@ nav {
 .nav-item {
     margin: 0.5em;
 }
-.collapse.show {
+.navbar-collapse.show {
     background-color: rgba(201, 102, 56, 0.7);
     width: 100%;
-    height: 100%;
+    height: fit-content;
     z-index: 2000;
+    border-top: solid black;
+    margin-top: 1vmin;
 }
 .logo {
     margin-right: 2em;
     margin-left: 2em;
     margin-bottom: 1em;
 }
+/* Main content */
 main {
     display: flex;
     flex-direction: column;
-    flex-flow: column;
+    margin-top: 2.5vmax;
     width: 100vw;
     height: auto;
-    padding: 5vh;
+    padding: 2.5vmax;
     overflow-y: scroll;
+    border-radius: 5px;
 }
+/* Card part */
 #main-card {
     height: fit-content;
-    background-color: D9D9D9;
-    padding: 0;
+    background-color: #D9D9D9;
+    padding: 0px;
     box-shadow: black 1px 0.3em 0.3em 0.3em;
     border-radius: 7.5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .card-header {
     background-color: C96638;
     text-align: center;
     padding: 0px;
     margin: 0px;
-    border-bottom: 5px solid #E4A88C;
-    border-radius: 5px;
+    border-bottom: 2px solid black;
+    border-radius: 7.55px;
     box-sizing: border-box;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: black;
-    font-family: trispace;
-}
-hr {
-    border-radius: 5px;
-    border: 1px solid #E4A88C; /* Remove default border */
-    height: 1vmin; /* Set the height (thickness) */
-    background-color: #C96638   ; /* Change color */
-    margin: 0px; /* Center horizontally with some vertical spacing */
 }
 
 img.img-fluid {
     align-self: center;
-    border: 4px solid black;
     border-radius: 5px;
-    margin: 1vw;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;    
+    border-right: 2px solid black;    
+}
+.accordion-button {
+    background-color: #C96638 !important;
+    color: black;
+    border: 1px solid black;
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-body {
+    background-color: #D9D9D9;
+    padding: 0px;
+    padding-top: 1vmin;
 }
 .description {
     padding: 0.5em; 
     margin: 0px;
+    text-align: justify;
+}
+.description > div {
+    text-align: center;
+}
+/* Text part */
+hr {
+    border-radius: 5px;
+    height: 0.5vmin; /* Set the height (thickness) */
+    background-color: #6B1A10   ; /* Change color */
+    margin: 0px; /* Center horizontally with some vertical spacing */
 }
 #info-box {
     border-radius: 5px;
+    padding-left: 5vmin;
+    padding-right: 5vmin;
+    overflow-wrap: anywhere;
 }
 div#info-box > p {
     text-align: justify;
 }
+.text-button {
+    background-color: #67314B;
+    color: white;
+    font-family: trispace;
+}
+
+/* Footer */
 footer {
+    height: 25%;
     background-color: black;
     padding: 2em;
     width: 100vw;
