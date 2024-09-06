@@ -34,10 +34,11 @@ nav {
 }
 #narrative-navbar-wrapper {
     position: sticky;
+    height: fit-content;
     top: 0;
     padding: 0%;
     margin: 0%;
-     z-index: 1000; 
+    z-index: 1000; 
   }
 #narrative-navbar {
     display: flex;
@@ -86,9 +87,8 @@ main {
     flex-direction: column;
     margin-top: 2.5vmax;
     width: 100vw;
-    height: auto;
+    height: fit-content;
     padding: 2.5vmax;
-    overflow-y: scroll;
     border-radius: 5px;
 }
 /* Card part */
@@ -108,7 +108,6 @@ main {
     margin: 0px;
     border-bottom: 2px solid black;
     border-radius: 7.55px;
-    box-sizing: border-box;
 }
 
 img.img-fluid {

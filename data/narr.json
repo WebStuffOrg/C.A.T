@@ -1,60 +1,316 @@
 {   
+    "meta" : {
+        "title" : "Cats Art Exhibition",
+        "description" : "A collection of art featuring cats from around the world and throughout history.",
+        "narratives" : ["geography", "daily", "supernatural"],
+        "defaultNarrative" : "geography",
+        "defaultStart" : 0
+    },
     "items" : [
-
+            {
+                "id": 1,
+                "title": "Mantle",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 200 BC – AD 100",
+                "artForm": "Textile",
+                "medium": "Camelid fiber",
+                "dimensions": "Unknown",
+                "img" : "images/img-1.jpg"
+            },
+            {
+                "id": 2,
+                "title": "Cat from a Ball Toss Game",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 1920",
+                "artForm": "Folk Art (Sculpture)",
+                "medium": "Painted canvas with leather, wood, and metal",
+                "dimensions": "Unknown",
+                "img" : "images/img-2.jpg"
+            },
+            {
+                "id": 3,
+                "title": "Amulet depicting a cat",
+                "creator": "Unknown",
+                "timeOfCreation": "1076–332 BC",
+                "artForm": "Amulet",
+                "medium": "Faience (blue-green)",
+                "dimensions": "Unknown",
+                "img" : "images/img-3.jpg"
+            },
+            {
+                "id": 4,
+                "title": "Nightlight in the form of a cat",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 1760 - c. 1770",
+                "artForm": "Figure (Nightlight)",
+                "medium": "Porcelain with enamel colors",
+                "dimensions": "Unknown",
+                "img" : "images/img-4.jpg"
+            },
+            {
+                "id": 5,
+                "title": "Tournée du Chat Noir avec Rodolphe Salis",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 1896",
+                "artForm": "Poster",
+                "medium": "Colour lithograph on paper",
+                "dimensions": "Unknown",
+                "img" : "images/img-5.jpg"
+            },
+            {
+                "id": 6,
+                "title": "Shashthi",
+                "creator": "Unknown",
+                "timeOfCreation": "ca. 1885",
+                "artForm": "Painting",
+                "medium": "Opaque watercolour on paper",
+                "dimensions": "Unknown",
+                "img" : "images/img-6.jpg"
+            },
+            {
+                "id": 7,
+                "title": "The Cat",
+                "creator": "Unknown",
+                "timeOfCreation": "1850s",
+                "artForm": "Religious Card",
+                "medium": "Hand-coloured lithograph with letterpress and gilt embossing",
+                "dimensions": "Unknown",
+                "img" : "images/img-7.jpg"
+            },
+            {
+                "id": 8,
+                "title": "Bodleian Library MS. Bodl. 764",
+                "creator": "Unknown",
+                "timeOfCreation": "Late 14th century",
+                "artForm": "Manuscript",
+                "medium": "Illuminated manuscript on vellum",
+                "dimensions": "Unknown",
+                "img" : "images/img-8.jpg"
+            },
+            {
+                "id": 9,
+                "title": "The Black Cat",
+                "creator": "Unknown",
+                "timeOfCreation": "1909",
+                "artForm": "Illustration",
+                "medium": "Watercolor and gouache on paper",
+                "dimensions": "Unknown",
+                "img" : "images/img-9.jpg"
+            },
+            {
+                "id": 10,
+                "title": "Cat with a quail, mosaic",
+                "creator": "Unknown",
+                "timeOfCreation": "1st century BCE",
+                "artForm": "Mosaic",
+                "medium": "Stone mosaic",
+                "dimensions": "Unknown",
+                "img" : "images/img-10.jpg"
+            },
+            {
+                "id": 11,
+                "title": "Kunisada Nekomata",
+                "creator": "Unknown",
+                "timeOfCreation": "1847",
+                "artForm": "Woodblock Print",
+                "medium": "Color woodcut",
+                "dimensions": "Unknown",
+                "img" : "images/img-11.jpg"
+            },
+            {
+                "id": 12,
+                "title": "Hanging Scroll",
+                "creator": "Unknown",
+                "timeOfCreation": "18th century",
+                "artForm": "Hanging Scroll",
+                "medium": "Ink and color on silk",
+                "dimensions": "Unknown",
+                "img" : "images/img-12.jpg"
+            },
+            {
+                "id": 13,
+                "title": "Study for the Madonna of the Cat",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 1478–1481",
+                "artForm": "Drawing",
+                "medium": "Pen and brown ink",
+                "dimensions": "Unknown",
+                "img" : "images/img-13.jpg"
+            },
+            {
+                "id": 14,
+                "title": "Collection of Russian Lubki",
+                "creator": "Unknown",
+                "timeOfCreation": "18th–19th century",
+                "artForm": "Printmaking (Lubki)",
+                "medium": "Woodblock prints on paper",
+                "dimensions": "Unknown",
+                "img" : "images/img-14.jpg"
+            },
+            {
+                "id": 15,
+                "title": "Sarcophagus of Prince Thutmose's Cat",
+                "creator": "Unknown",
+                "timeOfCreation": "New Kingdom, 18th Dynasty",
+                "artForm": "Sarcophagus",
+                "medium": "Limestone",
+                "dimensions": "Unknown",
+                "img" : "images/img-15.jpg"
+            },
+            {
+                "id": 16,
+                "title": "Engraved Rock Art",
+                "creator": "Unknown",
+                "timeOfCreation": "Digitized in 2006, originally photographed in 1998",
+                "artForm": "Digital photograph",
+                "medium": "Digital file, scanned from original",
+                "dimensions": "Unknown",
+                "img" : "images/img-16.png"
+            },
+            {
+                "id": 17,
+                "title": "25 Cats Name Sam and One Blue Pussy",
+                "creator": "Unknown",
+                "timeOfCreation": "1954",
+                "artForm": "Artist's Book",
+                "medium": "Lithographs hand-colored with watercolor",
+                "dimensions": "Unknown",
+                "img" : "images/img-17.jpg"
+            },
+            {
+                "id": 18,
+                "title": "Black Cat Auditions In Hollywood",
+                "creator": "Unknown",
+                "timeOfCreation": "1961",
+                "artForm": "Photograph",
+                "medium": "Black & White Negative",
+                "location": "Hollywood, California, USA",
+                "dimensions": "Unknown",
+                "img" : "images/img-18.jpg"
+            },
+            {
+                "id": 19,
+                "title": "Figure of Bastet",
+                "creator": "Unknown",
+                "timeOfCreation": "c. 900 BC - 600 BC",
+                "artForm": "Sculpture",
+                "medium": "Bronze with gold inlay",
+                "dimensions": "Unknown",
+                "img" : "images/img-19.jpg"
+            }
 ],
     "narratives" : {
-        "geography" : {
-                    "europe" : ["https://commons.wikimedia.org/wiki/Category:Cat_with_a_quail,_mosaic_(from_Pompeii)#/media/File:MANNapoli_9993_mosaic_casa_del_fauno_cat_birds_ducks_Pompeii_Italy.jpg", 
-                                "https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/",
-                                "https://collections.vam.ac.uk/item/O137574/tournée-du-chat-noir-avec-poster-steinlen-théophile-alexandre/", 
-                                "https://collections.vam.ac.uk/item/O589130/the-cat-religious-card-unknown/",
-                                "https://www.metmuseum.org/art/collection/search/818473",
-                                "https://en.wikipedia.org/wiki/Study_for_the_Madonna_of_the_Cat", 
-                                "https://publicdomainreview.org/collection/d-a-rovinskiis-collection-of-russian-lubki-18th%E2%80%9319th-century/"],
-
-                    "asia" : ["https://www.rijksmuseum.nl/en/rijksstudio/subjects/dogs-and-cats/objects#/AK-NM-6520,0", 
-                              "https://collections.vam.ac.uk/item/O71571/shashthi-painting-unknown/",
-                              "https://commons.wikimedia.org/wiki/File:Kunisada-Nekomata-1847-02.jpg",
-                              "https://colbase.nich.go.jp/collection_items/tnm/A-10569-5470?locale=en"],
-
-                    "americas" : ["https://www.slam.org/collection/objects/1815/", 
-                                  "https://americanart.si.edu/artwork/cat-ball-toss-game-24541",
-                                  "https://en.wikipedia.org/wiki/25_Cats_Name_Sam_and_One_Blue_Pussy",
-                                  "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
-
-                    "africa" : ["https://collezioni.museoegizio.it/it-IT/material/Cat_901/?description=&inventoryNumber=&title=&cgt=&yearFrom=&yearTo=&materials=&provenance=&acquisition=&epoch=&dyn",
-                                "https://www.britishmuseum.org/collection/image/36573001",
-                                "https://commons.wikimedia.org/wiki/File:Sarcophagus_of_Prince_Thutmose%27s_cat_by_Madam_Rafaèle.jpg",
-                                "https://www.britishmuseum.org/collection/object/E_2013-2034-2761"]
-                },
-        "daily" : {
-                    "chilling" : ["https://www.rijksmuseum.nl/en/rijksstudio/subjects/dogs-and-cats/objects#/AK-NM-6520,0", 
-                                  "https://en.wikipedia.org/wiki/25_Cats_Name_Sam_and_One_Blue_Pussy",
-                                  "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
-
-                    "play" : ["https://americanart.si.edu/artwork/cat-ball-toss-game-24541",
-                              "https://collections.vam.ac.uk/item/O589130/the-cat-religious-card-unknown/",
-                              "https://www.britishmuseum.org/collection/object/E_2013-2034-2761"],
-
-                    "hunting" : ["https://commons.wikimedia.org/wiki/Category:Cat_with_a_quail,_mosaic_(from_Pompeii)#/media/File:MANNapoli_9993_mosaic_casa_del_fauno_cat_birds_ducks_Pompeii_Italy.jpg",
-                                 "https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/"]
-                },
-        "supernatural" : {
-                          "folklore" : ["https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/",
-                                        "https://commons.wikimedia.org/wiki/File:Kunisada-Nekomata-1847-02.jpg",
-                                        "https://colbase.nich.go.jp/collection_items/tnm/A-10569-5470?locale=en", 
-                                        "https://publicdomainreview.org/collection/d-a-rovinskiis-collection-of-russian-lubki-18th%E2%80%9319th-century/"],
-
-                          "superstition" : ["https://www.metmuseum.org/art/collection/search/818473", 
-                                            "https://collections.vam.ac.uk/item/O137574/tournée-du-chat-noir-avec-poster-steinlen-théophile-alexandre/",
-                                            "https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg"],
-
-                          "religion" : ["https://collezioni.museoegizio.it/it-IT/material/Cat_901/?description=&inventoryNumber=&title=&cgt=&yearFrom=&yearTo=&materials=&provenance=&acquisition=&epoch=&dyn", 
-                                        "https://collections.vam.ac.uk/item/O71571/shashthi-painting-unknown/",
-                                        "https://www.slam.org/collection/objects/1815/",
-                                        "https://www.britishmuseum.org/collection/image/36573001",
-                                        "https://en.wikipedia.org/wiki/Study_for_the_Madonna_of_the_Cat",
-                                        "https://commons.wikimedia.org/wiki/File:Sarcophagus_of_Prince_Thutmose%27s_cat_by_Madam_Rafaèle.jpg"]
-                         }
+        "geography": {
+            "all": [
+                10,
+                8,
+                5,
+                7,
+                9,
+                13,
+                14,
+                4,
+                6,
+                11,
+                12,
+                1,
+                2,
+                17,
+                18,
+                3,
+                19,
+                15,
+                16
+            ],
+            "europe": [
+                10,
+                8,
+                5,
+                7,
+                18,
+                13,
+                14
+            ],
+            "asia": [
+                4,
+                6,
+                11,
+                12
+            ],
+            "americas": [
+                1,
+                2,
+                17,
+                18
+            ],
+            "africa": [
+                3,
+                19,
+                15,
+                16
+            ]
+        },
+        "daily": {
+            "all": [
+                4,
+                17,
+                18,
+                2,
+                7,
+                16,
+                10,
+                8
+            ],
+            "chilling": [
+                4,
+                17,
+                18
+            ],
+            "play": [
+                2,
+                7,
+                16
+            ],
+            "hunting": [
+                10,
+                8
+            ]
+        },
+        "supernatural": {
+            "all": [
+                8,
+                11,
+                12,
+                14,
+                18,
+                5,
+                18,
+                3,
+                6,
+                1,
+                19,
+                13,
+                15
+            ],
+            "folklore": [
+                8,
+                11,
+                12,
+                14
+            ],
+            "superstition": [
+                18,
+                5,
+                18
+            ],
+            "religion": [
+                3,
+                6,
+                1,
+                19,
+                13,
+                15
+            ]
+        }
     }
 }
