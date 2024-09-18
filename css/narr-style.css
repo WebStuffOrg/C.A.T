@@ -148,12 +148,9 @@ img.img-fluid {
 #alt-narr button{
     width: fit-content;
     height: fit-content;
-    background-color: black;
-    color: white;
     padding: 1%;
     margin: 0%;
     margin-left: 5%;
-    border-radius: 25%;
 }
 .accordion-body {
     padding: 0px;

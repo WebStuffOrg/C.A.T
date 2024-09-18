@@ -4,7 +4,8 @@
     "description": "A collection of art featuring cats from around the world and throughout history.",
     "narrativesList": ["Geography", "Europe", "Asia", "Americas", "Africa", "Daily", "Chilling Cats", "Playing Cats", "Hunting Cats", "Supernatural", "Folklore", "Superstition", "Religion"],
     "defaultNarrative": "Geography",
-    "defaultStart": 0
+    "defaultStart": 0,
+    "defaultText" : "basic"
 },
 "items": {
     "1": {
