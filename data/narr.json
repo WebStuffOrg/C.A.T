@@ -1,316 +1,404 @@
-{   
-    "meta" : {
-        "title" : "Cats Art Exhibition",
-        "description" : "A collection of art featuring cats from around the world and throughout history.",
-        "narratives" : ["geography", "daily", "supernatural"],
-        "defaultNarrative" : "geography",
-        "defaultStart" : 0
+{
+"meta": {
+    "title": "Cats Art Exhibition",
+    "description": "A collection of art featuring cats from around the world and throughout history.",
+    "narrativesList": ["Geography", "Europe", "Asia", "Americas", "Africa", "Daily", "Chilling Cats", "Playing Cats", "Hunting Cats", "Supernatural", "Folklore", "Superstition", "Religion"],
+    "defaultNarrative": "Geography",
+    "defaultStart": 0
+},
+"items": {
+    "1": {
+        "title": "Mantle",
+        "creator": "Unknown",
+        "time": "c. 200 BC – AD 100",
+        "type": "Textile",
+        "medium": "Camelid fiber",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-1.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Americas", "Supernatural", "Religion"]
     },
-    "items" : [
-            {
-                "id": 1,
-                "title": "Mantle",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 200 BC – AD 100",
-                "artForm": "Textile",
-                "medium": "Camelid fiber",
-                "dimensions": "Unknown",
-                "img" : "images/img-1.jpg"
-            },
-            {
-                "id": 2,
-                "title": "Cat from a Ball Toss Game",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 1920",
-                "artForm": "Folk Art (Sculpture)",
-                "medium": "Painted canvas with leather, wood, and metal",
-                "dimensions": "Unknown",
-                "img" : "images/img-2.jpg"
-            },
-            {
-                "id": 3,
-                "title": "Amulet depicting a cat",
-                "creator": "Unknown",
-                "timeOfCreation": "1076–332 BC",
-                "artForm": "Amulet",
-                "medium": "Faience (blue-green)",
-                "dimensions": "Unknown",
-                "img" : "images/img-3.jpg"
-            },
-            {
-                "id": 4,
-                "title": "Nightlight in the form of a cat",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 1760 - c. 1770",
-                "artForm": "Figure (Nightlight)",
-                "medium": "Porcelain with enamel colors",
-                "dimensions": "Unknown",
-                "img" : "images/img-4.jpg"
-            },
-            {
-                "id": 5,
-                "title": "Tournée du Chat Noir avec Rodolphe Salis",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 1896",
-                "artForm": "Poster",
-                "medium": "Colour lithograph on paper",
-                "dimensions": "Unknown",
-                "img" : "images/img-5.jpg"
-            },
-            {
-                "id": 6,
-                "title": "Shashthi",
-                "creator": "Unknown",
-                "timeOfCreation": "ca. 1885",
-                "artForm": "Painting",
-                "medium": "Opaque watercolour on paper",
-                "dimensions": "Unknown",
-                "img" : "images/img-6.jpg"
-            },
-            {
-                "id": 7,
-                "title": "The Cat",
-                "creator": "Unknown",
-                "timeOfCreation": "1850s",
-                "artForm": "Religious Card",
-                "medium": "Hand-coloured lithograph with letterpress and gilt embossing",
-                "dimensions": "Unknown",
-                "img" : "images/img-7.jpg"
-            },
-            {
-                "id": 8,
-                "title": "Bodleian Library MS. Bodl. 764",
-                "creator": "Unknown",
-                "timeOfCreation": "Late 14th century",
-                "artForm": "Manuscript",
-                "medium": "Illuminated manuscript on vellum",
-                "dimensions": "Unknown",
-                "img" : "images/img-8.jpg"
-            },
-            {
-                "id": 9,
-                "title": "The Black Cat",
-                "creator": "Unknown",
-                "timeOfCreation": "1909",
-                "artForm": "Illustration",
-                "medium": "Watercolor and gouache on paper",
-                "dimensions": "Unknown",
-                "img" : "images/img-9.jpg"
-            },
-            {
-                "id": 10,
-                "title": "Cat with a quail, mosaic",
-                "creator": "Unknown",
-                "timeOfCreation": "1st century BCE",
-                "artForm": "Mosaic",
-                "medium": "Stone mosaic",
-                "dimensions": "Unknown",
-                "img" : "images/img-10.jpg"
-            },
-            {
-                "id": 11,
-                "title": "Kunisada Nekomata",
-                "creator": "Unknown",
-                "timeOfCreation": "1847",
-                "artForm": "Woodblock Print",
-                "medium": "Color woodcut",
-                "dimensions": "Unknown",
-                "img" : "images/img-11.jpg"
-            },
-            {
-                "id": 12,
-                "title": "Hanging Scroll",
-                "creator": "Unknown",
-                "timeOfCreation": "18th century",
-                "artForm": "Hanging Scroll",
-                "medium": "Ink and color on silk",
-                "dimensions": "Unknown",
-                "img" : "images/img-12.jpg"
-            },
-            {
-                "id": 13,
-                "title": "Study for the Madonna of the Cat",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 1478–1481",
-                "artForm": "Drawing",
-                "medium": "Pen and brown ink",
-                "dimensions": "Unknown",
-                "img" : "images/img-13.jpg"
-            },
-            {
-                "id": 14,
-                "title": "Collection of Russian Lubki",
-                "creator": "Unknown",
-                "timeOfCreation": "18th–19th century",
-                "artForm": "Printmaking (Lubki)",
-                "medium": "Woodblock prints on paper",
-                "dimensions": "Unknown",
-                "img" : "images/img-14.jpg"
-            },
-            {
-                "id": 15,
-                "title": "Sarcophagus of Prince Thutmose's Cat",
-                "creator": "Unknown",
-                "timeOfCreation": "New Kingdom, 18th Dynasty",
-                "artForm": "Sarcophagus",
-                "medium": "Limestone",
-                "dimensions": "Unknown",
-                "img" : "images/img-15.jpg"
-            },
-            {
-                "id": 16,
-                "title": "Engraved Rock Art",
-                "creator": "Unknown",
-                "timeOfCreation": "Digitized in 2006, originally photographed in 1998",
-                "artForm": "Digital photograph",
-                "medium": "Digital file, scanned from original",
-                "dimensions": "Unknown",
-                "img" : "images/img-16.png"
-            },
-            {
-                "id": 17,
-                "title": "25 Cats Name Sam and One Blue Pussy",
-                "creator": "Unknown",
-                "timeOfCreation": "1954",
-                "artForm": "Artist's Book",
-                "medium": "Lithographs hand-colored with watercolor",
-                "dimensions": "Unknown",
-                "img" : "images/img-17.jpg"
-            },
-            {
-                "id": 18,
-                "title": "Black Cat Auditions In Hollywood",
-                "creator": "Unknown",
-                "timeOfCreation": "1961",
-                "artForm": "Photograph",
-                "medium": "Black & White Negative",
-                "location": "Hollywood, California, USA",
-                "dimensions": "Unknown",
-                "img" : "images/img-18.jpg"
-            },
-            {
-                "id": 19,
-                "title": "Figure of Bastet",
-                "creator": "Unknown",
-                "timeOfCreation": "c. 900 BC - 600 BC",
-                "artForm": "Sculpture",
-                "medium": "Bronze with gold inlay",
-                "dimensions": "Unknown",
-                "img" : "images/img-19.jpg"
-            }
-],
-    "narratives" : {
-        "geography": {
-            "all": [
-                10,
-                8,
-                5,
-                7,
-                9,
-                13,
-                14,
-                4,
-                6,
-                11,
-                12,
-                1,
-                2,
-                17,
-                18,
-                3,
-                19,
-                15,
-                16
-            ],
-            "europe": [
-                10,
-                8,
-                5,
-                7,
-                18,
-                13,
-                14
-            ],
-            "asia": [
-                4,
-                6,
-                11,
-                12
-            ],
-            "americas": [
-                1,
-                2,
-                17,
-                18
-            ],
-            "africa": [
-                3,
-                19,
-                15,
-                16
-            ]
+    "2": {
+        "title": "Cat from a Ball Toss Game",
+        "creator": "Unknown",
+        "time": "c. 1920",
+        "type": "Folk Art (Sculpture)",
+        "medium": "Painted canvas with leather, wood, and metal",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-2.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
         },
-        "daily": {
-            "all": [
-                4,
-                17,
-                18,
-                2,
-                7,
-                16,
-                10,
-                8
-            ],
-            "chilling": [
-                4,
-                17,
-                18
-            ],
-            "play": [
-                2,
-                7,
-                16
-            ],
-            "hunting": [
-                10,
-                8
-            ]
+        "includedIn": ["Geography", "Daily", "Playing Cats"]
+    },
+    "3": {
+        "title": "Amulet depicting a cat",
+        "creator": "Unknown",
+        "time": "1076–332 BC",
+        "type": "Amulet",
+        "medium": "Faience (blue-green)",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-3.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
         },
-        "supernatural": {
-            "all": [
-                8,
-                11,
-                12,
-                14,
-                18,
-                5,
-                18,
-                3,
-                6,
-                1,
-                19,
-                13,
-                15
-            ],
-            "folklore": [
-                8,
-                11,
-                12,
-                14
-            ],
-            "superstition": [
-                18,
-                5,
-                18
-            ],
-            "religion": [
-                3,
-                6,
-                1,
-                19,
-                13,
-                15
-            ]
-        }
+        "includedIn": ["Geography", "Africa", "Religion"]
+    },
+    "4": {
+        "title": "Nightlight in the form of a cat",
+        "creator": "Unknown",
+        "time": "c. 1760 - c. 1770",
+        "type": "Figure (Nightlight)",
+        "medium": "Porcelain with enamel colors",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-4.png",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Daily", "Chilling Cats"]
+    },
+    "5": {
+        "title": "Tournée du Chat Noir avec Rodolphe Salis",
+        "creator": "Unknown",
+        "time": "c. 1896",
+        "type": "Poster",
+        "medium": "Colour lithograph on paper",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-5.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Superstition"]
+    },
+    "6": {
+        "title": "Shashthi",
+        "creator": "Unknown",
+        "time": "ca. 1885",
+        "type": "Painting",
+        "medium": "Opaque watercolour on paper",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-6.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Asia"]
+    },
+    "7": {
+        "title": "The Cat",
+        "creator": "Unknown",
+        "time": "1850s",
+        "type": "Religious Card",
+        "medium": "Hand-coloured lithograph with letterpress and gilt embossing",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-7.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Daily", "Playing Cats"]
+    },
+    "8": {
+        "title": "Bodleian Library MS. Bodl. 764",
+        "creator": "Unknown",
+        "time": "Late 14th century",
+        "type": "Manuscript",
+        "medium": "Illuminated manuscript on vellum",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-8.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Folklore", "Superstition"]
+    },
+    "9": {
+        "title": "The Black Cat",
+        "creator": "Unknown",
+        "time": "1909",
+        "type": "Illustration",
+        "medium": "Watercolor and gouache on paper",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-9.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography"]
+    },
+    "10": {
+        "title": "Cat with a quail, mosaic",
+        "creator": "Unknown",
+        "time": "1st century BCE",
+        "type": "Mosaic",
+        "medium": "Stone mosaic",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-10.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Europe", "Daily", "Hunting Cats"]
+    },
+    "11": {
+        "title": "Kunisada Nekomata",
+        "creator": "Unknown",
+        "time": "1847",
+        "type": "Woodblock Print",
+        "medium": "Color woodcut",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-11.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Folklore"]
+    },
+    "12": {
+        "title": "Hanging Scroll",
+        "creator": "Unknown",
+        "time": "18th century",
+        "type": "Hanging Scroll",
+        "medium": "Ink and color on silk",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-12.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Folklore"]
+    },
+    "13": {
+        "title": "Study for the Madonna of the Cat",
+        "creator": "Unknown",
+        "time": "c. 1478–1481",
+        "type": "Drawing",
+        "medium": "Pen and brown ink",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-13.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Folklore"]
+    },
+    "14": {
+        "title": "Collection of Russian Lubki",
+        "creator": "Unknown",
+        "time": "18th–19th century",
+        "type": "Printmaking (Lubki)",
+        "medium": "Woodblock prints on paper",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-14.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Supernatural", "Folklore", "Superstition"]
+    },
+    "15": {
+        "title": "Sarcophagus of Prince Thutmose's Cat",
+        "creator": "Unknown",
+        "time": "New Kingdom, 18th Dynasty",
+        "type": "Sarcophagus",
+        "medium": "Limestone",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-15.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Africa"]
+    },
+    "16": {
+        "title": "Engraved Rock Art",
+        "creator": "Unknown",
+        "time": "Digitized in 2006, originally photographed in 1998",
+        "type": "Digital photograph",
+        "medium": "Digital file, scanned from original",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-16.png",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Africa"]
+    },
+    "17": {
+        "title": "25 Cats Name Sam and One Blue Pussy",
+        "creator": "Unknown",
+        "time": "1954",
+        "type": "Artist's Book",
+        "medium": "Lithographs hand-colored with watercolor",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-17.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Daily", "Americas", "Chilling Cats"]
+    },
+    "18": {
+        "title": "Black Cat Auditions In Hollywood",
+        "creator": "Unknown",
+        "time": "1961",
+        "type": "Photograph",
+        "medium": "Black & White Negative",
+        "location": "Hollywood, California, USA",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-18.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Americas", "Supernatural", "Superstition"]
+    },
+    "19": {
+        "title": "Figure of Bastet",
+        "creator": "Unknown",
+        "time": "c. 900 BC - 600 BC",
+        "type": "Sculpture",
+        "medium": "Bronze with gold inlay",
+        "dimensions": "Unknown",
+        "img": "images/narr/img-19.jpg",
+        "text": {
+            "basic": "basic text",
+            "extended": "extended text",
+            "long": "long text"
+        },
+        "includedIn": ["Geography", "Africa", "Religion"]
+    }
+},
+"narratives": {
+        "Geography": [
+            "10",
+            "8",
+            "5",
+            "7",
+            "9",
+            "13",
+            "14",
+            "4",
+            "6",
+            "11",
+            "12",
+            "1",
+            "2",
+            "17",
+            "18",
+            "3",
+            "19",
+            "15",
+            "16"
+        ],
+        "Europe": [
+            "10",
+            "8",
+            "5",
+            "7",
+            "18",
+            "13",
+            "14"
+        ],
+        "Asia": [
+            "4",
+            "6",
+            "11",
+            "12"
+        ],
+        "Americas": [
+            "1",
+            "2",
+            "17",
+            "18"
+        ],
+        "Africa": [
+            "3",
+            "19",
+            "15",
+            "16"
+        ],
+        "Daily": [
+            "4",
+            "17",
+            "18",
+            "2",
+            "7",
+            "16",
+            "10",
+            "8"
+        ],
+        "Chilling Cats": [
+            "4",
+            "17",
+            "18"
+        ],
+        "Playing Cats": [
+            "2",
+            "7",
+            "16"
+        ],
+        "Hunting Cats": [
+            "10",
+            "8"
+        ],
+        "Supernatural": [
+            "8",
+            "11",
+            "12",
+            "14",
+            "18",
+            "5",
+            "3",
+            "6",
+            "1",
+            "19",
+            "13",
+            "15"
+        ],
+        "Folklore": [
+            "8",
+            "11",
+            "12",
+            "14"
+        ],
+        "Superstition": [
+            "8",
+            "5",
+            "18"
+        ],
+        "Religion": [
+            "3",
+            "6",
+            "1",
+            "19",
+            "13",
+            "15"
+        ]
     }
 }

@@ -17,7 +17,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: black;
     font-family: trispace;
-    margin-bottom: 0px;
 }
 /* Navbars */
 nav {
@@ -33,31 +32,36 @@ nav {
     height: fit-content;
 }
 #narrative-navbar-wrapper {
-    position: sticky;
     height: fit-content;
-    top: 0;
     padding: 0%;
     margin: 0%;
     z-index: 1000; 
   }
 #narrative-navbar {
+    height: 5vh;
+    align-content: center;
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: auto;
     border-radius: 50px;
     box-shadow: 0px 5px 5px 0px black;
 }
 .dropdown-menu {
+    align-self: center;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50px;
+    border-radius: 25px;
     width: 100%;
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 .dropdown-item {
     color: white;
     font-family: trispace;
-    font-size: large;
+    overflow-x: visible;
+    text-wrap: pretty;
+    border-bottom: 2px solid black;
+    border-top: 2px solid white;
 }
 .nav-link {
     text-decoration: none;
@@ -72,7 +76,6 @@ nav {
     background-color: rgba(201, 102, 56, 0.7);
     width: 100%;
     height: fit-content;
-    z-index: 2000;
     border-top: solid black;
     margin-top: 1vmin;
 }
@@ -87,19 +90,25 @@ main {
     flex-direction: column;
     margin-top: 2.5vmax;
     width: 100vw;
-    height: fit-content;
     padding: 2.5vmax;
+    padding-bottom: 5vmax;
     border-radius: 5px;
 }
 /* Card part */
+@media (min-width: 768px) {
+    #card-wrapper {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 2.5vmax;
+    }
+}
 #main-card {
     height: fit-content;
-    background-color: #D9D9D9;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 0px;
-    box-shadow: black 1px 0.3em 0.3em 0.3em;
+    border: 1px solid black;
     border-radius: 7.5px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
 }
 .card-header {
     background-color: C96638;
@@ -112,21 +121,41 @@ main {
 
 img.img-fluid {
     align-self: center;
+    max-height: 75vmin;
     border-radius: 5px;
     border-bottom: 2px solid black;
     border-left: 2px solid black;    
     border-right: 2px solid black;    
 }
-.accordion-button {
-    background-color: #C96638 !important;
-    color: black;
-    border: 1px solid black;
-}
+.accordion-button,
+.accordion-button:not(.collapsed),
 .accordion-button:focus {
-    box-shadow: none;
+    background-color: inherit; /* Or set it to 'white' directly if you prefer */
+    box-shadow: none; /* Remove focus shadow here as well */
+
+}
+
+.accordion-button {
+    background-color: white; /* Set white background color initially */
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.accordion-button h5 {
+    width: 100%;
+    text-align: center;
+}
+#alt-narr button{
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    padding: 1%;
+    margin: 0%;
+    margin-left: 5%;
+    border-radius: 25%;
 }
 .accordion-body {
-    background-color: #D9D9D9;
     padding: 0px;
     padding-top: 1vmin;
 }
@@ -138,12 +167,14 @@ img.img-fluid {
 .description > div {
     text-align: center;
 }
+.description div.label {
+    font-family: trispace;
+}
 /* Text part */
 hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
     background-color: #6B1A10   ; /* Change color */
-    margin: 0px; /* Center horizontally with some vertical spacing */
 }
 #info-box {
     border-radius: 5px;
@@ -166,4 +197,24 @@ footer {
     background-color: black;
     padding: 2em;
     width: 100vw;
+}
+/* Style for loading spinner */
+.loading-spinner {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation for spinning effect */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

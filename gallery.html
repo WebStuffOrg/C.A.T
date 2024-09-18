@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <script src="js/narr.js"></script>
 </head>
 <body>
   <nav id="main-navbar" class="navbar navbar-expand-lg">
@@ -47,23 +46,20 @@
   </div>
   <div id="narrative-navbar-wrapper" class="container-fluid">
     <nav id="narrative-navbar" class="navbar navbar-expand-lg justify-content-between d-flex flex-row">
-      <button id="back-button" class="btn text-white">
+      <button id="back-button" class="btn text-white" onclick="prevItem()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
           <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
         </svg>
         <span class="d-none d-md-inline">Previous</span>
       </button>
       <div class="dropdown">
-        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <h4 class="d-inline text-white"><span id="current-narrative">Dumb Cats</span><span class="current-artwork d-none d-md-inline">: Artwork</span></h4>
+        <button class="btn btn-lg dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <h6 class="d-inline text-white"><span id="current-narrative"></span> <span class="d-none d-md-inline">:</span> <span class="current-artwork d-none d-md-inline"></span></h6>
         </button>
-        <ul class="dropdown-menu text-center">
-          <li class="dropdown-item">AAAA</li>
-          <li class="dropdown-item">BBB</li>
-          <li class="dropdown-item">CCC</li>
-        </ul>
+        <ol id="dropdown-list" class="dropdown-menu text-start">
+        </ol>
       </div>
-      <button id="next-button" class="btn text-white">
+      <button id="next-button" class="btn text-white" onclick="nextItem()">
         <span class="d-none d-md-inline">Next</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
           <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
@@ -71,56 +67,54 @@
       </button>
     </nav>
   </div>
-  <main class="container-fluid justify-content-center justify-content-md-start flex-md-row">
-    <div class="col-12 col-md-6 m-md-0">
+  <main class="container-fluid justify-content-center flex-md-row">
+    <div id="card-wrapper" class="col-12 col-md-5 m-md-0 h-100">
       <div class="card" id="main-card">
-        <div class="card-header text-center current-artwork"><h2>Title</h2></div>
-        <img class="p-0" src="images/home/cat.png" alt="meow">
-        <div id="narr-info" class="container-fluid pt-2 pb-2 text-nowrap" style="height: 5%; width: 100%; border-top: 2px solid black; border-radius: 5px;">
+        <div class="card-header text-center"><h5 class="current-artwork"></h5></div>
+        <img id="artwork-img" class="p-0 img-fluid" src="" alt="meow">
+        <div id="alt-narr" class="container-fluid d-inline-flex pt-2 pb-2" style="height: 5%; width: 100%; border-top: 2px solid black; border-radius: 5px; background-color: #C96638;">
           <h6 class="col-6">Artwork also in:</h6>
-          <div class="col-6"></div>
-        </div>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h5 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                Description
-              </button>
-            </h5>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse hidden">
-              <div class="accordion-body">
-                <div class="description row">
-                  <div class="label col-4">Title</div> <div class="data col-8">The name or title of the object.</div>
-                </div>
-                <div class="description row">
-                  <div class="label col-4">Creator</div> <div class="data col-8">The person, group, or entity responsible for creating the object.</div>
-                </div>
-                <div class="description row">
-                  <div class="label col-4">Date/Period</div> <div class="data col-8">The date or period when the object was created.</div>
-                </div>
-                <div class="description row">
-                  <div class="label col-4">Type</div> <div class="data col-8">The classification of the object (e.g., painting, sculpture, artifact, digital media).</div>
-                </div>
-                <div class="description row">
-                  <div class="label col-4">Medium</div> <div class="data col-8">The materials or techniques used in the creation of the object.</div>
-                </div>
-                <div class="description row">
-                  <div class="label col-4">Dimensions</div> <div class="data col-8">The physical size of the object (height, width, depth, or other relevant measurements).</div>
-                </div>
-              </div>
-            </div>
-          </div> 
+          <p onclick="switchNarrative(narrative=this.innerHTML, id=currentNarrative[currentIdx])">Supernatural</p>
+          <p onclick="switchNarrative(narrative=this.innerHTML, id=currentNarrative[currentIdx])">Daily</p>
         </div>
       </div>
     </div>
-    <div id="info-box" class="col-12 col-md-6 justify-content-center text-center mt-5 mt-md-0">
+    <div id="info-box" class="col-12 col-md-7 justify-content-center text-center mt-5 mt-md-0">
+      <hr>
       <h1>About this Artwork</h1>
-      <hr style=>
+      <hr>
+      <div class="accordion mb-5" id="accordionPanelsStayOpenExample">
+        <button class="accordion-button d-flex justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h5>Description</h5>
+        </button>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="description row">
+                <div class="label col-4">Title</div> <div id="title" class="table-data col-8"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-4">Creator</div> <div id="creator" class="table-data col-8"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-4">Date/Period</div> <div id="time" class="table-data col-8"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-4">Type</div> <div id="type" class="table-data col-8"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-4">Medium</div> <div id="medium" class="table-data col-8"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-4">Dimensions</div> <div id="dimensions" class="table-data col-8"></div>
+              </div>
+            </div>
+          </div>
+      </div>
       <p>
         <h4>Introduction</h4>
         <p>This artwork presents a striking and minimalist depiction of a black cat resting atop a large orange ball. The cat's form is rendered in smooth, flowing curves, with its body almost seamlessly blending into the ball, emphasizing its relaxed and leisurely posture. Its front legs drape over the ball in a manner that suggests comfort and ease, while its rear is partially hidden behind the sphere. The cat's face is simple yet expressive, featuring narrow, almond-shaped eyes and a small white nose, which add a touch of personality to the otherwise abstract representation.</p>
         <br>
-        
+
         <h4>Color Palette</h4>
         <p>The color palette is deliberately limited, consisting primarily of deep black, vibrant orange, and a muted beige background. This choice of colors creates a strong visual contrast that draws the viewer's eye directly to the central figure of the cat. The black of the cat against the orange of the ball and the neutral background enhances the sense of depth and focus in the composition.</p>
         <br>
@@ -133,13 +127,13 @@
         <p>In essence, this artwork captures the essence of minimalism, using basic forms and a limited color scheme to create a compelling and visually engaging piece that is both elegant and whimsical. The cat, as the central figure, embodies a sense of quiet repose, making the image both relatable and endearing to the viewer.</p>
         <br>
         <div id="button-container">
-          <button id="back-button" class="btn text-button disabled">
+          <button id="less-button" class="btn text-button disabled">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
             </svg>
             Read less
           </button>
-          <button id="next-button" class="btn text-button">
+          <button id="more-button" class="btn text-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
             </svg>
@@ -149,13 +143,11 @@
       </div>
   </main>
   <footer class="container-fluid">
-          <div class="col-12 col-md-6 justify-content-center">
+          <div class="col-12 col-md-7 justify-content-center">
               <h5 style="color: white;">Connect with us</h5>
-              <a href="https://www.facebook.com/"><img src="icons/facebook.png" alt="facebook" width="30px" height="30px"></a>
-              <a href="https://www.instagram.com/"><img src="icons/instagram.png" alt="instagram" width="30px" height="30px"></a>
-              <a href="https://www.twitter.com/"><img src="icons/twitter.png" alt="twitter" width="30px" height="30px"></a>
           </div>
-  </footer>   
+  </footer> 
+  <script src="js/narr.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
