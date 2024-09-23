@@ -120,12 +120,14 @@ padding-right: 5%;
 /* Navbar */
 .navbar {
   width: 100%;
-  background-color: #f0f0f0;
+  border: 2px solid  #815A45; 
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 }
+
+
 
 .navbar-container {
   display: flex;
@@ -243,6 +245,7 @@ body {
 }
 
 
+
 /* Hero */
 .hero {
     position: relative;
@@ -251,7 +254,7 @@ body {
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('images/home/img4.jpg') no-repeat center center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('/images/home/img4.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -268,7 +271,7 @@ body {
 
 .hero_content h1,
 .hero_content p {
-    color: rgb(247, 245, 245);;
+    color: #FAF3EF;
 }
 
 /* Poster */
@@ -280,7 +283,7 @@ body {
     justify-content: center; /* Centra il contenuto del poster */
     padding: 30px;
     box-sizing: border-box;
-    background-color:   rgb(247, 245, 245);
+    background-color:   #FAF3EF;
 }
 
 #video-back{
@@ -288,6 +291,7 @@ body {
   top: 100%;
   height: 100vh;
   width: 100%;
+
 }
 
 .poster_imgi{
@@ -339,7 +343,7 @@ body {
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     width: 100%;
-    background:#6B1A10;;
+    background:#6B1A10;
     background-size: cover;
 }
 
@@ -375,7 +379,7 @@ body {
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
   width: 100%;
-  background:#67314B;
+  background:#5C311Bff;
   background-size: cover;
 }
 
@@ -451,7 +455,7 @@ body {
 }
 
 .panel {
-  background:rgb(247, 245, 245);
+  background: #FAF3EF;
   padding:100px 30px
 }
 
@@ -525,7 +529,7 @@ body {
 
 
 .panelblue {
-  background:rgb(247, 245, 245);
+  background: #FAF3EF;
   padding:30px
 }
 
@@ -582,7 +586,7 @@ body {
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
   width: 100%;
-  background: rgb(247, 245, 245);
+  background:  #FAF3EF;
   background-size: cover;
 }
 
@@ -594,7 +598,7 @@ body {
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
   width: 100%;
-  background: rgb(247, 245, 245);
+  background: #FAF3EF;
   background-size: cover;
 }
 
@@ -644,7 +648,7 @@ body {
 }
 
 .carousel-indicators .active {
-  background-color: #fff;
+  background-color: #FAF3EF;
 }
 
 /* Control buttons */
