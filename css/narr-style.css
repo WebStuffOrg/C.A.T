@@ -113,43 +113,27 @@ button {
   transition: background-color 0.3s;
   font-size: 1.3em;
 }
-
-.dropdown-link:hover {
-  background-color:  #6B1A10;
+.navbar-collapse.show {
+    width: 100%;
+    height: fit-content;
+    border-top: solid black;
+    margin-top: 1vmin;
 }
-
-/* Show menu when toggle is clicked */
-.navbar-menu.show {
-  display: flex;
+.dropdown-menu {
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: scroll;
 }
-
-.dropdown-menu.show {
-  display: block;
-}
-
-
-
-/* Responsive navbar */
-@media (max-width: 768px) {
-  .navbar-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #ffffff;
-  }
-
-  .navbar-item {
-      margin: 10px 0;
-  }
-
-  .navbar-toggle {
-      display: flex;
-  }
-}
-.logo {
-    margin-right: 2em;
-    margin-left: 2em;
-    margin-bottom: 1em;
+.dropdown-item {
+    color: white;
+    font-family: trispace;
+    overflow-x: visible;
+    text-wrap: pretty;
+    border-bottom: 2px solid black;
+    border-top: 2px solid white;
 }
 /* Main content */
 main {
