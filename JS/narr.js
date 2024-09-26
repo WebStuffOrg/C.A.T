@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hideLoading()
         setDropdownList(currentNarrative, currentIdx)
         if (currentIdx === 0) backButton.disabled = true
-        document.getElementById('current-narrative').innerHTML = narrativeTitle
     })
 });
 
@@ -75,6 +74,8 @@ async function setContent(data) {
             img.src = imagePath;
             img.onload = () => {
                 document.getElementById('artwork-img').setAttribute('src', imagePath);
+                resolve();
+                document.getElementById('artwork-img-2').setAttribute('src', imagePath);
                 resolve();
             };
             img.onerror = () => reject(new Error('Image failed to load'));
@@ -140,7 +141,6 @@ async function switchNarrative (narrative, id=null) {
         currentIdx = 0
         await setContent(currItem)
     }
-    document.getElementById('current-narrative').innerHTML = narrative
     if (currentIdx === 0) backButton.disabled = true;
    else {
     backButton.disabled = false;
