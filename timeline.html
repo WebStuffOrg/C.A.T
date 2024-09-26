@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-lightù" style="background-color:#ffffff">
+    <nav class="navbar navbar-expand-lg navbar-light bg-lightù" style="background-color:#000000">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="images/icons/black-cat.png" alt="logo" width="75px" height="65px">.A.T</a>
+            <a href="index.html" class="navbar-brand"><img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -314,6 +314,39 @@
 </div>
     
 
+<footer class="footer">
+    <div class="text-center p-3">
+        <p>
+        <b>A Linked Open Data project</b><br>
+        
+        MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
+        Course "Information Modeling and Web Tachnologies" <br>
+
+        <a href="documentation.html">Documentation about the project</a><br>
+       
+        </p>
+      </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const toggleButton = document.querySelector('.navbar-toggle');
+              const navbarMenu = document.querySelector('.navbar-menu');
+              const servicesDropdown = document.querySelector('.services-dropdown');
+  
+              toggleButton.addEventListener('click', function() {
+                  navbarMenu.classList.toggle('show');
+                  
+              });
+  
+              servicesDropdown.addEventListener('click', function() {
+                  this.querySelector('.dropdown-menu').classList.toggle('show');
+              });
+          });
+      </script>
+        
+
+</div>
+</footer>
 
 <!-- Link a Flickity JS per il carousel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>

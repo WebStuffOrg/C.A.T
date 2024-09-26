@@ -1,16 +1,16 @@
-/* Rimuovere margini e padding predefiniti */
+t/* Rimuovere margini e padding predefiniti */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Nunito;
+ 
 }
 
 /* Corpo della pagina */
 body{
   font-size: 16px;
   background-color:   rgb(247, 245, 245);
-  
 }
 
 /* Link */
@@ -120,29 +120,26 @@ padding-right: 5%;
 /* Navbar */
 .navbar {
   width: 100%;
-  border: 2px solid  #815A45; 
+  border: 2px solid  #000000; 
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 }
 
+.navbar .nav-link, 
+        .navbar .navbar-brand, 
+        .navbar .dropdown-item, 
+        .navbar .navbar-toggler-icon {
+            color: rgb(255, 255, 255) !important;
+        }
 
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 10px 20px;
-  color: #ff8989;
-}
 
 .navbar-logo {
   font-size: 2.5em;
   text-decoration: none;
-  color: #000000;
+
 }
 
 .navbar-menu {
@@ -151,6 +148,7 @@ padding-right: 5%;
   margin: 0;
   padding: 0;
 }
+
 
 .navbar-item {
   margin-left: 20px;
@@ -164,9 +162,7 @@ padding-right: 5%;
   transition: color 0.3s;
 }
 
-.navbar-link:hover {
-  color:  #6B1A10;
-}
+
 
 .navbar-toggle {
   display: none;
@@ -187,7 +183,7 @@ padding-right: 5%;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  background-color: #000000;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -203,7 +199,7 @@ padding-right: 5%;
   padding: 10px;
   text-decoration: none;
   color: #000000;
-  background-color: #ffffff;  border: 1px solid #000000; 
+  background-color: #000000;  border: 1px solid #ffffff; 
   transition: background-color 0.3s;
   font-size: 1.3em;
 }
@@ -220,6 +216,8 @@ padding-right: 5%;
 .dropdown-menu.show {
   display: block;
 }
+
+
 
 /* Responsive navbar */
 @media (max-width: 768px) {
@@ -242,9 +240,10 @@ padding-right: 5%;
 /* Adjust body and timeline for fixed navbar */
 body {
   padding-top: 60px;
+  color: #000;
+  
+
 }
-
-
 
 /* Hero */
 .hero {
@@ -256,6 +255,7 @@ body {
     width: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('/images/home/img4.jpg') no-repeat center center;
     background-size: cover;
+    
 }
 
 /* Contenuto Hero */
@@ -591,16 +591,6 @@ body {
 }
 
 
-
-.end-cover {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centra il contenuto orizzontalmente */
-  width: 100%;
-  background: #FAF3EF;
-  background-size: cover;
-}
 
 
 
