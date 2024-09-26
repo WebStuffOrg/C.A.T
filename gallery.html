@@ -19,7 +19,7 @@
     </button>
     <a id="logo" class="navbar-brand" href="index.html"><img src="images/icons/pets.png" alt="logo" width="25px" height="25px">C.A.T</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
@@ -38,80 +38,70 @@
   </nav>
   <main class="container-fluid justify-content-center">
     <div class="row d-flex">
-      <div id="card-wrapper" class="col-12 m-md-0 flex-xs-column flex-column">
-        
-        <!-- Wrapper for image and overlay elements -->
-        <div class="image-container position-relative d-flex">
-          <!-- Overlay Navbar -->
-          <div id="narrative-navbar" class="navbar justify-content-center flex-row position-absolute w-100">
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <h6 class="d-inline text-white">
-                  <span class="current-artwork d-md-inline"></span>
-                </h6>
-              </button>
-              <ol id="dropdown-list" class="dropdown-menu text-start"></ol>
-            </div>
+      <div id="image-wrapper" class="col-12">
+        <!-- Overlay Navbar -->
+        <div id="narrative-navbar" class="navbar justify-content-center flex-row position-absolute w-100">
+          <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <h6 class="d-inline text-white">
+                <span class="current-artwork d-md-inline h6"></span>
+              </h6>
+            </button>
+            <ol id="dropdown-list" class="dropdown-menu text-start"></ol>
           </div>
-          
-          <!-- Image -->
-          <img id="artwork-img" class="p-0 img-fluid" src="" alt="meow">
-    
-          <!-- Overlay Buttons -->
-          <button id="back-button" class="btn text-white position-absolute" onclick="prevItem()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-              <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
-            </svg>
-          </button>
-    
-          <button id="next-button" class="btn text-white position-absolute" onclick="nextItem()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-              <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-            </svg>
-          </button>
-    
         </div>
-        
-      </div>
-    </div>
-  <div class="row justify-content-center justify-content-md-start flex-row">
-    <div id="info-box" class="col-12 col-md-8 text-center p-md-5">
-      <div class="accordion mb-5 mt-5" id="accordionPanelsStayOpenExample">
-        <button class="accordion-button d-flex justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          <h5>Description</h5>
+        <!-- Overlay Buttons -->
+        <button id="back-button" class="btn-sm text-white position-absolute" onclick="prevItem()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+          </svg>
         </button>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <div class="description row">
-                <div class="label col-4">Title</div> <div id="title" class="current-artwork col-8"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-4">Creator</div> <div id="creator" class="table-data col-8"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-4">Date</div> <div id="time" class="table-data col-8"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-4">Type</div> <div id="type" class="table-data col-8"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-4">Medium</div> <div id="medium" class="table-data col-8"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-4">Dimensions</div> <div id="dimensions" class="table-data col-8"></div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="d-flex pt-2 pb-2" style="height: 5%; width: 100%;">
-        <div class="col-3 d-flex justify-content-center">
-          <h6 style="margin-bottom: 0%; align-self: baseline;">Also in:</h6>
+  
+        <button id="next-button" class="btn-sm text-white position-absolute" onclick="nextItem()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+          </svg>
+        </button>
+        <!-- Wrapper for image and overlay elements -->
+        <div class="position-relative d-flex justify-content-center">
+          <!-- Image -->
+          <img id="artwork-img" class="img-fluid align-self-center" src="" alt="meow">
+    
         </div>
-        <div id="alt-narr" class="col-9 d-flex flex-wrap">
-        </div>
+        
       </div>
     </div>
-    <div id="side-image" class="col-md-4 d-none d-md-flex">
+  <div class="row d-flex flex-column flex-md-row">
+    <div id="info-box" class="col-12 col-md-6 mt-5">
+          <h5 class="h5" style="padding-left: 5vmax;">Description</h5>
+        </button>
+            <div class="table-body">
+              <div class="description row">
+                <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-6">Date</div> <div id="time" class="table-data col-6"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-6">Type</div> <div id="type" class="table-data col-6"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-6">Medium</div> <div id="medium" class="table-data col-6"></div>
+              </div>
+              <div class="description row">
+                <div class="label col-6">Dimensions</div> <div id="dimensions" class="table-data col-6"></div>
+              </div>
+            </div>
+    </div>
+    <div class="col-3 mt-5 ps-5 ps-md-0 d-flex flex-row flex-md-column flex-wrap">
+      <h6>Also present in:</h6>
+      <div id="alt-narr" class="d-flex flex-row flex-md-column justify-content-center">
+      </div>
+    </div>
+    <div id="side-image" class="col-3 d-none d-md-flex">
       <div class="card">
         <img id="artwork-img-2" class="p-0 img-fluid" src="" alt="meow">
       </div>
@@ -123,19 +113,15 @@
       <h3 style="margin-left: 30%; margin-right: 30%; text-align: center;">About this Artwork</h3>
       <hr style="margin-left: 20%; margin-right: 20%;">
       <p>
-        <h4>Introduction</h4>
         <p>This artwork presents a striking and minimalist depiction of a black cat resting atop a large orange ball. The cat's form is rendered in smooth, flowing curves, with its body almost seamlessly blending into the ball, emphasizing its relaxed and leisurely posture. Its front legs drape over the ball in a manner that suggests comfort and ease, while its rear is partially hidden behind the sphere. The cat's face is simple yet expressive, featuring narrow, almond-shaped eyes and a small white nose, which add a touch of personality to the otherwise abstract representation.</p>
         <br>
 
-        <h4>Color Palette</h4>
         <p>The color palette is deliberately limited, consisting primarily of deep black, vibrant orange, and a muted beige background. This choice of colors creates a strong visual contrast that draws the viewer's eye directly to the central figure of the cat. The black of the cat against the orange of the ball and the neutral background enhances the sense of depth and focus in the composition.</p>
         <br>
         
-        <h4>Artistic Style</h4>
         <p>The overall style of the artwork is modern and graphic, with a strong emphasis on bold, flat shapes and clean lines. This approach gives the image a timeless, almost iconic quality, making it both visually appealing and conceptually intriguing. The simplicity of the design, combined with the playful subject matter, evokes a sense of calm and contentment, while also leaving room for interpretation and imagination.</p>
         <br>
         
-        <h4>Conclusion</h4>
         <p>In essence, this artwork captures the essence of minimalism, using basic forms and a limited color scheme to create a compelling and visually engaging piece that is both elegant and whimsical. The cat, as the central figure, embodies a sense of quiet repose, making the image both relatable and endearing to the viewer.</p>
         <br>
         <div id="button-container" class="d-flex justify-content-between p-2">
