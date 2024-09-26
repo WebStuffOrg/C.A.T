@@ -7,6 +7,10 @@
     --quaternary-color: #67314B;
     --quinary-color: #D9D9D9;
     font-family: Nunito;
+    font-size: 1rem;
+}
+[style*="font-family: trispace;"] {
+    font-size: 2rem;
 }
 
 body {
@@ -68,67 +72,40 @@ main {
     flex-direction: column;
     width: 100vw;
 }
-#card-wrapper {
-    background-color: black;
+#image-wrapper {
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 0;
     display: flex;               /* Enable flexbox for centering */
     justify-content: center;      /* Center horizontally */
     height: 100vh;
-}
-
-.image-container {
-    display: flex;               /* Flexbox to center the image */
-    justify-content: center;       /* Limit the height of the image */
+    max-width: 100vw;
 }
 
 #artwork-img {
-    max-width: 100%;             /* Make the image responsive */
+    max-width: 100vw;             /* Make the image responsive */
     max-height: 100vh;            /* Keep the aspect ratio intact */
 }
 
 #narrative-navbar {
-    top: 0px; /* Position the navbar near the top */
     left: 50%;
     transform: translateX(-50%); /* Center the navbar horizontally */
     z-index: 1; /* Ensure it's above the image */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 #back-button, #next-button {
     background-color: rgba(0, 0, 0, 0.7);
+    top: 50%; /* Center vertically */
+    z-index: 1;
+    border-radius: 50px;
 }
 
 #back-button {
-    top: 50%; /* Center vertically */
-    left: 10px; /* Position near the left */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    z-index: 1;
+    left: 10px;
 }
   
-  #next-button {
-    top: 50%;
-    right: 10px; /* Position near the right */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    z-index: 1;
-}
-  
-.accordion-button,
-.accordion-button:not(.collapsed),
-.accordion-button:focus {
-    background-color: inherit; /* Or set it to 'white' directly if you prefer */
-    box-shadow: none; /* Remove focus shadow here as well */
-
-}
-
-.accordion-button {
-    background-color: white; /* Set white background color initially */
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-}
-
-.accordion-button h5 {
-    width: 100%;
-    text-align: center;
-}
+#next-button {
+    right: 10px;
+}  
 #main-card {
     height: fit-content;
     width: fit-content;
@@ -140,7 +117,7 @@ main {
 .hidden {
     position: fixed;
     top: 10px;
-    right: 10px;
+    right: 0px;
     width: 30vw; /* Shrink image size */
     height: auto;
     opacity: 0;
@@ -154,7 +131,8 @@ main {
     visibility: visible;
     position: fixed;
     top: 10px;
-    right: 10px;
+    right: 0px;
+    padding-right: 10px;
     width: 30vw; /* Shrink image size */
     height: auto;
     z-index: 1000;
@@ -162,24 +140,26 @@ main {
   }
   
 #alt-narr button{
+    color: white;
     width: fit-content;
     height: fit-content;
-    padding: 1%;
-    margin: 0%;
-    margin-left: 5%;
+    font-size: 0.7rem;
+    padding: 0.35rem;
+    margin-top: 2.5vmax;
+    background-color: var(--tertiary-color);
+    border-radius: 10%;
+    font-family: trispace;
 }
-.accordion-body {
+.table-body {
     padding: 0px;
     padding-top: 1vmin;
 }
 .description {
-    padding: 0.5em; 
     margin: 0px;
-    text-align: justify;
 }
 .description > div {
-    text-align: center;
-    padding: 0%;
+    text-align: left;
+    padding-left: 5vmax;
 }
 .description div.label {
     font-family: trispace;
@@ -225,6 +205,7 @@ footer {
     border-top: 8px solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Animation for spinning effect */

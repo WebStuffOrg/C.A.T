@@ -124,6 +124,7 @@ async function setNarrativeSwitch (item) {
     itemNarratives.forEach((i) => {
         el = document.createElement("button");
         el.textContent = i
+        el.classList.add("p-2", "ms-2", "ms-md-0")
         fragment.appendChild(el)
     })
     altNarrative.appendChild(fragment)
