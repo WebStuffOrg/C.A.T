@@ -121,14 +121,6 @@ padding-right: 5%;
 
 
 /* Navbar */
-.navbar {
-  width: 100%;
-  border: 2px solid  #000000; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
 
 .navbar .nav-link, 
         .navbar .navbar-brand, 
@@ -136,49 +128,6 @@ padding-right: 5%;
         .navbar .navbar-toggler-icon {
             color: rgb(255, 255, 255) !important;
         }
-
-
-
-.navbar-logo {
-  font-size: 2.5em;
-  text-decoration: none;
-
-}
-
-.navbar-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-
-.navbar-item {
-  margin-left: 20px;
-  position: relative;
-}
-
-.navbar-link {
-  text-decoration: none;
-  color: #000000;
-  font-size: 1.3em;
-  transition: color 0.3s;
-}
-
-
-
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.navbar-toggle-icon {
-  width: 25px;
-  height: 3px;
-  background-color: #000000;
-  margin: 4px 0;
-}
 
 /* Dropdown menu styles */
 .dropdown-menu {
@@ -202,7 +151,7 @@ padding-right: 5%;
   padding: 10px;
   text-decoration: none;
   color: #000000;
-  background-color: #000000;  border: 1px solid #ffffff; 
+  background-color: #000000;  border: 1px solid ; 
   transition: background-color 0.3s;
   font-size: 1.3em;
 }
@@ -240,13 +189,6 @@ padding-right: 5%;
   }
 }
 
-/* Adjust body and timeline for fixed navbar */
-body {
-  padding-top: 60px;
-  color: #000;
-  
-
-}
 
 /* Hero */
 .hero {
