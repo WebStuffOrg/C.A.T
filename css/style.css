@@ -4,13 +4,16 @@ t/* Rimuovere margini e padding predefiniti */
   padding: 0;
   box-sizing: border-box;
   font-family: Nunito;
+
+
  
 }
 
 /* Corpo della pagina */
-body{
+body,html{
   font-size: 16px;
   background-color:   rgb(247, 245, 245);
+  overflow-x: hidden;
 }
 
 /* Link */
@@ -465,34 +468,14 @@ body {
     align-items: center;
 }
 
-.dot {
-    height: 250px;
-    width: 250px;
-    background: #6adf91;
-    border-radius: 100%;
-    line-height: 250px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 40px;
-    margin-bottom: 40px;
-}
-
 /* Footer */
 .footer {
     background: #000;
     padding: 0;
+    
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   
-
-
-
 
 /* Scrolling */
   .scroll-buttons {
