@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+    <title>C.A.T</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+    <link rel="stylesheet" href="css/about.css"/>
+</head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-lightù" style="background-color:rgb(0, 0, 0)">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" ><a href="#" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">MAP</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            NARRATIVES
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">GALLERY</a>
+                            <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">ABOUT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="intro_content">
+        <h1>ABOUT US</h1>
+    </div>
+
+    <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="images/home/valentino.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">VALENTINO</h5>
+            <p class="card-text">DHDK student<br>
+                University of Bologna</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="images/home/chiara.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">CHIARA</h5>
+            <p class="card-text">DHDK student<br>
+                University of Bologna</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="images/home/elvira.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">ELVIRA</h5>
+            <p class="card-text">DHDK student<br>
+                University of Bologna</p>
+          </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="images/home/lin.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">LIN</h5>
+              <p class="card-text">DHDK student<br>
+                University of Bologna</p>
+          </div>
+          </div>
+      </div>
+
+
+
+<footer class="footer">
+    <div class="text-center p-3">
+        <p>
+        <b>A Linked Open Data project</b><br>
+        
+        MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
+        Course "Information Modeling and Web Tachnologies" <br>
+
+        <a href="documentation.html">Documentation about the project</a><br>
+       
+        </p>
+      </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const toggleButton = document.querySelector('.navbar-toggle');
+              const navbarMenu = document.querySelector('.navbar-menu');
+              const servicesDropdown = document.querySelector('.services-dropdown');
+  
+              toggleButton.addEventListener('click', function() {
+                  navbarMenu.classList.toggle('show');
+                  
+              });
+  
+              servicesDropdown.addEventListener('click', function() {
+                  this.querySelector('.dropdown-menu').classList.toggle('show');
+              });
+          });
+      </script>
+        
+
+</div>
+</footer>
+
+    </body>
+</html>

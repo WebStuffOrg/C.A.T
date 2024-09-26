@@ -1,0 +1,119 @@
+body {
+    font-family: Nunito;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.navbar .nav-link, 
+.navbar .navbar-brand, 
+.navbar .dropdown-item, 
+.navbar .navbar-toggler-icon {
+    color: rgb(255, 255, 255) !important;
+}
+
+main {
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.member {
+    margin: 20px;
+    text-align: center;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+}
+
+.member h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.member a {
+    color: red;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.member p {
+    margin: 5px 0;
+}
+
+h1 {
+    color: #000000;
+}
+.intro_content {
+    position: relative;
+    height: 15vh;
+    display:flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra orizzontalmente */
+    width: 100%; /* Modifica a 100% se vuoi occupare l'intera larghezza */
+    background-size: cover;
+    text-align: center; /* Centra il testo */
+    margin-top: 60px;
+    margin-top: 20px; 
+}
+
+.card-deck{
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    
+
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 0;
+}
+
+.text-center{
+    color: #fff;
+}
+
+
+.social-icons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 40px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;}
