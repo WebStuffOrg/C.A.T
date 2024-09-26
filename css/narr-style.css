@@ -26,20 +26,125 @@ h1, h2, h3, h4, h5, h6 {
 button {
     font-size: 0.7rem;
 }
-.nav-link {
-    text-decoration: none;
-    color: white;
-    font-family: trispace;
-    font-size: large;
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  border: 2px solid  #000000; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
-.nav-item {
-    margin: 0.5em;
+
+.navbar .nav-link, 
+        .navbar .navbar-brand, 
+        .navbar .dropdown-item, 
+        .navbar .navbar-toggler-icon {
+            color: rgb(255, 255, 255) !important;
+        }
+
+
+
+.navbar-logo {
+  font-size: 2.5em;
+  text-decoration: none;
+
 }
-.navbar-collapse.show {
-    width: 100%;
-    height: fit-content;
-    border-top: solid black;
-    margin-top: 1vmin;
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar-item {
+  margin-left: 20px;
+  position: relative;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.3em;
+  transition: color 0.3s;
+}
+
+
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #000000;
+  margin: 4px 0;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  width: 200px;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #000000;  border: 1px solid #ffffff; 
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+}
+
+.dropdown-link:hover {
+  background-color:  #6B1A10;
+}
+
+/* Show menu when toggle is clicked */
+.navbar-menu.show {
+  display: flex;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ffffff;
+  }
+
+  .navbar-item {
+      margin: 10px 0;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
 }
 .logo {
     margin-right: 2em;
