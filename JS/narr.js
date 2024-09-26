@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
         itemData = items[currentNarrative[currentIdx]]
 
         await setContent(itemData)
-        hideLoading()
+        document.getElementById("current-narrative").textContent = narrativeTitle
         setDropdownList(currentNarrative, currentIdx)
+        hideLoading()
         if (currentIdx === 0) backButton.disabled = true
     })
 });
@@ -131,6 +132,7 @@ async function setNarrativeSwitch (item) {
 };
 
 async function switchNarrative (narrative, id=null) {
+    document.getElementById("current-narrative").textContent = narrativeTitle
     currentNarrative = narratives[narrative];
     narrativeTitle = narrative
     if (id) {

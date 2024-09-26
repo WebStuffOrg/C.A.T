@@ -5,6 +5,7 @@
     <title>Gallery</title>
     <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style2.css"/>  
     <link rel="stylesheet" type="text/css" href="css/narr-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,35 +13,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav id="main-navbar" class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <a id="logo" class="navbar-brand" href="index.html"><img src="images/icons/pets.png" alt="logo" width="25px" height="25px">C.A.T</a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Map</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page">Narratives</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-disabled="false">About</a>
-        </li>
-      </ul>
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
+    <div class="container">
+        <a href="index.html" class="navbar-brand"><img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ><a href="#" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">MAP</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NARRATIVES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">GALLERY</a>
+                        <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about_us.html" class="nav-link">ABOUT US</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
-  </nav>
+</nav>
   <main class="container-fluid justify-content-center">
     <div class="row d-flex">
       <div id="image-wrapper" class="col-12">
         <!-- Overlay Navbar -->
-        <div id="narrative-navbar" class="navbar justify-content-center flex-row position-absolute w-100">
+        <div id="narrative-navbar" class="navbar justify-content-between flex-row position-absolute w-100">
+          <button id="current-narrative" class="btn ms-md-2 text-white">
+            <img src="images/icons/back.png" alt="meow" style="width: 10px; height: 10px;">
+          </button>
           <div class="dropdown">
             <button class="btn btn-lg dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <h6 class="d-inline text-white">
@@ -49,15 +53,16 @@
             </button>
             <ol id="dropdown-list" class="dropdown-menu text-start"></ol>
           </div>
+          <button id="modal-toggler" class="btn me-md-2 text-white">See narrative list</button>
         </div>
         <!-- Overlay Buttons -->
-        <button id="back-button" class="btn-sm text-white position-absolute" onclick="prevItem()">
+        <button id="back-button" class="btn text-white position-absolute" onclick="prevItem()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
             <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
           </svg>
         </button>
   
-        <button id="next-button" class="btn-sm text-white position-absolute" onclick="nextItem()">
+        <button id="next-button" class="btn text-white position-absolute" onclick="nextItem()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
             <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
           </svg>
@@ -80,23 +85,23 @@
                 <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
               </div>
               <div class="description row">
-                <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6"></div>
+                <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6">-</div>
               </div>
               <div class="description row">
-                <div class="label col-6">Date</div> <div id="time" class="table-data col-6"></div>
+                <div class="label col-6">Date</div> <div id="time" class="table-data col-6">-</div>
               </div>
               <div class="description row">
-                <div class="label col-6">Type</div> <div id="type" class="table-data col-6"></div>
+                <div class="label col-6">Type</div> <div id="type" class="table-data col-6">-</div>
               </div>
               <div class="description row">
-                <div class="label col-6">Medium</div> <div id="medium" class="table-data col-6"></div>
+                <div class="label col-6">Medium</div> <div id="medium" class="table-data col-6">-</div>
               </div>
               <div class="description row">
-                <div class="label col-6">Dimensions</div> <div id="dimensions" class="table-data col-6"></div>
+                <div class="label col-6">Dimensions</div> <div id="dimensions" class="table-data col-6">-</div>
               </div>
             </div>
     </div>
-    <div class="col-3 mt-5 ps-5 ps-md-0 d-flex flex-row flex-md-column flex-wrap">
+    <div id="info-text" class="col-3 mt-5 ps-5 ps-md-0 d-flex flex-row flex-md-column">
       <h6>Also present in:</h6>
       <div id="alt-narr" class="d-flex flex-row flex-md-column justify-content-center">
       </div>
@@ -108,7 +113,7 @@
     </div>
   </div>
     <div class="row">
-      <div class="col-12 col-md-8" style="padding: 5vmax;">
+      <div class="col-12 col-md-8" style="padding: 3vmax;">
       <hr style="margin-left: 10%; margin-right: 10%;">
       <h3 style="margin-left: 30%; margin-right: 30%; text-align: center;">About this Artwork</h3>
       <hr style="margin-left: 20%; margin-right: 20%;">
@@ -179,6 +184,9 @@
     observer.observe(artworkImage);
   </script>
   <script src="js/narr.js"></script>  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" src="myscript.js"></script>
+  <script type="text/javascript" src="JS/myscript.js"></script>
 </body>
 </html>
