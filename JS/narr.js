@@ -7,7 +7,7 @@ let items = []
 const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
 const altNarrative = document.getElementById("alt-narr")
-const dropdown = document.getElementById('dropdown-list')
+const artworksList = document.getElementById("artwork-list")
 
 function showLoading() {
     document.getElementById('loading').style.display = 'block';
@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         itemData = items[currentNarrative[currentIdx]]
 
         await setContent(itemData)
-        document.getElementById("current-narrative").textContent = narrativeTitle
         setDropdownList(currentNarrative, currentIdx)
         hideLoading()
         if (currentIdx === 0) backButton.disabled = true
@@ -89,28 +88,32 @@ async function setContent(data) {
     document.querySelectorAll('.table-data').forEach((el) => {
         el.innerHTML = data[el.id]
     });
+    document.querySelectorAll('.current-narrative').forEach((el) => {
+        el.textContent = narrativeTitle
+    });  
+
     setNarrativeSwitch(data)
 };
 
 async function setDropdownList(narrative=currentNarrative) {
-    dropdown.innerHTML = ""
     narrative.forEach((item, i) => {
         const listElement = document.createElement('li')
-        listElement.classList.add('dropdown-item')
+        listElement.classList.add("btn")
         listElement.id = i
-        listElement.innerHTML = i+1 + ". " + items[item].title
+        listElement.innerHTML = items[item].title
         listElement.onclick = async () => {
             currentIdx = i
+            disableCurrDropItem(currentIdx)
             await setContent(items[item])
         }
-        dropdown.appendChild(listElement)
+        artworksList.appendChild(listElement)
     })
     disableCurrDropItem(currentIdx);
 };
 
 
 function disableCurrDropItem(idx) {
-    document.querySelector('.disabled')?.classList.remove('disabled')
+    artworksList.querySelector('.disabled')?.classList.remove('disabled')
     const dropdownItem = document.getElementById(idx)
     dropdownItem.classList.add('disabled')
 }
@@ -132,7 +135,9 @@ async function setNarrativeSwitch (item) {
 };
 
 async function switchNarrative (narrative, id=null) {
-    document.getElementById("current-narrative").textContent = narrativeTitle
+    document.querySelectorAll('.current-narrative').forEach((el) => {
+        el.textContent = narrative
+    });    
     currentNarrative = narratives[narrative];
     narrativeTitle = narrative
     if (id) {
