@@ -1,78 +1,105 @@
-.image-list{
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.card-img-top {
+    height: 325px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.card {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 95%;
-    margin: 40px auto;
+    flex-direction: column;
+    min-height: 450px;
 }
 
-.image-item{
-    width: 550px;
-    height: 280px;
-    margin-bottom: 80px;
-    position: relative;
-    margin-right: 50px;
-}
-.image-item1{
-    height: 550px;
-    width: 300px;
-    margin-bottom: 80px;
-    margin-right: 50px;
-
-    position: relative;
-}
-
-.image-title{
-    font-weight: bold;
-    font-family: Nunito;
-    margin-top: 125px;
-    font-size: 28px;
-    margin-left: 40px;
-}
-.item-image{
-    width: 100%;
-    height: 100%;
-}
-
-.image-text{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #bbb;
-    color: white;
-    padding: 30px;
-}
-
-.image-item:hover .image-text {
-    display: block;
-}
-
-.image-item1:hover .image-text {
-    display: block;
-}
-
-.tips-box{
-    width: 100%;
-    color: #000;
+.card-body {
+    flex-grow: 1;
     display: flex;
-    justify-content: end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.tips{
-    /* width: 120px; */
-    /* background-color: rgba(107,26,16,1); */
-    height: 100%;
+.card h5.card-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
     text-align: center;
-    border-radius: 5px;
-    padding: 5px 0;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-left: 5px;
 }
 
+.card p.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: left;
+}
 
+.view-collection-btn, .view-more-btn {
+    background-color: #6B1A10;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
 
+.view-collection-btn:hover, .view-more-btn:hover {
+    background-color: #5a150e;
+    color: #fff;
+}
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #6B1A10;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#backToTopBtn:hover {
+    background-color: #5a150e;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.row {
+    margin-bottom: 2rem;
+}
+
+#sub-narratives-geography .card {
+    min-height: 375px; 
+}
+
+#sub-narratives-geography .card h5 {
+    text-align: center;
+}
+
+p.card-text {
+    text-align: left;
+}
