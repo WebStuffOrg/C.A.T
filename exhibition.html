@@ -1,304 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>C.A.T</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
-    <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Museum Narratives</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/exhibition.css" />
-</head>
-</head>
+    <!-- Google Fonts - Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/exhibition.css">
+</head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-lightù" style="background-color:rgb(0, 0, 0)">
+
+    <!-- Narratives Section -->
+    <section id="narratives" class="p-5">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="images/icons/cat_logo.png" alt="logo" width="75px"
-                    height="65px">.A.T</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">MAP</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            NARRATIVES
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="gallery.html">GALLERY</a>
-                            <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+            <h2 class="mb-4">Narratives</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/geography.jpg" class="card-img-top" alt="Geography Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Geography</h5>
+                            <p class="card-text">Across the globe, cats have been celebrated in art and culture for thousands of years for their grace, mystery, and hunting prowess.</p>
+                            <a href="#sub-narratives-geography" class="btn btn-primary mt-auto view-more-btn">View More</a>
                         </div>
-                    </li>
-                    <li class="nav-item"><a href="about_us.html" class="nav-link">ABOUT US</a></li>
-                </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/daily.jpg" class="card-img-top" alt="Daily Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Daily</h5>
+                            <p class="card-text">Cats have been our companions for centuries, their mysterious yet affectionate nature making them beloved members of households worldwide.</p>
+                            <a href="#sub-narratives-daily" class="btn btn-primary mt-auto view-more-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/supernatural.jpg" class="card-img-top" alt="Supernatural Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Supernatural</h5>
+                            <p class="card-text">Throughout history, cats have been associated with the mystical and the supernatural, often serving as symbols of mystery and magic.</p>
+                            <a href="#sub-narratives-supernatural" class="btn btn-primary mt-auto view-more-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-
-    <div class="image-title">Gallery</div>
-    <div class="image-list">
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-1.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
+    <!-- Sub-Narratives Section: Geography -->
+    <section id="sub-narratives-geography" class="p-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Sub-Narratives: Geography</h2>
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-8.jpg" class="card-img-top" alt="Europe">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Europe</h5>
+                            <p class="card-text">Explore the historical representations of cats in European art, from medieval manuscripts to royal tapestries.</p>
+                            <a href="#collection-europe" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-12.jpg" class="card-img-top" alt="Asia">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Asia</h5>
+                            <p class="card-text">Cats have long been revered in Asian cultures, symbolizing luck and protection in many traditions.</p>
+                            <a href="#collection-asia" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-15.jpg" class="card-img-top" alt="Africa">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Africa</h5>
+                            <p class="card-text">In ancient Egypt, cats were sacred animals, representing the goddess Bastet and seen as protectors of the home.</p>
+                            <a href="#collection-africa" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-1.jpg" class="card-img-top" alt="America">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">America</h5>
+                            <p class="card-text">In the Americas, cats are often depicted as symbols of independence and hunting prowess, featured in both native and colonial art.</p>
+                            <a href="#collection-america" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="image-item">
+    </section>
 
-            <img class="item-image" src="./images/narr/img-4.png" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
+    <!-- Sub-Narratives Section: Daily -->
+    <section id="sub-narratives-daily" class="p-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Sub-Narratives: Daily</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-17.jpg" class="card-img-top" alt="Chilling Cats">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Chilling Cats</h5>
+                            <p class="card-text">Cats lounging and sleeping have been captured in countless artworks, illustrating their peaceful presence in everyday life.</p>
+                            <a href="#collection-chilling-cats" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-7.jpg" class="card-img-top" alt="Playing Cats">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Playing Cats</h5>
+                            <p class="card-text">From playful kittens to cats engaging with toys, these artworks reflect the playful and curious nature of felines.</p>
+                            <a href="#collection-playing-cats" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-10.jpg" class="card-img-top" alt="Hunting Cats">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Hunting Cats</h5>
+                            <p class="card-text">Whether hunting mice in homes or stalking prey in the wild, cats have been depicted as natural hunters throughout history.</p>
+                            <a href="#collection-hunting-cats" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-8.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
+    </section>
+
+    <!-- Sub-Narratives Section: Supernatural -->
+    <section id="sub-narratives-supernatural" class="p-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Sub-Narratives: Supernatural</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-14.jpg" class="card-img-top" alt="Folklore">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Folklore</h5>
+                            <p class="card-text">Cats have appeared in folklore around the world, often playing the role of protectors or guides with magical powers.</p>
+                            <a href="#collection-folklore" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-5.jpg" class="card-img-top" alt="Superstition">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Superstition</h5>
+                            <p class="card-text">Cats have long been associated with superstitions, especially in Europe where black cats were often linked to witches.</p>
+                            <a href="#collection-superstition" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images/narr/img-6.jpg" class="card-img-top" alt="Religion">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Religion</h5>
+                            <p class="card-text">From ancient Egyptian deities to the role of cats in Buddhism, religion has often recognized the spiritual significance of cats.</p>
+                            <a href="#collection-religion" class="btn btn-primary mt-auto view-collection-btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-11.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-15.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-16.png" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-2.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        
-        
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-3.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-5.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-6.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-7.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-9.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-13.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-17.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-19.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-14.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item1">
-            <img class="item-image" src="./images/narr/img-10.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-        <div class="image-item">
-            <img class="item-image" src="./images/narr/img-12.jpg" alt="">
-            <div class="image-text">This big cloth from ancient Peru is covered with cat designs! These cats are drawn
-                in cool shapes, with their tails connecting to each other. People used this cloth to wrap the dead
-                before burying them, showing how much they loved and respected cats.</div>
-            <div class="tips-box">
-                <div class="tips">South America,</div>
-                <div class="tips">Daily Life,</div>
-                <div class="tips">Category 3</div>
-            </div>
-        </div>
-    </div>
+    </section>
 
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">Top</button>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Custom JS for scroll to top -->
+    <script>
+        window.onscroll = function () {
+            toggleBackToTopBtn();
+        };
 
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 
-    <footer class="footer">
-        <div class="text-center p-3">
-            <p>
-                <b>A Linked Open Data project</b><br>
-
-                MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
-                Course "Information Modeling and Web Tachnologies" <br>
-
-                <a href="documentation.html">Documentation about the project</a><br>
-
-            </p>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const toggleButton = document.querySelector('.navbar-toggle');
-                const navbarMenu = document.querySelector('.navbar-menu');
-                const servicesDropdown = document.querySelector('.services-dropdown');
-
-                toggleButton.addEventListener('click', function () {
-                    navbarMenu.classList.toggle('show');
-
-                });
-
-                servicesDropdown.addEventListener('click', function () {
-                    this.querySelector('.dropdown-menu').classList.toggle('show');
-                });
-            });
-        </script>
-
-
-        </div>
-    </footer>
-
-    <!-- Link a Flickity JS per il carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
-    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" src="myscript.js"></script>
-
-    <script type="text/javascript" src="JS/myscript.js"></script>
-    <script src="myscript.js"></script>
-    <script></script>
-
+        function toggleBackToTopBtn() {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+    </script>
 </body>
-
 </html>
