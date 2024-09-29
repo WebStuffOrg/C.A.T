@@ -4,9 +4,6 @@ t/* Rimuovere margini e padding predefiniti */
   padding: 0;
   box-sizing: border-box;
   font-family: Nunito;
-
-
- 
 }
 
 /* Corpo della pagina */
@@ -14,6 +11,7 @@ body,html{
   font-size: 16px;
   background-color:   rgb(247, 245, 245);
   overflow-x: hidden;
+  font-family: Nunito;
 }
 
 /* Link */
@@ -57,6 +55,7 @@ p {
 .small-text {
   font-size: 14px;
 }
+
 
 /* Logo */
 .hide1, .hide2{
@@ -121,11 +120,9 @@ padding-right: 5%;
 
 
 /* Navbar */
-
 .navbar .nav-link, 
-        .navbar .navbar-brand, 
-        .navbar .dropdown-item, 
-        .navbar .navbar-toggler-icon {
+        .navbar .navbar-brand 
+        .navbar .dropdown-item {
             color: rgb(255, 255, 255) !important;
         }
 
@@ -144,6 +141,7 @@ padding-right: 5%;
 
 .dropdown-item {
   width: 200px;
+  color: #ffffff;
 }
 
 .dropdown-link {
@@ -156,20 +154,17 @@ padding-right: 5%;
   font-size: 1.3em;
 }
 
-.dropdown-link:hover {
-  background-color:  #6B1A10;
-}
 
 /* Show menu when toggle is clicked */
 .navbar-menu.show {
   display: flex;
+  color: #000000;
 }
 
 .dropdown-menu.show {
   display: block;
+
 }
-
-
 
 /* Responsive navbar */
 @media (max-width: 768px) {
@@ -294,6 +289,7 @@ padding-right: 5%;
 
 .bg-cover_text {
     width: 50%;
+
 }
 
 .bg-cover_title {
@@ -324,7 +320,7 @@ padding-right: 5%;
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
   width: 100%;
-  background:#5C311Bff;
+  background: #67314B;;
   background-size: cover;
 }
 
@@ -414,7 +410,11 @@ padding-right: 5%;
 .footer {
     background: #000;
     padding: 0;
-    
+
+}
+
+.footer a{
+  color: #f0f0f0;
 }
 
   

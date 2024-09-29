@@ -1,76 +1,83 @@
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Nunito;
+}
+
+
+
 body {
     font-family: Nunito;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-header {
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    
 }
-
-
 
 /* Navbar */
-.navbar {
-    width: 100%;
-    border: 2px solid  #000000; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .navbar .nav-link, 
-          .navbar .navbar-brand, 
-          .navbar .dropdown-item, 
-          .navbar .navbar-toggler-icon {
-              color: rgb(255, 255, 255) !important;
-          }
-  
-  
-  
-  .navbar-logo {
-    font-size: 2.5em;
-    text-decoration: none;
-  
-  }
-  
+.navbar .nav-link, 
+        .navbar .navbar-brand 
+        .navbar .dropdown-item {
+            color: rgb(255, 255, 255) !important;
+        }
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: -5;
+}
+
+.dropdown-item {
+  width: 200px;
+  color: #ffffff;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #000000;  border: 1px solid ; 
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+}
+
+
+/* Show menu when toggle is clicked */
+.navbar-menu.show {
+  display: flex;
+  color: #000000;
+}
+
+.dropdown-menu.show {
+  display: block;
+
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
   .navbar-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ffffff;
   }
-  
-  
+
   .navbar-item {
-    margin-left: 20px;
-    position: relative;
+      margin: 10px 0;
   }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: #000000;
-    font-size: 1.3em;
-    transition: color 0.3s;
-  }
-  
-  
-  
+
   .navbar-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+      display: flex;
   }
-  
-  .navbar-toggle-icon {
-    width: 25px;
-    height: 3px;
-    background-color: #000000;
-    margin: 4px 0;
-  }
+}
+
   
   /* Dropdown menu styles */
   .dropdown-menu {
@@ -133,79 +140,62 @@ header {
   }
   
 
-main {
-    padding: 50px 20px;
+.card-container {
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+.card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-.team {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.card:hover{
+  transform: scale(1.05);
 }
 
-.member {
-    margin: 20px;
-    text-align: center;
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #ddd;
-    object-fit: cover;
+.card-content {
+  padding: 20px;
 }
 
-.member h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
+.card-content h3{
+  color: #6B1A10;
+  font-size: 27px;
+  margin-bottom: 10px;
 }
 
-.member a {
-    color: red;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
+.card-content p{
+  color: #333;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.member p {
-    margin: 5px 0;
-}
-
-h1 {
-    color: #000000;
-}
-.intro_content {
-    position: relative;
-    height: 30vh;
-    display:flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra orizzontalmente */
-    width: 100%; /* Modifica a 100% se vuoi occupare l'intera larghezza */
-    background-size: cover;
-    text-align: center; /* Centra il testo */
-    margin-top: 60px;
-    margin-top: 20px; 
-}
-
-.card-deck{
-    position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 10%;
-    
-
+@media screen and (max-width:768px){
+  .card {
+    flex:100%
+  }
 }
 
 /* Footer */
 .footer {
     background: #000;
     padding: 0;
+    margin-top: 18%;
 }
 
 .text-center {

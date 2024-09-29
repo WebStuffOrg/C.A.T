@@ -1,23 +1,13 @@
 :root {
-    --pr_colour:#ecd2a6;
-    --pr_colour: #904921ff;
-    --pr_colour:#5C311Bff;
-    --pr_colour: #95806Fff;
-    --pr_colour: #CE8942ff;
-    --pr_colour: #6B1A10;
-    --background-color: #FAF3EF; /* Colore di sfondo */
-    --text-color: #815A45; /* Colore del testo principale */
-    --timeline-line-color: #D8A78B; /* Colore della linea della timeline */
-    --highlight-color: #f1e5a3; /* Colore di evidenziazione (es. per date o eventi importanti) */
-    --cat-color: #e6d6b2; /* Colore dell'intestazione */
-
-    --base_colour: #FAF3EF;
-    --base_colour: #d8bd8b;
-    --base_colour: #904921 ;
-    --base_colour: #5C311B ;
-    --pr_colour:   #6B1A10;
+    --primary-color: rgb(228, 168, 140);
+    --secondary-color: rgb(201, 102, 56);
+    --tertiary-color: rgb(107, 26, 16);
+    --quaternary-color: rgb(103, 49, 75);
+    --quinary-color: rgb(217, 217, 217);
+    --background-color:  rgb(250, 243, 239);
     
 }
+
 
 /* Rimuovere margini e padding predefiniti */
 * {
@@ -27,157 +17,109 @@
     font-family: Nunito;
   }
 
+  body {
+    background-color:  #FAF3EF;
+}
 
 .intro_content {
-    position: relative;
-    height: 15vh;
-    display:flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra orizzontalmente */
-    width: 100%; /* Modifica a 100% se vuoi occupare l'intera larghezza */
-    background-size: cover;
-    text-align: center; /* Centra il testo */
-    margin-top: 60px;
-    margin-top: 20px; 
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add space below the intro section */
+    margin-top: 40px;
+}
+
+.intro-paragraph {
+    font-size: 1.2em; /* Dimensione del font */
+    color: #000000; /* Colore del testo */
+    margin: 20px auto; /* Spazio sopra e sotto, centrato orizzontalmente */
+    border: 2px solid rgb(103, 49, 75, 0.9); /* Contorno arancione di 1px */
+    padding: 10px; /* Spazio interno al paragrafo */
+    border-radius: 5px; /* Angoli arrotondati */
+    background-color:  rgb(107, 26, 16, 0.1); /* Colore di sfondo arancione chiaro */
+    width: 80%; /* Larghezza del rettangolo */
+    max-width: 600px; /* Larghezza massima del rettangolo */
+    box-shadow: 0 2px 5px rgb(107, 26, 16, 0.9, 0.4); /* Ombra leggera per dare profondità */
+    margin-top: 40px;
+    margin-bottom: 60px;
+  
+}
+
+
+h1, h2,h4 {
+    color:rgb(0, 0, 0);;
 }
 
 h1 {
-    color: #000000;
+    color: #000000; 
 }
 
 
 /* Navbar */
-.navbar {
-    width: 100%;
-    border: 2px solid #000000; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 10px 20px;
-    color: #ff8989;
-  }
-  
-  .navbar-logo {
-    font-size: 2.5em;
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-item {
-    margin-left: 20px;
-    position: relative;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: #000000;
-    font-size: 1.3em;
-    transition: color 0.3s;
-  }
-  
-  .navbar-link:hover {
-    color:  #6B1A10;
-  }
-  
-  .navbar-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .navbar-toggle-icon {
-    width: 25px;
-    height: 3px;
-    background-color: #000000;
-    margin: 4px 0;
-  }
-  
-  .navbar .nav-link, 
-        .navbar .navbar-brand, 
-        .navbar .dropdown-item, 
-        .navbar .navbar-toggler-icon {
+.navbar .nav-link, 
+        .navbar .navbar-brand 
+        .navbar .dropdown-item {
             color: rgb(255, 255, 255) !important;
         }
-  
-  /* Dropdown menu styles */
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-  }
-  
-  .dropdown-item {
-    width: 200px;
-  }
-  
-  .dropdown-link {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #ffffff;  border: 1px solid #000000; 
-    transition: background-color 0.3s;
-    font-size: 1.3em;
-  }
-  
 
-  
-  /* Show menu when toggle is clicked */
-  .navbar-menu.show {
-    display: flex;
-  }
-  
-  .dropdown-menu.show {
-    display: block;
-  }
-  
-  /* Responsive navbar */
-  @media (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-    }
-  
-    .navbar-item {
-        margin: 10px 0;
-    }
-  
-    .navbar-toggle {
-        display: flex;
-    }
-  }
-  
-  /* Adjust body and timeline for fixed navbar */
-  body {
-    padding-top: 60px;
-    background: #FAF3EF;
-    font-family: Nunito;
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  width: 200px;
+  color: #ffffff;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #000000;  border: 1px solid ; 
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+}
+
+
+/* Show menu when toggle is clicked */
+.navbar-menu.show {
+  display: flex;
+  color: #000000;
+}
+
+.dropdown-menu.show {
+  display: block;
+
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ffffff;
   }
 
+  .navbar-item {
+      margin: 10px 0;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
+}
+
+
+/* Timeline */
 
 .timeline {
     position: relative;
@@ -282,9 +224,35 @@ h1 {
 
 
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 7px 7px  rgb(107, 26, 16, 0.9);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 7px 10px  rgb(107, 26, 16, 0.9);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 7px 7px  rgb(107, 26, 16, 0.9);
+    }
+}
+
+.text-box {
+    padding: 20px 30px;
+    position: relative;
+    border-radius: 9px;
+    font-size: 15px;
+    border: 1px solid  rgb(107, 26, 16);
+    background-color: rgba(250, 243, 239, 0.461);
+    box-shadow: 0 2px 5px  rgb(107, 26, 16, 0.9);
+    animation: pulse 4s infinite; /* Aggiungi l'animazione di pulsazione */
+}
+
 .bottom {
     text-decoration: none;
-    background: #d8bd8b ;
+    background: #000000 ;
     padding: 7px 15px;
     border-radius: 5px;
     font-size: 14px;
@@ -297,14 +265,7 @@ h1 {
     color: #fff;
 }
 
-.text-box {
-    padding: 20px 30px;
-    background:#e8e0d2;
-    position: relative;
-    border-radius: 6px;
-    font-size: 15px;
-    border: 1px solid black;
-}
+
 
 .left-content {
     left:0;
@@ -340,7 +301,7 @@ h1 {
     position: absolute;
     width: 6px;
     height: 100%;
-    background:  #6B1A10; 
+    background: rgb(107, 26, 16);
     top:0;
     left: 50%;
     margin-left: -3px;
@@ -375,7 +336,7 @@ h1 {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 13px solid black;
+    border-left: 13px solid  rgb(107, 26, 16, 0.9);
     right: -15px;
 }
 
@@ -387,7 +348,7 @@ h1 {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 12px solid black;
+    border-right: 12px solid  rgb(107, 26, 16, 0.9);
     left: -15px;
 }
 
