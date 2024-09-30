@@ -209,15 +209,36 @@ padding-right: 5%;
     position: relative; /* altrimenti la z-index non viene eseguito */
 }
 
-.hero_content h1,
-.hero_content p {
-    color: #FAF3EF;
+.hero_content h1 {
+  color: #FAF3EF;
+  animation: pulseText 4s infinite;
 }
+
+.hero_content p {
+  color: #FAF3EF;
+} 
+
+@keyframes pulseText {
+  0% {
+      text-shadow: 0 0 5px black, 0 0 10px  rgb(103, 49, 75);
+      transform: scale(1);
+  }
+  50% {
+      text-shadow: 0 0 15px rgb(103, 49, 75), 0 0 20px rgb(103, 49, 75);
+      transform: scale(1.02);
+  }
+  100% {
+      text-shadow: 0 0 5px black, 0 0 10px rgb(103, 49, 75);
+      transform: scale(1);
+  }
+}
+
+
 
 /* Poster */
 .poster {
     display: flex;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     align-items: center;
     justify-content: center; /* Centra il contenuto del poster */
@@ -278,7 +299,7 @@ padding-right: 5%;
 
 /* Sfondo coprente */
 .bg-cover {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
@@ -315,7 +336,7 @@ padding-right: 5%;
 
 /* Sfondo coprente */
 .go-cover {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
@@ -378,32 +399,6 @@ padding-right: 5%;
     .grid {
         flex-wrap: wrap;
     }
-}
-
-/* Carousel */
-.main-carousel {
-    padding: 40px 0;
-}
-
-.carousel-cell {
-    height: 350px; 
-    width: 350px;
-    background: #6adf91;
-    border-radius: 100%;
-    line-height: 350px;
-    text-align: center;
-    margin-right: 40px;
-}
-
-.panel {
-  background: #FAF3EF;
-  padding:100px 30px
-}
-
-
-.panel-blue_text {
-    display: flex;
-    align-items: center;
 }
 
 /* Footer */
@@ -506,7 +501,7 @@ padding-right: 5%;
 
 
 .end-cover {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
