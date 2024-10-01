@@ -123,3 +123,40 @@ section {
 p.card-text {
     text-align: left;
 }
+
+.carousel-caption h5 {
+    color: white !important; 
+}
+
+.carousel-caption {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+    width: 80%;
+}
+
+.carousel-item:hover .carousel-caption {
+    opacity: 1;
+}
+
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    height: 325px; 
+    object-fit: cover;
+}
