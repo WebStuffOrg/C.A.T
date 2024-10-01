@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" ><a href="index.html" class="nav-link">HOME</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">MAP</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         NARRATIVES
@@ -43,27 +43,27 @@
     <div class="row d-flex">
       <div id="image-wrapper" class="col-12">
         <!-- Overlay Navbar -->
+          <div class="offcanvas offcanvas-start" style="background-color: rgba(0, 0 ,0, 0.8); max-width: 30%;" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="">
+              <ol id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></ol>
+            </div>
+          </div>
         <div id="narrative-navbar" class="navbar justify-content-between d-none d-sm-flex flex-row position-absolute w-100">
-          <a href="exhibition.html">
-          <button id="return-button" class="btn ms-md-2 text-white d-none d-sm-flex flex-md-row">
-            <img src="images/icons/back.png" alt="meow" style="width: 20px; height: 20px;">
-            <p class="current-narrative" style="margin-bottom: 0px;"></p>
-          </button>
-        </a>
+          <a href="exhibition.html" style="text-decoration: none;">
+            <button id="return-button" class="btn ms-md-2 text-white d-none d-sm-flex flex-md-row">
+              <img src="images/icons/back.png" alt="meow" style="width: 20px; height: 20px;">
+              <p class="current-narrative" style="margin-bottom: 0px;"></p>
+            </button>
+          </a>
           <h6 class="current-artwork d-md-inline h6 text-white pt-3"></h6>
           <button class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             See narrative list
           </button>
           
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title current-narrative" id="offcanvasExampleLabel"></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="">
-              <ol id="artwork-list" class="d-flex flex-column overflow-scroll" style="max-height: 80%;"></ol>
-            </div>
-          </div>
         </div>
         <!-- Overlay Buttons -->
         <button id="back-button" class="btn text-white position-absolute" onclick="prevItem()">
@@ -82,10 +82,9 @@
         
       </div>
     </div>
-  <div class="row d-flex flex-column flex-md-row">
-    <div id="info-box" class="col-12 col-md-5 mt-5 ps-md-5">
+  <div class="row">
+    <div id="info-box" class="col-12 col-md-7 mt-5 ps-md-5">
           <h5 class="h5">Description</h5>
-        </button>
             <div class="table-body">
               <div class="description row">
                 <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
@@ -107,11 +106,12 @@
               </div>
             </div>
     </div>
-    <div class="col-8 col-md-3 d-flex flex-column mt-5 ps-md-5">
-      <h6>Also present in:</h6>
-      <div id="alt-narr" class="row flex-md-column justify-content-center">
-      </div>
+  </div>
+  <div class="row flex-row mt-5 ps-md-5 justify-content-center">
+    <h6>Also present in:</h6>
+    <div id="alt-narr" class="align-content-start">
     </div>
+  </div>
     <div id="side-image" class="col-4 d-none d-md-flex">
       <div class="card">
         <img id="artwork-img-2" class="p-0 img-fluid" src="" alt="meow">
@@ -126,13 +126,10 @@
       <p>
         <p>This artwork presents a striking and minimalist depiction of a black cat resting atop a large orange ball. The cat's form is rendered in smooth, flowing curves, with its body almost seamlessly blending into the ball, emphasizing its relaxed and leisurely posture. Its front legs drape over the ball in a manner that suggests comfort and ease, while its rear is partially hidden behind the sphere. The cat's face is simple yet expressive, featuring narrow, almond-shaped eyes and a small white nose, which add a touch of personality to the otherwise abstract representation.</p>
         <br>
-
         <p>The color palette is deliberately limited, consisting primarily of deep black, vibrant orange, and a muted beige background. This choice of colors creates a strong visual contrast that draws the viewer's eye directly to the central figure of the cat. The black of the cat against the orange of the ball and the neutral background enhances the sense of depth and focus in the composition.</p>
         <br>
-        
         <p>The overall style of the artwork is modern and graphic, with a strong emphasis on bold, flat shapes and clean lines. This approach gives the image a timeless, almost iconic quality, making it both visually appealing and conceptually intriguing. The simplicity of the design, combined with the playful subject matter, evokes a sense of calm and contentment, while also leaving room for interpretation and imagination.</p>
         <br>
-        
         <p>In essence, this artwork captures the essence of minimalism, using basic forms and a limited color scheme to create a compelling and visually engaging piece that is both elegant and whimsical. The cat, as the central figure, embodies a sense of quiet repose, making the image both relatable and endearing to the viewer.</p>
         <br>
         <div id="button-container" class="d-flex justify-content-between p-2">
@@ -196,6 +193,13 @@
   
     // Start observing the image container
     observer.observe(artworkImage);
+
+    window.addEventListener("resize", () => {
+      const offcanvasClasses = document.querySelector(".offcanvas").classList
+      if (offcanvasClasses.contains("show") ) {
+        offcanvasClasses.remove("show")
+      }
+    })
   </script>
   <script src="js/narr.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
