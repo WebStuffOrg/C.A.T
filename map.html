@@ -33,13 +33,14 @@
 
         .page-title, .navbar-brand, .nav-link {
             font-family: 'Trispace', sans-serif;
-            font-weight: bold;
             text-align: center;
+            font-weight:600;
             margin: 20px 0;
         }
 
         .page-title {
             font-size: 30px !important;
+            font-weight: bold !important;
         }
 
         .page-title-section {
@@ -59,12 +60,12 @@
             text-transform: uppercase !important;
             font-weight: 500  !important;
             color: white  !important;
+            padding-right: 60px;
         }
 
         #header-menu .navbar-brand {
             padding-left: 90px !important;
         }
-
 
         #header-menu .nav-link:hover {
             color: #e4a88c !important;
@@ -74,12 +75,10 @@
             background-color: #f8f9fa;
         }
 
-
         #search-menu .navbar-brand,
         #search-menu .nav-link {
             color: #000000 !important;
         }
-
 
         #search-menu .nav-item {
             margin-left: 20px;
@@ -125,15 +124,15 @@
         }
 
         #info-image {
-            width: 100%; /* Takes full width of the container */
-            max-width: 400px; /* Sets a reasonable max width */
-            max-height: 400px; /* Sets a max height to avoid overly tall images */
-            height: auto; /* Maintains the aspect ratio */
+            width: 100%; 
+            max-width: 400px; 
+            max-height: 400px; 
+            height: auto; 
             display: block;
             margin-top: 10px;
-            margin-left: 0; /* Aligns the image to the left */
-            object-fit: contain; /* Ensures the whole image is visible without distortion */
-            overflow: hidden; /* Prevents any overflow */
+            margin-left: 0;
+            object-fit: contain; 
+            overflow: hidden; 
         }
 
         .map-point{
@@ -184,6 +183,46 @@
             background-color: #c96638;
         }
 
+        
+        @media (max-width: 768px) {
+            #header-menu .navbar-nav {
+                margin-left: 10px;
+                padding-left: 0;
+                flex-direction: row; 
+            }
+
+            #header-menu .nav-link {
+                padding: 5px 10px;
+                text-align: left;
+            }
+
+            #search-menu .navbar-nav {
+                margin-left: 10px;
+                padding: 0;
+                flex-direction: row;
+            }
+
+
+            #search-menu .nav-link {
+                padding: 5px 8px;
+                text-align: left ;
+            }
+
+            #search-menu .dropdown-menu {
+                left:auto !important;
+                right: 0;
+                width: 100%; 
+            }
+
+            #search-menu .dropdown-submenu > .dropdown-menu {
+                left: auto !important; 
+                right: 100%;
+            }
+
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,7 +230,7 @@
 <header id="header-menu">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="images/icons/cat_logo.png" alt="Logo" class="logo" width="75px" height="65px"> A.T.
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
@@ -200,17 +239,17 @@
             </button>
             <div class="collapse navbar-collapse" id="headerNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">MAP</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="narrativesDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">NARRATIVES</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">GALLERY</a></li>
-                             <li><a class="dropdown-item" href="#">TIMELINE</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">GALLERY</a></li>
+                             <li><a class="dropdown-item" href="timeline.html">TIMELINE</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link">ABOUT US</a></li>
+                    <li class="nav-item"><a href="about_us.html" class="nav-link">ABOUT US</a></li>
                 </ul>
             </div>
         </div>
@@ -375,7 +414,7 @@
             title: "<b>Nightlight in the form of a cat</b>",
             description: "Orininates in: China, Kanton <br>Period: c.1760 - c.1770</br> Material: porcelain, glaze </br>Classification: figure ",
             image: "images/narr/img-4.png",
-            link: "https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge/course-structure-diagram/piano/2024/9224/000/000/2023",
+            link: "file:///D:/web%20project/SecretProject/gallery.html",
             period: "Modern",
             narrative: ["Asia", "Cats in Daily Life"] 
         },
@@ -563,7 +602,7 @@
             } else if (filterType === 'narrative' && exhibit.narrative.includes(filterValue)) {
                 showPoint = true;
             } else if (filterType === 'all') {
-                showPoint = true;  // Show all points when 'All Exhibits' is clicked
+                showPoint = true;  
             }
 
             const mapPoint = document.getElementById(`point-${exhibitId}`);
@@ -573,8 +612,8 @@
         });  
 
         if (filterType === 'all') {
-            clearInfoPanel();  // Reset info panel content
-            document.querySelectorAll('.map-point').forEach(point => point.classList.remove('active'));  // Remove active class
+            clearInfoPanel();  
+            document.querySelectorAll('.map-point').forEach(point => point.classList.remove('active'));  
         }
     }
     
@@ -585,7 +624,6 @@
     document.getElementById('info-link').style.display = 'none';
     };
 
-    // Go to top button visibility and functionality
     window.onscroll = function () {
         const goTopBtn = document.getElementById("goTopBtn");
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
