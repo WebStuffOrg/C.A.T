@@ -23,12 +23,14 @@
             height: auto; 
             display: flex;
             flex-direction: column;
+            background-color: rgb(250, 243, 239);
         }
 
         .content-container {
             flex-grow: 1;
             overflow: auto;
             margin-bottom: 50px;
+            background-color: rgb(250, 243, 239);
         }
 
         .page-title, .navbar-brand, .nav-link {
@@ -39,12 +41,13 @@
         }
 
         .page-title {
+            color: whitesmoke !important;
             font-size: 30px !important;
             font-weight: bold !important;
         }
 
         .page-title-section {
-            background-color: #e4a88c;
+            background-color: #7d3b5b;
             padding: 20px;
             text-align: center;
         }
@@ -60,11 +63,20 @@
             text-transform: uppercase !important;
             font-weight: 500  !important;
             color: white  !important;
-            padding-right: 60px;
+            padding: 10px 15px;
         }
 
         #header-menu .navbar-brand {
-            padding-left: 90px !important;
+            padding-left: 170px !important;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #header-menu #headerNavbar {
+            margin-right: 900px;
         }
 
         #header-menu .nav-link:hover {
@@ -72,7 +84,7 @@
         }
 
         #search-menu {
-            background-color: #f8f9fa;
+            background-color:rgb(250, 243, 239) !important;
         }
 
         #search-menu .navbar-brand,
@@ -110,6 +122,7 @@
             height: auto;
             margin: 0 auto;
             overflow: hidden;
+            background-color: rgb(250, 243, 239);
         }
 
         .map-container svg {
@@ -171,12 +184,17 @@
             z-index: 99;
             border: none;
             outline: none;
-            background-color: #e4a88c;
-            color: white;
+            background-color: #e6e5e4;
+            color: black;
+            width: 45px;
+            height: 45px;
             cursor: pointer;
             padding: 15px;
-            border-radius: 10px;
-            font-size: 18px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
         }
 
         #goTopBtn:hover {
@@ -329,7 +347,7 @@
             <div class="map-container">
                 <svg width="100%" height="auto" viewBox="0 0 841 674" xmlns="http://www.w3.org/2000/svg">
                     <g class ="map-point">
-                        <rect width="841" height="674" fill="white"/>
+                        <rect width="841" height="674" fill="#FAF3EF"/>
                         <path id="Vector 1" d="M40 23L780 20" stroke="black" stroke-width="4" fill = "none"/>
                         <path id="Vector 2" d="M202 129V639H659.023V152H780" stroke="black" stroke-width="4" fill = "none"/>
                         <path id="Vector 3" d="M40 130L200 130" stroke="black" stroke-width="4" fill = "none"/>
@@ -404,7 +422,11 @@
     </div>
 </footer>
 
-<button id="goTopBtn" onclick="goToTop()">Go up</button>
+<button id="goTopBtn" onclick="goToTop()">
+    <svg viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+    </svg>
+</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -414,7 +436,7 @@
             title: "<b>Nightlight in the form of a cat</b>",
             description: "Orininates in: China, Kanton <br>Period: c.1760 - c.1770</br> Material: porcelain, glaze </br>Classification: figure ",
             image: "images/narr/img-4.png",
-            link: "file:///D:/web%20project/SecretProject/gallery.html",
+            link: "gallery.html",
             period: "Modern",
             narrative: ["Asia", "Cats in Daily Life"] 
         },
