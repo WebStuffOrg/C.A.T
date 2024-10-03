@@ -25,18 +25,71 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
     font-size: 0.7rem;
+    border: solid 3px;
 }
-.nav-link {
-    text-decoration: none;
-    color: white;
-    font-family: trispace;
-    font-size: large;
+/* Navbar */
+.navbar .nav-link, 
+        .navbar .navbar-brand 
+        .navbar .dropdown-item {
+            color: rgb(255, 255, 255) !important;
+        }
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
 }
-.navbar-collapse.show {
-    width: 100%;
-    height: fit-content;
-    border-top: solid black;
-    margin-top: 1vmin;
+
+.dropdown-item {
+  width: 200px;
+  color: #ffffff;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #000000;  border: 1px solid ; 
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+}
+
+
+/* Show menu when toggle is clicked */
+.navbar-menu.show {
+  display: flex;
+  color: #000000;
+}
+
+.dropdown-menu.show {
+  display: block;
+
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ffffff;
+  }
+
+  .navbar-item {
+      margin: 10px 0;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
 }
 /* Main content */
 main {
@@ -51,15 +104,18 @@ main {
     justify-content: center;      /* Center horizontally */
     height: 100vh;
     width: 100%;
+    position: relative;
+    top: 0px
 }
 #artwork-img {
-    max-width: 100vw;             /* Make the image responsive */
+    max-width: 100%;             /* Make the image responsive */
     max-height: 100vh;
+    height: auto;
 }
-@media (width < 768px){
+@media (width < 992px){
     #image-wrapper {
         height: 50%;
-    }
+    };
 }
 #narrative-navbar {
     height: fit-content;
@@ -67,18 +123,17 @@ main {
     left: 50%;
     transform: translateX(-50%); /* Center the navbar horizontally */
     z-index: 1; /* Ensure it's above the image */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
-#return-button {
-    --text-color: white;
-    color: var(--text-color);
-}
-#return-button:hover {
-    background-color: white;
-    --text-color : black;
+
+#narrative-navbar button:hover {
+    background-color:var(--tertiary-color);
+    color: white;
 }
 #artwork-list li {
     color: white;
+    text-align: left;
+    width: fit-content;
 }
 #back-button, #next-button {
     background-color: rgba(0, 0, 0, 0.7);
@@ -93,14 +148,7 @@ main {
   
 #next-button {
     right: 10px;
-}  
-#main-card {
-    height: fit-content;
-    width: fit-content;
-    padding: 0px;
-    border: 1px solid black;
-    border-radius: 7.5px;
-}
+} 
 /* Initially hidden */
 .hidden {
     position: fixed;
@@ -109,6 +157,7 @@ main {
     width: 30vw; /* Shrink image size */
     height: auto;
     opacity: 0;
+    padding-right: 10px;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
@@ -132,10 +181,10 @@ main {
     width: fit-content;
     height: fit-content;
     padding: 0.35rem;
-    margin-top: 2.5vmax;
     background-color: var(--tertiary-color);
     border-radius: 10%;
     font-family: trispace;
+    margin-right: 2vmax;
 }
 .table-body {
     padding: 0px;
@@ -157,9 +206,6 @@ hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
     background-color: #6B1A10   ; /* Change color */
-}
-#info-box {
-    border-radius: 5px;
 }
 .text-button {
     background-color: #67314B;
@@ -189,7 +235,6 @@ footer {
     border-top: 8px solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Animation for spinning effect */

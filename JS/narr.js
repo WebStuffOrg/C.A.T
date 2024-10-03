@@ -1,20 +1,26 @@
 let narratives = []
-let currentNarrative = []
+let currentNarrativeArr = []
 let narrativeTitle = ""
 let currentIdx = 0
 let items = []
+let displayedText = 0
 
 const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
 const altNarrative = document.getElementById("alt-narr")
 const artworksList = document.getElementById("artwork-list")
+const mainImage = document.getElementById('artwork-img')
+const sideImage = document.getElementById('artwork-img-2')
+const spinner = document.getElementById('loading')
+const textButtons = document.getElementById("button-container")
+
 
 function showLoading() {
-    document.getElementById('loading').style.display = 'block';
+    spinner.style.display = 'block';
 }
 
 function hideLoading() {
-    document.getElementById('loading').style.display = 'none';
+    spinner.style.display = 'none';
 }
 
 
@@ -24,14 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	.then(response => response.json())
 	.then(async data => {
         currentIdx = data.meta.defaultStart
-        narrativeTitle = data.meta.defaultNarrative
         items = data.items
         narratives = data.narratives
-        currentNarrative = narratives[narrativeTitle] 
-        itemData = items[currentNarrative[currentIdx]]
+        console.log(window.location.search)
+        if (window.location.href.includes("?")) {
+            const urlObj = new URLSearchParams(window.location.search);
+            itemData = urlObj.get("id")
+            if (urlObj.has("narr")) {currentNarrativeArr = narratives[urlObj.get("narr")]}
+        }
+        else {
+            narrativeTitle = data.meta.defaultNarrative
+            currentNarrativeArr = narratives[narrativeTitle] 
+            itemData = items[currentNarrativeArr[currentIdx]]    
+        }
+        
 
         await setContent(itemData)
-        setDropdownList(currentNarrative, currentIdx)
+        setSidebarList(currentNarrativeArr, currentIdx)
         hideLoading()
         if (currentIdx === 0) backButton.disabled = true
     })
@@ -39,32 +54,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 altNarrative.addEventListener("click", (e) => {
     const narrative = e.target.innerHTML
-    const itemId = currentNarrative[currentIdx]
+    const itemId = currentNarrativeArr[currentIdx]
     switchNarrative(narrative, itemId)
 });
 
-async function nextItem() {
-    if (currentIdx === 0) {
-        backButton.disabled = false
+textButtons.addEventListener("click", async (e) => {
+    if (e.target.tagName=== "BUTTON") {
+        let textType = ""
+        if (e.target.id == "less-button" && displayedText != 0) {
+            displayedText -= 1
+        }
+        else if (e.target.id == "more-button" && displayedText != 2) {
+            displayedText += 1
+        };
+        switch (displayedText) {
+            case displayedText == 1: 
+            textType = "long"; 
+            break
+            case displayedText == 2: 
+            textType = "extended"; 
+            break
+            default: textType = "basic";
+        }
+        console.log(textType)
+        document.getElementById("info-text").innerHTML = items[currentNarrativeArr[currentIdx]].text[textType]
     }
-    currentIdx += 1
-    await setContent(items[currentNarrative[currentIdx]])
-    if (currentIdx === currentNarrative.length - 1) {
-        nextButton.disabled = true
-    };
-    disableCurrDropItem(currentIdx);
+});
+
+async function nextItem() {
+    backButton.disabled = currentIdx === 0;
+    currentIdx += 1;
+    await setContent(items[currentNarrativeArr[currentIdx]]);
+    nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
+    disableCurrSideItem(currentIdx);
 };
 
 async function prevItem() {
-    if (currentIdx === currentNarrative.length - 1) {
-        nextButton.disabled = false
-    }
+    nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     currentIdx -= 1
-    await setContent(items[currentNarrative[currentIdx]])
-    if (currentIdx === 0) {
-        backButton.disabled = true
-    };
-    disableCurrDropItem(currentIdx);
+    await setContent(items[currentNarrativeArr[currentIdx]])
+    backButton.disabled = currentIdx === 0;
+    disableCurrSideItem(currentIdx);
 };
 
 async function setContent(data) {
@@ -73,9 +103,8 @@ async function setContent(data) {
             const img = new Image();
             img.src = imagePath;
             img.onload = () => {
-                document.getElementById('artwork-img').setAttribute('src', imagePath);
-                resolve();
-                document.getElementById('artwork-img-2').setAttribute('src', imagePath);
+                mainImage.setAttribute('src', imagePath);
+                sideImage.setAttribute('src', imagePath);
                 resolve();
             };
             img.onerror = () => reject(new Error('Image failed to load'));
@@ -95,7 +124,8 @@ async function setContent(data) {
     setNarrativeSwitch(data)
 };
 
-async function setDropdownList(narrative=currentNarrative) {
+async function setSidebarList(narrative=currentNarrativeArr) {
+    artworksList.innerHTML = ""
     narrative.forEach((item, i) => {
         const listElement = document.createElement('li')
         listElement.classList.add("btn")
@@ -103,19 +133,19 @@ async function setDropdownList(narrative=currentNarrative) {
         listElement.innerHTML = items[item].title
         listElement.onclick = async () => {
             currentIdx = i
-            disableCurrDropItem(currentIdx)
+            disableCurrSideItem(currentIdx)
             await setContent(items[item])
         }
         artworksList.appendChild(listElement)
     })
-    disableCurrDropItem(currentIdx);
+    disableCurrSideItem(currentIdx);
 };
 
 
-function disableCurrDropItem(idx) {
+function disableCurrSideItem(idx) {
     artworksList.querySelector('.disabled')?.classList.remove('disabled')
-    const dropdownItem = document.getElementById(idx)
-    dropdownItem.classList.add('disabled')
+    const SidebarItem = document.getElementById(idx)
+    SidebarItem.classList.add('disabled')
 }
 
 
@@ -138,12 +168,12 @@ async function switchNarrative (narrative, id=null) {
     document.querySelectorAll('.current-narrative').forEach((el) => {
         el.textContent = narrative
     });    
-    currentNarrative = narratives[narrative];
+    currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative
     if (id) {
-        currentIdx = currentNarrative.indexOf(id)
-        setNarrativeSwitch(items[currentNarrative[currentIdx]])
-        setDropdownList()
+        currentIdx = currentNarrativeArr.indexOf(id)
+        setNarrativeSwitch(items[currentNarrativeArr[currentIdx]])
+        setSidebarList()
     }
     else {
         currentIdx = 0
@@ -152,7 +182,6 @@ async function switchNarrative (narrative, id=null) {
     if (currentIdx === 0) backButton.disabled = true;
    else {
     backButton.disabled = false;
-    if (currentIdx === currentNarrative.length - 1) nextButton.disabled = true    
+    if (currentIdx === currentNarrativeArr.length - 1) nextButton.disabled = true    
    } 
 }
-
