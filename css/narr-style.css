@@ -25,18 +25,71 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
     font-size: 0.7rem;
+    border: solid 3px;
 }
-.nav-link {
-    text-decoration: none;
-    color: white;
-    font-family: trispace;
-    font-size: large;
+/* Navbar */
+.navbar .nav-link, 
+        .navbar .navbar-brand 
+        .navbar .dropdown-item {
+            color: rgb(255, 255, 255) !important;
+        }
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
 }
-.navbar-collapse.show {
-    width: 100%;
-    height: fit-content;
-    border-top: solid black;
-    margin-top: 1vmin;
+
+.dropdown-item {
+  width: 200px;
+  color: #ffffff;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #000000;  border: 1px solid ; 
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+}
+
+
+/* Show menu when toggle is clicked */
+.navbar-menu.show {
+  display: flex;
+  color: #000000;
+}
+
+.dropdown-menu.show {
+  display: block;
+
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ffffff;
+  }
+
+  .navbar-item {
+      margin: 10px 0;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
 }
 /* Main content */
 main {
@@ -95,12 +148,7 @@ main {
   
 #next-button {
     right: 10px;
-}  
-#main-card {
-    height: fit-content;
-    width: fit-content;
-    padding: 0px;
-}
+} 
 /* Initially hidden */
 .hidden {
     position: fixed;
@@ -158,9 +206,6 @@ hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
     background-color: #6B1A10   ; /* Change color */
-}
-#info-box {
-    border-radius: 5px;
 }
 .text-button {
     background-color: #67314B;
