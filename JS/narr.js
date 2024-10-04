@@ -14,7 +14,6 @@ const sideImage = document.getElementById('artwork-img-2')
 const spinner = document.getElementById('loading')
 const textButtons = document.getElementById("button-container")
 
-
 function showLoading() {
     spinner.style.display = 'block';
 }
@@ -23,33 +22,41 @@ function hideLoading() {
     spinner.style.display = 'none';
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     showLoading();
-	fetch('data/narr.json')
-	.then(response => response.json())
-	.then(async data => {
+    fetch('data/narr.json')
+    .then(response => response.json())
+    .then(async data => {
         currentIdx = data.meta.defaultStart
         items = data.items
         narratives = data.narratives
         narrativeTitle = data.meta.defaultNarrative
-        currentNarrativeArr = narratives[narrativeTitle] 
+        currentNarrativeArr = narratives[narrativeTitle]
+
         if (window.location.href.includes("?")) {
             const urlObj = new URLSearchParams(window.location.search);
             console.log(urlObj)
-            itemId = urlObj.get("id").toString()
-            itemData = items[itemId]
-            if (urlObj.has("narr")) {currentNarrativeArr = narratives[urlObj.get("narr")]}
+            const itemId = urlObj.get("id").toString()  // 确保 id 是字符串
+            const itemData = items[itemId]  // 根据 id 获取展品数据
+            if (urlObj.has("narr")) { currentNarrativeArr = narratives[urlObj.get("narr")] }
+
+            console.log("itemId:", itemId)
+            console.log("itemData:", itemData)
+
+            if (itemData) {
+                await setContent(itemData)  // 确保 itemData 存在再调用 setContent
+            } else {
+                console.error("Invalid item data for id:", itemId)
+            }
+        } else {
+            const itemData = items[currentNarrativeArr[currentIdx]]
+            await setContent(itemData)
         }
-        else {
-            itemData = items[currentNarrativeArr[currentIdx]]    
-        }
-        
-        await setContent(itemData)
+
         setSidebarList(currentNarrativeArr, currentIdx)
         hideLoading()
         if (currentIdx === 0) backButton.disabled = true
-    })
+    });
 });
 
 altNarrative.addEventListener("click", (e) => {
@@ -59,22 +66,22 @@ altNarrative.addEventListener("click", (e) => {
 });
 
 textButtons.addEventListener("click", async (e) => {
-    if (e.target.tagName=== "BUTTON") {
+    if (e.target.tagName === "BUTTON") {
         let textType = ""
         if (e.target.id == "less-button" && displayedText != 0) {
             displayedText -= 1
-        }
-        else if (e.target.id == "more-button" && displayedText != 2) {
+        } else if (e.target.id == "more-button" && displayedText != 2) {
             displayedText += 1
         };
         switch (displayedText) {
-            case displayedText == 1: 
-            textType = "long"; 
-            break
-            case displayedText == 2: 
-            textType = "extended"; 
-            break
-            default: textType = "basic";
+            case 1: 
+                textType = "long"; 
+                break
+            case 2: 
+                textType = "extended"; 
+                break
+            default: 
+                textType = "basic";
         }
         console.log(textType)
         document.getElementById("info-text").innerHTML = items[currentNarrativeArr[currentIdx]].text[textType]
@@ -87,7 +94,7 @@ async function nextItem() {
     await setContent(items[currentNarrativeArr[currentIdx]]);
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     disableCurrSideItem(currentIdx);
-};
+}
 
 async function prevItem() {
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
@@ -95,13 +102,19 @@ async function prevItem() {
     await setContent(items[currentNarrativeArr[currentIdx]])
     backButton.disabled = currentIdx === 0;
     disableCurrSideItem(currentIdx);
-};
+}
 
 async function setContent(data) {
+    if (!data || !data.img) {
+        console.error("Invalid item data or missing image path");
+        return;
+    }
+
     async function loadImage(imagePath) {
         return new Promise((resolve, reject) => {
             const img = new Image();
             img.src = imagePath;
+            console.log("Loading image path:", imagePath);
             img.onload = () => {
                 mainImage.setAttribute('src', imagePath);
                 sideImage.setAttribute('src', imagePath);
@@ -109,79 +122,75 @@ async function setContent(data) {
             };
             img.onerror = () => reject(new Error('Image failed to load'));
         });
-    };
-    await loadImage(data.img)
+    }
+
+    await loadImage(data.img);
     document.querySelectorAll('.current-artwork').forEach((el) => {
-        el.innerHTML = data.title
+        el.innerHTML = data.title;
     });
     document.querySelectorAll('.table-data').forEach((el) => {
-        el.innerHTML = data[el.id]
+        el.innerHTML = data[el.id];
     });
     document.querySelectorAll('.current-narrative').forEach((el) => {
-        el.textContent = narrativeTitle
-    });  
+        el.textContent = narrativeTitle;
+    });
 
-    setNarrativeSwitch(data)
-};
-
-async function setSidebarList(narrative=currentNarrativeArr) {
-    artworksList.innerHTML = ""
-    narrative.forEach((item, i) => {
-        const listElement = document.createElement('li')
-        listElement.classList.add("btn")
-        listElement.id = i
-        listElement.innerHTML = items[item].title
-        listElement.onclick = async () => {
-            currentIdx = i
-            disableCurrSideItem(currentIdx)
-            await setContent(items[item])
-        }
-        artworksList.appendChild(listElement)
-    })
-    disableCurrSideItem(currentIdx);
-};
-
-
-function disableCurrSideItem(idx) {
-    artworksList.querySelector('.disabled')?.classList.remove('disabled')
-    const SidebarItem = document.getElementById(idx)
-    SidebarItem.classList.add('disabled')
+    setNarrativeSwitch(data);
 }
 
+async function setSidebarList(narrative = currentNarrativeArr) {
+    artworksList.innerHTML = "";
+    narrative.forEach((item, i) => {
+        const listElement = document.createElement('li');
+        listElement.classList.add("btn");
+        listElement.id = i;
+        listElement.innerHTML = items[item].title;
+        listElement.onclick = async () => {
+            currentIdx = i;
+            disableCurrSideItem(currentIdx);
+            await setContent(items[item]);
+        };
+        artworksList.appendChild(listElement);
+    });
+    disableCurrSideItem(currentIdx);
+}
 
-async function setNarrativeSwitch (item) {
-    altNarrative.innerHTML = ""
-    const itemNarratives = [...item.includedIn]
-    const idx = itemNarratives.indexOf(narrativeTitle) 
-    itemNarratives.splice(idx, 1)
-    const fragment = document.createDocumentFragment()
+function disableCurrSideItem(idx) {
+    artworksList.querySelector('.disabled')?.classList.remove('disabled');
+    const SidebarItem = document.getElementById(idx);
+    SidebarItem.classList.add('disabled');
+}
+
+async function setNarrativeSwitch(item) {
+    altNarrative.innerHTML = "";
+    const itemNarratives = [...item.includedIn];
+    const idx = itemNarratives.indexOf(narrativeTitle);
+    itemNarratives.splice(idx, 1);
+    const fragment = document.createDocumentFragment();
     itemNarratives.forEach((i) => {
         el = document.createElement("button");
-        el.textContent = i
-        el.classList.add("p-2", "ms-2", "ms-md-0")
-        fragment.appendChild(el)
-    })
-    altNarrative.appendChild(fragment)
-};
+        el.textContent = i;
+        el.classList.add("p-2", "ms-2", "ms-md-0");
+        fragment.appendChild(el);
+    });
+    altNarrative.appendChild(fragment);
+}
 
-async function switchNarrative (narrative, id=null) {
+async function switchNarrative(narrative, id = null) {
     document.querySelectorAll('.current-narrative').forEach((el) => {
-        el.textContent = narrative
-    });    
+        el.textContent = narrative;
+    });
     currentNarrativeArr = narratives[narrative];
-    narrativeTitle = narrative
+    narrativeTitle = narrative;
     if (id) {
-        currentIdx = currentNarrativeArr.indexOf(id)
-        setNarrativeSwitch(items[currentNarrativeArr[currentIdx]])
-        setSidebarList()
-    }
-    else {
-        currentIdx = 0
-        await setContent(currItem)
+        currentIdx = currentNarrativeArr.indexOf(id);
+        setNarrativeSwitch(items[currentNarrativeArr[currentIdx]]);
+        setSidebarList();
+    } else {
+        currentIdx = 0;
+        await setContent(currItem);
     }
     if (currentIdx === 0) backButton.disabled = true;
-   else {
-    backButton.disabled = false;
-    if (currentIdx === currentNarrativeArr.length - 1) nextButton.disabled = true    
-   } 
+    else backButton.disabled = false;
+    if (currentIdx === currentNarrativeArr.length - 1) nextButton.disabled = true;
 }
