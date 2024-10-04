@@ -32,19 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIdx = data.meta.defaultStart
         items = data.items
         narratives = data.narratives
-        console.log(window.location.search)
+        narrativeTitle = data.meta.defaultNarrative
+        currentNarrativeArr = narratives[narrativeTitle] 
         if (window.location.href.includes("?")) {
             const urlObj = new URLSearchParams(window.location.search);
-            itemData = urlObj.get("id")
+            console.log(urlObj)
+            itemId = urlObj.get("id").toString()
+            itemData = items[itemId]
             if (urlObj.has("narr")) {currentNarrativeArr = narratives[urlObj.get("narr")]}
         }
         else {
-            narrativeTitle = data.meta.defaultNarrative
-            currentNarrativeArr = narratives[narrativeTitle] 
             itemData = items[currentNarrativeArr[currentIdx]]    
         }
         
-
         await setContent(itemData)
         setSidebarList(currentNarrativeArr, currentIdx)
         hideLoading()
