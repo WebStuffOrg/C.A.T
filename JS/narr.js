@@ -3,7 +3,7 @@ let currentNarrativeArr = []
 let narrativeTitle = ""
 let currentIdx = 0
 let items = []
-let displayedText = 0
+let textState = 0
 
 const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
@@ -13,6 +13,10 @@ const mainImage = document.getElementById('artwork-img')
 const sideImage = document.getElementById('artwork-img-2')
 const spinner = document.getElementById('loading')
 const textButtons = document.getElementById("button-container")
+const lessButton = document.getElementById("less-button")
+const moreButton = document.getElementById("more-button")
+const text = document.getElementById("info-text")
+const imageContainer = document.getElementById("image-wrapper")
 
 function showLoading() {
     spinner.style.display = 'block';
@@ -22,40 +26,33 @@ function hideLoading() {
     spinner.style.display = 'none';
 }
 
+// EVENT LISTENERS //
+
 document.addEventListener("DOMContentLoaded", () => {
     showLoading();
     fetch('data/narr.json')
     .then(response => response.json())
     .then(async data => {
-        currentIdx = data.meta.defaultStart
+        imageContainer.scrollIntoView()
         items = data.items
         narratives = data.narratives
         narrativeTitle = data.meta.defaultNarrative
-        currentNarrativeArr = narratives[narrativeTitle]
-
+        let itemId
         if (window.location.href.includes("?")) {
+
             const urlObj = new URLSearchParams(window.location.search);
-            console.log(urlObj)
-            const itemId = urlObj.get("id").toString()  // 确保 id 是字符串
-            const itemData = items[itemId]  // 根据 id 获取展品数据
-            if (urlObj.has("narr")) { currentNarrativeArr = narratives[urlObj.get("narr")] }
-
-            console.log("itemId:", itemId)
-            console.log("itemData:", itemData)
-
-            if (itemData) {
-                await setContent(itemData)  // 确保 itemData 存在再调用 setContent
-            } else {
-                console.error("Invalid item data for id:", itemId)
-            }
-        } else {
-            const itemData = items[currentNarrativeArr[currentIdx]]
-            await setContent(itemData)
+            itemId = urlObj.get("id").toString();
+            if (urlObj.has("narr")) narrativeTitle = urlObj.get("narr").toString();
+            currentIdx = narratives[narrativeTitle].indexOf(itemId);
+        } 
+        else {
+            itemId = narratives[narrativeTitle][currentIdx];
         }
-
-        setSidebarList(currentNarrativeArr, currentIdx)
+        const itemData = items[itemId];
+        currentNarrativeArr = narratives[narrativeTitle];
+        await setContent(itemData);  
+        await setSidebarList(currentNarrativeArr, currentIdx);
         hideLoading()
-        if (currentIdx === 0) backButton.disabled = true
     });
 });
 
@@ -65,28 +62,36 @@ altNarrative.addEventListener("click", (e) => {
     switchNarrative(narrative, itemId)
 });
 
-textButtons.addEventListener("click", async (e) => {
-    if (e.target.tagName === "BUTTON") {
-        let textType = ""
-        if (e.target.id == "less-button" && displayedText != 0) {
-            displayedText -= 1
-        } else if (e.target.id == "more-button" && displayedText != 2) {
-            displayedText += 1
-        };
-        switch (displayedText) {
+textButtons.addEventListener("click", (e) => {
+    const el = e.target
+    if (el.tagName === "BUTTON") {
+        let textType
+        textState += parseInt(el.value)
+        console.log(textState)
+        switch (textState) {
             case 1: 
-                textType = "long"; 
-                break
+                textType = "extended";
+                lessButton.disabled = false;
+                moreButton.disabled = false;
+                break;
             case 2: 
-                textType = "extended"; 
-                break
+                textType = "long";
+                moreButton.disabled = true;
+                break;
             default: 
                 textType = "basic";
+                lessButton.disabled = true;
         }
-        console.log(textType)
-        document.getElementById("info-text").innerHTML = items[currentNarrativeArr[currentIdx]].text[textType]
+        const item = currentNarrativeArr[currentIdx]
+        text.innerHTML = items[item]["text"][textType]
     }
 });
+
+sideImage.addEventListener("click", () => {
+    imageContainer.scrollIntoView()
+})
+
+// UI FUNCTIONS //
 
 async function nextItem() {
     backButton.disabled = currentIdx === 0;
@@ -105,16 +110,10 @@ async function prevItem() {
 }
 
 async function setContent(data) {
-    if (!data || !data.img) {
-        console.error("Invalid item data or missing image path");
-        return;
-    }
-
     async function loadImage(imagePath) {
         return new Promise((resolve, reject) => {
             const img = new Image();
             img.src = imagePath;
-            console.log("Loading image path:", imagePath);
             img.onload = () => {
                 mainImage.setAttribute('src', imagePath);
                 sideImage.setAttribute('src', imagePath);
@@ -134,8 +133,9 @@ async function setContent(data) {
     document.querySelectorAll('.current-narrative').forEach((el) => {
         el.textContent = narrativeTitle;
     });
-
     setNarrativeSwitch(data);
+    backButton.disabled = currentIdx === 0;
+    lessButton.disabled = true;
 }
 
 async function setSidebarList(narrative = currentNarrativeArr) {

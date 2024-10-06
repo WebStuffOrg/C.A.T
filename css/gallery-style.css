@@ -28,7 +28,7 @@ button {
     border: solid 3px;
 }
 /* Navbar */
-.navbar .nav-link, 
+.navbar .nav-link,
         .navbar .navbar-brand 
         .navbar .dropdown-item {
             color: rgb(255, 255, 255) !important;
@@ -159,6 +159,7 @@ main {
     opacity: 0;
     padding-right: 10px;
     visibility: hidden;
+    display: none;
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
   
