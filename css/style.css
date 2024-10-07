@@ -11,7 +11,7 @@ body,html{
   font-size: 16px;
   background-color:   rgb(247, 245, 245);
   overflow-x: hidden;
-  font-family: Nunito;
+  font-family:  'Nunito', sans-serif;
 }
 
 /* Link */
@@ -23,13 +23,13 @@ a {
 h1, h3, h4, h5, p {
   color: #000000;
   padding-bottom: 30px;
-  font-family: 'Source Serif';
+  font-family: 'Nunito', sans-serif;
 }
 
 h2{
 color: #f0f0f0;
 padding-bottom: 30px;
-  font-family: 'Source Serif';
+  font-family: 'Nunito', sans-serif;
 }
 
 
