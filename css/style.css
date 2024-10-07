@@ -56,6 +56,9 @@ p {
   font-size: 14px;
 }
 
+.navbar-brand {
+  color: white;
+}
 
 /* Logo */
 .hide1, .hide2{
@@ -71,7 +74,6 @@ opacity: 1;
 transition: max-width 0.2s, opacity 0.2s;
 
 }
-
 
 /* Testo introduttivo */
 .intro-text {
@@ -123,7 +125,7 @@ padding-right: 5%;
 .navbar .nav-link, 
         .navbar .navbar-brand 
         .navbar .dropdown-item {
-            color: rgb(255, 255, 255) !important;
+            color: rgb(255, 255, 255);
         }
 
 /* Dropdown menu styles */
