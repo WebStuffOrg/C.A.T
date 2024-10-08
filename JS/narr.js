@@ -56,10 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-altNarrative.addEventListener("click", (e) => {
+altNarrative.addEventListener("click", async (e) => {
     const narrative = e.target.innerHTML
     const itemId = currentNarrativeArr[currentIdx]
     switchNarrative(narrative, itemId)
+    imageContainer.scrollIntoView()
+
 });
 
 textButtons.addEventListener("click", (e) => {
@@ -182,15 +184,7 @@ async function switchNarrative(narrative, id = null) {
     });
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
-    if (id) {
-        currentIdx = currentNarrativeArr.indexOf(id);
-        setNarrativeSwitch(items[currentNarrativeArr[currentIdx]]);
-        setSidebarList();
-    } else {
-        currentIdx = 0;
-        await setContent(currItem);
-    }
-    if (currentIdx === 0) backButton.disabled = true;
-    else backButton.disabled = false;
-    if (currentIdx === currentNarrativeArr.length - 1) nextButton.disabled = true;
+    currentIdx = 0;
+    await setContent(items[currentNarrativeArr[0]]);
+    backButton.disabled = true;
 }
