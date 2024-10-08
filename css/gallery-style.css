@@ -119,9 +119,7 @@ main {
 }
 #narrative-navbar {
     height: fit-content;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%); /* Center the navbar horizontally */
+    width: 100%;/* Center the navbar horizontally */
     z-index: 1; /* Ensure it's above the image */
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -194,6 +192,7 @@ main {
 .description {
     margin-bottom: 1vh;
     border-bottom: 1px dotted black;
+    padding: 5px;
 }
 .description > div {
     text-align: left;
