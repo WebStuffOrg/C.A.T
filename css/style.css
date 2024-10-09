@@ -124,7 +124,7 @@ padding-right: 5%;
 /* Stile per rendere le voci del menu bianche */
 .navbar .navbar-nav .nav-link, 
 .nav-link:hover, 
-.nav-item.active .nav-link{
+.nav-item.active .nav-link {
   color: white;
 }
 
