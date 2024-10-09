@@ -54,11 +54,13 @@ h1 {
 
 
 /* Navbar */
-.navbar .nav-link, 
-        .navbar .navbar-brand 
-        .navbar .dropdown-item {
-            color: rgb(255, 255, 255) !important;
-        }
+
+/* Stile per rendere le voci del menu bianche */
+.navbar .navbar-nav .nav-link, 
+.nav-link:hover, 
+.nav-item.active .nav-link {
+  color: white;
+}
 
 /* Dropdown menu styles */
 .dropdown-menu {
@@ -99,6 +101,13 @@ h1 {
   display: block;
 
 }
+.navbar-brand {
+  color: white;
+}
+
+
+
+
 
 /* Responsive navbar */
 @media (max-width: 768px) {
@@ -117,6 +126,7 @@ h1 {
       display: flex;
   }
 }
+
 
 
 /* Timeline */

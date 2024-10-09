@@ -17,11 +17,13 @@ body,html{
 
 
 /* Navbar */
-.navbar .nav-link, 
-        .navbar .navbar-brand 
-        .navbar .dropdown-item {
-            color: rgb(255, 255, 255) !important;
-        }
+
+/* Stile per rendere le voci del menu bianche */
+.navbar .navbar-nav .nav-link, 
+.nav-link:hover, 
+.nav-item.active .nav-link {
+  color: white;
+}
 
 /* Dropdown menu styles */
 .dropdown-menu {
@@ -33,7 +35,7 @@ body,html{
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: -5;
+  z-index: 1000;
 }
 
 .dropdown-item {
@@ -62,6 +64,13 @@ body,html{
   display: block;
 
 }
+.navbar-brand {
+  color: white;
+}
+
+
+
+
 
 /* Responsive navbar */
 @media (max-width: 768px) {
@@ -81,67 +90,6 @@ body,html{
   }
 }
 
-  
-  /* Dropdown menu styles */
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #000000;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-  }
-  
-  .dropdown-item {
-    width: 200px;
-  }
-  
-  .dropdown-link {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #000000;  border: 1px solid #ffffff; 
-    transition: background-color 0.3s;
-    font-size: 1.3em;
-  }
-  
-  .dropdown-link:hover {
-    background-color:  #6B1A10;
-  }
-  
-  /* Show menu when toggle is clicked */
-  .navbar-menu.show {
-    display: flex;
-  }
-  
-  .dropdown-menu.show {
-    display: block;
-  }
-  
-  
-  
-  /* Responsive navbar */
-  @media (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-    }
-  
-    .navbar-item {
-        margin: 10px 0;
-    }
-  
-    .navbar-toggle {
-        display: flex;
-    }
-  }
-  
 
 .card-container {
   max-width: 80%;
