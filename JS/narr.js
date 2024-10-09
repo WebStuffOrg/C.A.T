@@ -9,6 +9,7 @@ const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
 const altNarrative = document.getElementById("alt-narr")
 const artworksList = document.getElementById("artwork-list")
+const smallImagecontainer = document.getElementById("side-image");
 const mainImage = document.getElementById('artwork-img')
 const sideImage = document.getElementById('artwork-img-2')
 const spinner = document.getElementById('loading')
@@ -18,18 +19,47 @@ const moreButton = document.getElementById("more-button")
 const text = document.getElementById("info-text")
 const imageContainer = document.getElementById("image-wrapper")
 
-function showLoading() {
+async function showLoading() {
     spinner.style.display = 'block';
 }
 
-function hideLoading() {
+async function hideLoading() {
     spinner.style.display = 'none';
 }
 
+
+// OBSERVER //
+
+const observerCallback = (entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      // Image is out of view, apply the sticky class
+      smallImagecontainer.classList.remove('hidden');
+      smallImagecontainer.classList.add('visible');
+    } else {
+      // Image is in view, remove the sticky class
+      smallImagecontainer.classList.remove('visible');
+      smallImagecontainer.classList.add('hidden');
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback);
+
+// Start observing the image container
+observer.observe(mainImage);
+
+window.addEventListener("resize", () => {
+  const offcanvasClasses = document.querySelector(".offcanvas").classList
+  if (offcanvasClasses.contains("show") ) {
+    offcanvasClasses.remove("show")
+  }
+})
+
 // EVENT LISTENERS //
 
-document.addEventListener("DOMContentLoaded", () => {
-    showLoading();
+document.addEventListener("DOMContentLoaded", async () => {
+    await showLoading();
     fetch('data/narr.json')
     .then(response => response.json())
     .then(async data => {
@@ -52,17 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
         currentNarrativeArr = narratives[narrativeTitle];
         await setContent(itemData);  
         await setSidebarList(currentNarrativeArr, currentIdx);
-        hideLoading()
+        await hideLoading()
     });
 });
 
+// narrative switch
+
 altNarrative.addEventListener("click", async (e) => {
     const narrative = e.target.innerHTML
-    const itemId = currentNarrativeArr[currentIdx]
-    switchNarrative(narrative, itemId)
+    smallImagecontainer.classList.replace("visible", "hidden")
+    await switchNarrative(narrative)
     imageContainer.scrollIntoView()
-
 });
+
+// text switching 
 
 textButtons.addEventListener("click", (e) => {
     const el = e.target
@@ -86,8 +119,10 @@ textButtons.addEventListener("click", (e) => {
         }
         const item = currentNarrativeArr[currentIdx]
         text.innerHTML = items[item]["text"][textType]
-    }
+    };
 });
+
+// scrollup animation 
 
 sideImage.addEventListener("click", () => {
     imageContainer.scrollIntoView()
@@ -112,18 +147,18 @@ async function prevItem() {
 }
 
 async function setContent(data) {
-    async function loadImage(imagePath) {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = imagePath;
-            img.onload = () => {
-                mainImage.setAttribute('src', imagePath);
-                sideImage.setAttribute('src', imagePath);
-                resolve();
-            };
-            img.onerror = () => reject(new Error('Image failed to load'));
-        });
-    }
+        async function loadImage(imagePath) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = imagePath;
+                img.onload = () => {
+                    mainImage.setAttribute('src', imagePath);
+                    sideImage.setAttribute('src', imagePath);
+                    resolve();
+                };
+                img.onerror = () => reject(new Error('Image failed to load'));
+            });
+        };
 
     await loadImage(data.img);
     document.querySelectorAll('.current-artwork').forEach((el) => {
@@ -178,7 +213,7 @@ async function setNarrativeSwitch(item) {
     altNarrative.appendChild(fragment);
 }
 
-async function switchNarrative(narrative, id = null) {
+async function switchNarrative(narrative) {
     document.querySelectorAll('.current-narrative').forEach((el) => {
         el.textContent = narrative;
     });
@@ -186,5 +221,6 @@ async function switchNarrative(narrative, id = null) {
     narrativeTitle = narrative;
     currentIdx = 0;
     await setContent(items[currentNarrativeArr[0]]);
+    await setSidebarList();
     backButton.disabled = true;
 }

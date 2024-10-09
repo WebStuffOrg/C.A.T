@@ -68,8 +68,8 @@
               <p style="margin-bottom: 0px;">Exhibition</p>
             </button>
           </a>
-          <h6 class="current-artwork d-md-inline h6 text-white pt-3"></h6>
-          <button class="btn text-white d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <h6 class="current-artwork d-inline h6 text-white p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
+          <button class="btn text-white d-flex me-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <!--svg by https://freeicons.io/business-and-online-icons/list-icon-icon-3-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
             <p class="current-narrative" style="margin-bottom: 0px;"></p>
@@ -176,43 +176,6 @@
 </div>
 </footer>
   <div id="loading" class="loading-spinner"></div>
-  <script>
-    // Select the image element
-    const artworkImage = document.getElementById('artwork-img');
-    const smallImagecontainer = document.getElementById("side-image");
-    
-    // Create a callback function for the observer
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          // Image is out of view, apply the sticky class
-          smallImagecontainer.classList.remove('hidden');
-          smallImagecontainer.classList.add('visible');
-        } else {
-          // Image is in view, remove the sticky class
-          smallImagecontainer.classList.remove('visible');
-          smallImagecontainer.classList.add('hidden');
-        }
-      });
-    };
-    
-    // Create an observer with specific options
-    const observerOptions = {
-      root: null, // Use the viewport as the root
-    };
-    
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
-    // Start observing the image container
-    observer.observe(artworkImage);
-
-    window.addEventListener("resize", () => {
-      const offcanvasClasses = document.querySelector(".offcanvas").classList
-      if (offcanvasClasses.contains("show") ) {
-        offcanvasClasses.remove("show")
-      }
-    })
-  </script>
   <script src="js/narr.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
