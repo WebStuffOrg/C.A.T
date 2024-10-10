@@ -89,10 +89,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 // narrative switch
 
 altNarrative.addEventListener("click", async (e) => {
-    const narrative = e.target.innerHTML
-    smallImagecontainer.classList.replace("visible", "hidden")
-    await switchNarrative(narrative)
-    imageContainer.scrollIntoView()
+    const narrative = e.target.innerHTML;
+    
+    // Immediately hide the small image container
+    smallImagecontainer.classList.add('hidden');
+    smallImagecontainer.classList.remove('visible');
+    
+    // Wait for the next animation frame to ensure the hidden class is applied
+    await new Promise(requestAnimationFrame);
+    
+    // Scroll to the image container
+    imageContainer.scrollIntoView({ behavior: 'smooth' });
+    
+    // Wait for the scrolling to complete
+    await new Promise(resolve => setTimeout(resolve, 600)); // Adjust time as needed
+    
+    // Now switch the narrative
+    await switchNarrative(narrative);
 });
 
 // text switching 
