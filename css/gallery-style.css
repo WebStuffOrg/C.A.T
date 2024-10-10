@@ -29,11 +29,13 @@ button {
 }
 
 /* Navbar */
-.navbar .nav-link, 
-        .navbar .navbar-brand 
-        .navbar .dropdown-item {
-            color: rgb(255, 255, 255);
-        }
+
+/* Stile per rendere le voci del menu bianche */
+.navbar .navbar-nav .nav-link, 
+.nav-link:hover, 
+.nav-item.active .nav-link{
+  color: white;
+}
 
 /* Dropdown menu styles */
 .dropdown-menu {
@@ -73,6 +75,9 @@ button {
 .dropdown-menu.show {
   display: block;
 
+}
+.navbar-brand {
+  color: white;
 }
 
 /* Responsive navbar */
@@ -122,12 +127,12 @@ main {
     height: fit-content;
     width: 100%;/* Center the navbar horizontally */
     z-index: 1; /* Ensure it's above the image */
-    background-color: rgba(0, 0, 0, 0.7);
 }
-
+#narrative-navbar button {
+    background-color:rgba(0, 0, 0, 0.1);
+}
 #narrative-navbar button:hover {
     background-color:var(--tertiary-color);
-    color: white;
 }
 #artwork-list li {
     color: white;
@@ -159,7 +164,7 @@ main {
     padding-right: 10px;
     visibility: hidden;
     display: none;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.2s ease, visibility 0.1s ease;
   }
   
   /* Shown with animation */
@@ -173,7 +178,7 @@ main {
     width: 30vw; /* Shrink image size */
     height: auto;
     z-index: 1000;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.1s ease;
   }
   
 #alt-narr button{
