@@ -147,32 +147,41 @@ async function prevItem() {
 }
 
 async function setContent(data) {
-        async function loadImage(imagePath) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = imagePath;
-                img.onload = () => {
-                    mainImage.setAttribute('src', imagePath);
-                    sideImage.setAttribute('src', imagePath);
-                    resolve();
-                };
-                img.onerror = () => reject(new Error('Image failed to load'));
-            });
-        };
+    const imageLoadPromise = loadImage(data.img);
+    
+    // Update text content concurrently
+    const updateTextPromise = Promise.all([
+        updateElements('.current-artwork', data.title),
+        updateElements('.table-data', el => data[el.id]),
+        updateElements('.current-narrative', narrativeTitle),
+        setNarrativeSwitch(data)
+    ]);
 
-    await loadImage(data.img);
-    document.querySelectorAll('.current-artwork').forEach((el) => {
-        el.innerHTML = data.title;
-    });
-    document.querySelectorAll('.table-data').forEach((el) => {
-        el.innerHTML = data[el.id];
-    });
-    document.querySelectorAll('.current-narrative').forEach((el) => {
-        el.textContent = narrativeTitle;
-    });
-    setNarrativeSwitch(data);
+    // Wait for both image loading and text updates to complete
+    await Promise.all([imageLoadPromise, updateTextPromise]);
+
     backButton.disabled = currentIdx === 0;
     lessButton.disabled = true;
+}
+
+function updateElements(selector, content) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+        el.textContent = typeof content === 'function' ? content(el) : content;
+    });
+}
+
+function loadImage(imagePath) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = imagePath;
+        img.onload = () => {
+            mainImage.src = imagePath;
+            sideImage.src = imagePath;
+            resolve();
+        };
+        img.onerror = () => reject(new Error('Image failed to load'));
+    });
 }
 
 async function setSidebarList(narrative = currentNarrativeArr) {
@@ -223,4 +232,5 @@ async function switchNarrative(narrative) {
     await setContent(items[currentNarrativeArr[0]]);
     await setSidebarList();
     backButton.disabled = true;
+    nextButton.disabled = false;
 }
