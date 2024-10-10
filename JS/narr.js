@@ -136,7 +136,7 @@ async function nextItem() {
     await setContent(items[currentNarrativeArr[currentIdx]]);
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     disableCurrSideItem(currentIdx);
-}
+};
 
 async function prevItem() {
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
@@ -144,7 +144,7 @@ async function prevItem() {
     await setContent(items[currentNarrativeArr[currentIdx]])
     backButton.disabled = currentIdx === 0;
     disableCurrSideItem(currentIdx);
-}
+};
 
 async function setContent(data) {
     const imageLoadPromise = loadImage(data.img);
@@ -159,17 +159,18 @@ async function setContent(data) {
 
     // Wait for both image loading and text updates to complete
     await Promise.all([imageLoadPromise, updateTextPromise]);
-
+    text.innerHTML = data.text.basic
+    textState = 0
     backButton.disabled = currentIdx === 0;
     lessButton.disabled = true;
-}
+};
 
 function updateElements(selector, content) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
         el.textContent = typeof content === 'function' ? content(el) : content;
     });
-}
+};
 
 function loadImage(imagePath) {
     return new Promise((resolve, reject) => {
@@ -182,7 +183,7 @@ function loadImage(imagePath) {
         };
         img.onerror = () => reject(new Error('Image failed to load'));
     });
-}
+};
 
 async function setSidebarList(narrative = currentNarrativeArr) {
     artworksList.innerHTML = "";
@@ -199,13 +200,13 @@ async function setSidebarList(narrative = currentNarrativeArr) {
         artworksList.appendChild(listElement);
     });
     disableCurrSideItem(currentIdx);
-}
+};
 
 function disableCurrSideItem(idx) {
     artworksList.querySelector('.disabled')?.classList.remove('disabled');
     const SidebarItem = document.getElementById(idx);
     SidebarItem.classList.add('disabled');
-}
+};
 
 async function setNarrativeSwitch(item) {
     altNarrative.innerHTML = "";
@@ -220,7 +221,7 @@ async function setNarrativeSwitch(item) {
         fragment.appendChild(el);
     });
     altNarrative.appendChild(fragment);
-}
+};
 
 async function switchNarrative(narrative) {
     document.querySelectorAll('.current-narrative').forEach((el) => {
@@ -233,4 +234,4 @@ async function switchNarrative(narrative) {
     await setSidebarList();
     backButton.disabled = true;
     nextButton.disabled = false;
-}
+};
