@@ -41,7 +41,7 @@ p {
 
 /* Dimensioni del testo */
 .big-text {
-  font-size: 60px;
+  font-size: 2.986rem;
 }
 
 .med-text {
@@ -82,7 +82,7 @@ transition: max-width 0.2s, opacity 0.2s;
 
 /* Bottone */
 .button {
-  padding: 14px 20px;
+  padding: 2vh 5vh;
   background: #6B1A10;
   color: #fff;
   display: inline-block;
@@ -204,7 +204,6 @@ padding-right: 5%;
     width: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('/images/home/img4.jpg') no-repeat center center;
     background-size: cover;
-    
 }
 
 /* Contenuto Hero */
@@ -221,6 +220,7 @@ padding-right: 5%;
 .hero_content h1 {
   color: #FAF3EF;
   animation: pulseText 4s infinite;
+  font-family: "Lexend", sans-serif;
 }
 
 .hero_content p {
