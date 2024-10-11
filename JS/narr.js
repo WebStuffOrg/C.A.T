@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (window.location.href.includes("?")) {
 
             const urlObj = new URLSearchParams(window.location.search);
-            itemId = urlObj.get("id").toString();
+            itemId = (urlObj.has("id"))?urlObj.get("id").toString()  : narratives[narrativeTitle][0];
             if (urlObj.has("narr")) narrativeTitle = urlObj.get("narr").toString();
             currentIdx = narratives[narrativeTitle].indexOf(itemId);
         } 
         else {
-            itemId = narratives[narrativeTitle][currentIdx];
+            itemId = narratives[narrativeTitle][0];
         }
         const itemData = items[itemId];
         currentNarrativeArr = narratives[narrativeTitle];
