@@ -21,7 +21,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Americas", "Supernatural", "Religion"]
+        "includedIn": ["Timeline", "Geography", "Americas", "Supernatural", "Religion"]
     },
     "2": {
         "title": "Cat from a Ball Toss Game",
@@ -36,7 +36,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Daily", "Playing Cats"]
+        "includedIn": ["Timeline", "Geography", "Daily", "Playing Cats"]
     },
     "3": {
         "title": "Amulet depicting a cat",
@@ -51,7 +51,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Africa", "Religion"]
+        "includedIn": ["Timeline", "Geography", "Africa", "Religion"]
     },
     "4": {
         "title": "Nightlight in the form of a cat",
@@ -66,7 +66,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Daily", "Chilling Cats"]
+        "includedIn": ["Timeline", "Geography", "Daily", "Chilling Cats"]
     },
     "5": {
         "title": "Tournée du Chat Noir avec Rodolphe Salis",
@@ -81,7 +81,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Superstition"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Superstition"]
     },
     "6": {
         "title": "Shashthi",
@@ -96,7 +96,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Asia"]
+        "includedIn": ["Timeline", "Geography", "Asia"]
     },
     "7": {
         "title": "The Cat",
@@ -111,7 +111,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Daily", "Playing Cats"]
+        "includedIn": ["Timeline", "Geography", "Daily", "Playing Cats"]
     },
     "8": {
         "title": "Bodleian Library MS. Bodl. 764",
@@ -126,7 +126,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Folklore", "Superstition"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Folklore", "Superstition"]
     },
     "9": {
         "title": "The Black Cat",
@@ -141,7 +141,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography"]
+        "includedIn": ["Timeline", "Geography"]
     },
     "10": {
         "title": "Cat with a quail, mosaic",
@@ -156,7 +156,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Europe", "Daily", "Hunting Cats"]
+        "includedIn": ["Timeline", "Geography", "Europe", "Daily", "Hunting Cats"]
     },
     "11": {
         "title": "Kunisada Nekomata",
@@ -171,7 +171,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Folklore"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Folklore"]
     },
     "12": {
         "title": "Hanging Scroll",
@@ -186,7 +186,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Folklore"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Folklore"]
     },
     "13": {
         "title": "Study for the Madonna of the Cat",
@@ -201,7 +201,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Folklore"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Folklore"]
     },
     "14": {
         "title": "Collection of Russian Lubki",
@@ -216,7 +216,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Supernatural", "Folklore", "Superstition"]
+        "includedIn": ["Timeline", "Geography", "Supernatural", "Folklore", "Superstition"]
     },
     "15": {
         "title": "Sarcophagus of Prince Thutmose's Cat",
@@ -231,7 +231,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Africa"]
+        "includedIn": ["Timeline", "Geography", "Africa"]
     },
     "16": {
         "title": "Engraved Rock Art",
@@ -246,7 +246,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Africa"]
+        "includedIn": ["Timeline", "Geography", "Africa"]
     },
     "17": {
         "title": "25 Cats Name Sam and One Blue Pussy",
@@ -261,7 +261,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Daily", "Americas", "Chilling Cats"]
+        "includedIn": ["Timeline", "Geography", "Daily", "Americas", "Chilling Cats"]
     },
     "18": {
         "title": "Black Cat Auditions In Hollywood",
@@ -277,7 +277,7 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Americas", "Supernatural", "Superstition"]
+        "includedIn": ["Timeline", "Geography", "Americas", "Supernatural", "Superstition"]
     },
     "19": {
         "title": "Figure of Bastet",
@@ -292,10 +292,31 @@
             "extended": "extended text",
             "long": "long text"
         },
-        "includedIn": ["Geography", "Africa", "Religion"]
+        "includedIn": ["Timeline", "Geography", "Africa", "Religion"]
     }
 },
 "narratives": {
+        "Timeline": [
+            "3",
+            "19",
+            "1",
+            "10",
+            "15",
+            "13",
+            "8",
+            "12",
+            "14",
+            "4",
+            "7",
+            "6",
+            "5",
+            "2",
+            "12",
+            "9",
+            "17",
+            "18",
+            "16"
+        ],
         "Geography": [
             "10",
             "8",

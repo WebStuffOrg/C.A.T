@@ -61,23 +61,25 @@
               <ol id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></ol>
             </div>
           </div>
-        <div id="narrative-navbar" class="navbar justify-content-between d-none d-sm-flex flex-row position-absolute">
+        <div id="narrative-navbar" class="navbar justify-content-center justify-content-sm-between d-flex position-absolute">
           <a href="exhibition.html" style="text-decoration: none;" title="Leave current narrative.">
-            <button id="return-button" class="btn ms-md-2 text-white d-none d-sm-flex flex-md-row">
-              <img src="images/icons/back.png" alt="meow" style="width: 20px; height: 20px;">
+            <button id="return-button" class="btn ms-md-2 text-white d-none d-sm-flex">
+              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
+                <path d="M352,170.667H94.17l70.249-70.248a21.334,21.334,0,1,0-30.171-30.171L27.581,176.915a21.336,21.336,0,0,0,0,30.171L134.248,313.752a21.334,21.334,0,1,0,30.171-30.171L94.17,213.333H352a96,96,0,0,1,0,192H128A21.333,21.333,0,1,0,128,448H352c76.461,0,138.667-62.205,138.667-138.667S428.461,170.667,352,170.667Z" id="id_101" style="fill: rgb(235, 239, 240);"></path>
+              </svg>              
               <p style="margin-bottom: 0px;">Exhibition</p>
             </button>
           </a>
-          <h6 class="current-artwork d-inline h6 text-white p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
-          <button class="btn text-white d-flex me-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <h6 class="current-artwork d-inline text-white p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
+          <button class="btn text-white d-none d-sm-flex me-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <!--svg by https://freeicons.io/business-and-online-icons/list-icon-icon-3-->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list pt-1"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
             <p class="current-narrative" style="margin-bottom: 0px;"></p>
           </button>
-          
         </div>
         <!-- Overlay Buttons -->
         <button id="back-button" class="btn text-white position-absolute" onclick="prevItem()">
+          <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
             <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
           </svg>
@@ -90,13 +92,21 @@
         </button>
           <!-- Image -->
         <img id="artwork-img" class="img-fluid" src="" alt="meow">
-        
+        <div class="scroll-buttons">
+          <button id="scroll-button">
+            <svg viewBox="0 0 24 24">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   <div class="row">
-    <div id="info-box" class="col-12 col-md-7 mt-5 ps-md-5">
-          <h5 class="h5">Description</h5>
-            <div class="table-body">
+    <div id="info-box" class="col-12 col-md-8 mt-5 ps-md-5">
+      <hr style="margin-left: 10%; margin-right: 10%;">
+      <h3 style="margin-left: 30%; margin-right: 30%; text-align: center;">About this Artwork</h3>
+      <hr style="margin-left: 20%; margin-right: 20%;">
+            <div class="table-body mt-5">
               <div class="description row">
                 <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
               </div>
@@ -118,9 +128,11 @@
             </div>
     </div>
   </div>
-  <div class="row flex-row mt-5 ps-md-5 justify-content-center">
-    <h6>Also present in:</h6>
-    <div id="alt-narr" class="align-content-start">
+  <div class="row flex-row ps-md-5 mt-5 justify-content-start">
+    <div class="col-12 col-md-8" style="padding-left: 5px;">
+      <h6>Also present in:</h6>
+      <div id="alt-narr" class="">
+      </div>
     </div>
   </div>
     <div id="side-image" class="col-4 d-none d-md-flex">
@@ -129,20 +141,10 @@
       </div>
     </div>
   </div>
-    <div class="row">
-      <div class="col-12 col-md-8" style="padding: 3vmax;">
-      <hr style="margin-left: 10%; margin-right: 10%;">
-      <h3 style="margin-left: 30%; margin-right: 30%; text-align: center;">About this Artwork</h3>
-      <hr style="margin-left: 20%; margin-right: 20%;">
+    <div class="row mb-5">
+      <div class="col-12 col-md-8 mt-5 ps-md-5">
+      <h5>Description</h5>
       <div id="info-text">
-        <p>This artwork presents a striking and minimalist depiction of a black cat resting atop a large orange ball. The cat's form is rendered in smooth, flowing curves, with its body almost seamlessly blending into the ball, emphasizing its relaxed and leisurely posture. Its front legs drape over the ball in a manner that suggests comfort and ease, while its rear is partially hidden behind the sphere. The cat's face is simple yet expressive, featuring narrow, almond-shaped eyes and a small white nose, which add a touch of personality to the otherwise abstract representation.</p>
-        <br>
-        <p>The color palette is deliberately limited, consisting primarily of deep black, vibrant orange, and a muted beige background. This choice of colors creates a strong visual contrast that draws the viewer's eye directly to the central figure of the cat. The black of the cat against the orange of the ball and the neutral background enhances the sense of depth and focus in the composition.</p>
-        <br>
-        <p>The overall style of the artwork is modern and graphic, with a strong emphasis on bold, flat shapes and clean lines. This approach gives the image a timeless, almost iconic quality, making it both visually appealing and conceptually intriguing. The simplicity of the design, combined with the playful subject matter, evokes a sense of calm and contentment, while also leaving room for interpretation and imagination.</p>
-        <br>
-        <p>In essence, this artwork captures the essence of minimalism, using basic forms and a limited color scheme to create a compelling and visually engaging piece that is both elegant and whimsical. The cat, as the central figure, embodies a sense of quiet repose, making the image both relatable and endearing to the viewer.</p>
-        <br>
       </div>
         <div id="button-container" class="d-flex justify-content-between p-2">
           <button id="less-button" class="btn text-button" value="-1">

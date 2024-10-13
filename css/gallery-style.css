@@ -113,6 +113,29 @@ main {
     position: relative;
     top: 0px
 }
+
+.scroll-buttons {
+    position: fixed;
+    height: 8%;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#scroll-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
 #artwork-img {
     max-width: 100%;             /* Make the image responsive */
     max-height: 100vh;
@@ -134,7 +157,7 @@ main {
 #narrative-navbar button:hover {
     background-color:var(--tertiary-color);
 }
-#artwork-list li {
+#artwork-list button {
     color: white;
     text-align: left;
     width: fit-content;
@@ -214,7 +237,7 @@ hr {
     background-color: #6B1A10   ; /* Change color */
 }
 .text-button {
-    background-color: #67314B;
+    background-color: var(--tertiary-color);
     color: white;
     font-family: trispace;
     font-size: small;
@@ -227,6 +250,7 @@ footer {
     background-color: black;
     padding: 2em;
     width: 100%;
+    height: auto;
 }
 /* Style for loading spinner */
 .loading-spinner {

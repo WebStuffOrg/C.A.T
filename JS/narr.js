@@ -4,6 +4,7 @@ let narrativeTitle = ""
 let currentIdx = 0
 let items = []
 let textState = 0
+let rotation = 180
 
 const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
@@ -12,12 +13,13 @@ const artworksList = document.getElementById("artwork-list")
 const smallImagecontainer = document.getElementById("side-image");
 const mainImage = document.getElementById('artwork-img')
 const sideImage = document.getElementById('artwork-img-2')
-const spinner = document.getElementById('loading')
+const spinner = document.querySelector('.loading-spinner')
 const textButtons = document.getElementById("button-container")
 const lessButton = document.getElementById("less-button")
 const moreButton = document.getElementById("more-button")
 const text = document.getElementById("info-text")
 const imageContainer = document.getElementById("image-wrapper")
+const table = document.getElementById("info-box")
 
 async function showLoading() {
     spinner.style.display = 'block';
@@ -135,10 +137,19 @@ textButtons.addEventListener("click", (e) => {
     };
 });
 
-// scrollup animation 
+// scroll animations 
 
 sideImage.addEventListener("click", () => {
     imageContainer.scrollIntoView()
+})
+
+document.getElementById("scroll-button").addEventListener("click", (e) => {
+    if (smallImagecontainer.classList.contains("hidden")) {
+        table.scrollIntoView()    
+    }
+    else imageContainer.scrollIntoView()
+    e.target.setAttribute("transform", `rotate(${rotation})`)
+    rotation += 180
 })
 
 // UI FUNCTIONS //
@@ -161,7 +172,6 @@ async function prevItem() {
 
 async function setContent(data) {
     const imageLoadPromise = loadImage(data.img);
-    
     // Update text content concurrently
     const updateTextPromise = Promise.all([
         updateElements('.current-artwork', data.title),
@@ -169,7 +179,6 @@ async function setContent(data) {
         updateElements('.current-narrative', narrativeTitle),
         setNarrativeSwitch(data)
     ]);
-
     // Wait for both image loading and text updates to complete
     await Promise.all([imageLoadPromise, updateTextPromise]);
     text.innerHTML = data.text.basic
@@ -201,7 +210,7 @@ function loadImage(imagePath) {
 async function setSidebarList(narrative = currentNarrativeArr) {
     artworksList.innerHTML = "";
     narrative.forEach((item, i) => {
-        const listElement = document.createElement('li');
+        const listElement = document.createElement('button');
         listElement.classList.add("btn");
         listElement.id = i;
         listElement.innerHTML = items[item].title;
