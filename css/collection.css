@@ -10,14 +10,32 @@ h1, h3, h4, h5, p {
     padding-bottom: 30px;
 }
 
+.navbar {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important; 
+}
+
+.navbar .dropdown-menu {
+    background-color: rgb(0, 0, 0);
+}
+
+.navbar .dropdown-item {
+    color: white !important;
+}
+
+
 .collection-title {
     text-align: center;
     margin-top: 50px;
     padding-bottom: 20px;
 }
 
-.collection-title h1 {
-    font-size: 60px;
+.collection-title h2 {
+    font-size: 40px;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -34,6 +52,7 @@ h1, h3, h4, h5, p {
 .gallery-item {
     overflow: hidden;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .gallery-item img {
@@ -82,29 +101,37 @@ h1, h3, h4, h5, p {
     right: 20px;
     display: flex;
     flex-direction: column;
+    z-index: 99;
 }
 
 .scroll-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
     background-color: #ffffff;
     border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 40px !important;
+    height: 40px !important;
+    padding: 10px !important;    
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
+    fill: black;
 }
 
 .scroll-button:hover {
     background-color: #f0f0f0;
 }
 
-.scroll-button svg {
-    width: 20px;
-    height: 20px;
-}
+
 
 @media (min-width: 1200px) {
     .gallery {
