@@ -1,6 +1,6 @@
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #FAF3EF !important;
 }
 
 h1, h2, h3, h4, h5 {
@@ -27,6 +27,13 @@ h1, h2, h3, h4, h5 {
 .navbar .dropdown:hover .dropdown-menu {
     display: block;
     background-color: rgb(0, 0, 0);
+}
+
+h1 {
+    font-size: 40px; 
+    font-weight: bold;
+    text-align: center;  
+    color: #000;  
 }
 
 .card-img-top {
@@ -104,6 +111,10 @@ section {
     background-color: #f8f9fa;
 }
 
+.sub-narratives-bg {
+    background-color: #FAF3EF !important;
+}
+
 .container {
     max-width: 1140px;
 }
@@ -114,6 +125,7 @@ section {
 
 #sub-narratives-geography .card {
     min-height: 375px;
+    margin-bottom: 25px;
 }
 
 #sub-narratives-geography .card h5 {
@@ -147,6 +159,18 @@ p.card-text {
 
 .carousel-caption .btn {
     margin-top: 10px;
+    background-color: #6B1A10; 
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #5a150e; 
+    color: #fff;
 }
 
 .carousel-control-prev-icon,
@@ -159,4 +183,37 @@ p.card-text {
 .carousel-item img {
     height: 325px; 
     object-fit: cover;
+}
+
+.scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.scroll-button {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
+    fill: black;
+}
+
+.scroll-button:hover {
+    background-color: #f0f0f0;
 }
