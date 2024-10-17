@@ -52,6 +52,7 @@ h1, h3, h4, h5, p {
     overflow: hidden;
     border-radius: 10px;
     margin: 10px;
+    position: relative; 
 }
 
 .gallery-item img {
@@ -78,6 +79,44 @@ h1, h3, h4, h5, p {
 .small {
     grid-column: span 1;
     grid-row: span 1;
+}
+
+.carousel-caption {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.gallery-item:hover .carousel-caption {
+    opacity: 1;
+}
+
+.carousel-caption h5 {
+    color: white !important;
+    margin: 0 0 10px 0;
+}
+
+.carousel-caption .btn {
+    background-color: #6B1A10;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #5a150e;
+    color: #fff;
 }
 
 .footer {
