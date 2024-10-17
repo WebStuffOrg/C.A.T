@@ -5,49 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Museum Narratives</title>
 
-    <!-- Google Fonts - Nunito -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/exhibition.css">
-    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
 
     <!-- Header from index.html -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:rgb(0, 0, 0)">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
-                    <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="map.html" class="nav-link">MAP</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            NARRATIVES
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            EXHIBITION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
                             <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
                             <a class="dropdown-item" href="gallery.html">GALLERY</a>
                             <a class="dropdown-item" href="timeline.html">TIMELINE</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="about_us.html" class="nav-link">ABOUT US</a></li>
+                    <li class="nav-item">
+                        <a href="about_us.html" class="nav-link">ABOUT US</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>  
 
     <!-- Narratives Section -->
     <section id="narratives" class="p-5">
         <div class="container">
-            <h2 class="mb-4">Narratives</h2>
+            <h1 class="mb-4 text-center">NARRATIVES</h1>
             <div class="row">
                 <div class="col-md-4 d-flex">
                     <div class="card flex-fill">
@@ -84,9 +95,9 @@
     </section>
 
     <!-- Sub-Narratives Section: Geography -->
-    <section id="sub-narratives-geography" class="p-5 bg-light">
+    <section id="sub-narratives-geography" class="p-5 sub-narratives-bg">
         <div class="container">
-            <h2 class="mb-4">Sub-Narratives: Geography</h2>
+            <h2 class="mb-4 text-center">Sub-Narratives: Geography</h2>
             <div class="row">
                 <div class="col-md-6 d-flex">
                     <div class="card flex-fill">
@@ -338,9 +349,9 @@
     </section>
 
 <!-- Sub-Narratives Section: Daily -->
-<section id="sub-narratives-daily" class="p-5 bg-light">
+<section id="sub-narratives-daily" class="p-5 sub-narratives-bg">
     <div class="container">
-        <h2 class="mb-4">Sub-Narratives: Daily</h2>
+        <h2 class="mb-4 text-center">Sub-Narratives: Daily</h2>
         <div class="row">
             <!-- Chilling Cats Card -->
             <div class="col-md-4 d-flex">
@@ -475,9 +486,9 @@
 
 
     <!-- Sub-Narratives Section: Supernatural -->
-    <section id="sub-narratives-supernatural" class="p-5 bg-light">
+    <section id="sub-narratives-supernatural" class="p-5 sub-narratives-bg">
         <div class="container">
-            <h2 class="mb-4">Sub-Narratives: Supernatural</h2>
+            <h2 class="mb-4 text-center">Sub-Narratives: Supernatural</h2>
             <div class="row">
                 <!-- Folklore Card -->
                 <div class="col-md-4 d-flex">
@@ -646,7 +657,13 @@
     </section>
 
     <!-- Scroll to Top Button -->
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">Top</button>
+    <div class="scroll-buttons">
+        <button class="scroll-button" onclick="scrollToTop()">
+            <svg viewBox="0 0 24 24">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </button>
+    </div>
 
     <!-- Footer from index.html -->
     <footer class="footer">

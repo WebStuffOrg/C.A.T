@@ -7,36 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/collection.css"/>
 </head>
 
 <body> 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
         <div class="container">
-            <a href="index.html" class="navbar-brand" style="color:white;"><img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" ><a href="index.html" class="nav-link" style="color:white;">HOME</a></li>
-                    <li class="nav-item"><a href="map.html" class="nav-link" style="color:white;">MAP</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="map.html" class="nav-link">MAP</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             EXHIBITION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
-                            <a class="dropdown-item" href="#">COLLECTIONS</a>
+                            <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
                             <a class="dropdown-item" href="gallery.html">GALLERY</a>
                             <a class="dropdown-item" href="timeline.html">TIMELINE</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="about_us.html" class="nav-link" style="color:white;">ABOUT US</a></li>
+                    <li class="nav-item">
+                        <a href="about_us.html" class="nav-link">ABOUT US</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -44,8 +56,28 @@
 
     <!-- Collection Title -->
     <section class="collection-title">
-        <h1>Collection</h1>
+        <h2><b>COLLECTIONS</b></h2>
     </section>
+
+    <!-- Introduction Section -->
+    <div class="text-center" style="padding-bottom: 20px; max-width: 1200px; margin: 0 auto;">
+        <p style="font-size: 18px; padding: 0 15px; max-width: 1000px; margin: 0 auto; text-align: left;">
+            Our collection is a glimpse into the world of feline artistry, capturing the beauty and significance of cats throughout history. But there's more to explore! In the <b>Narratives</b> section, you can delve deeper into each exhibit's story, discover the various narratives, and fully immerse yourself in the historical, cultural, and artistic importance of these pieces. After browsing our full collection, click below to continue your journey and unlock the full experience!
+        </p>
+        
+        <br> 
+        
+        <p style="font-size: 16px; padding: 0 15px; max-width: 1000px; margin: 0 auto;">
+            <i>Leave this page and</i>
+        </p>
+    
+        <br>
+        <a href="exhibition.html" class="btn btn-primary view-more-btn" style="background-color: #6B1A10;">Go to narratives view</a>
+    </div>
+    
+    
+    
+    
 
     <!-- Gallery Section -->
     <div class="gallery">
@@ -85,7 +117,7 @@
             </svg>
         </button>
     </div>
-
+    
     <!-- Footer -->
     <footer class="footer" style="background-color:black; color:white;">
         <div class="text-center p-3">
@@ -102,9 +134,9 @@
     </footer>
 
     <!-- JavaScript and external libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
-    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <!-- Bootstrap 5 Popper.js and JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="JS/myscript.js"></script>
     <script>
