@@ -27,7 +27,6 @@ h1, h3, h4, h5, p {
     color: white !important;
 }
 
-
 .collection-title {
     text-align: center;
     margin-top: 50px;
@@ -36,7 +35,7 @@ h1, h3, h4, h5, p {
 
 .collection-title h2 {
     font-size: 40px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Comfortaa', sans-serif; 
 }
 
 .gallery {
@@ -130,8 +129,6 @@ h1, h3, h4, h5, p {
 .scroll-button:hover {
     background-color: #f0f0f0;
 }
-
-
 
 @media (min-width: 1200px) {
     .gallery {
