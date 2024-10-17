@@ -4,7 +4,7 @@ let narrativeTitle = ""
 let currentIdx = 0
 let items = []
 let textState = 0
-let rotation = 180
+let rotation = 0
 
 const nextButton = document.getElementById("next-button")
 const backButton = document.getElementById("back-button")
@@ -20,6 +20,9 @@ const moreButton = document.getElementById("more-button")
 const text = document.getElementById("info-text")
 const imageContainer = document.getElementById("image-wrapper")
 const table = document.getElementById("info-box")
+const scrollButton = document.getElementById("scroll-button")
+const arrowSvg = document.querySelector("#scroll-button > svg")
+
 
 async function showLoading() {
     spinner.style.display = 'block';
@@ -38,25 +41,24 @@ const observerCallback = (entries) => {
       // Image is out of view, apply the sticky class
       smallImagecontainer.classList.remove('hidden');
       smallImagecontainer.classList.add('visible');
+      arrowSvg.setAttribute("transform", `rotate(${rotation})`);
+      rotation += 180;
     } else {
       // Image is in view, remove the sticky class
       smallImagecontainer.classList.remove('visible');
       smallImagecontainer.classList.add('hidden');
+      arrowSvg.setAttribute("transform", `rotate(${rotation})`);
+      rotation += 180;
     }
+    
   });
 };
 
 const observer = new IntersectionObserver(observerCallback);
 
-// Start observing the image container
+// observer instance
 observer.observe(mainImage);
 
-window.addEventListener("resize", () => {
-  const offcanvasClasses = document.querySelector(".offcanvas").classList
-  if (offcanvasClasses.contains("show") ) {
-    offcanvasClasses.remove("show")
-  }
-})
 
 // EVENT LISTENERS //
 
@@ -87,6 +89,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         await hideLoading()
     });
 });
+
+window.addEventListener("resize", () => {
+    const offcanvasClasses = document.querySelector(".offcanvas").classList
+    if (offcanvasClasses.contains("show") ) {
+      offcanvasClasses.remove("show")
+    }
+  })  
 
 // narrative switch
 
@@ -137,19 +146,17 @@ textButtons.addEventListener("click", (e) => {
     };
 });
 
-// scroll animations 
+// Scroll animations 
 
 sideImage.addEventListener("click", () => {
     imageContainer.scrollIntoView()
 })
 
-document.getElementById("scroll-button").addEventListener("click", (e) => {
+scrollButton.addEventListener("click", (e) => {
     if (smallImagecontainer.classList.contains("hidden")) {
         table.scrollIntoView()    
     }
     else imageContainer.scrollIntoView()
-    e.target.setAttribute("transform", `rotate(${rotation})`)
-    rotation += 180
 })
 
 // UI FUNCTIONS //
