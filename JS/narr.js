@@ -146,7 +146,7 @@ document.getElementById("scroll-button").addEventListener("click", (e) => {
         imageContainer.scrollIntoView();
     }
     e.target.setAttribute("transform", `rotate(${rotation})`);
-});
+    });
 
 // Offcanvas buttons
 artworksList.addEventListener("click", async (e) => {
