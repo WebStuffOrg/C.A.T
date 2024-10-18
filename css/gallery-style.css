@@ -238,7 +238,6 @@ hr {
 .text-button {
     background-color: var(--quaternary-color);
     color: white;
-    font-family: Comfortaa;
     font-size: small;
     padding: 1%;
 }
