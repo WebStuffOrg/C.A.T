@@ -58,7 +58,7 @@ padding-right: 5%;
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('/images/home/img4.jpg') no-repeat center center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('../images/home/img-4.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -244,16 +244,6 @@ padding-right: 5%;
   }
 }
 
-/* Footer */
-.footer {
-    background: #000;
-    padding: 0;
-
-}
-
-.footer a{
-  color: #f0f0f0;
-}
 
 
 /* Information Table */
