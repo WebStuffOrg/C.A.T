@@ -21,6 +21,7 @@ const moreButton = document.getElementById("more-button");
 const text = document.getElementById("info-text");
 const imageContainer = document.getElementById("image-wrapper");
 const table = document.getElementById("info-box");
+const arrowSvg = document.querySelector("#scroll-button > svg")
 
 async function showLoading() {
     spinner.style.display = 'block';
@@ -37,6 +38,8 @@ const observerCallback = (entries) => {
     if (!entry.isIntersecting) {
       smallImagecontainer.classList.remove('hidden');
       smallImagecontainer.classList.add('visible');
+      arrowSvg.setAttribute("transform", `rotate(${rotation})`);
+      rotation += 180;
     } else {
       smallImagecontainer.classList.remove('visible');
       smallImagecontainer.classList.add('hidden');
@@ -143,7 +146,6 @@ document.getElementById("scroll-button").addEventListener("click", (e) => {
         imageContainer.scrollIntoView();
     }
     e.target.setAttribute("transform", `rotate(${rotation})`);
-    rotation += 180;
 });
 
 // Offcanvas buttons
