@@ -1,0 +1,334 @@
+
+/* Testo introduttivo */
+.intro-text {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Bottone */
+.button {
+  margin-top: 30px;
+  padding: 1.5vh 2vh;
+  background: #6B1A10;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+/* Margini di sezione */
+.mt-1 {
+  margin-top: 50px;
+  padding-top: 5%;
+}
+
+.mt-2 {
+  margin-top: 100px;
+}
+
+.mt-3 {
+  margin-top: 150px;
+}
+
+.tw {
+  color:#fff;
+  padding-left: 0;
+  padding-right: 5%;
+
+}
+
+.twi {
+color:#000000;
+padding-left: 0;
+padding-right: 5%;
+
+}
+
+@media (max-width: 768px)  {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),  url('/images/home/img4.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Contenuto Hero */
+.hero_content {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center; /* Centra il testo */
+    z-index: 1;
+    position: relative; /* altrimenti la z-index non viene eseguito */
+}
+
+.hero_content h1 {
+  font-family: 'Comfortaa', sans-serif;
+  color: #FAF3EF;
+  animation: pulseText 4s infinite;
+}
+
+.hero_content p {
+  color: #FAF3EF;
+} 
+
+@keyframes pulseText {
+  0% {
+      text-shadow: 0 0 5px black, 0 0 10px  rgb(103, 49, 75);
+      transform: scale(1);
+  }
+  50% {
+      text-shadow: 0 0 15px rgb(103, 49, 75), 0 0 20px rgb(103, 49, 75);
+      transform: scale(1.02);
+  }
+  100% {
+      text-shadow: 0 0 5px black, 0 0 10px rgb(103, 49, 75);
+      transform: scale(1);
+  }
+}
+
+/* Poster */
+.poster {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center; /* Centra il contenuto del poster */
+    padding: 30px;
+    box-sizing: border-box;
+    background-color:   #FAF3EF;
+}
+
+#video-back{
+  position: static;
+  top: 100%;
+  height: 100vh;
+  width: 100%;
+
+}
+
+.poster_img{
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.poster_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.poster_content {
+    width: 40%;
+    text-align: center; /* Centra il testo all'interno della sezione contenuti del poster */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .poster {
+      flex-wrap: wrap;
+      height: auto; /* Adjust height to content */
+      padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .poster_img,
+  .poster_content {
+      width: 100%;
+  }
+
+  .poster_content {
+      text-align: center; /* Ensures text remains centered on smaller screens */
+      padding: 10px 0; /* Reduced padding above and below text */
+  }
+
+  /* Add specific adjustments for video */
+  #video-back {
+      height: auto; /* Adjusts video height automatically */
+      padding: 0; /* Remove any additional padding */
+  }
+}
+
+
+
+/* Sfondo coprente */
+.bg-cover {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    width: 100%;
+    background:var(--tertiary-color);
+    background-size: cover;
+}
+
+.bg-cover_text {
+    width: 50%;
+
+}
+
+.bg-cover_title {
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 760px) {
+  .bg-cover {
+      flex-direction: column; /* Stack elements vertically */
+      height: auto; /* Adjust height to content */
+      padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .bg-cover_text,
+  .bg-cover_title {
+      width: 100%; /* Full width for smaller screens */
+      padding: 20px; /* Adjust padding for spacing */
+  }
+
+  .bg-cover_title {
+      justify-content: center; /* Center title text */
+      padding: 20px 0; /* Adjust padding for smaller screens */
+  }
+}
+
+
+
+/* Sfondo coprente */
+.go-cover {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 100%;
+  background:var(--quaternary-color);
+  background-size: cover;
+}
+
+.go-cover_text {
+  width: 50%;
+}
+
+.go-cover_title {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .go-cover {
+      flex-wrap: wrap;
+      height: auto;
+  }
+
+  .go-cover_text,
+  .go-cover_title {
+      width: 100%;
+  }
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 0;
+
+}
+
+.footer a{
+  color: #f0f0f0;
+}
+
+
+/* Information Table */
+
+.information-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+.information-table {
+  width: 100%;
+  border-collapse: collapse;
+ 
+}
+
+.information-table th, .information-table td {
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  text-align: left;
+  vertical-align: top;
+  color: #f0f0f0;
+}
+
+.information-table th {
+  width: 200px;
+  font-weight: bold;
+ 
+}
+
+.information-table td {
+  width: auto;
+
+}
+
+.information-table strong {
+  font-weight: bold;
+ 
+}
+
+.information-table tr:last-child th, .information-table tr:last-child td {
+  border-bottom: none;
+
+}
+
+
+
+.end-cover {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 100%;
+  background:  #FAF3EF;
+  background-size: cover;
+}
+
+/* Carousel styles */
+.carousel {
+  position: relative;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-item {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
