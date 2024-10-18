@@ -68,6 +68,7 @@ padding-right: 5%;
     padding: 30px;
     text-align: center; /* Centra il testo */
     z-index: 1;
+  
     position: relative; /* altrimenti la z-index non viene eseguito */
 }
 
