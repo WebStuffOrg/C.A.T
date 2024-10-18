@@ -1,25 +1,3 @@
-:root {
-    --primary-color: rgb(228, 168, 140);
-    --secondary-color: rgb(201, 102, 56);
-    --tertiary-color: rgb(107, 26, 16);
-    --quaternary-color: rgb(103, 49, 75);
-    --quinary-color: rgb(217, 217, 217);
-    --background-color:  rgb(250, 243, 239);
-    
-}
-
-
-/* Rimuovere margini e padding predefiniti */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-  }
-
-  body {
-    background-color:  #FAF3EF;
-}
 
 .intro_content {
     text-align: center; /* Center the text */
@@ -43,92 +21,6 @@
   
 }
 
-
-h1, h2,h4 {
-    color:rgb(0, 0, 0);;
-}
-
-h1 {
-    color: #000000; 
-}
-
-
-/* Navbar */
-
-/* Stile per rendere le voci del menu bianche */
-.navbar .navbar-nav .nav-link, 
-.nav-link:hover, 
-.nav-item.active .nav-link {
-  color: white;
-}
-
-/* Dropdown menu styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #000000;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  z-index: 1000;
-}
-
-.dropdown-item {
-  width: 200px;
-  color: #ffffff;
-}
-
-.dropdown-link {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #000000;
-  background-color: #000000;  border: 1px solid ; 
-  transition: background-color 0.3s;
-  font-size: 1.3em;
-}
-
-
-/* Show menu when toggle is clicked */
-.navbar-menu.show {
-  display: flex;
-  color: #000000;
-}
-
-.dropdown-menu.show {
-  display: block;
-
-}
-.navbar-brand {
-  color: white;
-}
-
-
-
-
-
-/* Responsive navbar */
-@media (max-width: 768px) {
-  .navbar-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #ffffff;
-  }
-
-  .navbar-item {
-      margin: 10px 0;
-  }
-
-  .navbar-toggle {
-      display: flex;
-  }
-}
-
-
-
 /* Timeline */
 
 .timeline {
@@ -137,13 +29,7 @@ h1 {
     margin: 20px auto;
 }
 
-.content {
-    padding: 10px 50px;
-    position: relative;
-    width: 50%;
-    animation: movedown 1s linear forwards;
-    opacity: 0;
-}
+
 
 @keyframes movedown {
     0%{
@@ -261,21 +147,18 @@ h1 {
 }
 
 .bottom {
-    text-decoration: none;
-    background: #000000 ;
-    padding: 7px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 400;
-    width: 100px;
-    border: 1px solid #000000;
+    margin-top: 30px;
+    background:#6B1A10;
+    padding: 1.5vh 2vh;
+    border-radius: 4px;
+    display: inline-block;
 }
+
+  
 
 .bottom a{
     color: #fff;
 }
-
-
 
 .left-content {
     left:0;
@@ -285,22 +168,34 @@ h1 {
 .right-content {
     left:50%;
 }
+
+.content {
+    z-index: 1; /* Ensure content is above the line */
+    position: relative;
+    padding: 10px 50px;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+    }
+
+
 .content img {
     position: absolute;
     width: 70px;
-    height: 70px; /* Aggiungi l'altezza per mantenere il cerchio perfetto */
-    border-radius: 50%; /* Cambiato a 50% per garantire un cerchio perfetto */
+    height: 70px; /* Maintain circle shape */
+    border-radius: 50%; /* Ensure perfect circle */
     right: -38px;
     top: 32px;
-    z-index: 10;
-    object-fit: cover; /* Assicura che l'immagine si adatti correttamente nel cerchio */
+    z-index: 2; /* Ensure images are above the line and content */
+    object-fit: cover; /* Ensure image fits correctly */
 }
 
-.content img:hover{
-    transform: scale(2); /* Ingrandisce l'immagine */
-    z-index: 2;
+.content img:hover {
+    transform: scale(2); /* Enlarge image */
+    z-index: 3; /* Ensure hovered image is above everything */
     transition: 0.5s;
 }
+
 
 .right-content img {
     left: -36px;
@@ -311,13 +206,14 @@ h1 {
     position: absolute;
     width: 6px;
     height: 100%;
-    background: rgb(107, 26, 16);
-    top:0;
+    background: rgb(103, 49, 75);
+    top: 0;
     left: 50%;
     margin-left: -3px;
-    z-index: -1;
-    animation: moveline 6s linear forwards;
+    z-index: 0;
+    animation: moveline 15s linear forwards;
 }
+
 
 @keyframes moveline {
     0%{
@@ -407,51 +303,3 @@ h1 {
 }
 
 
-
-
-
-
-
-
-/* Scrolling */
-.scroll-buttons {
-    position: fixed;
-    height: 8%;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .scroll-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .scroll-button:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .scroll-button svg {
-    width: 20px;
-    height: 20px;
-  }
-
-
-/* Footer */
-.footer {
-    background: #000;
-    padding: 0;
-}
-
-.text-center {
-    color: #f0f0f0;
-}
