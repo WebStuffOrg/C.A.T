@@ -1,8 +1,9 @@
 let narratives = []
+let items = []
+
 let currentNarrativeArr = []
 let narrativeTitle = ""
 let currentIdx = 0
-let items = []
 let textState = 0
 let rotation = 0
 
@@ -48,7 +49,7 @@ const observerCallback = (entries) => {
       smallImagecontainer.classList.remove('visible');
       smallImagecontainer.classList.add('hidden');
       arrowSvg.setAttribute("transform", `rotate(${rotation})`);
-      rotation += 180;
+      rotation -= 180;
     }
     
   });
@@ -60,7 +61,7 @@ const observer = new IntersectionObserver(observerCallback);
 observer.observe(mainImage);
 
 
-// EVENT LISTENERS //
+///// EVENT LISTENERS /////
 
 document.addEventListener("DOMContentLoaded", async () => {
     await showLoading();
@@ -125,7 +126,7 @@ textButtons.addEventListener("click", (e) => {
     const el = e.target
     if (el.tagName === "BUTTON") {
         let textType
-        textState += parseInt(el.value)
+        textState += +el.value
         console.log(textState)
         switch (textState) {
             case 1: 
@@ -159,7 +160,19 @@ scrollButton.addEventListener("click", (e) => {
     else imageContainer.scrollIntoView()
 })
 
-// UI FUNCTIONS //
+// Offcanvas buttons
+artworksList.addEventListener("click", async (e) => {
+    if (e.target.tagName === "BUTTON") {
+        currentIdx = +e.target.id;
+        disableCurrSideItem(currentIdx);
+        await setContent(items[currentNarrativeArr[currentIdx]]);
+    }
+    console.log(currentIdx)
+    console.log(narrativeTitle)
+})
+
+
+///// UI FUNCTIONS /////
 
 async function nextItem() {
     backButton.disabled = currentIdx === 0;
@@ -188,9 +201,11 @@ async function setContent(data) {
     ]);
     // Wait for both image loading and text updates to complete
     await Promise.all([imageLoadPromise, updateTextPromise]);
-    text.innerHTML = data.text.basic
-    textState = 0
+
+    text.innerHTML = data.text.basic;
+    textState = 0;
     backButton.disabled = currentIdx === 0;
+    nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     lessButton.disabled = true;
 };
 
@@ -221,11 +236,6 @@ async function setSidebarList(narrative = currentNarrativeArr) {
         listElement.classList.add("btn");
         listElement.id = i;
         listElement.innerHTML = items[item].title;
-        listElement.onclick = async () => {
-            currentIdx = i;
-            disableCurrSideItem(currentIdx);
-            await setContent(items[item]);
-        };
         artworksList.appendChild(listElement);
     });
     disableCurrSideItem(currentIdx);
@@ -246,7 +256,7 @@ async function setNarrativeSwitch(item) {
     itemNarratives.forEach((i) => {
         el = document.createElement("button");
         el.textContent = i;
-        el.classList.add("p-2", "ms-2", "ms-md-0");
+        el.classList.add("p-2", "btn");
         fragment.appendChild(el);
     });
     altNarrative.appendChild(fragment);

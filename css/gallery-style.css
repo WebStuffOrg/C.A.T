@@ -5,7 +5,7 @@
     --secondary-color: #C96638;
     --tertiary-color: #6B1A10;
     --quaternary-color: #67314B;
-    --quinary-color: #D9D9D9;
+    --quinary-color: #FAF3EF;
     font-family: Nunito;
     font-size: 1rem;
 }
@@ -16,10 +16,10 @@
 body {
     font-family: Nunito;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: black;
     font-family: Comfortaa;
 }
 
@@ -150,6 +150,7 @@ main {
     height: fit-content;
     width: 100%;/* Center the navbar horizontally */
     z-index: 1; /* Ensure it's above the image */
+    align-items: center;
 }
 #narrative-navbar button {
     background-color:rgba(0, 0, 0, 0.1);
@@ -208,10 +209,7 @@ main {
     color: white;
     width: fit-content;
     height: fit-content;
-    padding: 0.35rem;
     background-color: var(--tertiary-color);
-    border-radius: 10%;
-    font-family: Comfortaa;
     margin-right: 2vmax;
     border-radius: 20px;
 }
@@ -229,7 +227,7 @@ main {
     overflow-wrap: anywhere;
 }
 .description div.label {
-    font-family: Comfortaa;
+    font-weight: bold;
 }
 /* Text part */
 hr {
@@ -238,11 +236,11 @@ hr {
     background-color: #6B1A10   ; /* Change color */
 }
 .text-button {
-    background-color: var(--tertiary-color);
+    background-color: var(--quaternary-color);
     color: white;
     font-family: Comfortaa;
     font-size: small;
-    padding-bottom: 1%;
+    padding: 1%;
 }
 
 /* Footer */

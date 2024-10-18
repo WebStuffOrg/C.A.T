@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="about_us.html" class="nav-link">ABOUT USS</a>
+                    <a href="about_us.html" class="nav-link">ABOUT US</a>
                 </li>
             </ul>
         </div>
@@ -52,29 +52,29 @@
     <div class="row">
       <div id="image-wrapper" class="col-12">
         <!-- Overlay Navbar -->
-          <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8); max-width: 30%;" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8);" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel"></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="">
-              <ol id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></ol>
+              <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
             </div>
           </div>
-        <div id="narrative-navbar" class="navbar justify-content-center justify-content-sm-between d-flex position-absolute">
+        <div id="narrative-navbar" class="navbar justify-content-between d-flex position-absolute">
           <a href="exhibition.html" style="text-decoration: none;" title="Leave current narrative.">
-            <button id="return-button" class="btn ms-md-2 text-white d-none d-sm-flex">
+            <button id="return-button" class="btn ms-md-2 text-white d-flex p-0 p-sm-1">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
                 <path d="M352,170.667H94.17l70.249-70.248a21.334,21.334,0,1,0-30.171-30.171L27.581,176.915a21.336,21.336,0,0,0,0,30.171L134.248,313.752a21.334,21.334,0,1,0,30.171-30.171L94.17,213.333H352a96,96,0,0,1,0,192H128A21.333,21.333,0,1,0,128,448H352c76.461,0,138.667-62.205,138.667-138.667S428.461,170.667,352,170.667Z" id="id_101" style="fill: rgb(235, 239, 240);"></path>
               </svg>              
-              <p style="margin-bottom: 0px;">Exhibition</p>
+              <p class="d-none d-md-flex" style="margin-bottom: 0px;">Exhibition</p>
             </button>
           </a>
-          <h6 class="current-artwork d-inline text-white p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
-          <button class="btn text-white d-none d-sm-flex me-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <h6 class="current-artwork d-inline text-white text-center p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
+          <button class="btn d-flex text-white me-md-2 p-0 p-sm-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <!--svg by https://freeicons.io/business-and-online-icons/list-icon-icon-3-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list pt-1"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
-            <p class="current-narrative" style="margin-bottom: 0px;"></p>
+            <p class="current-narrative d-none d-md-flex" style="margin-bottom: 0px;"></p>
           </button>
         </div>
         <!-- Overlay Buttons -->
@@ -102,44 +102,46 @@
       </div>
     </div>
   <div class="row">
-    <div id="info-box" class="col-12 col-md-8 mt-5 ps-md-5">
+    <div class="col-12 col-md-8 mt-5 ps-md-5">
       <hr style="margin-left: 10%; margin-right: 10%;">
       <h3 style="margin-left: 30%; margin-right: 30%; text-align: center;">About this Artwork</h3>
       <hr style="margin-left: 20%; margin-right: 20%;">
-            <div class="table-body mt-5">
-              <div class="description row">
-                <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
-              </div>
-              <div class="description row">
-                <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6">-</div>
-              </div>
-              <div class="description row">
-                <div class="label col-6">Date</div> <div id="time" class="table-data col-6">-</div>
-              </div>
-              <div class="description row">
-                <div class="label col-6">Type</div> <div id="type" class="table-data col-6">-</div>
-              </div>
-              <div class="description row">
-                <div class="label col-6">Medium</div> <div id="medium" class="table-data col-6">-</div>
-              </div>
-              <div class="description row">
-                <div class="label col-6">Dimensions</div> <div id="dimensions" class="table-data col-6">-</div>
-              </div>
+        <div>
+          <div class="table-body mt-5">
+            <div class="description row">
+              <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
             </div>
+            <div class="description row">
+              <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6">-</div>
+            </div>
+            <div class="description row">
+              <div class="label col-6">Date</div> <div id="time" class="table-data col-6">-</div>
+            </div>
+            <div class="description row">
+              <div class="label col-6">Type</div> <div id="type" class="table-data col-6">-</div>
+            </div>
+            <div class="description row">
+              <div class="label col-6">Medium</div> <div id="medium" class="table-data col-6">-</div>
+            </div>
+            <div class="description row">
+              <div class="label col-6">Dimensions</div> <div id="dimensions" class="table-data col-6">-</div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
-  <div class="row flex-row ps-md-5 mt-5 justify-content-start">
-    <div class="col-12 col-md-8" style="padding-left: 5px;">
-      <h6>Also present in:</h6>
-      <div id="alt-narr" class="">
-      </div>
-    </div>
-  </div>
     <div id="side-image" class="col-4 d-none d-md-flex">
       <div class="card" style="max-height: 50vh;">
         <img id="artwork-img-2" class="p-0 img-fluid" src="" alt="meow">
       </div>
     </div>
+  </div>
+  <div class="row ps-md-5 mt-5 justify-content-start">
+    <div class="col-12 col-md-8" style="padding-left: 5px;">
+      <h6>Also present in:</h6>
+      <div id="alt-narr" class="btn-group flex-wrap">
+      </div>
+    </div>
+  </div>
   </div>
     <div class="row mb-5">
       <div class="col-12 col-md-8 mt-5 ps-md-5">
