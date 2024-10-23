@@ -17,7 +17,7 @@
   /* Corpo della pagina */
   body,html{
     font-size: 16px;
-    background-color:   rgb(247, 245, 245);
+    background-color:  rgb(250, 243, 239);
     overflow-x: hidden;
   }
   
@@ -95,6 +95,7 @@
 .dropdown-item {
   color: #ffffff;
   font-family: 'Comfortaa';
+  font-size: 14px;
 }
 
 
