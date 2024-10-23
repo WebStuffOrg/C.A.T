@@ -111,10 +111,9 @@ padding-right: 5%;
 
 #video-back{
   position: static;
-  top: 100%;
-  height: 100vh;
   width: 100%;
-
+  height: fit-content;
+  margin-top:10vh; 
 }
 
 .poster_img{
@@ -133,9 +132,12 @@ padding-right: 5%;
 
 .poster_content {
     width: 40%;
-    text-align: center; /* Centra il testo all'interno della sezione contenuti del poster */
+    text-align:left; 
     padding: 20px;
     box-sizing: border-box;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    text-wrap:pretty;
 }
 
 @media (max-width: 760px) {
@@ -177,6 +179,7 @@ padding-right: 5%;
 
 .bg-cover_text {
     width: 50%;
+    padding-right: 2.5vw;
 
 }
 
@@ -255,7 +258,8 @@ padding-right: 5%;
 
 .information-table {
   width: 100%;
-  border-collapse: collapse;
+
+  padding-right: 2.5vw;
  
 }
 

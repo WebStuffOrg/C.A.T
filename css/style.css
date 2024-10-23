@@ -69,8 +69,9 @@
 /* Stile per rendere le voci del menu bianche */
 .navbar .navbar-nav .nav-link, 
 .nav-link:hover, 
+.navbar-brand,
 .nav-item.active .nav-link  {
-  color:  rgb(250, 243, 239);
+  color:  rgb(250, 243, 239)!important; 
   font-family: 'Nunito', sans-serif;
 }
 
@@ -79,6 +80,7 @@
   border-color:  rgb(250, 243, 239) /* Pink border color */
 
 }
+
 
 /* Dropdown menu styles */
 .dropdown-menu {
