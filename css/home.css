@@ -68,7 +68,6 @@ padding-right: 5%;
     padding: 30px;
     text-align: center; /* Centra il testo */
     z-index: 1;
-  
     position: relative; /* altrimenti la z-index non viene eseguito */
 }
 
@@ -106,7 +105,7 @@ padding-right: 5%;
     justify-content: center; /* Centra il contenuto del poster */
     padding: 30px;
     box-sizing: border-box;
-    background-color:   #FAF3EF;
+    background-color: rgb(250, 243, 239);
 }
 
 #video-back{
@@ -300,7 +299,7 @@ padding-right: 5%;
   align-items: center;
   justify-content: center; /* Centra il contenuto orizzontalmente */
   width: 100%;
-  background:  #FAF3EF;
+  background:  rgb(250, 243, 239);
   background-size: cover;
 }
 
