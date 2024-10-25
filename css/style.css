@@ -17,7 +17,7 @@
   /* Corpo della pagina */
   body,html{
     font-size: 16px;
-    background-color:  rgb(250, 243, 239);
+    background-color:  #faf3ef;
     overflow-x: hidden;
   }
   
@@ -156,7 +156,7 @@
 .footer {
   background: #000;
   padding: 0;
-
+  position: relative;
 }
 
 .footer a{

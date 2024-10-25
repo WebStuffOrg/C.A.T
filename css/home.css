@@ -254,9 +254,7 @@ padding-right: 5%;
 
 .information-table {
   width: 100%;
-
   padding-right: 2.5vw;
- 
 }
 
 .information-table th, .information-table td {
@@ -288,8 +286,6 @@ padding-right: 5%;
 
 }
 
-
-
 .end-cover {
   height: 100vh;
   display: flex;
@@ -298,6 +294,17 @@ padding-right: 5%;
   width: 100%;
   background:  rgb(250, 243, 239);
   background-size: cover;
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 768px) {
+  .information-section {
+    margin-bottom: 200px; /* Aumenta il margine sui dispositivi piccoli */
+  }
+ 
+  .end-cover {
+    padding-bottom: 100px; /* Spazio extra sotto il footer per evitare la sovrapposizione */
+  }
 }
 
 /* Carousel styles */
