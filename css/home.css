@@ -113,6 +113,7 @@ padding-right: 5%;
   width: 100%;
   height: fit-content;
   margin-top:10vh; 
+  border-radius: 10px;
 }
 
 .poster_img{
@@ -151,15 +152,11 @@ padding-right: 5%;
       width: 100%;
   }
 
-  .poster_content {
-      text-align: center; /* Ensures text remains centered on smaller screens */
-      padding: 10px 0; /* Reduced padding above and below text */
-  }
-
   /* Add specific adjustments for video */
   #video-back {
       height: auto; /* Adjusts video height automatically */
-      padding: 0; /* Remove any additional padding */
+      padding: 0; 
+      padding-bottom: 75px;/* Remove any additional padding */
   }
 }
 
