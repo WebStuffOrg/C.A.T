@@ -1,17 +1,4 @@
 
-.description {
-    display: flex;
-    min-height: 100vh;
-    padding-top: 1%;
-    padding-left: 1%;
-}
-
-.sidebar {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #000;
-   
-}
 
 .sidebar ul {
     list-style-type: none;
@@ -30,13 +17,7 @@
 }
 
 .content {
-    flex-grow: 1;
-    display: flex;
-    justify-content:baseline;
-    align-items:baseline;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 2%;
+    padding: 0 30px;
 }
 
 .center-cell {
@@ -46,20 +27,61 @@
     
 }
 
+
 h1 {
-  color: #c96638;
-  
+  color: rgb(103, 49, 75);
+  font-size: 2.986rem;
+  text-align: center;
+  padding-top: 20px;
 }
 
-h3 {
-  color: #000;
+h5 {
+  color:rgb(107, 26, 16);
+  font-size: 1.44rem;
 }
 
 p {
   color: #000;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
 }
 
 ul, li {
-    font-size: 20px;
-    line-height: 1.6em;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
 }
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+   
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: rgba(103, 49, 75, 0.092);
+}
+
+.section-header {
+    background-color: rgb(250, 243, 239);
+    font-weight: bold;
+}
+
+
+table.firstable {
+    width: 80%; 
+    margin: 0 auto;
+    margin: 20px auto;
+}
+
+th, td {
+    padding: 10px; 
+    text-align: left; 
+    
+}
+
+
