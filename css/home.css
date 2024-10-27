@@ -108,6 +108,7 @@
 #video-back {
   position: static;
   width: 100%;
+  height: auto;
   margin-top: 10vh;
   border-radius: 10px;
   height: fit-content;
@@ -137,11 +138,10 @@
 
   .poster_img, .poster_content {
       width: 100%;
-      height: fit-content;
   }
 
   #video-back {
-      height: fit-content;
+      height: auto;
       padding: 0;
       padding-bottom: 3rem;
   }
