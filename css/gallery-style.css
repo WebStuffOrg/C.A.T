@@ -9,8 +9,15 @@
     font-family: Nunito;
     font-size: 1rem;
 }
+
 [style*="font-family: Comfortaa;"] {
     font-size: 2rem;
+}
+
+@media (max-width: 768px)  {
+    html {
+      font-size: 12px;
+    }
 }
 
 body {
@@ -20,7 +27,7 @@ body {
     background-color: var(--quinary-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     font-family: Comfortaa;
 }
 
@@ -98,21 +105,45 @@ button {
       display: flex;
   }
 }
+
+.page-title {
+    color: black;
+    font-size: 2.986rem	!important;
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title-section {
+    padding: 35px;
+    text-align: center;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color:rgb(107, 26, 16);; 
+    bottom: -10px; 
+    left: 0;
+    animation: lineGrow 1.5s ease-in-out forwards;
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
 /* Main content */
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-#image-wrapper {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 0;
-    display: flex;               /* Enable flexbox for centering */
-    justify-content: center;      /* Center horizontally */
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    top: 0px
 }
 
 .scroll-buttons {
@@ -135,14 +166,27 @@ main {
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
+}
+
+#image-wrapper {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0;
+    display: flex;               /* Enable flexbox for centering */
+    justify-content: center;      /* Center horizontally */
+    height: 100vh;
+    width: 95%;
+    position: relative;
+    top: 0px;
+    left: 2.5%;
+    border-radius: 10px;
+}
 
 #artwork-img {
     max-width: 100%;             /* Make the image responsive */
     max-height: 100vh;
     height: auto;
 }
-@media (width < 992px){
+@media screen and (width < 992px){
     #image-wrapper {
         height: 50%;
     };
@@ -154,7 +198,7 @@ main {
     align-items: center;
 }
 #narrative-navbar button {
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color:rgba(0, 0, 0, 0.3);
 }
 #narrative-navbar button:hover {
     background-color:var(--tertiary-color);
