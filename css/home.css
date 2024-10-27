@@ -146,7 +146,9 @@
   justify-content: center;
   width: 100%;
   background-size: cover;
+  flex-wrap: wrap;
 }
+
 
 .bg-cover {
   background: var(--tertiary-color);
@@ -159,18 +161,19 @@
 .bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
   width: 50%;
   padding: 2.5vw;
+  box-sizing: border-box;
 }
 
 @media (max-width: 760px) {
   .bg-cover, .go-cover {
       flex-direction: column;
       height: auto;
-      padding: 1rem;
+      padding: 20px;
   }
 
   .bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
       width: 100%;
-      padding: 1rem;
+      padding: 20px;
   }
 }
 
@@ -178,11 +181,13 @@
 .information-section h2 {
   font-weight: bold;
   margin-bottom: 1.25rem;
+  overflow-x: auto; 
 }
 
 .information-table {
   width: 100%;
   padding-right: 2.5vw;
+
 }
 
 .information-table th, .information-table td {
