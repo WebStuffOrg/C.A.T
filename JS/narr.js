@@ -123,11 +123,12 @@ textButtons.addEventListener("click", (e) => {
             case 2: 
                 textType = "long";
                 moreButton.disabled = true;
+                document.getElementById('info-text').scrollIntoView()
                 break;
             default: 
                 textType = "basic";
                 lessButton.disabled = true;
-        }
+        };
         const item = currentNarrativeArr[currentIdx];
         text.innerHTML = items[item]["text"][textType];
     }
@@ -192,6 +193,7 @@ async function setContent(data) {
     backButton.disabled = currentIdx === 0;
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     lessButton.disabled = true;
+    moreButton.disabled = false;
 }
 
 function updateElements(selector, content) {
@@ -256,6 +258,4 @@ async function switchNarrative(narrative) {
     currentIdx = 0;
     await setContent(items[currentNarrativeArr[0]]);
     await setSidebarList();
-    backButton.disabled = true;
-    nextButton.disabled = false;
 }

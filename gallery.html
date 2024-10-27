@@ -63,17 +63,17 @@
               <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
             </div>
           </div>
-        <div id="narrative-navbar" class="navbar justify-content-between d-flex position-absolute">
+        <div id="narrative-navbar" class="navbar justify-content-between d-flex position-absolute align-items-start">
           <a href="exhibition.html" style="text-decoration: none;" title="Leave current narrative.">
-            <button id="return-button" class="btn ms-md-2 text-white d-flex p-0 p-sm-1">
+            <button id="return-button" class="btn ms-1 ms-md-2 p-0 p-sm-1 text-white d-flex">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
                 <path d="M352,170.667H94.17l70.249-70.248a21.334,21.334,0,1,0-30.171-30.171L27.581,176.915a21.336,21.336,0,0,0,0,30.171L134.248,313.752a21.334,21.334,0,1,0,30.171-30.171L94.17,213.333H352a96,96,0,0,1,0,192H128A21.333,21.333,0,1,0,128,448H352c76.461,0,138.667-62.205,138.667-138.667S428.461,170.667,352,170.667Z" id="id_101" style="fill: rgb(235, 239, 240);"></path>
               </svg>              
               <p class="d-none d-md-flex" style="margin-bottom: 0px;">Exhibition</p>
             </button>
           </a>
-          <h6 class="current-artwork d-inline text-white text-center p-2" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></h6>
-          <button class="btn d-flex text-white me-md-2 p-0 p-sm-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <h6 class="current-artwork d-inline text-white text-center p-2"></h6>
+          <button class="btn d-flex text-white me-1 me-md-2 p-0 p-sm-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <!--svg by https://freeicons.io/business-and-online-icons/list-icon-icon-3-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list pt-1"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
             <p class="current-narrative d-none d-md-flex" style="margin-bottom: 0px;"></p>
@@ -142,42 +142,40 @@
       </div>
     </div>
   </div>
+  <div class="row mb-5">
+    <div class="col-12 col-md-8 mt-5 ps-md-5">
+    <h5 style="text-align: center;">Description</h5>
+    <div id="info-text">
+    </div>
+      <div id="button-container" class="d-flex justify-content-between p-2">
+        <button id="less-button" class="btn text-button" value="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+          </svg>
+          Read less
+        </button>
+        <button id="more-button" class="btn text-button" value="1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+          </svg>
+          Read more
+        </button>
+      </div>
+    </div>
   </div>
-    <div class="row mb-5">
-      <div class="col-12 col-md-8 mt-5 ps-md-5">
-      <h5 style="text-align: center;">Description</h5>
-      <div id="info-text">
-      </div>
-        <div id="button-container" class="d-flex justify-content-between p-2">
-          <button id="less-button" class="btn text-button" value="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
-            </svg>
-            Read less
-          </button>
-          <button id="more-button" class="btn text-button" value="1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
-            </svg>
-            Read more
-          </button>
-        </div>
-      </div>
-      </div>
-  </main>
-  <footer class="footer">
-    <div class="text-center p-3 text-white">
-        <p>
-        <b>A Linked Open Data project</b><br>
-        
-        MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
-        Course "Information Modeling and Web Tachnologies" <br>
+</main>
+<footer class="footer">
+  <div class="text-center p-3 text-white">
+    <p>
+    <b>A Linked Open Data project</b><br>
+    
+    MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
+    Course "Information Modeling and Web Tachnologies" <br>
 
-        <a href="documentation.html">Documentation about the project</a><br>
-       
-        </p>
-      </div>      
-</div>
+    <a href="documentation.html">Documentation about the project</a><br>
+    
+    </p>
+  </div>      
 </footer>
   <div id="loading" class="loading-spinner"></div>
   <script src="./JS/narr.js"></script> 
