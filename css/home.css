@@ -168,12 +168,12 @@
   .bg-cover, .go-cover {
       flex-direction: column;
       height: auto;
-      padding: 20px;
+      padding: 1rem;
   }
 
   .bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
       width: 100%;
-      padding: 20px;
+      padding: 1rem;
   }
 }
 
@@ -181,13 +181,11 @@
 .information-section h2 {
   font-weight: bold;
   margin-bottom: 1.25rem;
-  overflow-x: auto; 
 }
 
 .information-table {
   width: 100%;
   padding-right: 2.5vw;
-
 }
 
 .information-table th, .information-table td {
