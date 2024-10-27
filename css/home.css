@@ -109,7 +109,7 @@
   position: static;
   width: 100%;
   height: auto;
-  margin-top: 5vh;
+  margin-top: 10vh;
   border-radius: 10px;
   height: fit-content;
 }
@@ -141,6 +141,7 @@
   }
 
   #video-back {
+      width: 100%;
       height: auto;
       padding: 0;
       padding-bottom: 3rem;
