@@ -138,6 +138,7 @@
 
   .poster_img, .poster_content {
       width: 100%;
+      height: fit-content;
   }
 
   #video-back {
