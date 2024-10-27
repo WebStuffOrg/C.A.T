@@ -87,7 +87,6 @@
 
 /* Responsive adjustments for small screens */
 @media (max-width: 760px) {
-
   .hero_content h1 {
     font-size: 1.5rem; /* Adjust font size for smaller screens */
   }
@@ -112,6 +111,7 @@
   height: auto;
   margin-top: 10vh;
   border-radius: 10px;
+  height: fit-content;
 }
 
 .poster_img {
@@ -141,7 +141,7 @@
   }
 
   #video-back {
-      height: auto;
+      height: fit-content;
       padding: 0;
       padding-bottom: 3rem;
   }
@@ -179,8 +179,14 @@
       padding: 1rem;
   }
 
-  .bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
+  .bg-cover_text, .bg-cover_title, .go-cover_title {
       width: 100%;
+      padding: 1rem;
+  }
+
+  .go-cover_text {
+      flex-wrap: wrap;
+      height: auto;
       padding: 1rem;
   }
 
