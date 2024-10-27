@@ -1,3 +1,4 @@
+
 /* Testo introduttivo */
 .intro-text {
   text-transform: uppercase;
@@ -201,7 +202,8 @@
 
 .information-table {
   width: 100%;
-  padding-right: 2.5vw;
+  padding-right: 1.5vw;
+  
 }
 
 .information-table th, .information-table td {
@@ -236,6 +238,7 @@
 @media (max-width: 768px) {
   .information-section {
     margin-bottom: 12.5rem;
+    
   }
  
   .end-cover {
@@ -243,11 +246,12 @@
   }
 }
 
+
 /* Carousel styles */
 .carousel {
   position: relative;
   margin: 1.25rem auto;
-  max-width: 800px;
+  max-width: 100%; /* Modificato per adattarsi meglio su schermi più piccoli */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -257,10 +261,18 @@
 }
 
 .carousel-item img {
-  height: 25rem;
+  height: auto; /* Altezza automatica per mantenere l'aspect ratio */
+  max-height: 25rem; /* Mantiene un'altezza massima */
   object-fit: cover;
 }
 
-.carousel-item {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+/* Responsive adjustments for carousel */
+@media (max-width: 760px) {
+  .carousel {
+    max-width: 100%; /* Imposta la larghezza al 100% su schermi più piccoli */
+  }
+
+  .carousel-item img {
+    max-height: 15rem; /* Riduci l'altezza massima su schermi più piccoli */
+  }
 }
