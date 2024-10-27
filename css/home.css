@@ -85,6 +85,15 @@
   }
 }
 
+/* Responsive adjustments for small screens */
+@media (max-width: 760px) {
+
+  .hero_content h1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
 /* Poster */
 .poster {
   display: flex;
