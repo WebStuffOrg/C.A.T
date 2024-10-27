@@ -108,16 +108,18 @@
 #video-back {
   position: static;
   width: 100%;
-  height: auto;
   margin-top: 10vh;
   border-radius: 10px;
   height: fit-content;
 }
 
 .poster_img {
-  position: relative;
-  object-fit: cover;
+  position: static;
   width: 100%;
+  margin-top: 10vh;
+  border-radius: 10px;
+  object-fit: cover;
+ 
   height: 100%;
 }
 
