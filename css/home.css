@@ -44,6 +44,7 @@
 .hero {
   position: relative;
   height: 100vh;
+  display: -webkit-flex; /* Prefisso per Safari */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,23 +97,28 @@
 
 /* Poster */
 .poster {
+  display: -webkit-flex; /* Safari compatibility */
   display: flex;
+  flex-direction: row;
   height: 100vh;
   width: 100%;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  box-sizing: border-box;
   background-color: rgb(250, 243, 239);
+  gap: 2rem; /* Added spacing between the video and content */
+  box-sizing: border-box;
 }
 
 #video-back {
-  position: static;
-  width: 100%;
+  position: relative; /* Better positioning control */
+  width: 100%; /* Explicit width for better layout control */
   height: auto;
-  margin-top: 10vh;
   border-radius: 10px;
-  height: fit-content;
+  min-height: 50vh; /* Minimum height */
+  max-height: 80vh; /* Maximum height */
+  object-fit: cover;
+  margin-top: 10vh;
 }
 
 .poster_img {
@@ -123,35 +129,35 @@
 }
 
 .poster_content {
-  width: 40%;
+  width: 40%; /* Explicit width for content */
   text-align: left;
   padding: 1.5rem;
   box-sizing: border-box;
 }
 
+
 /* Responsive for Poster */
 @media (max-width: 760px) {
   .poster {
-      flex-wrap: wrap;
-      height: auto;
-      padding: 1rem;
+    flex-wrap: wrap;
+    height: auto; /* Allow dynamic height on smaller screens */
+    padding: 1rem;
   }
 
-  .poster_img, .poster_content {
-      width: 100%;
+  #video-back, .poster_content {
+    width: 100%; /* Full width for mobile */
+    height: auto;
   }
 
   #video-back {
-      width: 100%;
-      height: auto;
-      padding: 0;
-      padding-bottom: 3rem;
+    margin-top: 0; /* Remove margin for mobile */
   }
 }
 
 /* Sfondo coprente */
 .bg-cover, .go-cover, .end-cover {
-  height: 100vh;
+  min-height: 100vh; /* Usa min-height anziché height */
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +165,6 @@
   background-size: cover;
   flex-wrap: wrap;
 }
-
 
 .bg-cover {
   background: var(--tertiary-color);
@@ -176,6 +181,7 @@
 
 @media (max-width: 760px) {
   .bg-cover, .go-cover {
+      -webkit-flex-direction: column;
       flex-direction: column;
       height: auto;
       padding: 1rem;
@@ -207,12 +213,13 @@
 }
 
 .information-table th, .information-table td {
-  padding: 0.625rem;
+  padding: 10px; /* Usa padding esplicito per migliorare layout su Safari */
   border-bottom: 1px solid #000000;
   text-align: left;
   vertical-align: top;
   color: #f0f0f0;
 }
+
 
 .information-table th {
   width: 12.5rem;
@@ -234,17 +241,31 @@
 .end-cover {
   background: rgb(250, 243, 239);
 }
-
 @media (max-width: 768px) {
-  .information-section {
-    margin-bottom: 12.5rem;
-    
+  .information-table {
+    display: block; /* Changes table layout to block */
+    width: 100%;    /* Ensures it takes full width */
   }
- 
+
+  .information-table th, .information-table td {
+    display: block;           /* Makes each cell a block */
+    width: 70%;              /* Full width for each cell */
+    padding: 8px;             /* Reduce padding for smaller screens */
+    border-bottom: 1px solid #000000;
+  }
+
+  .information-table th {
+    font-size: 1rem;          /* Adjust font size */
+  }
+
+  .information-table td {
+    font-size: 0.9rem;        /* Adjust font size */
+  }
+}
   .end-cover {
     padding-bottom: 6.25rem;
   }
-}
+
 
 
 /* Carousel styles */
@@ -256,9 +277,13 @@
 }
 
 .carousel-inner {
+  display: -webkit-flex; /* Aggiungi prefisso */
+  display: flex;
+  max-width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
+
 
 .carousel-item img {
   height: auto; /* Altezza automatica per mantenere l'aspect ratio */
