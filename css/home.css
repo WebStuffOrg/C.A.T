@@ -62,6 +62,7 @@
   position: relative;
 }
 
+
 .hero_content h1 {
   font-family: 'Comfortaa', sans-serif;
   color: #FAF3EF;
@@ -74,15 +75,15 @@
 
 @keyframes pulseText {
   0% {
-      text-shadow: 0 0 5px black, 0 0 10px rgb(103, 49, 75);
+      text-shadow: 0 0 5px black, 0 0 10px  rgb(107, 26, 16);
       transform: scale(1);
   }
   50% {
-      text-shadow: 0 0 15px rgb(103, 49, 75), 0 0 20px rgb(103, 49, 75);
+      text-shadow: 0 0 15px  rgb(107, 26, 16), 0 0 20px rgb(107, 26, 16);
       transform: scale(1.02);
   }
   100% {
-      text-shadow: 0 0 5px black, 0 0 10px rgb(103, 49, 75);
+      text-shadow: 0 0 5px black, 0 0 10px rgb(107, 26, 16);
       transform: scale(1);
   }
 }
