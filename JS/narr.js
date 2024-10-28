@@ -21,7 +21,7 @@ const moreButton = document.getElementById("more-button");
 const text = document.getElementById("info-text");
 const imageContainer = document.getElementById("image-wrapper");
 const table = document.getElementById("info-box");
-const arrowSvg = document.querySelector("#scroll-button > svg")
+const arrowSvg = document.querySelector(".scroll-button > svg")
 
 async function showLoading() {
     spinner.style.display = 'block';
@@ -140,7 +140,7 @@ sideImage.addEventListener("click", () => {
     imageContainer.scrollIntoView();
 });
 
-document.getElementById("scroll-button").addEventListener("click", (e) => {
+document.querySelector(".scroll-button").addEventListener("click", (e) => {
     if (smallImagecontainer.classList.contains("hidden")) {
         table.scrollIntoView();    
     } else {
