@@ -13,3 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Autoplay bloccato dal browser:', error);
   });
 });
+

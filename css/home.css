@@ -249,18 +249,18 @@
   }
 
   .information-table th, .information-table td {
-    display: block;           /* Makes each cell a block */
+    display:contents;           /* Makes each cell a block */
     width: 70%;              /* Full width for each cell */
     padding: 8px;             /* Reduce padding for smaller screens */
     border-bottom: 1px solid #000000;
   }
 
   .information-table th {
-    font-size: 1rem;          /* Adjust font size */
+    font-size: 0.5rem;          /* Adjust font size */
   }
 
   .information-table td {
-    font-size: 0.9rem;        /* Adjust font size */
+    font-size: 0.2rem;        /* Adjust font size */
   }
 }
   .end-cover {
