@@ -209,4 +209,8 @@ color: #f0f0f0;
   h6 {
     font-size: 0.875rem;
   }
+
+  p {
+    font-size: 0.625rem;
+  }
 }
