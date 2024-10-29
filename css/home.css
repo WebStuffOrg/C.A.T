@@ -1,43 +1,8 @@
 
-/* Testo introduttivo */
 .intro-text {
   text-transform: uppercase;
   font-size: 1.25rem;
   font-weight: bold;
-}
-
-/* Bottone */
-.button {
-  margin-top: 2rem;
-  padding: 1vh 2vh;
-  background: #6B1A10;
-  color: #fff;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-/* Margini di sezione */
-.mt-1 {
-  margin-top: 3rem;
-  padding-top: 5%;
-}
-
-.mt-2 {
-  margin-top: 6rem;
-}
-
-.mt-3 {
-  margin-top: 9rem;
-}
-
-.tw, .twi {
-  color: #fff;
-  padding-left: 0;
-  padding-right: 5%;
-}
-
-.twi {
-  color: #000000;
 }
 
 /* Hero */
@@ -49,6 +14,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 /* Contenuto Hero */
@@ -91,24 +57,32 @@
 /* Responsive adjustments for small screens */
 @media (max-width: 760px) {
   .hero_content h1 {
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    width: 100%;/* Riduce la dimensione del font */
+    line-height: 1.4; /* Aumenta l'interlinea per migliorare la leggibilità */
   }
 }
 
-
 /* Poster */
 .poster {
-  display: -webkit-flex; /* Safari compatibility */
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   background-color: rgb(250, 243, 239);
-  gap: 2rem; /* Added spacing between the video and content */
+  gap: 2rem;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.poster_content {
+  width: 100%;
+  max-width: 600px; /* Larghezza massima per evitare che si allarghi troppo */
+  text-align: left;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 #video-back {
@@ -119,29 +93,34 @@
   min-height: 50vh; /* Minimum height */
   max-height: 80vh; /* Maximum height */
   object-fit: cover;
-  margin-top: 10vh;
+  margin: auto; 
 }
+
 
 .poster_img {
   position: relative;
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+}
+/* Pulsante */
+.button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem; /* Dimensioni ridotte del padding per rendere il bottone più compatto */
+  background: #6B1A10;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 0.9rem; /* Riduce la dimensione del font */
 }
 
-.poster_content {
-  width: 40%; /* Explicit width for content */
-  text-align: left;
-  padding: 1.5rem;
-  box-sizing: border-box;
-}
 
-
-/* Responsive for Poster */
+/* Responsive adjustments for Poster */
 @media (max-width: 760px) {
   .poster {
     flex-wrap: wrap;
-    height: auto; /* Allow dynamic height on smaller screens */
+    height: auto;
     padding: 1rem;
   }
 
@@ -150,13 +129,20 @@
     height: auto;
   }
 
-  #video-back {
-    margin-top: 0; /* Remove margin for mobile */
+  .poster_content {
+    width: 100%;
+    font-size: 0.9rem; /* Riduce la dimensione del font */
+    line-height: 1.4; /* Aumenta l'interlinea per migliorare la leggibilità */
+  }
+
+  .button {
+    font-size: 0.8rem; /* Riduce ulteriormente la dimensione del font del pulsante */
+    padding: 0.5rem 1rem; /* Padding ridotto per evitare che il pulsante esca dai bordi */
   }
 }
 
 /* Sfondo coprente */
-.bg-cover, .go-cover, .end-cover {
+.bg-cover {
   min-height: 100vh; /* Usa min-height anziché height */
   display: -webkit-flex;
   display: flex;
@@ -175,10 +161,11 @@
   background: var(--quaternary-color);
 }
 
-.bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
+.bg-cover_text, .bg-cover_title {
   width: 50%;
   padding: 2.5vw;
 }
+
 
 @media (max-width: 760px) {
   .bg-cover, .go-cover {
@@ -193,112 +180,107 @@
       padding: 1rem;
   }
 
-  .go-cover_text {
-      flex-wrap: wrap;
-      height: auto;
-      padding: 1rem;
+  .end-cover {
+    padding-bottom: 100px; /* Spazio extra sotto il footer per evitare la sovrapposizione */
   }
 
 }
 
-/* Information Table */
-.information-section h2 {
-  font-weight: bold;
-  margin-bottom: 1.25rem;
+.go-cover {
+  height: 100vh;
+  display:-webkit-flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 100%;
+  background:var(--quaternary-color);
+  background-size: cover;
 }
 
 .information-table {
-  width: 100%;
-  padding-right: 1.5vw;
-  
+  background-color: rgb(103, 49, 75); /* Colore di sfondo della tabella */
+  color: black; /* Colore del testo in nero */
+  padding: 1rem;
 }
 
+/* Colore di sfondo per le intestazioni della tabella */
 .information-table th, .information-table td {
-  padding: 10px; /* Usa padding esplicito per migliorare layout su Safari */
-  border-bottom: 1px solid #000000;
-  text-align: left;
-  vertical-align: top;
-  color: #f0f0f0;
+  background-color: rgba(103, 49, 75, 0.8); /* Sfondo traslucido per le intestazioni */
+}
+
+.bg-cover_text h6 b {
+  display: block; /* Assicura che i tag <b> siano su righe separate */
+  margin-top: 1rem; /* Spaziatura sopra ogni intestazione */
+}
+
+.bg-cover_text h6 b:not(:last-child) {
+  border-bottom: 2px solid  rgba(73, 37, 54, 0.899);  /* Aggiungi una riga sotto ogni <b> eccetto l'ultimo */
+  padding-bottom: 0.5rem; /* Spaziatura sotto la riga */
 }
 
 
-.information-table th {
-  width: 12.5rem;
-  font-weight: bold;
-}
 
-.information-table td {
-  width: auto;
-}
-
-.information-table strong {
-  font-weight: bold;
-}
-
-.information-table tr:last-child th, .information-table tr:last-child td {
-  border-bottom: none;
-}
-
-.end-cover {
-  background: rgb(250, 243, 239);
-}
+/* Responsive adjustments for table */
 @media (max-width: 768px) {
-  .information-table {
-    display: block; /* Changes table layout to block */
-    width: 100%;    /* Ensures it takes full width */
-  }
-
   .information-table th, .information-table td {
-    display:contents;           /* Makes each cell a block */
-    width: 70%;              /* Full width for each cell */
-    padding: 8px;             /* Reduce padding for smaller screens */
-    border-bottom: 1px solid #000000;
-  }
-
-  .information-table th {
-    font-size: 0.5rem;          /* Adjust font size */
-  }
-
-  .information-table td {
-    font-size: 0.2rem;        /* Adjust font size */
+      font-size: 0.875rem; /* Font size adjustment for smaller screens */
+      padding: 0.5rem; /* Reduce padding for smaller screens */
   }
 }
-  .end-cover {
-    padding-bottom: 6.25rem;
-  }
 
+/* Carousel styles *//* Stili per end-cover */
+.end-cover {
+  min-height: 100vh; /* Imposta un'altezza minima, ma permette l'adattamento in responsive */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: rgb(250, 243, 239);
+  padding: 2rem 0; /* Aggiunge padding sopra e sotto */
+  box-sizing: border-box;
+}
 
-
-/* Carousel styles */
+/* Stili per il carousel */
 .carousel {
   position: relative;
-  margin: 1.25rem auto;
-  max-width: 100%; /* Modificato per adattarsi meglio su schermi più piccoli */
+  margin: 0 auto; /* Centrato orizzontalmente */
+  max-width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .carousel-inner {
-  display: -webkit-flex; /* Aggiungi prefisso */
   display: flex;
   max-width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
 
-
 .carousel-item img {
-  height: auto; /* Altezza automatica per mantenere l'aspect ratio */
-  max-height: 25rem; /* Mantiene un'altezza massima */
+  height: auto; /* Mantiene il rapporto d'aspetto */
+  max-height: 25rem;
   object-fit: cover;
 }
 
-/* Responsive adjustments for carousel */
+/* Adattamenti per la modalità responsive */
 @media (max-width: 760px) {
+  .end-cover {
+    padding: 1.5rem 0; /* Riduce il padding in modalità mobile */
+    min-height: 60vh; /* Riduce l'altezza minima in modalità mobile */
+  }
+
   .carousel {
-    max-width: 100%; /* Imposta la larghezza al 100% su schermi più piccoli */
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
   }
 
   .carousel-item img {
-    max-height: 15rem; /* Riduci l'altezza massima su schermi più piccoli */
+    max-height: 15rem;
+  }
+
+  /* Spazio sotto il carousel */
+  .carousel + * {
+    margin-top: 2rem;
   }
 }

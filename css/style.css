@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
   
@@ -117,39 +118,54 @@
       display: flex;
   }
 }
-
 /* Scrolling */
 .scroll-buttons {
-    position: fixed;
-    height: 8%;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  height: auto; /* Cambiato per adattarsi al contenuto */
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.scroll-button {
+  width: 40px; /* Dimensione fissa per il bottone */
+  height: 40px; /* Dimensione fissa per il bottone */
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px; /* Spazio tra i bottoni */
+  transition: background-color 0.3s; /* Transizione per il hover */
+}
+
+.scroll-button:hover {
+  background-color: #f0f0f0;
+}
+
+.scroll-button svg {
+  width: 20px; /* Dimensione fissa per l'icona */
+  height: 20px; /* Dimensione fissa per l'icona */
+}
+
+/* Responsive adjustments */
+@media (max-width: 760px) {
   .scroll-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 35px; /* Dimensione ridotta per schermi piccoli */
+    height: 35px; /* Dimensione ridotta per schermi piccoli */
   }
-  
-  .scroll-button:hover {
-    background-color: #f0f0f0;
-  }
-  
+
   .scroll-button svg {
-    width: 20px;
-    height: 20px;
+    width: 18px; /* Dimensione ridotta per l'icona */
+    height: 18px; /* Dimensione ridotta per l'icona */
   }
+}
+
 
   
 /* Footer */
@@ -163,3 +179,34 @@
 color: #f0f0f0;
 }
   
+@media (max-width: 760px) {
+  /* General Text Adjustments */
+  body {
+    font-size: 0.875rem; /* Reduce base font size */
+  }
+
+  /* Specific Heading Adjustments */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  h5 {
+    font-size: 1rem; /* Smaller font size for h5 */
+  }
+
+  h6 {
+    font-size: 0.875rem;
+  }
+}
