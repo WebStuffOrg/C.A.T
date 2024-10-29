@@ -30,7 +30,6 @@
 
 
 .hero_content h1 {
-  font-family: 'Comfortaa', sans-serif;
   color: #FAF3EF;
   animation: pulseText 4s infinite;
 }
@@ -266,7 +265,7 @@
 @media (max-width: 760px) {
   .end-cover {
     flex-wrap: wrap;
-    height: auto;
+    height: 100vh;
     padding: 1rem;
   }
 
