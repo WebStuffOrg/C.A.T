@@ -156,7 +156,7 @@
 }
 
 /* Sfondo coprente */
-.bg-cover, .go-cover, .end-cover {
+.bg-cover {
   min-height: 100vh; /* Usa min-height anziché height */
   display: -webkit-flex;
   display: flex;
@@ -175,10 +175,46 @@
   background: var(--quaternary-color);
 }
 
-.bg-cover_text, .bg-cover_title, .go-cover_text, .go-cover_title {
+.bg-cover_text, .bg-cover_title {
   width: 50%;
   padding: 2.5vw;
 }
+
+
+.go-cover {
+  height: 100vh;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 100%;
+  background:var(--quaternary-color);
+  background-size: cover;
+}
+
+
+.go-cover_text {
+  padding-left: 22rem
+}
+
+.go-cover_title {
+  width: 50%;
+  padding: 50px;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+
+.end-cover {
+  height: 100vh;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 100%;
+  background:  rgb(250, 243, 239);
+  background-size: cover;
+}
+
+
 
 @media (max-width: 760px) {
   .bg-cover, .go-cover {
@@ -197,6 +233,10 @@
       flex-wrap: wrap;
       height: auto;
       padding: 1rem;
+  }
+
+  .end-cover {
+    padding-bottom: 100px; /* Spazio extra sotto il footer per evitare la sovrapposizione */
   }
 
 }
@@ -242,30 +282,35 @@
 .end-cover {
   background: rgb(250, 243, 239);
 }
+
+
+/* Stili per dispositivi mobili */
 @media (max-width: 768px) {
   .information-table {
-    display: block; /* Changes table layout to block */
-    width: 100%;    /* Ensures it takes full width */
-  }
-
-  .information-table th, .information-table td {
-    display:contents;           /* Makes each cell a block */
-    width: 70%;              /* Full width for each cell */
-    padding: 8px;             /* Reduce padding for smaller screens */
-    border-bottom: 1px solid #000000;
-  }
-
-  .information-table th {
-    font-size: 0.5rem;          /* Adjust font size */
-  }
-
-  .information-table td {
-    font-size: 0.2rem;        /* Adjust font size */
-  }
+    display: table;
+    width: 120%;
+    padding-left: 0; /* Azzeramento padding sinistro per la tabella */
+    margin-left: 0; /* Azzeramento eventuale margine sinistro */
 }
-  .end-cover {
-    padding-bottom: 6.25rem;
-  }
+
+.information-table tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.information-table th, .information-table td {
+  display: table-cell;
+  width: 40%;
+  padding: 8px ;
+  padding-inline-start: 0; /* Imposta il padding sinistro su 0 */
+  font-size: 0.5rem;
+  vertical-align: top;
+}
+
+}
+
+
 
 
 
