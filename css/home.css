@@ -130,7 +130,6 @@
 
   .poster_content {
     width: 100%;
-    font-size: 0.9rem; /* Riduce la dimensione del font */
     line-height: 1.4; /* Aumenta l'interlinea per migliorare la leggibilità */
   }
 
@@ -222,7 +221,6 @@
 /* Responsive adjustments for table */
 @media (max-width: 768px) {
   .information-table th, .information-table td {
-      font-size: 0.875rem; /* Font size adjustment for smaller screens */
       padding: 0.5rem; /* Reduce padding for smaller screens */
   }
 }
