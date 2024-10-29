@@ -265,8 +265,9 @@
 /* Adattamenti per la modalità responsive */
 @media (max-width: 760px) {
   .end-cover {
-    padding: 1.5rem 0; /* Riduce il padding in modalità mobile */
-    min-height: 60vh; /* Riduce l'altezza minima in modalità mobile */
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
   }
 
   .carousel {
