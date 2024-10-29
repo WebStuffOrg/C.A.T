@@ -171,14 +171,22 @@ main {
     transition: opacity 0.5s ease, visibility 0.1s ease;
 }
 
-#alt-narr button{
+#alt-narr .sub-narr button{
     color: white;
     width: fit-content;
     height: fit-content;
     background-color: var(--tertiary-color);
-    margin-right: 2vmax;
-    border-radius: 20px;
+    margin-right: 0.5vw;
 }
+
+/* .narr-icon {
+    width: inherit;
+} */
+
+.sub-narr {
+    align-content: center;
+}
+
 .table-body {
     padding: 0px;
     padding-top: 1vmin;

@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // narrative switch
 
 altNarrative.addEventListener("click", async (e) => {
+   if (e.target.tagName == "BUTTON") {
     const narrative = e.target.innerHTML;
     smallImagecontainer.classList.add('hidden');
     smallImagecontainer.classList.remove('visible');
@@ -104,6 +105,7 @@ altNarrative.addEventListener("click", async (e) => {
     imageContainer.scrollIntoView({ behavior: 'smooth' });
     await new Promise(resolve => setTimeout(resolve, 600));
     await switchNarrative(narrative);
+}
 });
 
 // text switching 
@@ -196,6 +198,7 @@ async function setContent(data) {
     moreButton.disabled = false;
 }
 
+// setContent helper funcs
 function updateElements(selector, content) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
@@ -216,6 +219,8 @@ function loadImage(imagePath) {
     });
 }
 
+//////////////
+
 async function setSidebarList(narrative = currentNarrativeArr) {
     artworksList.innerHTML = "";
     narrative.forEach((item, i) => {
@@ -235,18 +240,44 @@ function disableCurrSideItem(idx) {
 }
 
 async function setNarrativeSwitch(item) {
-    altNarrative.innerHTML = "";
+    // resetting alt narrative section
+    document.querySelectorAll("#alt-narr div.sub-narr").forEach((i) => {
+        i.innerHTML = "";
+    });
+    document.querySelectorAll("#daily button").disabled = true;
+    document.querySelectorAll("#supernatural button").disabled = true;
+
     const itemNarratives = [...item.includedIn];
+    console.log(itemNarratives)
     const idx = itemNarratives.indexOf(narrativeTitle);
     itemNarratives.splice(idx, 1);
-    const fragment = document.createDocumentFragment();
-    itemNarratives.forEach((i) => {
-        const el = document.createElement("button");
-        el.textContent = i;
-        el.classList.add("p-2", "btn");
-        fragment.appendChild(el);
+    itemNarratives.forEach((i) => { 
+        const button = document.createElement("button");
+        button.setAttribute("class", "btn");
+        button.textContent = i; 
+        switch (i) {
+            case "Supernatural":
+            case "Daily":
+                document.getElementById(i.toLowerCase()).disabled = false;
+                break;
+            case "Playing":
+            case "Chilling":
+            case "Hunting":
+                document.querySelector("#daily div.sub-narr").appendChild(button);
+                break;
+            case "Folklore":
+            case "Superstition":
+            case "Religion":
+                document.querySelector("#supernatural div.sub-narr").appendChild(button);
+                break;
+            case "Europe":
+            case "Asia":
+            case "Africa":
+            case "Americas":
+                document.querySelector("#geography div.sub-narr").appendChild(button);
+                break;
+        };
     });
-    altNarrative.appendChild(fragment);
 }
 
 async function switchNarrative(narrative) {
