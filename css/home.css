@@ -169,6 +169,23 @@
   padding: 2.5vw;
 }
 
+.bg-cover_text h5 b {
+  display: block; /* Assicura che i tag <b> siano su righe separate */
+  margin-top: 1rem; /* Spaziatura sopra ogni intestazione */
+}
+
+.bg-cover_text h5 b:not(:last-child) {
+  border-bottom: 2px solid rgba(73, 37, 54, 0.899);  /* Aggiungi una riga sotto ogni <b> eccetto l'ultimo */
+  padding-bottom: 0.5rem; /* Spaziatura sotto la riga */
+}
+
+/* Stile per <ul> e <p> per mantenerli alla stessa dimensione del testo */
+.bg-cover_text ul,
+.bg-cover_text p {
+  color: rgb(250, 243, 239); /* Stessa colorazione per <ul> e <p> */
+  margin-top: 0.5rem; /* Spaziatura sopra */
+  margin-bottom: 0.5rem; /* Spaziatura sotto */
+}
 
 @media (max-width: 760px) {
   .bg-cover, .go-cover {
