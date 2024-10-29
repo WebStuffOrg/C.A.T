@@ -253,6 +253,200 @@
                 </li> 
                 </p>
 
+                <h4>2. Design Specifications</h4> <br>
+
+                        <h5>2.1 General Visual Design Choices</h5>
+
+                        <h6>2.1.1 Color Scheme</h6>
+                        <p>The project adopts a warm, inviting color palette to harmonize with the theme of artistic and cultural exploration:</p>
+                        <ul>
+                            <li><b>Palette</b>: Soft Peach (#E4A88C), Burnt Orange (#C96638), Deep Red (#6B1A10), and Light Beige (#FAF3EF).</li>
+                            <li><b>Rationale</b>: Colors were selected to create a cohesive and inviting environment. Background colors are subdued to allow the content to take focus, while accent colors emphasize interactive elements and guide user actions.</li>
+                            <li><b>Usage</b>: Backgrounds are mainly light beige, supporting readability. Text uses dark colors for high contrast, and interactive elements like buttons and links are highlighted with deeper tones to signal actions.</li>
+                        </ul>
+
+                        <h6>2.1.2 Typography</h6>
+                            <p>Typography choices prioritize clarity and aesthetic alignment with the project’s theme:</p>
+                            <ul>
+                                <li><b>Fonts</b>: 'Nunito' is used for body text due to its clean and readable style, while 'Comfortaa' is used for headers, adding a modern and welcoming tone.</li>
+                                <li><b>Hierarchy and consistency</b>: A clear typographic hierarchy (bold for headings, regular weight for body text) is maintained throughout, providing structure and consistency. Font sizes are adjusted responsively to ensure readability across devices.</li>
+                            </ul>
+                            
+                            <h6>2.1.3 Layout and Grid System</h6>
+                            <p>The layout leverages a flexible, responsive grid to ensure accessibility and ease of navigation:</p>
+                            <ul>
+                                <li><b>Grid structure</b>: CSS Grid and Flexbox are used to adapt the layout dynamically, with multiple columns on larger screens and single columns on mobile for streamlined viewing.</li>
+                                <li><b>Page structure</b>: A consistent navigation bar and footer across all pages maintain user familiarity. Content blocks are designed to maintain spacing and alignment, preventing clutter and enhancing readability.</li>
+                            </ul>
+                            
+                            <h6>2.1.4 Iconography and Imagery</h6>
+                            <p>The project minimizes icon usage to keep focus on the artwork while supporting key navigational functions:</p>
+                            <ul>
+                                <li><b>Icons</b>: Simple icons are used sparingly for essential actions, such as navigation and social media links, maintaining a minimalist look.</li>
+                                <li><b>Images</b>: Artwork images are displayed in high resolution and dynamically scaled to fit within the responsive grid. Hover effects reveal supplementary information, ensuring an engaging and informative visual experience.</li>
+                            </ul> <br>
+                            
+                            <h5>2.2 Individual page design specifications</h5> <br>
+                            
+                            <h5>2.2.1 Map Page Design</h5>
+                            
+                            <h6>2.2.1.1 Overview</h6>
+                            <p>The Map page offers an interactive SVG-based map that visually represents geographical locations tied to exhibition items. It allows users to explore the cultural context of items by region, with each map point providing specific information about the item, enhancing engagement through visual and contextual elements.</p>
+                            
+                            <h6>2.2.1.2 Visual Design</h6>
+                            <ul>
+                                <li><b>Color Scheme</b>: Backgrounds use light beige (#FAF3EF), consistent with the site’s neutral tones, creating a subtle canvas that does not detract from the map’s content. Interactive map points use accent colors such as Deep Red (#6B1A10), which stand out clearly against the background.</li>
+                                <li><b>Typography</b>: Titles are presented in ‘Comfortaa’ for a modern, accessible style, while exhibit descriptions use ‘Nunito’ to ensure readability in small font sizes. Headings and subheadings are bolded to provide a clear hierarchy in the information panel.</li>
+                            </ul>
+                            
+                            <h6>2.2.1.3 Layout</h6>
+                            <ul>
+                                <li><b>Map centering and spacing</b>: The map takes a central position on the page, expanding dynamically to fit the screen while maintaining aspect ratios. Padding around the map ensures that interactive points are easily accessible.</li>
+                                <li><b>Information panel</b>: Positioned to the right (or below on mobile), this panel provides exhibit details such as title, creator, date, and links to other narratives. It appears smoothly on the user’s selection of a map point.</li>
+                                <li><b>Adaptive layout</b>: The page structure adapts to devices, showing the map at full width on small screens with the information panel positioned below for easy scrolling access.</li>
+                            </ul>
+                            
+                            <h6>2.2.1.4 Interactive Design</h6>
+                            <ul>
+                                <li><b>Interactive map points</b>: Each clickable point changes color or slightly enlarges on hover, visually indicating interactivity. Upon clicking, an animation expands the information panel, maintaining user engagement.</li>
+                                <li><b>Zoom & pan controls</b>: Users can zoom into specific map regions and pan across, especially useful for densely packed areas. Zoom levels are limited to maintain quality without distortion.</li>
+                                <li><b>Tooltip pop-ups</b>: Hovering over a point reveals a tooltip with the exhibit’s name and a brief description. This feature helps users decide which points to explore further.</li>
+                            </ul>
+                            
+                            <h6>2.2.1.5 User Experience and Accessibility</h6>
+                            <ul>
+                                <li><b>Contrast for accessibility</b>: Map points and text in the information panel use high contrast, adhering to WCAG standards for readability.</li>
+                                <li><b>Keyboard navigation</b>: Interactive points are accessible via the keyboard, with tab navigation allowing users to highlight each point and activate it.</li>
+                            </ul>
+                            
+                            <h6>2.2.1.6 Mobile-Specific Adjustments</h6>
+                            <ul>
+                                <li><b>Responsive map size</b>: On mobile, the map scales down while maintaining interaction capability, ensuring users can still select points and view details.</li>
+                                <li><b>Single-column layout</b>: The information panel shifts below the map to utilize vertical scrolling, which is more accessible for touch navigation.</li>
+                            </ul>
+                            
+                            <h5>2.3 Technical Design</h5><br>
+
+                            <h4>3. Attribution Information</h4> 
+
+                            <p>The purpose of this website is to explore historical artifacts related to cats as an end-of-course project for the "Information Modeling and Web Technologies" course in the Master’s Degree program in <strong>Digital Humanities and Digital Knowledge</strong> at the University of Bologna, under Prof. Fabio Vitali. Each item has been selected for educational purposes, showcasing cat imagery across cultures.</p>
+                            <p>All copyrights and related rights on the content remain with the original rights holders.</p>
+                            <p>All copyright on the typographic and layout choices is © 2024  Chiara Martina, Elvira Kushlak, Valentino Castagna, Zizhe Lin </p>
+                        
+                            <h5>3.1 Public Domain Mark</h5>
+                            <ol>
+                                <li><strong>Mantle</strong><br>
+                                    Early Horizon period, Paracas culture, c. 200 BC–AD 100. Likely from Pisco, Ica province, Peru.<br>
+                                    Source: Saint Louis Art Museum. <a href="https://www.slam.org/collection/objects/1815/">Link</a>
+                                </li>
+                                
+                                <li><strong>Cat from a Ball Toss Game</strong><br>
+                                    Unidentified American artist, ca. 1920. Painted canvas with leather, wood, and metal.<br>
+                                    Source: Smithsonian American Art Museum. <a href="https://americanart.si.edu/artwork/cat-ball-toss-game-24541">Link</a>
+                                </li>
+                                
+                                <li><strong>Amulet depicting a Cat</strong><br>
+                                    Faience amulet. Date unknown, from Museo Egizio collection.<br>
+                                    Source: Museo Egizio. <a href="https://collezioni.museoegizio.it/it-IT/material/Cat_901">Link</a>
+                                </li>
+                                
+                                <li><strong>Nightlight in the form of a Cat</strong><br>
+                                    Porcelain with enamel colors, ca. 1760–1770.<br>
+                                    Source: Rijksmuseum. <a href="https://www.rijksmuseum.nl/en/rijksstudio/subjects/dogs-and-cats/objects#/AK-NM-6520,0">Link</a>
+                                </li>
+                        
+                                <li><strong>Tournée du Chat Noir avec Rodolphe Salis</strong><br>
+                                    Théophile-Alexandre Steinlen, color lithograph on paper, ca. 1896.<br>
+                                    Source: Victoria and Albert Museum. <a href="https://collections.vam.ac.uk/item/O137574/tournée-du-chat-noir-avec-poster-steinlen-théophile-alexandre/">Link</a>
+                                </li>
+                                
+                                <li><strong>Shashthi</strong><br>
+                                    Unknown artist, opaque watercolor on paper, ca. 1885.<br>
+                                    Source: Victoria and Albert Museum. <a href="https://collections.vam.ac.uk/item/O71571/shashthi-painting-unknown/">Link</a>
+                                </li>
+                        
+                                <li><strong>The Cat (Religious Card)</strong><br>
+                                    Unknown artist, hand-colored lithograph with letterpress and gilt embossing, 1850s.<br>
+                                    Source: Victoria and Albert Museum. <a href="https://collections.vam.ac.uk/item/O589130/the-cat-religious-card-unknown/">Link</a>
+                                </li>
+                        
+                                <li><strong>The Black Cat</strong><br>
+                                    John Byam Liston Shaw, watercolor and gouache illustration, 1909.<br>
+                                    Source: The Metropolitan Museum of Art. <a href="https://www.metmuseum.org/art/collection/search/818473">Link</a>
+                                </li>
+                        
+                                <li><strong>Kunisada Nekomata Woodblock Print</strong><br>
+                                    Japanese woodblock print, date unknown.<br>
+                                    Source: British Museum. <a href="https://www.britishmuseum.org/collection/image/36573001">Link</a>
+                                </li>
+                        
+                                <li><strong>Hanging Scroll of the Cat</strong><br>
+                                    Unknown artist, 18th-century Japanese hanging scroll.<br>
+                                    Source: Tokyo National Museum. <a href="https://colbase.nich.go.jp/collection_items/tnm/A-10569-5470?locale=en">Link</a>
+                                </li>
+                        
+                                <li><strong>Collection of Russian Lubki (18th–19th Century)</strong><br>
+                                    Illustrated lubki prints, ca. 18th–19th century.<br>
+                                    Source: The Public Domain Review. <a href="https://publicdomainreview.org/collection/d-a-rovinskiis-collection-of-russian-lubki-18th%E2%80%9319th-century/">Link</a>
+                                </li>
+                        
+                                <li><strong>25 Cats Name Sam and One Blue Pussy</strong><br>
+                                    Andy Warhol, ca. 1954, watercolor illustrations.<br>
+                                    Source: Wikipedia <a href="https://en.wikipedia.org/wiki/25_Cats_Name_Sam_and_One_Blue_Pussy">Link</a>, The Marginalian <a href="https://www.themarginalian.org/2014/10/29/25-cats-name-sam-and-one-blue-pussy-andy-warhol-mother/">Link</a>, and Kirkegaard’s Antikvariat <a href="https://www.kirkegaardsantikvariat.dk/product/andy-warhol-25-cats-name-sam-and-one-blue-pussy-holy-cats-by-andy-warhols-mother/">Link</a>
+                                </li>
+                        
+                                <li><strong>Black Cat Auditions in Hollywood</strong><br>
+                                    Photograph, 1961.<br>
+                                    Source: Google Arts & Culture. <a href="https://artsandculture.google.com/asset/black-cat-auditions-in-hollywood/VwGeB9VD_pL9wg">Link</a>
+                                </li>
+                    
+                            </ol>
+
+                            <h5>3.2 Attribution-NonCommercial 4.0 International</h5>
+                            <ol>
+                                <li><strong>Bodleian Library Manuscript MS. Bodl. 764</strong><br>
+                                    Manuscript page, date unknown.<br>
+                                    Source: Bodleian Libraries, University of Oxford. <a href="https://digital.bodleian.ox.ac.uk/objects/ecf96804-a514-4adc-8779-2dbc4e4b2f1e/surfaces/0db6862a-cc65-4b09-996e-64ab761d43e5/">Link</a>
+                                </li>
+                            </ol>
+
+                            <h5>3.3 Attribution-NonCommercial-ShareAlike 4.0 International</h5>
+                            <ol>
+                                <li><strong>Bronze figure of the cat-headed goddess Bastet</strong><br>
+                                    Bronze figure, date unknown. <br>
+                                    Source: The Trustees of the British Museum. <a href = "https://www.britishmuseum.org/collection/image/36573001">Link</a>
+                                </li>
+                
+
+                                <li><strong>Study for the Madonna of the Cat</strong><br>
+                                    Leonardo da Vinci, preparatory drawing.<br>
+                                    Source: Wikipedia. <a href="https://en.wikipedia.org/wiki/Study_for_the_Madonna_of_the_Cat">Link</a>
+                            </ol>
+
+                            <h5>3.4 CC0 1.0 Universal</h5>
+                             <ol>
+                                <li><strong>Mosaic of a Cat with Birds (Pompeii)</strong><br>
+                                    Unknown artist, mosaic from Pompeii.<br>
+                                    Source: Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:MANNapoli_9993_mosaic_casa_del_fauno_cat_birds_ducks_Pompeii_Italy.jpg">Link</a>
+                                </li>
+                             </ol>
+
+                             <h5>3.5 Attribution 2.0 Generic</h5>
+                             <ol>
+                                <li><strong>Sarcophagus of Prince Thutmose’s Cat</strong><br>
+                                    Limestone sarcophagus, date unknown.<br>
+                                    Source: Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:Sarcophagus_of_Prince_Thutmose%27s_cat_by_Madam_Rafaèle.jpg">Link</a>
+                                </li>
+                             </ol>
+
+                             <h5>3.6 Copyright Tara</h5>
+                             <ol>
+                                <li><strong>Engraved Rock Art with Cat Figures</strong><br>
+                                    Digital photograph by David Coulson, featuring two cat-like figures and ostriches on a sandstone rock face.<br>
+                                    Source: British Museum, Copyright TARA/David Coulson. 
+                                    <a href="https://www.britishmuseum.org/collection/image/1502539001">Link</a>
+                                </li>
+                            </ol>                 
             </td>
         </tr>
 </div>
