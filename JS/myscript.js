@@ -8,9 +8,22 @@ AOS.init();
 
 document.addEventListener('DOMContentLoaded', function() {
   var video = document.getElementById('video-back');
-  video.play().catch(error => {
-      // In alcuni casi, l’autoplay viene bloccato del tutto e può lanciare un errore.
+
+  function playVideo() {
+    video.play().catch(error => {
       console.log('Autoplay bloccato dal browser:', error);
+    });
+  }
+
+  // Check if the screen is in responsive mode (< 768px) to autoplay the video
+  if (window.innerWidth <= 768) {
+    playVideo();
+  }
+
+  // Optional: Also listen for window resize to restart video if resizing below 768px
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+      playVideo();
+    }
   });
 });
-
