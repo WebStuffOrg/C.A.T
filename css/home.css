@@ -123,9 +123,14 @@
     padding: 1rem;
   }
 
-  #video-back, .poster_content {
+  .poster_content {
     width: 100%; /* Full width for mobile */
     height: auto;
+  }
+
+  #video-back {
+    min-height: 30vh; 
+    max-height: 50vh; 
   }
 
   .poster_content {
