@@ -33,14 +33,14 @@
             font-family: 'Comfortaa', sans-serif;
             text-align: center;
             margin: 0;
-            color: white;
+            color: white!important;
             font-size: 16px;
         }
 
         .page-title {
-            color: black !important;
+            color: black;
             font-size: 2.986rem	!important;
-            font-weight: bold !important;
+            font-weight: bold;
             font-family: 'Comfortaa', sans-serif;
             position: relative;
             display: inline-block;
