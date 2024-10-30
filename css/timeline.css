@@ -1,5 +1,4 @@
 /* Timeline */
-
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -174,6 +173,7 @@
     left: -36px;
 }
 
+/* Timeline Line */
 .timeline::after {
     content: "";
     position: absolute;
@@ -184,7 +184,7 @@
     left: 50%;
     margin-left: -3px;
     z-index: 0;
-    animation: moveline 15s linear forwards;
+    animation: moveline 10s linear forwards; /* Velocità aumentata */
 }
 
 
