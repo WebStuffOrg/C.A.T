@@ -176,15 +176,12 @@ main {
     width: fit-content;
     height: fit-content;
     background-color: var(--tertiary-color);
-    margin-right: 0.5vw;
+    margin-top: 0.5vw;
+    align-self: center;
 }
 
-/* .narr-icon {
-    width: inherit;
-} */
-
-.sub-narr {
-    align-content: center;
+.narr-icon img {
+    transform: scale(1);
 }
 
 .table-body {

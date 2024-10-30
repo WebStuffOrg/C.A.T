@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     fetch('data/narr.json')
     .then(response => response.json())
     .then(async data => {
-        imageContainer.scrollIntoView();
         items = data.items;
         narratives = data.narratives;
         narrativeTitle = data.meta.defaultNarrative;
@@ -91,21 +90,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         await setContent(itemData);
         await setSidebarList(currentNarrativeArr, currentIdx);
         await hideLoading();
+        imageContainer.scrollIntoView();
     });
 });
 
 // narrative switch
 
 altNarrative.addEventListener("click", async (e) => {
-   if (e.target.tagName == "BUTTON") {
-    const narrative = e.target.innerHTML;
-    smallImagecontainer.classList.add('hidden');
-    smallImagecontainer.classList.remove('visible');
-    await new Promise(requestAnimationFrame);
-    imageContainer.scrollIntoView({ behavior: 'smooth' });
-    await new Promise(resolve => setTimeout(resolve, 600));
-    await switchNarrative(narrative);
-}
+    const el = e.target;
+    const buttonContent = el.closest("button")
+    if (buttonContent) {
+        let narrative;
+        if (el.textContent != "") {
+            narrative = el.textContent;
+        }
+        else {
+            narrative = el.id.charAt(0).toUpperCase() + el.id.slice(1, - 4);
+        };
+        smallImagecontainer.classList.add('hidden');
+        smallImagecontainer.classList.remove('visible');
+        await new Promise(requestAnimationFrame);
+        imageContainer.scrollIntoView({ behavior: 'smooth' });
+        await new Promise(resolve => setTimeout(resolve, 600));
+        await switchNarrative(narrative);
+    };
 });
 
 // text switching 
@@ -244,21 +252,25 @@ async function setNarrativeSwitch(item) {
     document.querySelectorAll("#alt-narr div.sub-narr").forEach((i) => {
         i.innerHTML = "";
     });
-    document.querySelectorAll("#daily button").disabled = true;
-    document.querySelectorAll("#supernatural button").disabled = true;
+    document.querySelector("#daily button").disabled = true;
+    document.querySelector("#supernatural button").disabled = true;
 
     const itemNarratives = [...item.includedIn];
-    console.log(itemNarratives)
-    const idx = itemNarratives.indexOf(narrativeTitle);
-    itemNarratives.splice(idx, 1);
+    if (narrativeTitle != "Geography" && narrativeTitle != "Timeline") {
+        const idx = itemNarratives.indexOf(narrativeTitle);
+        itemNarratives.splice(idx, 1);
+    }
+    else {
+        document.querySelector(`#${narrativeTitle.toLowerCase()} button`).disabled = true;
+    }
     itemNarratives.forEach((i) => { 
         const button = document.createElement("button");
-        button.setAttribute("class", "btn");
+        button.classList.add("btn");
         button.textContent = i; 
         switch (i) {
             case "Supernatural":
             case "Daily":
-                document.getElementById(i.toLowerCase()).disabled = false;
+                document.querySelector(`#${i.toLowerCase()} button`).disabled = false;
                 break;
             case "Playing":
             case "Chilling":
