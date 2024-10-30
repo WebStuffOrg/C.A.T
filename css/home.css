@@ -1,4 +1,3 @@
-
 .intro-text {
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -9,7 +8,6 @@
 .hero {
   position: relative;
   height: 100vh;
-  display: -webkit-flex; /* Prefisso per Safari */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,9 +15,9 @@
   overflow: hidden;
 }
 
-/* Contenuto Hero */
 .hero_content {
   width: 100%;
+  min-height: fit-content;
   max-width: 1350px;
   margin: 0 auto;
   padding: 2rem;
@@ -28,241 +26,168 @@
   position: relative;
 }
 
+.hero_content h1, .hero_content p {
+  color: #FAF3EF;
+}
 
 .hero_content h1 {
-  color: #FAF3EF;
   animation: pulseText 4s infinite;
 }
 
-.hero_content p {
-  color: #FAF3EF;
-}
-
 @keyframes pulseText {
-  0% {
-      text-shadow: 0 0 5px black, 0 0 10px  rgb(107, 26, 16);
-      transform: scale(1);
+  0%, 100% {
+    text-shadow: 0 0 5px black, 0 0 10px rgb(107, 26, 16);
+    transform: scale(1);
   }
   50% {
-      text-shadow: 0 0 15px  rgb(107, 26, 16), 0 0 20px rgb(107, 26, 16);
-      transform: scale(1.02);
-  }
-  100% {
-      text-shadow: 0 0 5px black, 0 0 10px rgb(107, 26, 16);
-      transform: scale(1);
+    text-shadow: 0 0 15px rgb(107, 26, 16), 0 0 20px rgb(107, 26, 16);
+    transform: scale(1.02);
   }
 }
 
-/* Responsive adjustments for small screens */
+/* Responsive Hero */
 @media (max-width: 760px) {
   .hero_content h1 {
-    width: 100%;/* Riduce la dimensione del font */
-    line-height: 1.4; /* Aumenta l'interlinea per migliorare la leggibilità */
+    width: 100%;
+    line-height: 1.4;
   }
 }
 
 /* Poster */
 .poster {
   display: flex;
-  flex-direction: row;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   background-color: rgb(250, 243, 239);
   gap: 2rem;
-  box-sizing: border-box;
   overflow: hidden;
 }
 
 .poster_content {
   width: 100%;
-  max-width: 600px; /* Larghezza massima per evitare che si allarghi troppo */
+  max-width: 600px;
   text-align: left;
   padding: 1rem;
-  box-sizing: border-box;
   overflow-y: auto;
 }
 
 #video-back {
-  position: relative; /* Better positioning control */
-  width: 100%; /* Explicit width for better layout control */
+  width: 100%;
   height: auto;
   border-radius: 10px;
-  min-height: 50vh; /* Minimum height */
-  max-height: 80vh; /* Maximum height */
+  min-height: 50vh;
+  max-height: 80vh;
   object-fit: cover;
-  margin: auto; 
+  margin: auto;
 }
 
-
-.poster_img {
-  position: relative;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-
-}
-/* Pulsante */
 .button {
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem; /* Dimensioni ridotte del padding per rendere il bottone più compatto */
+  padding: 0.75rem 1.5rem;
   background: #6B1A10;
   color: #fff;
   display: inline-block;
   border-radius: 4px;
-  font-size: 0.9rem; /* Riduce la dimensione del font */
+  font-size: 0.9rem;
 }
 
-
-/* Responsive adjustments for Poster */
+/* Responsive Poster */
 @media (max-width: 760px) {
   .poster {
     flex-wrap: wrap;
-    height: auto;
-    padding: 1rem;
-  }
-
-  .poster_content {
-    width: 100%; /* Full width for mobile */
-    height: auto;
-  }
-
-  #video-back {
-    min-height: 30vh; 
-    max-height: 50vh; 
   }
 
   .poster_content {
     width: 100%;
-    line-height: 1.4; /* Aumenta l'interlinea per migliorare la leggibilità */
+    font-size: 0.9rem; /* Riduce la dimensione del font per i testi */
+    line-height: 1.4; /* Aumenta leggermente l’interlinea per leggibilità */
+  }
+
+  #video-back {
+    min-height: 30vh;
+    max-height: 50vh;
   }
 
   .button {
-    font-size: 0.8rem; /* Riduce ulteriormente la dimensione del font del pulsante */
-    padding: 0.5rem 1rem; /* Padding ridotto per evitare che il pulsante esca dai bordi */
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }
 
-/* Sfondo coprente */
-.bg-cover {
-  min-height: 100vh; /* Usa min-height anziché height */
-  display: -webkit-flex;
+/* Background Section */
+.bg-cover, .end-cover {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-size: cover;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: var(--tertiary-color);
   flex-wrap: wrap;
 }
 
-.bg-cover {
-  background: var(--tertiary-color);
-}
-
-.go-cover {
-  background: var(--quaternary-color);
-}
-
-.bg-cover_text, .bg-cover_title {
+.bg-cover_title, .bg-cover_text {
   width: 50%;
   padding: 2.5vw;
 }
 
-.bg-cover_text h5 b {
-  display: block; /* Assicura che i tag <b> siano su righe separate */
-  margin-top: 1rem; /* Spaziatura sopra ogni intestazione */
+.title, h5 {
+  color: rgb(250, 243, 239);
 }
 
-.bg-cover_text h5 b:not(:last-child) {
-  border-bottom: 2px solid rgba(73, 37, 54, 0.899);  /* Aggiungi una riga sotto ogni <b> eccetto l'ultimo */
-  padding-bottom: 0.5rem; /* Spaziatura sotto la riga */
+h5 strong, .bg-cover_text h5 b {
+  display: block;
+  margin-top: 1rem;
+  border-bottom: 2px solid rgba(73, 37, 54, 0.899);
+  padding-bottom: 0.5rem;
 }
 
-/* Stile per <ul> e <p> per mantenerli alla stessa dimensione del testo */
-.bg-cover_text ul,
-.bg-cover_text p {
-  color: rgb(250, 243, 239); /* Stessa colorazione per <ul> e <p> */
-  margin-top: 0.5rem; /* Spaziatura sopra */
-  margin-bottom: 0.5rem; /* Spaziatura sotto */
+.bg-cover_text ul, .bg-cover_text p {
+  color: rgb(250, 243, 239);
+  margin: 0.5rem 0;
 }
 
+/* Responsive Background Section */
 @media (max-width: 760px) {
-  .bg-cover, .go-cover {
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      height: auto;
-      padding: 1rem;
+  .bg-cover, .end-cover {
+    flex-direction: column;
+    padding: 1rem;
   }
 
-  .bg-cover_text, .bg-cover_title, .go-cover_title {
-      width: 100%;
-      padding: 1rem;
+  .bg-cover_text, .bg-cover_title {
+    width: 100%;
+    padding: 1rem;
   }
-
-  .end-cover {
-    padding-bottom: 100px; /* Spazio extra sotto il footer per evitare la sovrapposizione */
-  }
-  
-  
 }
 
-.go-cover {
-  height: 100vh;
-  display:-webkit-flex;
-  align-items: center;
-  justify-content: center; /* Centra il contenuto orizzontalmente */
-  width: 100%;
-  background:var(--quaternary-color);
-  background-size: cover;
-}
-
+/* Table */
 .information-table {
-  background-color: rgb(103, 49, 75); /* Colore di sfondo della tabella */
-  color: black; /* Colore del testo in nero */
+  background-color: rgb(103, 49, 75);
+  color: black;
   padding: 1rem;
 }
 
-/* Colore di sfondo per le intestazioni della tabella */
 .information-table th, .information-table td {
-  background-color: rgba(103, 49, 75, 0.8); /* Sfondo traslucido per le intestazioni */
+  background-color: rgba(103, 49, 75, 0.8);
 }
 
-.bg-cover_text h6 b {
-  display: block; /* Assicura che i tag <b> siano su righe separate */
-  margin-top: 1rem; /* Spaziatura sopra ogni intestazione */
-}
-
-.bg-cover_text h6 b:not(:last-child) {
-  border-bottom: 2px solid  rgba(73, 37, 54, 0.899);  /* Aggiungi una riga sotto ogni <b> eccetto l'ultimo */
-  padding-bottom: 0.5rem; /* Spaziatura sotto la riga */
-}
-
-
-
-/* Responsive adjustments for table */
 @media (max-width: 768px) {
   .information-table th, .information-table td {
-      padding: 0.5rem; /* Reduce padding for smaller screens */
+    padding: 0.5rem;
   }
 }
 
-/* Carousel styles *//* Stili per end-cover */
+/* Carousel */
 .end-cover {
-  min-height: 100vh; /* Imposta un'altezza minima, ma permette l'adattamento in responsive */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
   background: rgb(250, 243, 239);
-  padding: 2rem 0; /* Aggiunge padding sopra e sotto */
-  box-sizing: border-box;
 }
 
-/* Stili per il carousel */
 .carousel {
   position: relative;
-  margin: 0 auto; /* Centrato orizzontalmente */
+  margin: 0 auto;
   max-width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -277,31 +202,18 @@
 }
 
 .carousel-item img {
-  height: auto; /* Mantiene il rapporto d'aspetto */
+  height: auto;
   max-height: 25rem;
   object-fit: cover;
 }
 
-/* Adattamenti per la modalità responsive */
+/* Responsive Carousel */
 @media (max-width: 760px) {
-  .end-cover {
-    flex-wrap: wrap;
-    height: 100vh;
-    padding: 1rem;
-  }
-
   .carousel {
-    max-width: 100%;
     padding: 1rem;
-    margin: 0 auto;
   }
 
   .carousel-item img {
     max-height: 15rem;
-  }
-
-  /* Spazio sotto il carousel */
-  .carousel + * {
-    margin-top: 2rem;
   }
 }

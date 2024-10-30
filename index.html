@@ -4,13 +4,7 @@
     <title>C.A.T</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -18,145 +12,136 @@
 </head>
 
 <body> 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="map.html" class="nav-link">MAP</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            EXHIBITION
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
-                            <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
-                            <a class="dropdown-item" href="gallery.html">GALLERY</a>
-                            <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(0, 0, 0);" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/icons/cat_logo.png" alt="Logo" width="75px" height="65px">.A.T
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="map.html" class="nav-link">MAP</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                EXHIBITION
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
+                                <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
+                                <a class="dropdown-item" href="gallery.html">GALLERY</a>
+                                <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about_us.html" class="nav-link">ABOUT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('images/home/img-4.jpeg') no-repeat center center; background-size: cover;">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12 text-center hero_content">
+                        <p class="intro-text"></p>
+                        <h1 data-aos="zoom-in">Cats, Art, Traditions <br>
+                            <br>Exhibition at Museo Civico Archeologico - Bologna
+                            <br> September 13 - December 20, 2024
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="poster">
+            <div class="poster_img">
+                <video autoplay muted loop playsinline id="video-back" aria-label="Background video featuring cats">
+                    <source src="images/home/video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="poster_content">
+                <h3 data-aos="fade-left" style="color: rgb(107, 26, 16);">Cats exhibition at Museo Civico Archeologico in Bologna</h3>
+                <h5 data-aos="fade-left" style="color: black;"> <br> We invite all visitors to immerse themselves in a fascinating journey through the world of cats, exploring our unique collection that celebrates these animals. 
+                    <br>Navigate through the exhibit's details and explore the museum's offerings. 
+                </h5>
+                <a href="map.html" class="button">Go to the map</a>
+            </div>
+        </section>
+
+        <section class="bg-cover">
+            <div class="bg-cover_title">
+                <h3 data-aos="fade-right" style="color: rgb(250, 243, 239);">About the Exhibition</h3>
+            </div>
+            
+            <div class="bg-cover_text">
+                <h5 data-aos="fade-left" style="color: rgb(250, 243, 239);">
+                    Cats have fascinated and accompanied humanity for thousands of years, crossing geographical, cultural and spiritual boundaries. Originally considered sacred and revered creatures, cats have played different roles in various societies: from symbols of luck and protection to protagonists of myths and superstitions. With the expansion of civilizations, cats have spread to every corner of the globe, becoming not only beloved pets, but also subjects of art, literature and popular culture. Our journey was born out of curiosity to explore not only the history of the cat as a pet, but also how it has influenced human culture.   
+                    It is this extraordinary bond between man and cat that has led us to create an exhibition that explores the cultural impact of these fascinating felines. We hope this exhibition offers a new perspective on the importance and timeless charm of cats, leading visitors to discover the deep connection that unites them with us.
+                </h5>
+            </div>
+        </section>
+
+        <section class="end-cover">
+            <div class="bg-cover_text">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="images/narr/img-15.jpg" alt="First slide">
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about_us.html" class="nav-link">ABOUT US </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-<div class="hero" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('images/home/img-4.jpeg') no-repeat center center; background-size: cover;">
-    <div class="hero_content">
-        <p class="intro-text"></p>
-        <h1 data-aos="zoom-in">Cats, Art, Traditions <br>
-            <br>Exhibition at Museo Civico Archeologico - Bologna
-            <br> September 13 - December 20, 2024
-        </h1>
-    </div>
-</div>
-
-
-    <div class="poster">
-        <div class="poster_img">
-            <video autoplay muted loop playsinline id="video-back">
-                <source src="images/home/video1.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="poster_content">
-            <h3 data-aos="fade-left" style="color:  rgb(107, 26, 16);">Cats exhibition at Museo Civico Archeologico in Bologna</h3>
-            <h5 data-aos="fade-left" style="color: black;"> <br> We invite all visitors to immerse themselves in a fascinating journey through the world of cats, exploring our unique collection that celebrates these animals. 
-                <br>Navigate through the exhibit's details and explore the museum's offerings. 
-            </h5>
-            <a href="map.html" class="button">Go to the map</a>
-        </div>
-    </div>
-
-    <div class="bg-cover">
-        <div class="bg-cover_title">
-            <h3 data-aos="fade-right" style="color:  rgb(250, 243, 239);">About the Exhibition </h3>
-        </div>
-        
-        <div class="bg-cover_text">
-            <h5 data-aos="fade-left" style="color: rgb(250, 243, 239)">
-                Cats have fascinated and accompanied humanity for thousands of years, crossing geographical, cultural and spiritual boundaries.
-                Originally considered sacred and revered creatures, cats have played different roles in various societies: from symbols of luck and protection to protagonists of myths and superstitions. With the expansion of civilizations, cats have spread to every corner of the globe, becoming not only beloved pets, but also subjects of art, literature and popular culture. Our journey was born out of curiosity to explore not only the history of the cat as a pet, but also how it has influenced human culture.
-                <br>It is this extraordinary bond between man and cat that has led us to create an exhibition that explores the cultural impact of these fascinating felines. We hope this exhibition offers a new perspective on the importance and timeless charm of cats, leading visitors to discover the deep connection that unites them with us.
-            </h5>
-        </div>
-    </div>
-
-    <div class="end-cover">
-        <div class="bg-cover_text">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/narr/img-15.jpg" alt="First slide">
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/narr/img-8.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/narr/img-4.png" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/narr/img-1.jpg" alt="Fourth slide">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="images/narr/img-8.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="images/narr/img-4.png" alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="images/narr/img-1.jpg" alt="Third slide">
+                    <div class="bg-cover_title">
+                        <h3><a href="narratives.html" class="twi" style="color: black;">Our Collection</a></h3>
                     </div>
                 </div>
-                <div class="bg-cover_title">
-                    <h3><a href="narratives.html" class="twi" style="color: black;">Our Collection</a></h3>
-                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="bg-cover" style="background-color: rgb(103, 49, 75);">
+    <section class="bg-cover" style="background-color: rgb(103, 49, 75);;">
         <div class="bg-cover_title">
-            <h3 data-aos="fade-right" style="color: rgb(250, 243, 239);">About the Exhibition</h3>
+            <h3 class="title">About the Exhibition</h3>
         </div>
-        
-        <div class="bg-cover_text" data-aos="fade-left" >
-            <h5 style="color: rgb(250, 243, 239);">
-                <b>Exhibition Period:</b> <br>
-                Friday, September 20 – Friday, November 20, 2024
-                <br><br>
-                <b>Closed:</b> <br>
-                Mondays
-                <br><br>
-                <b>Opening Hours:</b> <br>
-                10 AM – 6 PM (Tickets available until 30 minutes before closing)
-                <br><br>
-                <b>Address:</b> <br>
-                Via dell'Archiginnasio, 2 - 40124 Bologna BO
-                <br><br>
-                <b>Admission:</b>
-            
-            
-            <ul>
-                <li>Adults - €8,00</li>
-                <li>University & College Students, Over 65 - €5,00</li>
-                <li>High School & Junior High School Students - €5,00</li>
-                <li>Elementary School Students & Younger - free</li>
+    
+        <div class="bg-cover_text">
+            <h5><b>Exhibition Period:</b><br>Friday, September 20 – Friday, November 20, 2024</h5>
+            <h5><b>Closed:</b><br>Mondays</h5>
+            <h5><b>Opening Hours:</b><br>10 AM – 6 PM (Tickets available until 30 minutes before closing)</h5>
+            <h5><b>Address:</b><br>Via dell'Archiginnasio, 2 - 40124 Bologna BO</h5>
+            <h5><b>Admission:</b></h5>
+            <ul class="admission-list">
+                <h5><li>Adults - €8.00</li></h5>
+                <h5><li>University & College Students, Over 65 - €5.00</li></h5>
+                <h5><li>High School & Junior High School Students - €5.00</li></h5>
+                <h5><li>Elementary School Students & Younger - free</li></h5>
             </ul>
-        </h5> <br>
-            <p>
+            <p class="notes">
                 *20% discount for a group of over 20 people.<br>
                 *Ticket includes admission to the Museo Civico Archeologico Collection exhibition.<br>
                 *Persons with a Physical Disability Certificate, Intellectual Disability Certificate, Intellectual Disability Welfare Certificate, as well as up to two attendants, are admitted free of charge.
             </p>
         </div>
-    </div>
+    </section>
     
- 
-
     <div class="scroll-buttons">
         <button class="scroll-button" onclick="scrollToTop()">
             <svg viewBox="0 0 24 24">
@@ -164,23 +149,19 @@
             </svg>
         </button>
     </div>
+</main>
 
-
-<footer class="footer">
+<footer class="footer" aria-label="Footer">
     <div class="text-center p-3 text-white">
         <p>
-        <b>A Linked Open Data project</b><br>
-        
-        MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
-        Course "Information Modeling and Web Tachnologies" <br>
-        
-        <a href="documentation.html">Documentation about the project</a><br>
-       
+            <b>A Linked Open Data project</b><br>
+            MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
+            Course "Information Modeling and Web Technologies" <br>
+            <a href="documentation.html">Documentation about the project</a><br>
         </p>
-      </div>      
+    </div>
 </footer>
 
-<!-- Link a Flickity JS per il carousel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -189,5 +170,3 @@
 
 </body>
 </html>
-
-

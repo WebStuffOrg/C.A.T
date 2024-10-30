@@ -1,82 +1,75 @@
 :root {
-    --primary-color: rgb(228, 168, 140);
-    --secondary-color: rgb(201, 102, 56);
-    --tertiary-color: rgb(107, 26, 16);
-    --quaternary-color: rgb(103, 49, 75);
-    --quinary-color:  rgb(250, 243, 239);
-  
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
-  
-  
-  /* Corpo della pagina */
-  body,html{
-    font-size: 16px;
-    background-color:  #faf3ef;
-    overflow-x: hidden;
-  }
-  
-  /* Link */
-  a {
-    text-decoration: none;
-  }
-  
-  /* Dimensioni del testo */
-  h1 {
-    font-size: 2.986rem;
-    font-family: 'Comfortaa';
-  }
-  
-  h2 {
-    font-size: 2.488rem;
-    font-family: 'Comfortaa';
-  }
-  
-  h3 {
-    font-size: 2.074rem;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  h4 {
-    font-size: 1.728rem;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  h5 {
-    font-size: 1.44rem;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  h6 {
-    font-size: 1.2rem;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  p {
-    font-size: 1rem;
-    font-family: 'Nunito', sans-serif;
-  }
+  --primary-color: rgb(228, 168, 140);
+  --secondary-color: rgb(201, 102, 56);
+  --tertiary-color: rgb(107, 26, 16);
+  --quaternary-color: rgb(103, 49, 75);
+  --quinary-color: rgb(250, 243, 239);
+}
 
-/* Navbar */
-/* Stile per rendere le voci del menu bianche */
-.navbar .navbar-nav .nav-link, 
-.nav-link:hover, 
-.navbar-brand,
-.nav-item.active .nav-link  {
-  color:  rgb(250, 243, 239)!important; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo della pagina */
+body, html {
+  font-size: 16px;
+  background-color: #faf3ef;
+  overflow-x: hidden;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+}
+
+/* Dimensioni del testo */
+h1 {
+  font-size: 2.986rem;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+h2 {
+  font-size: 2.488rem;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+h3, h4, h5, h6, p {
   font-family: 'Nunito', sans-serif;
 }
 
-/* Ensure the toggle button is always white */
-.navbar-toggler {
-  border-color:  rgb(250, 243, 239) /* Pink border color */
+h3 {
+  font-size: 2.074rem;
+}
 
+h4 {
+  font-size: 1.728rem;
+}
+
+h5 {
+  font-size: 1.44rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Navbar */
+.navbar .navbar-nav .nav-link,
+.nav-link:hover,
+.navbar-brand,
+.nav-item.active .nav-link {
+  color: rgb(250, 243, 239) !important; 
+  font-family: 'Nunito', sans-serif;
+}
+
+.navbar-toggler {
+  border-color: rgb(250, 243, 239); /* Pink border color */
 }
 
 .navbar-toggler-icon {
@@ -99,7 +92,6 @@
   font-size: 14px;
 }
 
-
 /* Responsive navbar */
 @media (max-width: 768px) {
   .navbar-menu {
@@ -107,7 +99,6 @@
       flex-direction: column;
       width: 100%;
       background-color: #ffffff;
-
   }
 
   .navbar-item {
@@ -118,10 +109,10 @@
       display: flex;
   }
 }
+
 /* Scrolling */
 .scroll-buttons {
   position: fixed;
-  height: auto; /* Cambiato per adattarsi al contenuto */
   bottom: 20px;
   right: 20px;
   display: flex;
@@ -156,18 +147,16 @@
 /* Responsive adjustments */
 @media (max-width: 760px) {
   .scroll-button {
-    width: 35px; /* Dimensione ridotta per schermi piccoli */
-    height: 35px; /* Dimensione ridotta per schermi piccoli */
+      width: 35px; /* Dimensione ridotta per schermi piccoli */
+      height: 35px; /* Dimensione ridotta per schermi piccoli */
   }
 
   .scroll-button svg {
-    width: 18px; /* Dimensione ridotta per l'icona */
-    height: 18px; /* Dimensione ridotta per l'icona */
+      width: 18px; /* Dimensione ridotta per l'icona */
+      height: 18px; /* Dimensione ridotta per l'icona */
   }
 }
 
-
-  
 /* Footer */
 .footer {
   background: #000;
@@ -175,42 +164,41 @@
   position: relative;
 }
 
-.footer a{
-color: #f0f0f0;
+.footer a {
+  color: #f0f0f0;
 }
-  
+
+/* Responsive adjustments for text size */
 @media (max-width: 760px) {
-  /* General Text Adjustments */
   body {
-    font-size: 0.875rem; /* Reduce base font size */
+      font-size: 0.875rem; /* Reduce base font size */
   }
 
-  /* Specific Heading Adjustments */
   h1 {
-    font-size: 1.75rem;
+      font-size: 1.75rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
   }
 
   h3 {
-    font-size: 1.25rem;
+      font-size: 1.25rem;
   }
 
   h4 {
-    font-size: 1.125rem;
+      font-size: 1.125rem;
   }
 
   h5 {
-    font-size: 1rem; /* Smaller font size for h5 */
+      font-size: 1rem; /* Smaller font size for h5 */
   }
 
   h6 {
-    font-size: 0.875rem;
+      font-size: 0.875rem;
   }
 
   p {
-    font-size: 0.625rem;
+      font-size: 0.625rem;
   }
 }
