@@ -101,11 +101,12 @@
 
   .poster_content {
     width: 100%;
-    font-size: 0.9rem; /* Riduce la dimensione del font per i testi */
-    line-height: 1.4; /* Aumenta leggermente l’interlinea per leggibilità */
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   #video-back {
+    margin-top: 2rem; 
     min-height: 30vh;
     max-height: 50vh;
   }
@@ -115,6 +116,7 @@
     padding: 0.5rem 1rem;
   }
 }
+
 
 /* Background Section */
 .bg-cover, .end-cover {
