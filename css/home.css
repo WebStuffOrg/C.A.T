@@ -39,7 +39,6 @@
   }
 }
 
-/* Responsive Hero */
 @media (max-width: 760px) {
   #hero .hero_content h1 {
     width: 100%;
