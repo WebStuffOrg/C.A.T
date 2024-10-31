@@ -103,10 +103,12 @@
     width: 100%;
     font-size: 0.9rem;
     line-height: 1.4;
+    padding-top: 0; /* Rimuove il padding superiore, se presente */
+    margin-top: 0; /* Rimuove il margine superiore, se presente */
   }
 
   #video-back {
-    margin-top: 2rem; 
+    margin-bottom: 0.5rem; 
     min-height: 30vh;
     max-height: 50vh;
   }
