@@ -5,7 +5,7 @@
 }
 
 /* Hero */
-.hero {
+#hero {
   position: relative;
   height: 100vh;
   display: flex;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.hero_content {
+#hero .hero_content {
   width: 100%;
   min-height: fit-content;
   max-width: 1350px;
@@ -26,11 +26,11 @@
   position: relative;
 }
 
-.hero_content h1, .hero_content p {
+#hero .hero_content h1, #hero .hero_content p {
   color: #FAF3EF;
 }
 
-.hero_content h1 {
+#hero .hero_content h1 {
   animation: pulseText 4s infinite;
 }
 
@@ -47,14 +47,14 @@
 
 /* Responsive Hero */
 @media (max-width: 760px) {
-  .hero_content h1 {
+  #hero .hero_content h1 {
     width: 100%;
     line-height: 1.4;
   }
 }
 
 /* Poster */
-.poster {
+#poster {
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -65,7 +65,7 @@
   overflow: hidden;
 }
 
-.poster_content {
+#poster .poster_content {
   width: 100%;
   max-width: 600px;
   text-align: left;
@@ -95,11 +95,11 @@
 
 /* Responsive Poster */
 @media (max-width: 760px) {
-  .poster {
+  #poster {
     flex-wrap: wrap;
   }
 
-  .poster_content {
+  #poster .poster_content {
     width: 100%;
     font-size: 0.9rem;
     line-height: 1.4;
@@ -119,9 +119,8 @@
   }
 }
 
-
 /* Background Section */
-.bg-cover, .end-cover {
+#bg-cover, #end-cover {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -133,7 +132,8 @@
   flex-wrap: wrap;
 }
 
-.bg-cover_title, .bg-cover_text {
+#bg-cover .bg-cover_title, #bg-cover .bg-cover_text,
+#end-cover .bg-cover_title, #end-cover .bg-cover_text {
   width: 50%;
   padding: 2.5vw;
 }
@@ -142,26 +142,28 @@
   color: rgb(250, 243, 239);
 }
 
-h5 strong, .bg-cover_text h5 b {
+h5 strong, #bg-cover .bg-cover_text h5 b {
   display: block;
   margin-top: 1rem;
   border-bottom: 2px solid rgba(73, 37, 54, 0.899);
   padding-bottom: 0.5rem;
 }
 
-.bg-cover_text ul, .bg-cover_text p {
+#bg-cover .bg-cover_text ul, #bg-cover .bg-cover_text p,
+#end-cover .bg-cover_text ul, #end-cover .bg-cover_text p {
   color: rgb(250, 243, 239);
   margin: 0.5rem 0;
 }
 
 /* Responsive Background Section */
 @media (max-width: 760px) {
-  .bg-cover, .end-cover {
+  #bg-cover, #end-cover {
     flex-direction: column;
     padding: 1rem;
   }
 
-  .bg-cover_text, .bg-cover_title {
+  #bg-cover .bg-cover_text, #bg-cover .bg-cover_title,
+  #end-cover .bg-cover_text, #end-cover .bg-cover_title {
     width: 100%;
     padding: 1rem;
   }
@@ -185,7 +187,7 @@ h5 strong, .bg-cover_text h5 b {
 }
 
 /* Carousel */
-.end-cover {
+#end-cover {
   background: rgb(250, 243, 239);
 }
 
