@@ -1,4 +1,3 @@
-
 /* Hero */
 #hero {
   position: relative;
@@ -10,7 +9,7 @@
   overflow: hidden;
 }
 
-#hero .hero_content {
+.hero_content {
   width: 100%;
   min-height: fit-content;
   max-width: 1350px;
@@ -21,11 +20,11 @@
   position: relative;
 }
 
-#hero .hero_content h1, #hero .hero_content p {
+.hero_content h1, #hero .hero_content p {
   color: #FAF3EF;
 }
 
-#hero .hero_content h1 {
+.hero_content h1 {
   animation: pulseText 4s infinite;
 }
 
@@ -60,7 +59,7 @@
   overflow: hidden;
 }
 
-#poster .poster_content {
+.poster_content {
   width: 100%;
   max-width: 600px;
   text-align: left;
@@ -127,8 +126,8 @@
   flex-wrap: wrap;
 }
 
-#bg-cover .bg-cover_title, #bg-cover .bg-cover_text,
-#end-cover .bg-cover_title, #end-cover .bg-cover_text {
+.bg-cover_title,.bg-cover_text,
+.bg-cover_title, .bg-cover_text {
   width: 50%;
   padding: 2.5vw;
 }
@@ -144,8 +143,8 @@ h5 strong, #bg-cover .bg-cover_text h5 b {
   padding-bottom: 0.5rem;
 }
 
-#bg-cover .bg-cover_text ul, #bg-cover .bg-cover_text p,
-#end-cover .bg-cover_text ul, #end-cover .bg-cover_text p {
+.bg-cover_text ul, .bg-cover_text p,
+ .bg-cover_text ul,  .bg-cover_text p {
   color: rgb(250, 243, 239);
   margin: 0.5rem 0;
 }
@@ -157,8 +156,8 @@ h5 strong, #bg-cover .bg-cover_text h5 b {
     padding: 1rem;
   }
 
-  #bg-cover .bg-cover_text, #bg-cover .bg-cover_title,
-  #end-cover .bg-cover_text, #end-cover .bg-cover_title {
+ .bg-cover_text, .bg-cover_title,
+   .bg-cover_text,  .bg-cover_title {
     width: 100%;
     padding: 1rem;
   }
