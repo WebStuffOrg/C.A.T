@@ -84,6 +84,8 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* IMAGE DISPLAY */
+
 #image-wrapper {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 0;
@@ -103,14 +105,14 @@ main {
     height: auto;
 }
 
-@media screen and (width < 992px){
+@media (width < 992px){
     #image-wrapper {
         height: 50%;
     };
 }
 #narrative-navbar {
     height: fit-content;
-    width: 100%;/* Center the navbar horizontally */
+    width: 100%; 
     z-index: 1; /* Ensure it's above the image */
 }
 #narrative-navbar h6 {
@@ -143,6 +145,9 @@ main {
 #next-button {
     right: 10px;
 } 
+
+/* SIDE IMAGE*/
+
 /* Initially hidden */
 .hidden {
     position: fixed;
@@ -167,22 +172,32 @@ main {
     padding-right: 10px;
     width: 30vw; /* Shrink image size */
     height: auto;
-    z-index: 1000;
     transition: opacity 0.5s ease, visibility 0.1s ease;
 }
 
+/* NARRATIVE SWITCH SECTION */
+
 #alt-narr .sub-narr button{
     color: white;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     background-color: var(--tertiary-color);
-    margin-top: 0.5vw;
+    margin-top: 2.5vh;
     align-self: center;
+    text-wrap: wrap;
 }
 
 .narr-icon img {
-    transform: scale(1);
+    transform: scale(0.5);
 }
+
+.narr-icon button {
+    height: fit-content;
+    width: fit-content;
+    padding: 0px !important;
+}
+
+/* TABLE SECTION */
 
 .table-body {
     padding: 0px;
@@ -200,7 +215,8 @@ main {
 .description div.label {
     font-weight: bold;
 }
-/* Text part */
+
+/* DESCRIPTION SECTION */
 hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
@@ -210,7 +226,7 @@ hr {
     background-color: var(--quaternary-color);
     color: white;
     font-size: small;
-    padding: 1%;
+    padding: 2%;
 }
 
 /* Style for loading spinner */

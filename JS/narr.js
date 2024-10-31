@@ -97,15 +97,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 // narrative switch
 
 altNarrative.addEventListener("click", async (e) => {
-    const el = e.target;
-    const buttonContent = el.closest("button")
-    if (buttonContent) {
+    const button = e.target.closest("button")
+    if (button) {
         let narrative;
-        if (el.textContent != "") {
-            narrative = el.textContent;
+        if (e.target.innerText === "") {
+            console.log(button.title)
+            narrative = button.title.split(" ")[0];
         }
         else {
-            narrative = el.id.charAt(0).toUpperCase() + el.id.slice(1, - 4);
+            narrative = button.textContent;
         };
         smallImagecontainer.classList.add('hidden');
         smallImagecontainer.classList.remove('visible');
@@ -119,10 +119,10 @@ altNarrative.addEventListener("click", async (e) => {
 // text switching 
 
 textButtons.addEventListener("click", (e) => {
-    const el = e.target;
-    if (el.tagName === "BUTTON") {
+    const button = e.target.closest("button");
+    if (button) {
         let textType
-        textState += +el.value
+        textState += +button.value
         console.log(textState)
         switch (textState) {
             case 1: 
@@ -143,6 +143,12 @@ textButtons.addEventListener("click", (e) => {
         text.innerHTML = items[item]["text"][textType];
     }
 });
+
+// timeline refferal
+
+document.getElementById("timeline-button").addEventListener("click", () => {
+    document.getElementById("timeline-href").href = `timeline.html#${currentNarrativeArr[currentIdx]}`
+})
 
 // scroll animations 
 
@@ -254,6 +260,7 @@ async function setNarrativeSwitch(item) {
     });
     document.querySelector("#daily button").disabled = true;
     document.querySelector("#supernatural button").disabled = true;
+    document.querySelector("#geography button").disabled = false;
 
     const itemNarratives = [...item.includedIn];
     if (narrativeTitle != "Geography" && narrativeTitle != "Timeline") {
