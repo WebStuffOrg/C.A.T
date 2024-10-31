@@ -1,216 +1,258 @@
-body, html {
-    font-size: 16px;
-    background-color: #FAF3EF; 
-    overflow-x: hidden;
-    font-family: Nunito;
-}
+<!doctype html>
+<html lang="en"> 
+<head>
+    <title>C.A.T Collection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
-h1, h3, h4, h5, p {
-    color: #000000;
-    padding-bottom: 30px;
-}
+    <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-.navbar {
-    background-color: rgb(0, 0, 0) !important;
-}
+    <link rel="stylesheet" href="css/collection.css"/>
+</head>
 
-.navbar .nav-link,
-.navbar .navbar-brand {
-    color: white !important; 
-}
+<body> 
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="map.html" class="nav-link">MAP</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            EXHIBITION
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
+                            <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
+                            <a class="dropdown-item" href="gallery.html">GALLERY</a>
+                            <a class="dropdown-item" href="timeline.html">TIMELINE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about_us.html" class="nav-link">ABOUT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-.navbar .dropdown-menu {
-    background-color: rgb(0, 0, 0);
-}
+    <!-- Collection Title -->
+    <section class="collection-title">
+        <h1><b>Collections</b></h1>
+    </section>
 
-.navbar .dropdown-item {
-    color: white !important;
-}
+    <!-- Introduction Section -->
+    <div class="text-center" style="padding-bottom: 20px; max-width: 1200px; margin: 0 auto; margin-top: 30px;">
+        <p style="font-size: 18px; padding: 0 15px; max-width: 1000px; margin: 0 auto; text-align: left;">
+            Our collection is a glimpse into the world of feline artistry, capturing the beauty and significance of cats throughout history. But there's more to explore! In the <b>Narratives</b> section, you can delve deeper into each exhibit's story, discover the various narratives, and fully immerse yourself in the historical, cultural, and artistic importance of these pieces. After browsing our full collection, click below to continue your journey and unlock the full experience!
+        </p>
+        
+        <br> 
+        
+        <p style="font-size: 16px; padding: 0 15px; max-width: 1000px; margin: 0 auto;">
+            <i>Leave this page and</i>
+        </p>
+    
+        <br>
+        <a href="exhibition.html" class="btn btn-primary view-more-btn" style="background-color: #6B1A10;">Go to narratives view</a>
+    </div>
 
-.collection-title {
-    text-align: center;
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
+    <!-- Gallery Section -->
+    <div class="gallery">
+        <!-- Horizontal Images -->
+        <div class="gallery-item horizontal">
+            <img src="images/narr/img-1.jpg" alt="Mantle">
+            <div class="carousel-caption d-md-block">
+                <h5>Mantle</h5>
+                <a href="gallery.html?id=1" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item horizontal">
+            <img src="images/narr/img-4.png" alt="Nightlight in the form of a cat">
+            <div class="carousel-caption d-md-block">
+                <h5>Nightlight in the form of a cat</h5>
+                <a href="gallery.html?id=4" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item horizontal">
+            <img src="images/narr/img-8.jpg" alt="Bodleian Library MS. Bodl. 764">
+            <div class="carousel-caption d-md-block">
+                <h5>Bodleian Library MS. Bodl. 764</h5>
+                <a href="gallery.html?id=8" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item horizontal">
+            <img src="images/narr/img-11.jpg" alt="Kunisada Nekomata">
+            <div class="carousel-caption d-md-block">
+                <h5>Kunisada Nekomata</h5>
+                <a href="gallery.html?id=11" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item horizontal">
+            <img src="images/narr/img-15.jpg" alt="Sarcophagus of Prince Thutmose's Cat">
+            <div class="carousel-caption d-md-block">
+                <h5>Sarcophagus of Prince Thutmose's Cat</h5>
+                <a href="gallery.html?id=15" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
 
-.collection-title h1 {
-    font-size: 48px;
-    font-family: 'Comfortaa', sans-serif; 
-    display: inline-block; 
-    position: relative;
-    margin: 0; 
-    padding-bottom: 0px; 
-}
+        <!-- Vertical Images -->
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-2.jpg" alt="Cat from a Ball Toss Game">
+            <div class="carousel-caption d-md-block">
+                <h5>Cat from a Ball Toss Game</h5>
+                <a href="gallery.html?id=2" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-3.jpg" alt="Amulet depicting a cat">
+            <div class="carousel-caption d-md-block">
+                <h5>Amulet depicting a cat</h5>
+                <a href="gallery.html?id=3" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-5.jpg" alt="Tournée du Chat Noir with Rodolphe Salis">
+            <div class="carousel-caption d-md-block">
+                <h5>Tournée du Chat Noir with Rodolphe Salis</h5>
+                <a href="gallery.html?id=5" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-6.jpg" alt="Shashthi">
+            <div class="carousel-caption d-md-block">
+                <h5>Shashthi</h5>
+                <a href="gallery.html?id=6" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-7.jpg" alt="The Cat">
+            <div class="carousel-caption d-md-block">
+                <h5>The Cat</h5>
+                <a href="gallery.html?id=7" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-9.jpg" alt="The Black Cat">
+            <div class="carousel-caption d-md-block">
+                <h5>The Black Cat</h5>
+                <a href="gallery.html?id=9" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item vertical">
+            <img src="images/narr/img-19.jpg" alt="Figure of Bastet">
+            <div class="carousel-caption d-md-block">
+                <h5>Figure of Bastet</h5>
+                <a href="gallery.html?id=19" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
 
-.collection-title h1::after {
-    content: '';
-    position: absolute;
-    width: 100%; 
-    height: 4px;
-    background-color: rgb(107, 26, 16);
-    bottom: -10px;
-    left: 0;
-    animation: lineGrow 1.5s ease-in-out forwards;
-}
+        <!-- Square Images -->
+        <div class="gallery-item square">
+            <img src="images/narr/img-10.jpg" alt="Cat with a quail, mosaic">
+            <div class="carousel-caption d-md-block">
+                <h5>Cat with a quail, mosaic</h5>
+                <a href="gallery.html?id=10" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item square">
+            <img src="images/narr/img-12.jpg" alt="Hanging Scroll">
+            <div class="carousel-caption d-md-block">
+                <h5>Hanging Scroll</h5>
+                <a href="gallery.html?id=12" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
 
-@keyframes lineGrow {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
+        <!-- Small Images -->
+        <div class="gallery-item small">
+            <img src="images/narr/img-13.jpg" alt="Study for the Madonna of the Cat">
+            <div class="carousel-caption d-md-block">
+                <h5>Study for the Madonna of the Cat</h5>
+                <a href="gallery.html?id=13" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item small">
+            <img src="images/narr/img-14.jpg" alt="D. A. Rovinskii’s Collection of Russian Lubki">
+            <div class="carousel-caption d-md-block">
+                <h5>D. A. Rovinskii’s Collection of Russian Lubki</h5>
+                <a href="gallery.html?id=14" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item small">
+            <img src="images/narr/img-16.png" alt="Engraved Rock Art">
+            <div class="carousel-caption d-md-block">
+                <h5>Engraved Rock Art</h5>
+                <a href="gallery.html?id=16" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item small" data-id="17">
+            <img src="images/narr/img-17.jpg" alt="25 Cats Name Sam and One Blue Pussy">
+            <div class="carousel-caption d-md-block">
+                <h5>25 Cats Name Sam and One Blue Pussy</h5>
+                <a href="gallery.html?id=17" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+        <div class="gallery-item small">
+            <img src="images/narr/img-18.png" alt="Black Cat Auditions In Hollywood">
+            <div class="carousel-caption d-md-block">
+                <h5>Black Cat Auditions In Hollywood</h5>
+                <a href="gallery.html?id=18" class="btn btn-primary view-more-btn">View Detail</a>
+            </div>
+        </div>
+    </div>
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 15px;
-    padding: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    grid-auto-flow: dense;
-}
+    <!-- Scroll to Top Button -->
+    <div class="scroll-buttons">
+        <button class="scroll-button" onclick="scrollToTop()">
+            <svg viewBox="0 0 24 24">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer" style="background-color:black; color:white;">
+        <div class="text-center p-3">
+            <p>
+            <b>A Linked Open Data project</b><br>
+            
+            MA "Digital Humanities and Digital Knowledge", University of Bologna <br>
+            Course "Information Modeling and Web Technologies" <br>
+            
+            <a href="documentation.html" style="color:white;">Documentation about the project</a><br>
+           
+            </p>
+        </div>      
+    </footer>
 
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 10px;
-    position: relative; 
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.horizontal {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.vertical {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.square {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.small {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.gallery-item[data-id="17"] {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.carousel-caption {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 80%; 
-    padding: 10px; 
-    border-radius: 5px; 
-}
-
-.gallery-item:hover .carousel-caption {
-    opacity: 1;
-}
-
-.carousel-caption h5 {
-    color: white !important;
-    margin: 0 0 10px 0;
-}
-
-.carousel-caption .btn {
-    background-color: #6B1A10;
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.carousel-caption .btn:hover {
-    background-color: #5a150e;
-    color: #fff;
-}
-
-.footer {
-    background-color: black;
-    color: white;
-    padding: 0;
-}
-
-.footer a {
-    color: white;
-}
-
-.footer p {
-    color: white;
-}
-
-.scroll-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 99;
-}
-
-.scroll-button {
-    background-color: #ffffff;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 40px !important;
-    height: 40px !important;
-    padding: 10px !important;    
-}
-
-.scroll-button svg {
-    width: 24px;
-    height: 24px;
-    fill: black;
-}
-
-.scroll-button:hover {
-    background-color: #f0f0f0;
-}
-
-@media (min-width: 1200px) {
-    .gallery {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .horizontal, .vertical, .square, .small {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-}
+    <!-- JavaScript and external libraries -->
+    <!-- Bootstrap 5 Popper.js and JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="JS/myscript.js"></script>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
