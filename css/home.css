@@ -63,7 +63,6 @@
   max-width: 600px;
   text-align: left;
   padding: 1rem;
-  overflow-y: auto;
 }
 
 #video-back {
@@ -92,12 +91,10 @@
     flex-wrap: wrap;
   }
 
-  #poster .poster_content {
+ .poster_content {
     width: 100%;
     font-size: 0.9rem;
     line-height: 1.4;
-    padding-top: 0; /* Rimuove il padding superiore, se presente */
-    margin-top: 0; /* Rimuove il margine superiore, se presente */
   }
 
   #video-back {
@@ -135,7 +132,7 @@
   color: rgb(250, 243, 239);
 }
 
-h5 strong, #bg-cover .bg-cover_text h5 b {
+.h5 strong, .bg-cover_text h5 b {
   display: block;
   margin-top: 1rem;
   border-bottom: 2px solid rgba(73, 37, 54, 0.899);
