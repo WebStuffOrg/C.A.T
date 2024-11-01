@@ -1,16 +1,17 @@
-/* Card Container */
-.card-container {
+
+
+#card-container {
   max-width: 80%;
-  margin: 200px auto 50px; /* Margin top e bottom separati */
+  margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 25px; /* Usato per il gap tra le carte */
+  gap: 25px;
+  margin-top: 200px;
 }
 
-/* Card Styles */
 .card {
-  flex: 1 1 calc(25% - 25px); /* Adatta le dimensioni delle carte per layout flessibile */
+  flex: 1;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,49 +19,45 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
-.card:hover {
+.card:hover{
   transform: scale(1.05);
 }
 
-/* Card Image */
+
 .card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Card Content */
 .card-content {
   padding: 20px;
 }
 
-/* Heading and Paragraph Styles */
-.card-content h3 {
+.card-content h3{
   color: #67314B;
   font-size: 27px;
   margin-bottom: 10px;
 }
 
-.card-content p {
+.card-content p{
   color: #333;
   font-size: 17px;
   line-height: 1.6;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px){
   .card {
-      flex: 1 1 100%; /* Adatta le carte a una sola colonna */
+    flex:100%
   }
 }
 
+/* Footer */
 .footer {
-  margin-top: 300px;
+  color:#fff;
+    margin-top: 300px;
 }
 
-/* Text Centering */
-.text-center {
-  color: #fff;
-  text-align: center; /* Aggiunto per centrare il testo nel footer */
-}
+
+
+
