@@ -90,7 +90,7 @@
   #poster {
     flex-wrap: wrap;
   }
-  
+
   #video-back {
     margin-bottom: 0.5rem; 
     min-height: 30vh;
@@ -118,7 +118,7 @@
 
 .bg-cover_title, .bg-cover_text {
   width: 50%;
-  padding: 2.5vw;
+  padding: 1.5vw;
   font-size: 1.44rem;
   color: #FAF3EF;
   font-family: 'Nunito', sans-serif;
@@ -137,7 +137,7 @@
 
  .bg-cover_text ul,  .bg-cover_text p {
   color: rgb(250, 243, 239);
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 
 .admission-list li {
@@ -157,6 +157,7 @@
   font-size: 1rem;
   line-height: 1.4;
 }
+
 }
 
 /* Table */
