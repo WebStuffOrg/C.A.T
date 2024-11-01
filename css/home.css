@@ -143,6 +143,11 @@
   margin: 0.5rem 0;
 }
 
+.admission-list li {
+  font-size:  1.44rem;
+  font-weight: bold;
+}
+
 /* Responsive Background Section */
 @media (max-width: 760px) {
   #bg-cover, #end-cover {
