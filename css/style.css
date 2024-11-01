@@ -89,7 +89,7 @@ p {
 .dropdown-item {
   color: #ffffff;
   font-family: 'Comfortaa';
-  font-size: 14px;
+  font-size: 0.8rem; 
 }
 
 /* Responsive navbar */
