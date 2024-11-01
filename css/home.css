@@ -122,7 +122,6 @@
   flex-wrap: wrap;
 }
 
-.bg-cover_title,.bg-cover_text,
 .bg-cover_title, .bg-cover_text {
   width: 50%;
   padding: 2.5vw;
@@ -139,7 +138,6 @@
   padding-bottom: 0.5rem;
 }
 
-.bg-cover_text ul, .bg-cover_text p,
  .bg-cover_text ul,  .bg-cover_text p {
   color: rgb(250, 243, 239);
   margin: 0.5rem 0;
@@ -152,8 +150,7 @@
     padding: 1rem;
   }
 
- .bg-cover_text, .bg-cover_title,
-   .bg-cover_text,  .bg-cover_title {
+ .bg-cover_text{
     width: 100%;
     padding: 1rem;
   }
