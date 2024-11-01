@@ -90,13 +90,7 @@
   #poster {
     flex-wrap: wrap;
   }
-
- .poster_content {
-    width: 100%;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
+  
   #video-back {
     margin-bottom: 0.5rem; 
     min-height: 30vh;
@@ -125,13 +119,16 @@
 .bg-cover_title, .bg-cover_text {
   width: 50%;
   padding: 2.5vw;
+  font-size: 1.44rem;
+  color: #FAF3EF;
+  font-family: 'Nunito', sans-serif;
 }
 
-.title, h5 {
+.title {
   color: rgb(250, 243, 239);
 }
 
-.h5 strong, .bg-cover_text h5 b {
+.bg-cover_text b {
   display: block;
   margin-top: 1rem;
   border-bottom: 2px solid rgba(73, 37, 54, 0.899);
@@ -145,7 +142,6 @@
 
 .admission-list li {
   font-size:  1.44rem;
-  font-weight: bold;
 }
 
 /* Responsive Background Section */
@@ -155,10 +151,12 @@
     padding: 1rem;
   }
 
- .bg-cover_text{
-    width: 100%;
-    padding: 1rem;
-  }
+ .bg-cover_text, 
+ .admission-list li{
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 }
 
 /* Table */
