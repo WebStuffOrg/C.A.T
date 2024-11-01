@@ -18,7 +18,6 @@ h3 {
   }
 
 button {
-    font-size: 0.7rem;
     border: solid 3px;
 }
 
@@ -62,28 +61,6 @@ main {
     width: 100%;
 }
 
-.scroll-buttons {
-    position: fixed;
-    height: 8%;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-#scroll-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
 /* IMAGE DISPLAY */
 
 #image-wrapper {
@@ -105,12 +82,19 @@ main {
     height: auto;
 }
 
-@media (width < 992px){
+@media screen and (max-width: 992px) {
     #image-wrapper {
         height: 50%;
-    };
+        width: 100%;
+        left: 0%;
+    }
+    #alt-narr .sub-narr button {
+        padding: 3%;
+    }
 }
+
 #narrative-navbar {
+    position: absolute;
     height: fit-content;
     width: 100%; 
     z-index: 1; /* Ensure it's above the image */
@@ -177,24 +161,27 @@ main {
 
 /* NARRATIVE SWITCH SECTION */
 
-#alt-narr .sub-narr button{
+#alt-narr .sub-narr button {
     color: white;
     width: 100%;
     height: fit-content;
     background-color: var(--tertiary-color);
     margin-top: 2.5vh;
     align-self: center;
-    text-wrap: wrap;
+    overflow-wrap: break-word;
 }
 
 .narr-icon img {
-    transform: scale(0.5);
+    width: 200px;
+    height: auto;
 }
 
 .narr-icon button {
-    height: fit-content;
-    width: fit-content;
-    padding: 0px !important;
+    margin-right: 2.5vw;
+    height: fit-content !important;
+    width: fit-content !important;
+    align-self: center;
+    justify-self: center;
 }
 
 /* TABLE SECTION */

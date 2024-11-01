@@ -37,7 +37,6 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="exhibition.html">NARRATIVES</a>
                         <a class="dropdown-item" href="collection.html">COLLECTIONS</a>
-                        <a class="dropdown-item" href="gallery.html">GALLERY</a>
                         <a class="dropdown-item" href="timeline.html">TIMELINE</a>
                     </div>
                 </li>
@@ -65,7 +64,7 @@
               <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
             </div>
           </div>
-        <div id="narrative-navbar" class="navbar justify-content-between d-flex position-absolute align-items-start">
+        <div id="narrative-navbar" class="navbar justify-content-between d-flex">
           <a href="exhibition.html" style="text-decoration: none;" title="Leave current narrative.">
             <button id="return-button" class="btn ms-1 ms-md-2 p-2 text-white d-flex">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
@@ -122,6 +121,9 @@
           <div class="label col-6">Date</div> <div id="time" class="table-data col-6">-</div>
         </div>
         <div class="description row">
+          <div class="label col-6">Origin</div> <div id="origin" class="table-data col-6">-</div>
+        </div>
+        <div class="description row">
           <div class="label col-6">Type</div> <div id="type" class="table-data col-6">-</div>
         </div>
         <div class="description row">
@@ -143,7 +145,7 @@
     <div class="col-12 col-md-8" style="padding-left: 5px;">
       <h6>Also present in:</h6>
       <div class="row">
-        <div id="geography" class="col-3 p-2">
+        <div id="geography" class="col-4 col-md-3 p-2">
           <div class="narr-icon">
             <button class="btn" title="Geography Narrative">
               <img id="geography-img" class="img-fluid" src="images/icons/gIcon.png" alt="">
@@ -151,7 +153,7 @@
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="daily" class="col-3 p-2">
+        <div id="daily" class="col-4 col-md-3 p-2">
           <div class="narr-icon">
             <button class="btn" title="Daily Narrative">
               <img id="daily-img" class="img-fluid" src="images/icons/dIcon.png" alt="">
@@ -159,7 +161,7 @@
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="supernatural" class="col-3 p-2">
+        <div id="supernatural" class="col-4 col-md-3 p-2">
           <div class="narr-icon">
             <button class="btn" title="Supernatural Narrative">
               <img id="supernatural-img" class="img-fluid" src="images/icons/sIcon.png" alt="">
@@ -167,14 +169,14 @@
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div class="row p-2">
-          <div class="col-4">
-            <button class="btn" id="timeline-button" style="background-color: #6B1A10; margin-top: 10vh;">
-            <a id="timeline-href" href="#" class="col-2" style="color: white !important;">Go to timeline</a>
-          </button>   
-          </div>       
-        </div>
       </div>
+    </div>
+    <div class="row p-0">
+      <div class="col-4">
+        <button class="btn" id="timeline-button" style="background-color: #6B1A10; margin-top: 10vh;">
+          <a id="timeline-href" href="#" class="col-2" style="color: white !important;">Go to timeline</a>
+        </button>   
+      </div>       
     </div>
   </section>
 
@@ -182,7 +184,7 @@
     <div class="col-12 col-md-8 mt-5 ps-md-5">
     <h5 style="text-align: center; margin-bottom: 5vh;">Description</h5>
     <div id="info-text"></div>
-      <div id="button-container" class="d-flex justify-content-between p-2">
+      <div id="button-container" class="d-flex justify-content-between p-2 mt-5">
         <button id="less-button" class="btn text-button" value="-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
