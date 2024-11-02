@@ -5,15 +5,6 @@
             margin-bottom: 50px;
             background-color: rgb(250, 243, 239);
         }
-
-        .navbar-brand, .nav-link {
-            font-family: 'Nunito', sans-serif;
-            text-align: center;
-            margin: 0;
-            color: white!important;
-            font-size: 16px;
-        }
-
         .page-title {
             color: black;
             font-size: 2.986rem	!important;
@@ -49,14 +40,14 @@
         }
 
 
-        #navbarDropdown + .dropdown-menu .dropdown-item {
-            color: white !important;
-        }
-
         #search-menu {
             background-color:rgb(250, 243, 239) !important;
         }
 
+        #search-menu navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z'/%3E%3C/svg%3E") !important;
+          }
+        
         #search-menu .navbar-brand,
         #search-menu .nav-link {
             color: #000000 !important;
@@ -71,6 +62,11 @@
             max-height: 300px;
             overflow-y: auto;
             white-space: normal;
+            background-color: white;
+        }
+
+        #search-menu .dropdown-item{
+            color: black;
         }
 
         #search-menu .dropdown-submenu {
@@ -80,6 +76,7 @@
         #searchNavbar { 
             margin-right: 55px;
         }
+
 
         #search-menu .dropdown-submenu > .dropdown-menu {
             top: 0;
@@ -162,39 +159,6 @@
             color: white;  
         }
 
-        .scroll-buttons {
-            position: fixed;
-            height: 8%;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            z-index: 1000;
-        }
-  
-        .scroll-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1100;
-        }
-  
-        .scroll-button:hover {
-            background-color: #f0f0f0;
-        }
-        
-        .scroll-button svg {
-            width: 20px;
-            height: 20px;
-        }
-
         .footer {
             background: #000;
             padding:20px 0;
@@ -208,38 +172,4 @@
         }        
 
         
-        @media (max-width: 768px) {
-    
-            /* Home menu */
-            #home-menu .navbar-nav {
-                width: 100%; 
-                flex-direction: column;
-                justify-content: flex-start;
-            }
         
-            #home-menu .nav-link {
-                text-align: left; 
-                margin: 0;
-                padding: 9px 0;
-                width: 100%; 
-            }
-
-            #search-menu .navbar-nav {
-                width: 100%;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
-        
-            #search-menu .nav-link {
-                text-align: left; 
-                padding: 9px 0;
-                width: 100%; 
-            }
-
-            #search-menu .dropdown-menu {
-                left: 0;
-                right: auto;
-                width: 100%; 
-                text-align: left;
-            }
-        }
