@@ -66,10 +66,10 @@ main {
 #image-wrapper {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 0;
-    display: flex;               /* Enable flexbox for centering */
-    justify-content: center;      /* Center horizontally */
     height: 100vh;
     width: 95%;
+    display: flex;
+    justify-content: center;
     position: relative;
     top: 0px;
     left: 2.5%;
@@ -77,37 +77,49 @@ main {
 }
 
 #artwork-img {
-    max-width: 100%;             /* Make the image responsive */
     max-height: 100vh;
     height: auto;
+    display: flex;
+    align-self: center;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     #image-wrapper {
         height: 50%;
         width: 100%;
         left: 0%;
+        top: 40px;
     }
     #alt-narr .sub-narr button {
         padding: 3%;
     }
+    #wrapper-header {
+        top: -45px;
+        background-color: black;
+    }
+    #wrapper-header * {
+        padding: 0px;
+    }
 }
 
-#narrative-navbar {
+#wrapper-header {
     position: absolute;
     height: fit-content;
     width: 100%; 
     z-index: 1; /* Ensure it's above the image */
 }
-#narrative-navbar h6 {
+#wrapper-header h6 {
     background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 8px; 
-    max-width: 50%;
+    max-width: 70%;
+    margin-top: 1.25vh;
 }
-#narrative-navbar button {
+#wrapper-header button {
     background-color:rgba(0, 0, 0, 0.3);
+    align-self: flex-start;
+    margin-top: 1.25vh;
 }
-#narrative-navbar button:hover {
+#wrapper-header button:hover {
     background-color:var(--tertiary-color);
 }
 #artwork-list button {
@@ -138,12 +150,11 @@ main {
     top: 10px;
     right: 0px;
     width: 30vw; /* Shrink image size */
-    height: auto;
     opacity: 0;
     padding-right: 10px;
     visibility: hidden;
     display: none;
-    transition: opacity 0.2s ease, visibility 0.1s ease;
+    transition: opacity 0.5s ease, visibility 0.3s ease;
   }
   
   /* Shown with animation */
@@ -155,30 +166,11 @@ main {
     right: 0px;
     padding-right: 10px;
     width: 30vw; /* Shrink image size */
-    height: auto;
-    transition: opacity 0.5s ease, visibility 0.1s ease;
+    transition: opacity 0.5s ease, visibility 0.3s ease;
 }
 
-/* NARRATIVE SWITCH SECTION */
-
-#alt-narr .sub-narr button {
-    color: white;
-    width: 100%;
-    height: fit-content;
-    background-color: var(--tertiary-color);
-    margin-top: 2.5vh;
-    align-self: center;
-    overflow-wrap: break-word;
-}
-
-.narr-icon img {
-    width: 200px;
-    height: auto;
-}
-
-.narr-icon button {
-    height: fit-content !important;
-    width: fit-content !important;
+#side-image img {
+    max-height: 75vh;
     align-self: center;
     justify-self: center;
 }
@@ -202,7 +194,35 @@ main {
     font-weight: bold;
 }
 
+/* NARRATIVE SWITCH SECTION */
+
+#alt-narr .sub-narr button {
+    color: white;
+    min-width: 70%;
+    width: fit-content;
+    background-color: var(--tertiary-color);
+    margin-top: 2.5vh;
+    align-self: center;
+    overflow-wrap: break-word;
+}
+
+.narr-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.narr-icon img {
+    width: 70px;
+    height: auto;
+}
+
+.narr-icon button {
+    padding: 5%;
+    background-color: var(--secondary-color);
+}
+
 /* DESCRIPTION SECTION */
+
 hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
@@ -211,8 +231,10 @@ hr {
 .text-button {
     background-color: var(--quaternary-color);
     color: white;
-    font-size: small;
-    padding: 2%;
+}
+
+.text-button:active {
+    background-color: var(--quaternary-color);
 }
 
 /* Style for loading spinner */

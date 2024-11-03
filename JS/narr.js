@@ -6,6 +6,7 @@ let narrativeTitle = ""
 let currentIdx = 0
 let textState = 0
 let rotation = 0
+let narrImages
 
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
@@ -23,7 +24,7 @@ const imageContainer = document.getElementById("image-wrapper");
 const table = document.getElementById("info-box");
 const arrowSvg = document.querySelector(".scroll-button > svg")
 
-async function showLoading() {
+function showLoading() {
     spinner.style.display = 'block';
 }
 
@@ -49,7 +50,7 @@ const observerCallback = (entries) => {
   });
 };
 
-const observer = new IntersectionObserver(observerCallback);
+const observer = new IntersectionObserver(observerCallback, {threshold: 0.1});
 observer.observe(mainImage);
 
 window.addEventListener("resize", () => {
@@ -61,37 +62,51 @@ window.addEventListener("resize", () => {
 
 ///// EVENT LISTENERS /////
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await showLoading();
-    fetch('data/narr.json')
-    .then(response => response.json())
-    .then(async data => {
-        items = data.items;
-        narratives = data.narratives;
-        narrativeTitle = data.meta.defaultNarrative;
-        let itemId;
-        if (window.location.href.includes("?")) {
-            const urlObj = new URLSearchParams(window.location.search);
-            if (urlObj.has("narr")) {
-                narrativeTitle = urlObj.get("narr").toString(); 
-            }
-            currentNarrativeArr = narratives[narrativeTitle]; 
-            if (urlObj.has("id")) {
-                itemId = urlObj.get("id").toString(); 
-                currentIdx = currentNarrativeArr.indexOf(itemId); 
-            } else {
-                currentIdx = 0; 
-            }
-        } else {
-            currentNarrativeArr = narratives[narrativeTitle];
-            currentIdx = 0;
-        }
-        const itemData = items[currentNarrativeArr[currentIdx]];
-        await setContent(itemData);
-        await setSidebarList(currentNarrativeArr, currentIdx);
-        await hideLoading();
-        imageContainer.scrollIntoView();
+async function preloadNarrImages() {
+    const imgPromises = currentNarrativeArr.map((id) => {
+        const imgUrl = items[id].img
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = imgUrl;
+            img.onload = () => {
+                resolve(img);
+            };
+            img.onerror = () => reject(new Error('Image failed to load'));
+        });
     });
+
+    try {
+        const loadedImages = await Promise.all(imgPromises);
+        console.log("All images preloaded successfully!");
+        return loadedImages; // Return the array of loaded Image objects
+    } 
+    catch (error) {
+        console.error(error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    showLoading();
+    const response = await fetch('data/narr.json');
+    const data = await response.json()
+    items = data.items;
+    narratives = data.narratives;
+    if (window.location.href.includes("?")) {
+        const urlObj = new URLSearchParams(window.location.search);
+        narrativeTitle = urlObj.has("narr")? urlObj.get("narr").toString() : data.meta.defaultNarrative; 
+        currentNarrativeArr = narratives[narrativeTitle]; 
+        currentIdx = urlObj.has("id") ? currentNarrativeArr.indexOf(urlObj.get("id").toString()) : 0; 
+    }
+    else {
+        currentNarrativeArr = narratives[narrativeTitle];
+        currentIdx = 0;
+    };
+    narrImages = await preloadNarrImages();
+    const itemData = items[currentNarrativeArr[currentIdx]];
+    await setContent(itemData);
+    await setSidebarList(currentNarrativeArr, currentIdx);
+    await hideLoading();
+    imageContainer.scrollIntoView();
 });
 
 // narrative switch
@@ -111,7 +126,7 @@ altNarrative.addEventListener("click", async (e) => {
         smallImagecontainer.classList.remove('visible');
         await new Promise(requestAnimationFrame);
         imageContainer.scrollIntoView({ behavior: 'smooth' });
-        await new Promise(resolve => setTimeout(resolve, 600));
+        await new Promise(resolve => setTimeout(resolve, 600)); 
         await switchNarrative(narrative);
     };
 });
@@ -146,8 +161,8 @@ textButtons.addEventListener("click", (e) => {
 
 // timeline refferal
 
-document.getElementById("timeline-button").addEventListener("click", () => {
-    document.getElementById("timeline-href").href = `timeline.html#${currentNarrativeArr[currentIdx]}`
+document.getElementById("time").addEventListener("click", () => {
+    window.location.href = `timeline.html#${currentNarrativeArr[currentIdx]}`
 })
 
 // scroll animations 
@@ -183,7 +198,6 @@ async function nextItem() {
     backButton.disabled = currentIdx === 0;
     currentIdx += 1;
     await setContent(items[currentNarrativeArr[currentIdx]]);
-    nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     disableCurrSideItem(currentIdx);
 }
 
@@ -191,19 +205,20 @@ async function prevItem() {
     nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
     currentIdx -= 1;
     await setContent(items[currentNarrativeArr[currentIdx]]);
-    backButton.disabled = currentIdx === 0;
     disableCurrSideItem(currentIdx);
 }
 
 async function setContent(data) {
-    const imageLoadPromise = loadImage(data.img);
-    const updateTextPromise = Promise.all([
+    showLoading();
+    console.log(narrImages)
+    mainImage.src = sideImage.src = narrImages[currentIdx].src;
+    await hideLoading()
+    await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),
         updateElements('.current-narrative', narrativeTitle),
         setNarrativeSwitch(data)
     ]);
-    await Promise.all([imageLoadPromise, updateTextPromise]);
     text.innerHTML = data.text.basic;
     textState = 0;
     backButton.disabled = currentIdx === 0;
@@ -217,19 +232,6 @@ function updateElements(selector, content) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
         el.textContent = typeof content === 'function' ? content(el) : content;
-    });
-}
-
-function loadImage(imagePath) {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = imagePath;
-        img.onload = () => {
-            mainImage.src = imagePath;
-            sideImage.src = imagePath;
-            resolve();
-        };
-        img.onerror = () => reject(new Error('Image failed to load'));
     });
 }
 
@@ -300,12 +302,13 @@ async function setNarrativeSwitch(item) {
 }
 
 async function switchNarrative(narrative) {
+    console.log(narrative)
     document.querySelectorAll('.current-narrative').forEach((el) => {
         el.textContent = narrative;
     });
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
     currentIdx = 0;
-    await setContent(items[currentNarrativeArr[0]]);
-    await setSidebarList();
+    narrImages = await preloadNarrImages()
+    await Promise.all([setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
 }

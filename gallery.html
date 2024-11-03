@@ -17,7 +17,7 @@
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
     <div class="container">
         <a href="index.html" class="navbar-brand">
-            <img src="images/icons/cat_logo.png" alt="logo" width="75px" height="65px">.A.T
+            <img src="images/icons/cat_logo.png" alt="logo" width="75" height="65">.A.T
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,55 +53,46 @@
   <main class="container-fluid justify-content-center">
 
     <div class="row">
-      <section id="image-wrapper" class="col-12">
-        <!-- Overlay Navbar -->
+      <section id="image-wrapper">
           <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8);" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel"></h5>
+              <h5 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">...Loading...</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="">
               <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
             </div>
           </div>
-        <div id="narrative-navbar" class="navbar justify-content-between d-flex">
-          <a href="exhibition.html" style="text-decoration: none;" title="Leave current narrative.">
-            <button id="return-button" class="btn ms-1 ms-md-2 p-2 text-white d-flex">
-              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
-                <path d="M352,170.667H94.17l70.249-70.248a21.334,21.334,0,1,0-30.171-30.171L27.581,176.915a21.336,21.336,0,0,0,0,30.171L134.248,313.752a21.334,21.334,0,1,0,30.171-30.171L94.17,213.333H352a96,96,0,0,1,0,192H128A21.333,21.333,0,1,0,128,448H352c76.461,0,138.667-62.205,138.667-138.667S428.461,170.667,352,170.667Z" id="id_101" style="fill: rgb(235, 239, 240);"></path>
-              </svg>              
-              <p class="d-none d-md-flex" style="margin-bottom: 0px;">Exhibition</p>
-            </button>
-          </a>
-          <h6 class="current-artwork d-inline text-white text-center p-2"></h6>
-          <button class="btn d-flex text-white me-1 me-md-2 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <!-- Overlay Navbar -->
+
+        <div id="wrapper-header" class="justify-content-between d-flex">
+          <button id="return-button" class="btn ms-1 ms-md-2 mt-md-2 p-2 text-white d-flex">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
+              <path d="M352,170.667H94.17l70.249-70.248a21.334,21.334,0,1,0-30.171-30.171L27.581,176.915a21.336,21.336,0,0,0,0,30.171L134.248,313.752a21.334,21.334,0,1,0,30.171-30.171L94.17,213.333H352a96,96,0,0,1,0,192H128A21.333,21.333,0,1,0,128,448H352c76.461,0,138.667-62.205,138.667-138.667S428.461,170.667,352,170.667Z" id="id_101" style="fill: rgb(235, 239, 240);"></path>
+            </svg>
+            <a href="exhibition.html" class="d-none d-md-flex text-white" style="text-decoration: none;" title="Leave current narrative.">Narratives</a>              
+          </button>
+          <h6 class="current-artwork d-inline text-white text-center p-2 mt-md-2">...Loading...</h6>
+          <button class="btn d-flex text-white me-1 me-md-2 mt-md-2 p-2" type="button" title="Narrative's list of artworks" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <!--svg by https://freeicons.io/business-and-online-icons/list-icon-icon-3-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" height="20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list pt-1"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
-            <p class="current-narrative d-none d-md-flex" style="margin-bottom: 0px;"></p>
+            <span class="current-narrative d-none d-md-flex" style="margin-bottom: 0px;">...Loading...</span>
           </button>
         </div>
         <!-- Overlay Buttons -->
-        <button id="back-button" class="btn text-white position-absolute" onclick="prevItem()">
+        <button id="back-button" class="btn text-white position-absolute" value="-1" onclick="prevItem()">
           <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
             <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
           </svg>
         </button>
-  
-        <button id="next-button" class="btn text-white position-absolute" onclick="nextItem()">
+        <button id="next-button" class="btn text-white position-absolute" value="+1" onclick="nextItem()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
             <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
           </svg>
         </button>
           <!-- Image -->
-        <img id="artwork-img" class="img-fluid" src="images/icons/placeholder_with_logo.png" alt="meow">
-        <div class="scroll-buttons">
-          <button class="scroll-button">
-            <svg viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
-            </svg>
-          </button>
-        </div>
+        <img id="artwork-img" class="img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow">
       </section>
     </div>
 
@@ -112,13 +103,20 @@
       <hr style="margin-left: 20%; margin-right: 20%;">
       <div class="table-body mt-5">
         <div class="description row">
-          <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6"></div>
+          <div class="label col-6">Title</div> <div id="title" class="current-artwork col-6">-</div>
         </div>
         <div class="description row">
           <div class="label col-6">Creator</div> <div id="creator" class="table-data col-6">-</div>
         </div>
         <div class="description row">
-          <div class="label col-6">Date</div> <div id="time" class="table-data col-6">-</div>
+          <div class="label col-6">Date</div> 
+            <div class="col-6">
+              <div id="timeline" class="d-block">
+                <button class="btn table-data" id="time" title="Go to Timeline view" style="background-color: var(--primary-color); margin-left: -13px;">
+                  -
+                </button>
+              </div>
+            </div>
         </div>
         <div class="description row">
           <div class="label col-6">Origin</div> <div id="origin" class="table-data col-6">-</div>
@@ -136,53 +134,46 @@
     </section>
     <div id="side-image" class="col-4 d-none d-md-flex justify-content-center">
       <div class="card" style="max-height: 50vh;">
-        <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="meow">
+        <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow">
       </div>
     </div>
   </div>
 
-  <section id="alt-narr" class="row ps-md-5 mt-5 justify-content-start">
-    <div class="col-12 col-md-8" style="padding-left: 5px;">
-      <h6>Also present in:</h6>
+  <div class="row ps-md-5 mt-5 justify-content-start">
+    <section id="alt-narr" class="col-12 col-md-8" style="padding-left: 5px;">
+      <h5 class="fw-bolder">Categories:</h5>
       <div class="row">
-        <div id="geography" class="col-4 col-md-3 p-2">
+        <div id="geography" class="col-4 p-2 p-md-3">
           <div class="narr-icon">
             <button class="btn" title="Geography Narrative">
-              <img id="geography-img" class="img-fluid" src="images/icons/gIcon.png" alt="">
+              <img id="geography-img" class="img-fluid" src="images/icons/gIcon.png" alt="Geography Icon">
             </button>
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="daily" class="col-4 col-md-3 p-2">
+        <div id="daily" class="col-4 p-2 p-md-3">
           <div class="narr-icon">
             <button class="btn" title="Daily Narrative">
-              <img id="daily-img" class="img-fluid" src="images/icons/dIcon.png" alt="">
+              <img id="daily-img" src="images/icons/dIcon.png" alt="Daily Icon">
             </button>
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="supernatural" class="col-4 col-md-3 p-2">
+        <div id="supernatural" class="col-4 p-2 p-md-3">
           <div class="narr-icon">
             <button class="btn" title="Supernatural Narrative">
-              <img id="supernatural-img" class="img-fluid" src="images/icons/sIcon.png" alt="">
+              <img id="supernatural-img" src="images/icons/sIcon.png" alt="Supernatural Icon">
             </button>
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
       </div>
-    </div>
-    <div class="row p-0">
-      <div class="col-4">
-        <button class="btn" id="timeline-button" style="background-color: #6B1A10; margin-top: 10vh;">
-          <a id="timeline-href" href="#" class="col-2" style="color: white !important;">Go to timeline</a>
-        </button>   
-      </div>       
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section class="row mb-5">
+  <section id="description" class="row mb-5">
     <div class="col-12 col-md-8 mt-5 ps-md-5">
-    <h5 style="text-align: center; margin-bottom: 5vh;">Description</h5>
+    <h5 style="text-align: center; margin-bottom: 5vh; font-weight: bolder;">Description</h5>
     <div id="info-text"></div>
       <div id="button-container" class="d-flex justify-content-between p-2 mt-5">
         <button id="less-button" class="btn text-button" value="-1">
@@ -217,8 +208,16 @@
   </div>      
 </footer>
 
-  <div id="loading" class="loading-spinner"></div>
-  <script src="./JS/narr.js"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<div class="scroll-buttons">
+  <button class="scroll-button">
+    <svg viewBox="0 0 24 24">
+      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+    </svg>
+  </button>
+</div>
+
+<div id="loading" class="loading-spinner"></div>
+<script src="./JS/narr.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
