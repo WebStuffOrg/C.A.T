@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         currentIdx = urlObj.has("id") ? currentNarrativeArr.indexOf(urlObj.get("id").toString()) : 0; 
     }
     else {
-        currentNarrativeArr = narratives[data.meta.defaultNarrative];
+        narrativeTitle = data.meta.defaultNarrative
+        currentNarrativeArr = narratives[narrativeTitle];
         currentIdx = 0;
     };
     narrImages = await preloadNarrImages();

@@ -122,6 +122,7 @@ main {
 #wrapper-header button:hover {
     background-color:var(--tertiary-color);
 }
+
 #artwork-list button {
     color: white;
     text-align: left;
