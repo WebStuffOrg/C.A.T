@@ -134,6 +134,7 @@ altNarrative.addEventListener("click", async (e) => {
 // text switching 
 
 textButtons.addEventListener("click", (e) => {
+    text.innerHTML = ""
     const button = e.target.closest("button");
     if (button) {
         let textType
