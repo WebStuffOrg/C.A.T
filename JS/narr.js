@@ -155,7 +155,9 @@ textButtons.addEventListener("click", (e) => {
                 lessButton.disabled = true;
         };
         const item = currentNarrativeArr[currentIdx];
-        text.innerHTML = items[item]["text"][textType];
+        const textP = document.createElement("p")
+        textP.innerHTML = items[item]["text"][textType]
+        text.appendChild(textP);
     }
 });
 
@@ -265,12 +267,12 @@ async function setNarrativeSwitch(item) {
     document.querySelector("#geography button").disabled = false;
 
     const itemNarratives = [...item.includedIn];
-    if (narrativeTitle != "Geography" && narrativeTitle != "Timeline") {
-        const idx = itemNarratives.indexOf(narrativeTitle);
-        itemNarratives.splice(idx, 1);
+    if (narrativeTitle === "Geography") {
+        document.querySelector(`#geography button`).disabled = true;
     }
     else {
-        document.querySelector(`#${narrativeTitle.toLowerCase()} button`).disabled = true;
+        const idx = itemNarratives.indexOf(narrativeTitle);
+        itemNarratives.splice(idx, 1);
     }
     itemNarratives.forEach((i) => { 
         const button = document.createElement("button");
