@@ -15,7 +15,6 @@ const artworksList = document.getElementById("artwork-list");
 const smallImagecontainer = document.getElementById("side-image");
 const mainImage = document.getElementById('artwork-img');
 const sideImage = document.getElementById('artwork-img-2');
-const spinner = document.querySelector('.loading-spinner');
 const textButtons = document.getElementById("button-container");
 const lessButton = document.getElementById("less-button");
 const moreButton = document.getElementById("more-button");
@@ -24,13 +23,6 @@ const imageContainer = document.getElementById("image-wrapper");
 const table = document.getElementById("info-box");
 const arrowSvg = document.querySelector(".scroll-button > svg")
 
-function showLoading() {
-    spinner.style.display = 'block';
-}
-
-async function hideLoading() {
-    spinner.style.display = 'none';
-}
 
 // OBSERVER //
 
@@ -53,40 +45,29 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, {threshold: 0.1});
 observer.observe(mainImage);
 
-window.addEventListener("resize", () => {
-  const offcanvasClasses = document.querySelector(".offcanvas").classList;
-  if (offcanvasClasses.contains("show")) {
-    offcanvasClasses.remove("show");
-  }
-});
+
 
 ///// EVENT LISTENERS /////
 
-async function preloadNarrImages() {
-    const imgPromises = currentNarrativeArr.map((id) => {
-        const imgUrl = items[id].img
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = imgUrl;
-            img.onload = () => {
-                resolve(img);
-            };
-            img.onerror = () => reject(new Error('Image failed to load'));
-        });
-    });
-
-    try {
-        const loadedImages = await Promise.all(imgPromises);
-        console.log("All images preloaded successfully!");
-        return loadedImages; // Return the array of loaded Image objects
-    } 
-    catch (error) {
-        console.error(error);
+window.addEventListener("resize", () => {
+    const offcanvasClasses = document.querySelector(".offcanvas").classList;
+    if (offcanvasClasses.contains("show")) {
+      offcanvasClasses.remove("show");
     }
-}
+});
+
+window.addEventListener("load", () => {
+    const spinner = document.getElementById('loading-spinner');
+    spinner.classList.add("hide-loading");
+
+    spinner.addEventListener("transitionend", () => {
+        console.log(spinner);
+        spinner.remove();
+    });
+})
+
 
 document.addEventListener("DOMContentLoaded", async () => {
-    showLoading();
     const response = await fetch('data/narr.json');
     const data = await response.json()
     items = data.items;
@@ -105,7 +86,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     narrImages = await preloadNarrImages();
     const itemData = items[currentNarrativeArr[currentIdx]];
     await Promise.all([setSidebarList(currentNarrativeArr, currentIdx), setContent(itemData)]) ;
-    await hideLoading();
     imageContainer.scrollIntoView();
 });
 
@@ -197,6 +177,29 @@ artworksList.addEventListener("click", async (e) => {
 
 ///// UI FUNCTIONS /////
 
+async function preloadNarrImages() {
+    const imgPromises = currentNarrativeArr.map((id) => {
+        const imgUrl = items[id].img
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = imgUrl;
+            img.onload = () => {
+                resolve(img);
+            };
+            img.onerror = () => reject(new Error('Image failed to load'));
+        });
+    });
+
+    try {
+        const loadedImages = await Promise.all(imgPromises);
+        console.log("All images preloaded successfully!");
+        return loadedImages; // Return the array of loaded Image objects
+    } 
+    catch (error) {
+        console.error(error);
+    }
+}
+
 async function nextItem() {
     backButton.disabled = currentIdx === 0;
     currentIdx += 1;
@@ -212,10 +215,8 @@ async function prevItem() {
 }
 
 async function setContent(data) {
-    showLoading();
     console.log(narrImages)
     mainImage.src = sideImage.src = narrImages[currentIdx].src;
-    await hideLoading()
     await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),

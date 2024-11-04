@@ -194,7 +194,7 @@ main {
 }
 .description > div {
     text-align: left;
-    overflow-wrap: anywhere;
+    text-wrap:pretty;
 }
 .description div.label {
     font-weight: bold;
@@ -216,6 +216,9 @@ main {
     border: solid 1px var(--primary-color); 
     background-color: rgba(255, 255, 255, 0.5); 
     margin-left: -13px;
+    width: fit-content;
+    text-wrap: pretty;
+    text-align: left;
 }
 
 .narr-icon {
@@ -251,18 +254,33 @@ hr {
 }
 
 /* Style for loading spinner */
-.loading-spinner {
-    display: none; /* Hidden by default */
+#loading-spinner {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: var(--quinary-color);
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+#loading-spinner::after {
+    content: "";
     width: 50px;
     height: 50px;
     border: 8px solid #f3f3f3; /* Light gray */
     border-top: 8px solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+.hide-loading {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Animation for spinning effect */
