@@ -98,13 +98,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         currentIdx = urlObj.has("id") ? currentNarrativeArr.indexOf(urlObj.get("id").toString()) : 0; 
     }
     else {
-        currentNarrativeArr = narratives[narrativeTitle];
+        currentNarrativeArr = narratives[data.meta.defaultNarrative];
         currentIdx = 0;
     };
     narrImages = await preloadNarrImages();
     const itemData = items[currentNarrativeArr[currentIdx]];
-    await setContent(itemData);
-    await setSidebarList(currentNarrativeArr, currentIdx);
+    await Promise.all([setSidebarList(currentNarrativeArr, currentIdx), setContent(itemData)]) ;
     await hideLoading();
     imageContainer.scrollIntoView();
 });
