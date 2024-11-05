@@ -90,6 +90,9 @@ main {
         left: 0%;
         top: 40px;
     }
+    #artwork-img {
+        max-height: 75vh;
+}
     #alt-narr .sub-narr button {
         padding: 3%;
     }
