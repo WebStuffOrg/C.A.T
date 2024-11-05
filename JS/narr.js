@@ -57,13 +57,15 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("load", () => {
-    const spinner = document.getElementById('loading-spinner');
-    spinner.classList.add("hide-loading");
 
-    spinner.addEventListener("transitionend", () => {
-        console.log(spinner);
-        spinner.remove();
+    mainImage.addEventListener("load", () => {
+        const spinner = document.getElementById('loading-spinner');
+        spinner.classList.add("hide-loading");
+    
+        spinner.addEventListener("transitionend", () => {
+            spinner.remove();
     });
+    })
 })
 
 
