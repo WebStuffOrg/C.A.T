@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 ///// UI FUNCTIONS /////
 
 async function setContent(data) {
+    buttonsCheck();
     console.log(narrImages)
     await setImage();
     await Promise.all([
@@ -62,8 +63,7 @@ async function setContent(data) {
         setNarrativeSwitch(data)
     ]);
     text.innerHTML = data.text.basic;
-    textState = 0;
-    buttonsCheck();
+    textState = 0;;
 }
 
 async function buttonsCheck () {
@@ -280,9 +280,7 @@ textButtons.addEventListener("click", (e) => {
                 lessButton.disabled = true;
         };
         const item = currentNarrativeArr[currentIdx];
-        const textP = document.createElement("p")
-        textP.innerHTML = items[item]["text"][textType]
-        text.appendChild(textP);
+        text.innerHTML = items[item]["text"][textType]
     }
 });
 

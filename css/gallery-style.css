@@ -202,7 +202,8 @@ main {
 .card-header {
     background-color: black; 
     text-align: center;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /* NARRATIVE SWITCH SECTION */
