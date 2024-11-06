@@ -692,22 +692,8 @@
 
     <!-- Custom JS for scroll to top -->
     <script>
-        window.onscroll = function () {
-            toggleBackToTopBtn();
-        };
-
         function scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        function toggleBackToTopBtn() {
-            const backToTopBtn = document.getElementById("backToTopBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
