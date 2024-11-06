@@ -114,13 +114,13 @@ main {
 #wrapper-header h6 {
     background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 8px; 
-    max-width: 70%;
+    max-width: 80%;
     margin-top: 1.25vh;
+    align-self: center;
 }
 #wrapper-header button {
     background-color:rgba(0, 0, 0, 0.3);
-    align-self: flex-start;
-    margin-top: 1.25vh;
+    align-self: center;
 }
 #wrapper-header button:hover {
     background-color:var(--tertiary-color);
@@ -148,16 +148,16 @@ main {
 
 /* SIDE IMAGE*/
 
-/* Initially hidden */
-.hidden {
+#side-image {
     position: fixed;
     top: 10px;
     right: 0px;
-    width: 30vw; /* Shrink image size */
+}
+
+/* Initially hidden */
+.hidden {
     opacity: 0;
-    padding-right: 10px;
     visibility: hidden;
-    display: none;
     transition: opacity 0.5s ease, visibility 0.3s ease;
   }
   
@@ -165,19 +165,15 @@ main {
   .visible {
     opacity: 1;
     visibility: visible;
-    position: fixed;
-    top: 10px;
-    right: 0px;
-    padding-right: 10px;
-    width: 30vw; /* Shrink image size */
     transition: opacity 0.5s ease, visibility 0.3s ease;
 }
 
 #side-image img {
-    max-height: 75vh;
+    max-height: 70vh;
     align-self: center;
     justify-self: center;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 #side-image .card {
     border-radius: 5px;
@@ -188,7 +184,7 @@ main {
 
 .table-body {
     padding: 0px;
-    padding-top: 1vmin;
+    padding-top: 1vh;
 }
 .description {
     margin-bottom: 1vh;
@@ -203,11 +199,17 @@ main {
     font-weight: bold;
 }
 
+.card-header {
+    background-color: black; 
+    text-align: center;
+    border-radius: 5px;
+}
+
 /* NARRATIVE SWITCH SECTION */
 
 #alt-narr .sub-narr button {
     color: white;
-    min-width: 70%;
+    min-width: 50%;
     width: fit-content;
     background-color: var(--tertiary-color);
     margin-top: 2.5vh;
@@ -240,6 +242,11 @@ main {
     border: solid 2px var(--secondary-color);
 }
 
+#description h5 {
+    text-align: center; 
+    margin-bottom: 5vh; 
+    font-weight: bolder;
+}
 /* DESCRIPTION SECTION */
 
 hr {
