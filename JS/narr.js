@@ -8,8 +8,7 @@ let textState = 0
 let rotation = 0
 let narrImages
 
-const nextButton = document.getElementById("next-button");
-const backButton = document.getElementById("back-button");
+const navButtons = document.querySelectorAll(".back-button, .next-button")
 const altNarrative = document.getElementById("alt-narr");
 const artworksList = document.getElementById("artwork-list");
 const smallImagecontainer = document.getElementById("side-image");
@@ -67,8 +66,14 @@ async function setContent(data) {
 }
 
 async function buttonsCheck () {
-    backButton.disabled = currentIdx === 0;
-    nextButton.disabled = currentIdx === currentNarrativeArr.length - 1;
+    navButtons.forEach((i) => {
+        if (i.classList.contains("next-button")) {
+            i.disabled = currentIdx === currentNarrativeArr.length - 1;
+        }
+        else {
+            i.disabled = currentIdx === 0;
+        }
+    });
     lessButton.disabled = true;
     moreButton.disabled = false;
 }
@@ -170,7 +175,7 @@ async function switchNarrative(narrative) {
     narrativeTitle = narrative;
     currentIdx = 0;
     narrImages = await preloadNarrImages();
-    await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
+    await Promise.all([updateElements('.current-narrative', narrativeTitle), showLoading(), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
 }
 
 async function setSidebarList(narrative = currentNarrativeArr) {
@@ -222,15 +227,13 @@ window.addEventListener("resize", () => {
     }
 });
 
-window.addEventListener("load", () => {
 
-    mainImage.addEventListener("load", () => {
-        spinner.classList.add("hide-loading");
+mainImage.addEventListener("load", () => {
+    spinner.classList.add("hide-loading");
     
     //     spinner.addEventListener("transitionend", () => {
     //         spinner.remove();
     // });
-    })
 })
 
 // narrative switch

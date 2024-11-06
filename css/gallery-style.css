@@ -126,25 +126,42 @@ main {
     background-color:var(--tertiary-color);
 }
 
+#wrapper-header #offcanvas-button:hover {
+    background-color: var(--quaternary-color);
+}
+
 #artwork-list button {
     color: white;
     text-align: left;
     width: fit-content;
 }
-#back-button, #next-button {
+.back-button, .next-button {
+    position: absolute;
+    display: flex;
+    color: white;
     background-color: rgba(0, 0, 0, 0.7);
     top: 50%;
     z-index: 1;
     border-radius: 50px;
 }
 
-#back-button {
+.back-button {
     left: 10px;
 }
   
-#next-button {
+.next-button {
     right: 10px;
 } 
+
+.back-button:hover, .next-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: solid 1px var(--quinary-color);
+}
+.back-button:disabled, .next-button:disabled {
+    color: white;
+    border: solid 1px var(--quinary-color);
+}
 
 /* SIDE IMAGE*/
 
@@ -184,8 +201,8 @@ main {
 
 .table-body {
     padding: 0px;
-    padding-top: 1vh;
 }
+
 .description {
     margin-bottom: 1vh;
     border-bottom: 1px dotted black;
@@ -197,6 +214,7 @@ main {
 }
 .description div.label {
     font-weight: bold;
+    align-content: baseline;
 }
 
 .card-header {
