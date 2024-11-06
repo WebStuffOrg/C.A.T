@@ -245,4 +245,8 @@ h1, h3, h4, h5, p {
         grid-column: span 1;
         grid-row: span 1;
     }
+
+    .gallery-item:nth-child(-n+4) {
+        grid-column: span 2 !important; 
+    }
 }
