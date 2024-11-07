@@ -88,12 +88,10 @@
       <div id="image-wrapper">
           <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8);" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">C.A.T</h5>
+              <h4 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">C.A.T</h>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="">
-              <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
-            </div>
+            <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
           </div>
 
         <!-- Overlay Navbar -->
@@ -168,20 +166,20 @@
     </div>
     <div id="side-image" class="col-4 d-none d-md-flex justify-content-center hidden">
       <div class="card">
-        <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow">
+        <button class="btn back-button" value="-1" onclick="prevItem()">
+          <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+          </svg>
+        </button>
+        <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow" loading="lazy">
+        <button class="btn next-button" value="1" onclick="nextItem()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+          </svg>
+        </button>
         <div class="card-header text-white w-100 justify-content-between">
-          <button class="btn back-button" value="-1" onclick="prevItem()">
-            <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-              <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
-            </svg>
-          </button>
           <p class="current-narrative m-0"></p>
-          <button class="btn next-button" value="1" onclick="nextItem()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-              <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-            </svg>
-          </button>
         </div>
       </div>
     </div>

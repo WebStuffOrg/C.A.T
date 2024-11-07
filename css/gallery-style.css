@@ -160,6 +160,7 @@ main {
 }
 .back-button:disabled, .next-button:disabled {
     color: white;
+    background-color: rgba(0, 0, 0, 0.7);
     border: solid 1px var(--quinary-color);
 }
 

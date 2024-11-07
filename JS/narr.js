@@ -224,6 +224,7 @@ window.addEventListener("resize", () => {
     const offcanvasClasses = document.querySelector(".offcanvas").classList;
     if (offcanvasClasses.contains("show")) {
     offcanvasClasses.remove("show");
+    document.querySelector(".offcanvas-backdrop").remove("show");
     }
 });
 
@@ -320,4 +321,7 @@ artworksList.addEventListener("click", async (e) => {
     }
     console.log(currentIdx)
     console.log(narrativeTitle)
+    const offcanvasClasses = document.querySelector(".offcanvas").classList;
+    offcanvasClasses.remove("show");
+    document.querySelector(".offcanvas-backdrop").remove("show");
 })
