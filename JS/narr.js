@@ -18,7 +18,6 @@ const textButtons = document.getElementById("button-container");
 const lessButton = document.getElementById("less-button");
 const moreButton = document.getElementById("more-button");
 const text = document.getElementById("info-text");
-const table = document.getElementById("info-box");
 const arrowSvg = document.querySelector(".scroll-button > svg")
 const spinner = document.getElementById('loading-spinner');
 
@@ -54,7 +53,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function setContent(data) {
     buttonsCheck();
-    console.log(narrImages)
     await setImage();
     await Promise.all([
         updateElements('.current-artwork', data.title),
@@ -62,7 +60,7 @@ async function setContent(data) {
         setNarrativeSwitch(data)
     ]);
     text.innerHTML = data.text.basic;
-    textState = 0;;
+    textState = 0;
 }
 
 async function buttonsCheck () {
@@ -82,7 +80,7 @@ async function buttonsCheck () {
 function updateElements(selector, content) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
-        el.textContent = typeof content === 'function' ? content(el) : content;
+        el.innerHTML = typeof content === 'function' ? content(el) : content;
     });
 }
 
@@ -130,13 +128,12 @@ async function setNarrativeSwitch(item) {
     });
 
     const itemNarratives = [...item.includedIn];
-    if (narrativeTitle === "Geography") {
-        document.querySelector(`#geography button`).disabled = true;
-    }
-    else {
+
+    if (narrativeTitle != "Geography") {
         const idx = itemNarratives.indexOf(narrativeTitle);
         itemNarratives.splice(idx, 1);
     }
+    document.querySelector(`#geography button`).disabled = narrativeTitle === "Geography";
     itemNarratives.forEach((i) => { 
         const button = document.createElement("button");
         button.classList.add("btn");
@@ -174,8 +171,9 @@ async function switchNarrative(narrative) {
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
     currentIdx = 0;
+    showLoading();
     narrImages = await preloadNarrImages();
-    await Promise.all([updateElements('.current-narrative', narrativeTitle), showLoading(), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
+    await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
 }
 
 async function setSidebarList(narrative = currentNarrativeArr) {
@@ -183,7 +181,7 @@ async function setSidebarList(narrative = currentNarrativeArr) {
     narrative.forEach((item, i) => {
         const listElement = document.createElement('button');
         listElement.classList.add("btn");
-        listElement.id = i;
+        listElement.value = i;
         listElement.innerHTML = items[item].title;
         artworksList.appendChild(listElement);
     });
@@ -192,7 +190,7 @@ async function setSidebarList(narrative = currentNarrativeArr) {
 
 function disableCurrSideItem(idx) {
     artworksList.querySelector('.disabled')?.classList.remove('disabled');
-    document.getElementById(idx).classList.add('disabled');
+    artworksList.querySelector(`#artwork-list button:nth-child(${idx+1})`).classList.add('disabled');
 }
 
 // OBSERVER //
@@ -224,7 +222,7 @@ window.addEventListener("resize", () => {
     const offcanvasClasses = document.querySelector(".offcanvas").classList;
     if (offcanvasClasses.contains("show")) {
     offcanvasClasses.remove("show");
-    document.querySelector(".offcanvas-backdrop").remove("show");
+    document.querySelector(".offcanvas-backdrop").classList.remove("show");
     }
 });
 
@@ -262,9 +260,9 @@ altNarrative.addEventListener("click", async (e) => {
 // text switching 
 
 textButtons.addEventListener("click", (e) => {
-    text.innerHTML = ""
     const button = e.target.closest("button");
     if (button) {
+        text.innerHTML = ""
         let textType
         textState += +button.value
         console.log(textState)
@@ -315,13 +313,11 @@ document.querySelector(".scroll-button").addEventListener("click", (e) => {
 // Offcanvas buttons
 artworksList.addEventListener("click", async (e) => {
     if (e.target.tagName === "BUTTON") {
-        currentIdx = +e.target.id;
+        currentIdx = +e.target.value;
         disableCurrSideItem(currentIdx);
         await setContent(items[currentNarrativeArr[currentIdx]]);
     }
-    console.log(currentIdx)
-    console.log(narrativeTitle)
     const offcanvasClasses = document.querySelector(".offcanvas").classList;
     offcanvasClasses.remove("show");
-    document.querySelector(".offcanvas-backdrop").remove("show");
+    document.querySelector(".offcanvas-backdrop").classList.remove("show");
 })

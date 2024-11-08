@@ -14,7 +14,7 @@
 
 /* Corpo della pagina */
 body, html {
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #faf3ef;
   overflow-x: hidden;
 }
@@ -199,6 +199,6 @@ p {
   }
 
   p {
-      font-size: 0.625rem;
+      font-size: 0.875rem;
   }
 }

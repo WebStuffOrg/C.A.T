@@ -9,18 +9,6 @@
     font-family: Nunito;
 }
 
-h5 {
-    color: black !important;
-}
-
-h3 {
-    color: black !important;
-  }
-
-button {
-    border: solid 3px;
-}
-
 .page-title {
     color: black;
     font-size: 2.986rem	!important;
@@ -40,7 +28,7 @@ button {
     position: absolute;
     width: 0;
     height: 4px;
-    background-color:rgb(107, 26, 16);; 
+    background-color:rgb(107, 26, 16); 
     bottom: -10px; 
     left: 0;
     animation: lineGrow 1.5s ease-in-out forwards;
@@ -123,11 +111,12 @@ main {
     align-self: center;
 }
 #wrapper-header button:hover {
-    background-color:var(--tertiary-color);
+    background-color: var(--tertiary-color);
 }
 
-#wrapper-header #offcanvas-button:hover {
+#offcanvas-button:hover .text-button {
     background-color: var(--quaternary-color);
+    color: white;
 }
 
 #artwork-list button {
@@ -200,22 +189,21 @@ main {
 
 /* TABLE SECTION */
 
-.table-body {
-    padding: 0px;
+
+tbody {
+    --bs-table-bg: var(--quinary-color);
 }
 
 .description {
     margin-bottom: 1vh;
-    border-bottom: 1px dotted black;
     padding: 5px;
 }
-.description > div {
-    text-align: left;
+tr, td {
+    text-align: center;
     text-wrap:pretty;
 }
-.description div.label {
+.label {
     font-weight: bold;
-    align-content: baseline;
 }
 
 .card-header {
@@ -273,10 +261,6 @@ hr {
     border-radius: 5px;
     height: 0.5vmin; /* Set the height (thickness) */
     background-color: #6B1A10   ; /* Change color */
-}
-.text-button {
-    background-color: var(--quaternary-color);
-    color: white;
 }
 
 .text-button:active {
