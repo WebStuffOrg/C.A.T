@@ -14,7 +14,7 @@
 
 /* Corpo della pagina */
 body, html {
-  font-size: 1rem;
+  font-size: 1.25rem;
   background-color: #faf3ef;
   overflow-x: hidden;
 }
