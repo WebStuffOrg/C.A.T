@@ -134,6 +134,8 @@ async function setNarrativeSwitch(item) {
         itemNarratives.splice(idx, 1);
     }
     document.querySelector(`#geography button`).disabled = narrativeTitle === "Geography";
+    document.querySelector(`#daily button`).disabled = true;
+    document.querySelector(`#supernatural button`).disabled = true;
     itemNarratives.forEach((i) => { 
         const button = document.createElement("button");
         button.classList.add("btn");
@@ -286,12 +288,6 @@ textButtons.addEventListener("click", (e) => {
     }
 });
 
-// timeline refferal
-
-document.getElementById("time").addEventListener("click", () => {
-    window.location.href = `timeline.html#${currentNarrativeArr[currentIdx]}`
-})
-
 // scroll animations 
 
 sideImage.addEventListener("click", (e) => {
@@ -303,10 +299,10 @@ sideImage.addEventListener("click", (e) => {
 
 document.querySelector(".scroll-button").addEventListener("click", (e) => {
     if (smallImagecontainer.classList.contains("hidden")) {
-        table.scrollIntoView();    
+        document.getElementById("info-box").scrollIntoView();    
     } else {
         mainImage.parentElement.scrollIntoView({behavior : "smooth"});
-    }
+    };
     e.target.setAttribute("transform", `rotate(${rotation})`);
     });
 

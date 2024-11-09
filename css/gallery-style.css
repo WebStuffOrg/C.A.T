@@ -162,6 +162,7 @@ main {
     position: fixed;
     top: 10px;
     right: 0px;
+    padding-right: 0.75rem;
 }
 
 /* Initially hidden */
@@ -190,6 +191,13 @@ main {
     padding-left: 0px;
 }
 
+.card-header {
+    background-color: black; 
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 /* TABLE SECTION */
 
 
@@ -209,12 +217,7 @@ tr, td {
     font-weight: bold;
 }
 
-.card-header {
-    background-color: black; 
-    text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+
 
 /* NARRATIVE SWITCH SECTION */
 
@@ -226,6 +229,14 @@ tr, td {
     margin-top: 2.5vh;
     align-self: center;
     overflow-wrap: break-word;
+}
+
+
+#alt-narr p {
+    text-align: center;
+    color: black;
+    font-style: italic;
+    margin-bottom: 0.5rem;
 }
 
 #time {
@@ -253,12 +264,18 @@ tr, td {
     border: solid 2px var(--secondary-color);
 }
 
+
+/* DESCRIPTION SECTION */
+
 #description h5 {
     text-align: center; 
     margin-bottom: 5vh; 
-    font-weight: bolder;
+    font-weight: bold;
 }
-/* DESCRIPTION SECTION */
+
+#info-text {
+    text-wrap:stable;
+}
 
 hr {
     border-radius: 5px;
@@ -269,4 +286,5 @@ hr {
 .text-button:active {
     background-color: var(--quaternary-color);
 }
+
 
