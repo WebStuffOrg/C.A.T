@@ -119,7 +119,7 @@
 .bg-cover_title, .bg-cover_text {
   width: 50%;
   padding: 1.5vw;
-  font-size: 1.44rem;
+  font-size: 1.25rem;
   color: #FAF3EF;
   font-family: 'Nunito', sans-serif;
 }
@@ -141,7 +141,11 @@
 }
 
 .admission-list li {
-  font-size:  1.44rem;
+  font-size: 1.25rem; 
+}
+
+.notes {
+  font-size: 1rem;
 }
 
 /* Responsive Background Section */
