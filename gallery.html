@@ -86,13 +86,13 @@
 
     <section id="image-display" class="row">
       <div id="image-wrapper">
-          <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8);" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-              <h4 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">C.A.T</h>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
+        <div class="offcanvas offcanvas-end" style="background-color: rgba(0, 0 ,0, 0.8);" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h4 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">C.A.T</h4>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
+          <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
+        </div>
 
         <!-- Overlay Navbar -->
 
@@ -134,7 +134,7 @@
       <h2 class="m-auto text-center">About this Artwork</h2>
       <hr style="margin-left: 20%; margin-right: 20%;">
 
-      <table id="table-body" class="table table-hover mt-5">
+      <table class="table table-hover mt-5">
 
         <tr class="description">
           <th class="label">Title</th>
@@ -149,9 +149,15 @@
         <tr class="description">
           <th class="label">Date</th>
           <td>
-            <a class="btn table-data text-center" role="button" id="time" title="Go to Timeline view">
-              -
-            </a>
+            <div class="btn-group dropend">
+              <button id="time" type="button" class="btn btn-secondary dropdown-toggle table-data text-black" data-bs-toggle="dropdown" aria-expanded="false">
+                -
+              </button>
+              <ul class="dropdown-menu" style="background-color: rgba(255, 255 ,255, 0.5); border: 0px;">
+                <li><a class="dropdown-item text-black" role="button">Switch to Timeline narrative</a></li>
+                <li><a class="dropdown-item text-black" href="timeline.html">Go to Timeline view</a></li>
+              </ul>
+            </div>
           </td>
         </tr>
 
@@ -199,9 +205,10 @@
 
   <section id="alt-narr" class="row ps-md-5 mt-5 justify-content-start">
     <div  class="col-12 col-md-8" style="padding-left: 5px;">
-      <h5 class="fw-bolder text-center">Categories:</h5>
+      <h5 class="fw-bold text-center">Categories:</h5>
       <div class="row">
         <div id="geography" class="col-4 p-2 p-md-3">
+          <p>Geography</p>
           <div class="narr-icon">
             <button class="btn" title="Geography Narrative">
               <img id="geography-img" class="img-fluid" src="images/icons/gIcon.png" alt="Geography Icon">
@@ -210,6 +217,7 @@
           <div class="sub-narr d-flex flex-column"></div>
         </div>
         <div id="daily" class="col-4 p-2 p-md-3">
+          <p>Daily</p>
           <div class="narr-icon">
             <button class="btn" title="Daily Narrative" disabled>
               <img class="img-fluid" id="daily-img" src="images/icons/dIcon.png" alt="Daily Icon">
@@ -218,6 +226,7 @@
           <div class="sub-narr d-flex flex-column"></div>
         </div>
         <div id="supernatural" class="col-4 p-2 p-md-3">
+          <p>Supernatural</p>
           <div class="narr-icon">
             <button class="btn" title="Supernatural Narrative" disabled>
               <img id="supernatural-img"  class="img-fluid" src="images/icons/sIcon.png" alt="Supernatural Icon">
