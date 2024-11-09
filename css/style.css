@@ -24,40 +24,41 @@ a {
   text-decoration: none;
 }
 
-/* Dimensioni del testo */
 h1 {
-  font-size: 2.986rem;
+  font-size: 3.733rem; 
   font-family: 'Comfortaa', sans-serif;
 }
 
 h2 {
-  font-size: 2.488rem;
+  font-size: 3.11rem;
   font-family: 'Comfortaa', sans-serif;
 }
 
-h3, h4, h5, h6, p {
+h3 {
+  font-size: 2.593rem; 
   font-family: 'Nunito', sans-serif;
 }
 
-h3 {
-  font-size: 2.074rem;
-}
-
 h4 {
-  font-size: 1.728rem;
+  font-size: 2.16rem; 
+  font-family: 'Nunito', sans-serif;
 }
 
 h5 {
-  font-size: 1.44rem;
+  font-size: 1.8rem; 
+  font-family: 'Nunito', sans-serif;
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 1.5rem; 
+  font-family: 'Nunito', sans-serif;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.25rem; 
+  font-family: 'Nunito', sans-serif;
 }
+
 
 /* Navbar */
 .navbar .navbar-nav .nav-link,
