@@ -22,7 +22,7 @@ const arrowSvg = document.querySelector(".scroll-button > svg")
 const spinner = document.getElementById('loading-spinner');
 
 const setImage = async () => {mainImage.src = sideImage.src = narrImages[currentIdx].src};
-const showLoading = async () => {spinner.classList.remove("hide-loading");}
+const showLoading = () => {spinner.classList.remove("hide-loading");}
 
 document.addEventListener("DOMContentLoaded", async () => {
     const data = await fetch('data/narr.json').then(response => response.json());

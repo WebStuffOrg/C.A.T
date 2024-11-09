@@ -80,7 +80,7 @@ main {
     }
     #artwork-img {
         max-height: 75vh;
-}
+    }
     #alt-narr .sub-narr button {
         padding: 3%;
     }
@@ -110,11 +110,11 @@ main {
     background-color:rgba(0, 0, 0, 0.3);
     align-self: center;
 }
-#wrapper-header button:hover {
+#return-button:hover {
     background-color: var(--tertiary-color);
 }
 
-#offcanvas-button:hover .text-button {
+#offcanvas-button:hover, .text-button {
     background-color: var(--quaternary-color);
     color: white;
 }
@@ -142,15 +142,18 @@ main {
     right: 10px;
 } 
 
-.back-button:hover, .next-button:hover {
+.back-button:hover, .next-button:hover, 
+.back-button:disabled, .next-button:disabled {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border: solid 1px var(--quinary-color);
 }
-.back-button:disabled, .next-button:disabled {
-    color: white;
+
+.back-button:focus, .next-button:focus,
+.back-button:active, .next-button:active {
     background-color: rgba(0, 0, 0, 0.7);
-    border: solid 1px var(--quinary-color);
+    color: white;
+    border: 0px;
 }
 
 /* SIDE IMAGE*/
@@ -267,9 +270,3 @@ hr {
     background-color: var(--quaternary-color);
 }
 
-
-/* Animation for spinning effect */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
