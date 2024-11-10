@@ -118,9 +118,11 @@
 
 .bg-cover_title, .bg-cover_text {
   width: 50%;
+  padding-top: 1rem;
   color: #FAF3EF;
   font-family: 'Nunito', sans-serif;
 }
+
 
 .title {
   color: rgb(250, 243, 239);
