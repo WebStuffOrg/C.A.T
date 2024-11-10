@@ -32,8 +32,8 @@
           <div class="legs right">
         </div>
     </div>
-    <div class="hands left"></div>
-    <div class="hands right"></div>
+    <!-- <div class="hands left"></div>
+    <div class="hands right"></div> -->
   </div>
 
 </div>  
@@ -130,59 +130,59 @@
 
   <section id="info-box" class="mt-5 row">
     <div class="col-12 col-md-8 ps-md-5 pe-0">
-      <hr style="margin-left: 10%; margin-right: 10%;">
+      <hr class="mt-0" style="margin-left: 10%; margin-right: 10%;">
       <h2 class="m-auto text-center">About this Artwork</h2>
       <hr style="margin-left: 20%; margin-right: 20%;">
 
-      <table class="table table-hover mt-5">
+        <table class="table table-hover mt-5 mb-0">
 
-        <tr class="description">
-          <th class="label">Title</th>
-          <td class="table-data" id="title">-</td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Creator</th>
-          <td class="table-data" id="creator">-</td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Date</th>
-          <td>
-            <div class="btn-group dropbottom">
-              <button id="time" type="button" class="btn dropdown-toggle table-data text-black" data-bs-toggle="dropdown" aria-expanded="false">
-                -
-              </button>
-              <ul class="dropdown-menu" style="background-color: rgba(255, 255 ,255, 0.9); border: 0px;">
-                <li><a id="timeline-switch" class="dropdown-item text-black" role="button">Switch to Timeline narrative</a></li>
-                <li><a class="dropdown-item text-black" href="timeline.html">Go to Timeline view</a></li>
-              </ul>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Origin</th>
-          <td class="table-data" id="origin">-</td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Type</th>
-          <td class="table-data" id="type">-</td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Medium</th>
-          <td class="table-data" id="medium">-</td>
-        </tr>
-
-        <tr class="description">
-          <th class="label">Dimensions</th>
-          <td class="table-data" id="dimensions">-</td>
-        </tr>
-
-      </table>
-    <div id="side-image" class="col-4 d-none d-md-flex justify-content-center hidden">
+          <tr class="description">
+            <th class="label">Title</th>
+            <td class="table-data" id="title">-</td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Creator</th>
+            <td class="table-data" id="creator">-</td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Date</th>
+            <td>
+              <div class="btn-group dropdown-center dropbottom">
+                <button id="time" type="button" class="btn dropdown-toggle table-data text-black" data-bs-toggle="dropdown" aria-expanded="false">
+                  -
+                </button>
+                <ul class="dropdown-menu bg-white border-0">
+                  <li><a id="timeline-switch" class="dropdown-item text-black" role="button">Switch to Timeline narrative</a></li>
+                  <li><a class="dropdown-item text-black" href="timeline.html">Go to Timeline view</a></li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Origin</th>
+            <td class="table-data" id="origin">-</td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Type</th>
+            <td class="table-data" id="type">-</td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Medium</th>
+            <td class="table-data" id="medium">-</td>
+          </tr>
+  
+          <tr class="description">
+            <th class="label">Dimensions</th>
+            <td class="table-data" id="dimensions">-</td>
+          </tr>
+        </table>
+      </div>
+      <div id="side-image" class="col-4 d-none d-md-flex justify-content-center hidden">
       <div class="card">
         <button class="btn back-button" onclick="prevItem()">
           <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
@@ -205,9 +205,9 @@
 
   <section id="alt-narr" class="row ps-md-5 mt-5">
     <div  class="col-12 col-md-8">
-      <h5 class="fw-bold text-center">Categories:</h5>
+      <h5 class="fw-bold text-center mb-4">Categories:</h5>
       <div id="buttons-switches" class="row justify-content-between">
-        <div id="geography" class="col-4 p-2 p-md-3">
+        <div id="geography" class="col-4">
           <p>Geography</p>
           <div class="narr-icon">
             <button class="btn" title="Geography Narrative" value="Geography">
@@ -216,7 +216,7 @@
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="daily" class="col-4 p-2 p-md-3">
+        <div id="daily" class="col-4">
           <p>Daily</p>
           <div class="narr-icon">
             <button class="btn" title="Daily Narrative" value="Daily" disabled>
@@ -225,7 +225,7 @@
           </div>
           <div class="sub-narr d-flex flex-column"></div>
         </div>
-        <div id="supernatural" class="col-4 p-2 p-md-3">
+        <div id="supernatural" class="col-4">
           <p>Supernatural</p>
           <div class="narr-icon">
             <button class="btn" title="Supernatural Narrative" value="Supernatural" disabled>
