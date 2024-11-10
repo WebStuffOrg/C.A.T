@@ -20,11 +20,11 @@
   position: relative;
 }
 
-.hero_content h2, #hero .hero_content p {
+.hero_content h2, .hero_content h3, .hero_content p {
   color: #FAF3EF;
 }
 
-.hero_content h2 {
+.hero_content h2, .hero_content h3 {
   animation: pulseText 4s infinite;
 }
 
@@ -214,4 +214,8 @@
   .carousel-item img {
     max-height: 15rem;
   }
+}
+
+.p {
+ color: rgb(250, 243, 239)
 }
