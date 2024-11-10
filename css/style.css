@@ -14,16 +14,6 @@
 
 /* Corpo della pagina */
 body, html {
-<<<<<<< Updated upstream
-  font-size: 1rem;
-  background-color: #faf3ef;
-  overflow-x: hidden;
-}
-
-/* Link */
-:not(footer a) {
-  text-decoration: none;
-=======
     font-size: 16px;
     background-color: #faf3ef;
     overflow-x: hidden;
@@ -32,7 +22,6 @@ body, html {
 /* Link */
 a {
     text-decoration: none;
->>>>>>> Stashed changes
 }
 
 h1 {
@@ -98,15 +87,9 @@ p {
 }
 
 .dropdown-item {
-<<<<<<< Updated upstream
-  color: #ffffff;
-  font-family: 'Comfortaa';
-  font-size:  1rem; 
-=======
     color: #ffffff;
     font-family: 'Comfortaa';
     font-size: 14px;
->>>>>>> Stashed changes
 }
 
 /* Responsive navbar */
@@ -207,27 +190,15 @@ p {
         font-size: 1.125rem;
     }
 
-<<<<<<< Updated upstream
-  h5 {
-      font-size: 1rem;
-  }
-=======
     h5 {
         font-size: 1rem; /* Smaller font size for h5 */
     }
->>>>>>> Stashed changes
 
     h6 {
         font-size: 0.875rem;
     }
 
-<<<<<<< Updated upstream
-  p {
-      font-size: 0.875rem;
-  }
-=======
     p {
         font-size: 0.625rem;
     }
->>>>>>> Stashed changes
 }
