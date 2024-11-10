@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -49,15 +50,13 @@
     </header>
 
     <main>
-        <section id="hero" style="background: url('images/home/img-4.jpeg') no-repeat center center; background-size: cover;">
+        <section id="hero" style="background: url('images/home/img-2.jpg') no-repeat center center; background-size: cover;">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-12 text-center hero_content">
+                    <div class="col-12 text-center hero_content" data-aos="zoom-in">
                         <p class="intro-text"></p>
-                        <h1 data-aos="zoom-in">Cats, Art, Traditions <br>
-                            <br>Exhibition at Museo Civico Archeologico - Bologna
-                            <br> September 13 - December 20, 2024
-                        </h1>
+                        <h2>Cats, Art, Traditions</h2><br>
+                            <h3>Exhibition at Museo Civico Archeologico - Bologna<br> September 13 - December 20, 2024</h3> 
                     </div>
                 </div>
             </div>
@@ -70,9 +69,9 @@
                 </video>
             </div>
 
-            <div class="poster_content">
-                <h5 data-aos="fade-left" style="color: rgb(107, 26, 16);">Cats exhibition at Museo Civico Archeologico in Bologna</h5>
-                <p data-aos="fade-left" style="color: black;"> <br> We invite all visitors to embark on a fascinating journey through the world of cats, exploring our unique collection that celebrates these animals. 
+            <div class="poster_content" data-aos="fade-left" >
+                <h5 style="color: rgb(107, 26, 16);">Cats exhibition at Museo Civico Archeologico in Bologna</h5>
+                <p style="color: black;"> <br> We invite all visitors to embark on a fascinating journey through the world of cats, exploring our unique collection that celebrates these animals. 
                     <br>Navigate through the exhibit's details and explore the museum's offerings. 
                 </p>
                 <a href="map.html" class="button">Go to the map</a>
@@ -80,13 +79,12 @@
         </section>
 
         <section id="bg-cover">
-            <div class="bg-cover_title">
-                <h5 data-aos="fade-right" style="color: rgb(250, 243, 239);">About the Exhibition</h5>
+            <div class="bg-cover_title" data-aos="fade-right">
+                <h5 style="color: rgb(250, 243, 239);">About the Exhibition</h5>
             </div>
             
-            <div class="bg-cover_text">
-                <p data-aos="fade-left" style="color: rgb(250, 243, 239);">
-                    The exhibition Cats, Art, Traditions, held at the Museo Civico Archeologico in Bologna from 13 September to 20 December 2024, celebrates the millenary bond between cats and humanity, exploring their influence on art, culture and traditions. <br> 
+            <div class="bg-cover_text" data-aos="fade-left">
+                <p>The exhibition Cats, Art, Traditions, held at the Museo Civico Archeologico in Bologna from 13 September to 20 December 2024, celebrates the millenary bond between cats and humanity, exploring their influence on art, culture and traditions. <br> 
                     Our journey was born out of curiosity to explore not only the history of the cat as a pet, but also how it has influenced human culture. Visitors are invited to travel through ages and civilizations, discovering how these fascinating animals were revered, feared and loved in every corner of the world. <br>From ancient myths to modern symbolism, the exhibition offers a unique look at the cultural role of cats, testifying to the lasting impact and timeless beauty they have in our imaginations and our daily lives.
                 </p>
             </div>
@@ -117,29 +115,29 @@
         </section>
 
     <section id="bg-cover" style="background-color: rgb(103, 49, 75);;">
-        <div class="bg-cover_title">
+        <div class="bg-cover_title" data-aos="fade-right">
             <h5 class="title">Informations</h5>
         </div>
     
-        <div class="bg-cover_text">
-            <b>Exhibition Period:</b><br>Friday, September 20 – Friday, November 20, 2024
-            <b>Closed:</b><br>Mondays
-            <b>Opening Hours:</b><br>10 AM – 6 PM (Tickets available until 30 minutes before closing)
-            <b>Address:</b><br>Via dell'Archiginnasio, 2 - 40124 Bologna BO
-            <b>Admission:</b>
+        <div class="bg-cover_text" data-aos="fade-left">
+            <p><b>Exhibition Period:</b> Friday, September 20 – Friday, November 20, 2024</p>
+            <p><b>Closed:</b> Mondays</p>
+            <p><b>Opening Hours:</b> 10 AM – 6 PM (Tickets available until 30 minutes before closing)</p>
+            <p><b>Address:</b> Via dell'Archiginnasio, 2 - 40124 Bologna BO</p>
+            <p><b>Admission:</b></p>
             <ul class="admission-list">
                 <li>Adults - €8.00</li>
                 <li>University & College Students, Over 65 - €5.00</li>
                 <li>High School & Junior High School Students - €5.00</li>
                 <li>Elementary School Students & Younger - free</li>
-            </ul>                       
+            </ul>
             <p class="notes">
                 *20% discount for a group of over 20 people.<br>
                 *Ticket includes admission to the Museo Civico Archeologico Collection exhibition.<br>
                 *Persons with a Physical Disability Certificate, Intellectual Disability Certificate, Intellectual Disability Welfare Certificate, as well as up to two attendants, are admitted free of charge.
             </p>
         </div>
-    </section>
+        
     
     <div class="scroll-buttons">
         <button class="scroll-button" onclick="scrollToTop()">
