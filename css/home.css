@@ -20,11 +20,11 @@
   position: relative;
 }
 
-.hero_content h2, .hero_content h3, .hero_content p {
+.hero_content h1, .hero_content h2, .hero_content p {
   color: #FAF3EF;
 }
 
-.hero_content h2, .hero_content h3 {
+.hero_content h1, .hero_content h2 {
   animation: pulseText 4s infinite;
 }
 
@@ -118,7 +118,6 @@
 
 .bg-cover_title, .bg-cover_text {
   width: 50%;
-  padding: 1.5vw;
   color: #FAF3EF;
   font-family: 'Nunito', sans-serif;
 }
