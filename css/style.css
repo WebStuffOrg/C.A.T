@@ -1,19 +1,20 @@
 :root {
-  --primary-color: rgb(228, 168, 140);
-  --secondary-color: rgb(201, 102, 56);
-  --tertiary-color: rgb(107, 26, 16);
-  --quaternary-color: rgb(103, 49, 75);
-  --quinary-color: rgb(250, 243, 239);
+    --primary-color: rgb(228, 168, 140);
+    --secondary-color: rgb(201, 102, 56);
+    --tertiary-color: rgb(107, 26, 16);
+    --quaternary-color: rgb(103, 49, 75);
+    --quinary-color: rgb(250, 243, 239);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Corpo della pagina */
 body, html {
+<<<<<<< Updated upstream
   font-size: 1rem;
   background-color: #faf3ef;
   overflow-x: hidden;
@@ -22,40 +23,50 @@ body, html {
 /* Link */
 :not(footer a) {
   text-decoration: none;
+=======
+    font-size: 16px;
+    background-color: #faf3ef;
+    overflow-x: hidden;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+>>>>>>> Stashed changes
 }
 
 h1 {
-  font-size: 2.986rem;
-  font-family: 'Comfortaa', sans-serif;
+    font-size: 2.986rem;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 h2 {
-  font-size: 2.488rem;
-  font-family: 'Comfortaa', sans-serif;
+    font-size: 2.488rem;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 h3, h4, h5, h6, p {
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 h3 {
-  font-size: 2.074rem;
+    font-size: 2.074rem;
 }
 
 h4 {
-  font-size: 1.728rem;
+    font-size: 1.728rem;
 }
 
 h5 {
-  font-size: 1.44rem;
+    font-size: 1.44rem;
 }
 
 h6 {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 p {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 
@@ -64,12 +75,12 @@ p {
 .nav-link:hover,
 .navbar-brand,
 .nav-item.active .nav-link {
-  color: rgb(250, 243, 239) !important; 
-  font-family: 'Nunito', sans-serif;
+    color: rgb(250, 243, 239) !important; 
+    font-family: 'Nunito', sans-serif;
 }
 
 .navbar-toggler {
-  border-color: rgb(250, 243, 239); /* Pink border color */
+    border-color: rgb(250, 243, 239); /* Pink border color */
 }
 
 .navbar-toggler-icon {
@@ -78,127 +89,145 @@ p {
 
 /* Dropdown menu styles */
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  background-color: #000000;
-  list-style: none;
-  z-index: 1000;
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #000000;
+    list-style: none;
+    z-index: 1000;
 }
 
 .dropdown-item {
+<<<<<<< Updated upstream
   color: #ffffff;
   font-family: 'Comfortaa';
   font-size:  1rem; 
+=======
+    color: #ffffff;
+    font-family: 'Comfortaa';
+    font-size: 14px;
+>>>>>>> Stashed changes
 }
 
 /* Responsive navbar */
 
 @media (max-width: 768px) {
-  .navbar-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #ffffff;
-  }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+    }
 
-  .navbar-item {
-      margin: 10px 0;
-  }
+    .navbar-item {
+        margin: 10px 0;
+    }
 
-  .navbar-toggle {
-      display: flex;
-  }
+    .navbar-toggle {
+        display: flex;
+    }
 }
 /* Scrolling */
 .scroll-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
 }
 
 .scroll-button {
-  width: 40px; /* Dimensione fissa per il bottone */
-  height: 40px; /* Dimensione fissa per il bottone */
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px; /* Spazio tra i bottoni */
-  transition: background-color 0.3s; /* Transizione per il hover */
+    width: 40px; /* Dimensione fissa per il bottone */
+    height: 40px; /* Dimensione fissa per il bottone */
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px; /* Spazio tra i bottoni */
+    transition: background-color 0.3s; /* Transizione per il hover */
 }
 
 .scroll-button:hover {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
 .scroll-button svg {
-  width: 20px; /* Dimensione fissa per l'icona */
-  height: 20px; /* Dimensione fissa per l'icona */
+    width: 20px; /* Dimensione fissa per l'icona */
+    height: 20px; /* Dimensione fissa per l'icona */
 }
 
 /* Responsive adjustments */
 @media (max-width: 760px) {
-  .scroll-button {
-      width: 35px; /* Dimensione ridotta per schermi piccoli */
-      height: 35px; /* Dimensione ridotta per schermi piccoli */
-  }
+    .scroll-button {
+        width: 35px; /* Dimensione ridotta per schermi piccoli */
+        height: 35px; /* Dimensione ridotta per schermi piccoli */
+    }
 
-  .scroll-button svg {
-      width: 18px; /* Dimensione ridotta per l'icona */
-      height: 18px; /* Dimensione ridotta per l'icona */
-  }
+    .scroll-button svg {
+        width: 18px; /* Dimensione ridotta per l'icona */
+        height: 18px; /* Dimensione ridotta per l'icona */
+    }
 }
 
 /* Footer */
 .footer {
-  background: #000;
-  padding: 0;
-  position: relative;
+    background: #000;
+    padding: 0;
+    position: relative;
 }
 
 .footer a {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 
 /* Responsive adjustments for text size */
 @media (max-width: 760px) {
-  body {
-      font-size: 0.875rem; /* Reduce base font size */
-  }
+    body {
+        font-size: 0.875rem; /* Reduce base font size */
+    }
 
-  h1 {
-      font-size: 1.75rem;
-  }
+    h1 {
+        font-size: 1.75rem;
+    }
 
-  h2 {
-      font-size: 1.5rem;
-  }
+    h2 {
+        font-size: 1.5rem;
+    }
 
-  h3 {
-      font-size: 1.25rem;
-  }
+    h3 {
+        font-size: 1.25rem;
+    }
 
-  h4 {
-      font-size: 1.125rem;
-  }
+    h4 {
+        font-size: 1.125rem;
+    }
 
+<<<<<<< Updated upstream
   h5 {
       font-size: 1rem;
   }
+=======
+    h5 {
+        font-size: 1rem; /* Smaller font size for h5 */
+    }
+>>>>>>> Stashed changes
 
-  h6 {
-      font-size: 0.875rem;
-  }
+    h6 {
+        font-size: 0.875rem;
+    }
 
+<<<<<<< Updated upstream
   p {
       font-size: 0.875rem;
   }
+=======
+    p {
+        font-size: 0.625rem;
+    }
+>>>>>>> Stashed changes
 }
