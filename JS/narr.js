@@ -129,7 +129,7 @@ async function setNarrativeSwitch(item) {
 
     const itemNarratives = [...item.includedIn];
 
-    if (narrativeTitle != "Geography") {
+    if (narrativeTitle != "Geography" && narrativeTitle != "Timeline") {
         const idx = itemNarratives.indexOf(narrativeTitle);
         itemNarratives.splice(idx, 1);
     }
@@ -244,8 +244,7 @@ altNarrative.addEventListener("click", async (e) => {
     if (button) {
         let narrative;
         if (e.target.innerText === "") {
-            console.log(button.title)
-            narrative = button.title.split(" ")[0];
+            narrative = button.value;
         }
         else {
             narrative = button.textContent;
@@ -257,6 +256,15 @@ altNarrative.addEventListener("click", async (e) => {
         await new Promise(resolve => setTimeout(resolve, 600)); 
         await switchNarrative(narrative);
     };
+});
+
+document.getElementById("timeline-switch").addEventListener("click", async (e) => {
+    smallImagecontainer.classList.add('hidden');
+    smallImagecontainer.classList.remove('visible');
+    await new Promise(requestAnimationFrame);
+    mainImage.parentElement.scrollIntoView({behavior : "smooth"});
+    await new Promise(resolve => setTimeout(resolve, 600)); 
+    await switchNarrative("Timeline");
 });
 
 // text switching 

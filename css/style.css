@@ -14,49 +14,48 @@
 
 /* Corpo della pagina */
 body, html {
-  font-size: 1.25rem;
+  font-size: 1rem;
   background-color: #faf3ef;
   overflow-x: hidden;
 }
 
 /* Link */
-a {
+:not(footer a) {
   text-decoration: none;
 }
 
 h1 {
-  font-size: 3.733rem; 
+  font-size: 2.986rem;
   font-family: 'Comfortaa', sans-serif;
 }
 
 h2 {
-  font-size: 3.11rem;
+  font-size: 2.488rem;
   font-family: 'Comfortaa', sans-serif;
 }
 
-h3 {
-  font-size: 2.593rem; 
+h3, h4, h5, h6, p {
   font-family: 'Nunito', sans-serif;
+}
+
+h3 {
+  font-size: 2.074rem;
 }
 
 h4 {
-  font-size: 2.16rem; 
-  font-family: 'Nunito', sans-serif;
+  font-size: 1.728rem;
 }
 
 h5 {
-  font-size: 1.8rem; 
-  font-family: 'Nunito', sans-serif;
+  font-size: 1.44rem;
 }
 
 h6 {
-  font-size: 1.5rem; 
-  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
 }
 
 p {
-  font-size: 1.25rem; 
-  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
 }
 
 
@@ -94,6 +93,7 @@ p {
 }
 
 /* Responsive navbar */
+
 @media (max-width: 768px) {
   .navbar-menu {
       display: none;
@@ -110,7 +110,6 @@ p {
       display: flex;
   }
 }
-
 /* Scrolling */
 .scroll-buttons {
   position: fixed;

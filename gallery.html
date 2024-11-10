@@ -40,13 +40,13 @@
 
   <div class="scroll-buttons">
     <button class="scroll-button">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" tranform="rotate(180)">
         <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
       </svg>
     </button>
   </div>
     
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 0, 0)">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black">
     <div class="container">
         <a href="index.html" class="navbar-brand">
             <img src="images/icons/cat_logo.png" alt="logo" width="75" height="65">.A.T
@@ -91,7 +91,7 @@
             <h4 class="offcanvas-title current-narrative text-white" id="offcanvasExampleLabel">C.A.T</h4>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div id="artwork-list" class="d-flex flex-column" style="max-height: 80vh; overflow-y: scroll;"></div>
+          <div id="artwork-list" class="d-flex flex-column"></div>
         </div>
 
         <!-- Overlay Navbar -->
@@ -112,13 +112,13 @@
         </div>
 
         <!-- Overlay Buttons -->
-        <button class="btn back-button" value="-1" onclick="prevItem()">
+        <button class="btn back-button" onclick="prevItem()">
           <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
             <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
           </svg>
         </button>
-        <button class="btn next-button" value="+1" onclick="nextItem()">
+        <button class="btn next-button" onclick="nextItem()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
             <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
           </svg>
@@ -128,8 +128,8 @@
       </div>
     </section>
 
-  <section id="info-box" class="row">
-    <div class="col-12 col-md-8 mt-5 ps-md-5">
+  <section id="info-box" class="mt-5 row">
+    <div class="col-12 col-md-8 ps-md-5 pe-0">
       <hr style="margin-left: 10%; margin-right: 10%;">
       <h2 class="m-auto text-center">About this Artwork</h2>
       <hr style="margin-left: 20%; margin-right: 20%;">
@@ -149,12 +149,12 @@
         <tr class="description">
           <th class="label">Date</th>
           <td>
-            <div class="btn-group dropend">
-              <button id="time" type="button" class="btn btn-secondary dropdown-toggle table-data text-black" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn-group dropbottom">
+              <button id="time" type="button" class="btn dropdown-toggle table-data text-black" data-bs-toggle="dropdown" aria-expanded="false">
                 -
               </button>
-              <ul class="dropdown-menu" style="background-color: rgba(255, 255 ,255, 0.5); border: 0px;">
-                <li><a class="dropdown-item text-black" role="button">Switch to Timeline narrative</a></li>
+              <ul class="dropdown-menu" style="background-color: rgba(255, 255 ,255, 0.9); border: 0px;">
+                <li><a id="timeline-switch" class="dropdown-item text-black" role="button">Switch to Timeline narrative</a></li>
                 <li><a class="dropdown-item text-black" href="timeline.html">Go to Timeline view</a></li>
               </ul>
             </div>
@@ -184,14 +184,14 @@
       </table>
     <div id="side-image" class="col-4 d-none d-md-flex justify-content-center hidden">
       <div class="card">
-        <button class="btn back-button" value="-1" onclick="prevItem()">
+        <button class="btn back-button" onclick="prevItem()">
           <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
             <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
           </svg>
         </button>
         <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow" loading="lazy">
-        <button class="btn next-button" value="1" onclick="nextItem()">
+        <button class="btn next-button" onclick="nextItem()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
             <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
           </svg>
@@ -203,14 +203,14 @@
     </div>
   </section>
 
-  <section id="alt-narr" class="row ps-md-5 mt-5 justify-content-start">
-    <div  class="col-12 col-md-8" style="padding-left: 5px;">
+  <section id="alt-narr" class="row ps-md-5 mt-5">
+    <div  class="col-12 col-md-8">
       <h5 class="fw-bold text-center">Categories:</h5>
-      <div class="row">
+      <div id="buttons-switches" class="row justify-content-between">
         <div id="geography" class="col-4 p-2 p-md-3">
           <p>Geography</p>
           <div class="narr-icon">
-            <button class="btn" title="Geography Narrative">
+            <button class="btn" title="Geography Narrative" value="Geography">
               <img id="geography-img" class="img-fluid" src="images/icons/gIcon.png" alt="Geography Icon">
             </button>
           </div>
@@ -219,7 +219,7 @@
         <div id="daily" class="col-4 p-2 p-md-3">
           <p>Daily</p>
           <div class="narr-icon">
-            <button class="btn" title="Daily Narrative" disabled>
+            <button class="btn" title="Daily Narrative" value="Daily" disabled>
               <img class="img-fluid" id="daily-img" src="images/icons/dIcon.png" alt="Daily Icon">
             </button>
           </div>
@@ -228,7 +228,7 @@
         <div id="supernatural" class="col-4 p-2 p-md-3">
           <p>Supernatural</p>
           <div class="narr-icon">
-            <button class="btn" title="Supernatural Narrative" disabled>
+            <button class="btn" title="Supernatural Narrative" value="Supernatural" disabled>
               <img id="supernatural-img"  class="img-fluid" src="images/icons/sIcon.png" alt="Supernatural Icon">
             </button>
           </div>
@@ -238,8 +238,8 @@
     </div>
   </section>
 
-  <section id="description" class="row mb-5">
-    <div class="col-12 col-md-8 mt-5 ps-md-5">
+  <section id="description" class="row ps-md-5 mt-5 mb-5">
+    <div class="col-12 col-md-8">
     <h5>Description</h5>
     <div id="info-text"></div>
     <div id="button-container" class="d-flex justify-content-between p-2 mt-5">
