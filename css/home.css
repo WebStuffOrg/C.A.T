@@ -20,11 +20,11 @@
   position: relative;
 }
 
-.hero_content h1, #hero .hero_content p {
+.hero_content h2, #hero .hero_content p {
   color: #FAF3EF;
 }
 
-.hero_content h1 {
+.hero_content h2 {
   animation: pulseText 4s infinite;
 }
 
