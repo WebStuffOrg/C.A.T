@@ -326,9 +326,10 @@ hr {
         padding: 0px;
         margin: 0;
     }
-    #wrapper-header * {
+    #wrapper-header h6 {
         padding: 0px;
         margin: 0;
+        align-self: center;
     }
     #info-text {
         padding: 0px;
