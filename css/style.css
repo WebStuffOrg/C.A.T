@@ -15,7 +15,9 @@
 /* Corpo della pagina */
 html {
     font-size: 16px; /* Medium screen default */
-}
+    overflow-x: hidden; 
+  }
+  
 
 body {
     font-size: clamp(1rem, 0.8rem + 1vw, 1rem);
