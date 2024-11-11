@@ -11,7 +11,6 @@
 
 .page-title {
     color: black;
-    font-size: 2.986rem	!important;
     font-weight: bold;
     font-family: 'Comfortaa', sans-serif;
     position: relative;
@@ -144,11 +143,8 @@ main {
 /* SIDE IMAGE*/
 
 #side-image {
-    position: fixed;
-    top: 10px;
-    right: 0px;
-    padding-right: 1rem; /* matching the bs col padding (12px) */
-    padding-left: 1rem;
+    padding: 1rem; /* matching the bs col padding (12px) */
+    height: 100;
 }
 
 /* Initially hidden */
@@ -173,8 +169,11 @@ main {
     border-top-right-radius: 5px;
 }
 #side-image .card {
+    position: sticky;
+    width: fit-content;
+    top: 10px;
+    right: 0px;
     border-radius: 5px;
-    padding-left: 0px;
 }
 
 .card-header {
@@ -193,8 +192,8 @@ button.table-data {
     font-size: 1rem;
 }
 
-button.table-data .dropdown-menu {
-    overflow-wrap: anywhere;
+button.table-data li.dropdown-item {
+    border: 1px solid var(--primary-color);
 }
 
 tbody {
@@ -249,8 +248,9 @@ tr::after {
     text-align: center;
     color: black;
     font-style: italic;
+    font-size: 0.9rem;
     margin-bottom:0.5rem;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 

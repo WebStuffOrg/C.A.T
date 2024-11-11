@@ -128,8 +128,12 @@
       </div>
     </section>
 
+
+<section id="info-display" class="row">
+  <div class="col-12 col-md-8">
+
   <section id="info-box" class="mt-5 ps-md-5 row">
-    <div class="col-12 col-md-8">
+    <div class="col-12">
       <hr class="mt-0" style="margin-left: 10%; margin-right: 10%;">
       <h2 class="m-auto text-center">About this Artwork</h2>
       <hr style="margin-left: 20%; margin-right: 20%;">
@@ -181,30 +185,11 @@
             <td class="table-data" id="dimensions">-</td>
           </tr>
         </table>
-      </div>
-      <div id="side-image" class="col-4 d-none d-md-flex justify-content-center hidden">
-      <div class="card">
-        <button class="btn back-button" onclick="prevItem()">
-          <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
-          </svg>
-        </button>
-        <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow" loading="lazy">
-        <button class="btn next-button" onclick="nextItem()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
-          </svg>
-        </button>
-        <div class="card-header text-white w-100">
-          <p class="current-narrative m-0"></p>
-        </div>
-      </div>
     </div>
   </section>
 
   <section id="alt-narr" class="row ps-md-5 mt-5">
-    <div  class="col-12 col-md-8">
+    <div class="col-12">
       <h5 class="fw-bold text-center mb-3">Categories:</h5>
       <div id="buttons-switches" class="row justify-content-between">
         <div id="geography" class="col-4">
@@ -235,12 +220,11 @@
           <div class="sub-narr d-flex flex-column"></div>
         </div>
       </div>
-    </div>
   </section>
 
   <section id="description" class="row ps-md-5 mt-5 mb-5">
-    <div class="col-12 col-md-8">
-    <h5>Description</h5>
+    <div class="col-12">
+      <h5>Description</h5>
     <div id="info-text" class="mb-4"></div>
     <div id="button-container" class="d-flex justify-content-around mt-3">
       <button id="less-button" class="btn btn-sm text-button" value="-1">
@@ -258,6 +242,31 @@
     </div>
     </div>
   </section>
+
+</div>
+
+  <section id="side-image" class="col-md-4 d-none d-md-flex justify-content-center hidden">
+    <div class="card align-self-start">
+      <button class="btn back-button" onclick="prevItem()">
+        <!--svg credits: https://freeicons.io/mobile-user-interface/back-return-arrow-undo-turn-back-icon-452871-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+          <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+        </svg>
+      </button>
+      <img id="artwork-img-2" class="p-0 img-fluid" src="images/icons/placeholder_with_logo.png" alt="Meow" loading="lazy">
+      <button class="btn next-button" onclick="nextItem()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+          <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+        </svg>
+      </button>
+      <div class="card-header text-white w-100">
+        <p class="current-narrative m-0"></p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
 
 </main>
 
