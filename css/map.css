@@ -1,9 +1,33 @@
-
-        .content-container {
-            flex-grow: 1;
+ 
+       .content-container {
+            flex: 1;
             height: fit-content;
             padding-bottom: 50px;
+            gap: 10px;
             background-color: rgb(250, 243, 239);
+            overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+            .content-container {
+                flex-direction: column; 
+                gap: 0; 
+            }
+        
+            .map-container,
+            .info-panel {
+                max-width: 100%; 
+            }
+        }        
+
+        @media (max-width: 768px) {
+            .map-container {
+                max-height: 50vh; 
+            }
+        
+            .info-panel {
+                max-height: calc(50vh - 50px); 
+            }
         }
         
         .page-title {
@@ -105,10 +129,11 @@
         }
 
         .info-panel {
-            max-height: calc(100vh - 150px);
+            max-height: 150%;
             overflow-y: auto;
             padding-left: 10px;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
 
 
@@ -164,3 +189,5 @@
             text-decoration: none;      
             color: white;  
         }
+
+        
