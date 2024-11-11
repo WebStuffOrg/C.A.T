@@ -183,13 +183,22 @@ main {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+button.table-data {
+    border: solid 1px var(--primary-color); 
+    background-color: rgba(255, 255, 255, 0.5); 
+    margin-left: -13px;
+    width: fit-content;
+    text-wrap: pretty;
+    text-align: center;
+    font-size: 1rem;
+}
+
+button.table-data .dropdown-menu {
+    overflow-wrap: anywhere;
+}
 
 tbody {
     --bs-table-bg: var(--quinary-color);
-}
-
-.description {
-    padding: 0.25rem;
 }
 
 th, td {
@@ -197,11 +206,32 @@ th, td {
     text-wrap:pretty;
     width: 50%;
 }
-.label {
-    font-weight: bold;
+/* 
+tbody, td, tfoot, th, thead, tr {
+    border: 0px;
 }
 
+tr {
+    position: relative;
+}
 
+tr::after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    left: 15%;
+    width: 80%; 
+    height: 1px; 
+    background-color: black; 
+} */
+
+.description {
+    padding: 0.25rem;
+}
+
+.label {
+    font-weight: bold;
+}    
 /* NARRATIVE SWITCH SECTION */
 
 #alt-narr .sub-narr button {
@@ -219,21 +249,15 @@ th, td {
     text-align: center;
     color: black;
     font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom:0.5rem;
     overflow-wrap: break-word;
 }
 
-button.table-data {
-    border: solid 1px var(--primary-color); 
-    background-color: rgba(255, 255, 255, 0.5); 
-    margin-left: -13px;
-    width: fit-content;
-    text-wrap: pretty;
-    text-align: center;
-}
 
-.narr-icon:nth-child(2) {
+.narr-icon {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -254,7 +278,7 @@ button.table-data {
 
 #description h5 {
     text-align: center; 
-    margin-bottom: 5vh; 
+    margin-bottom: 1.5rem; 
     font-weight: bold;
 }
 
@@ -274,14 +298,21 @@ hr {
 
 .text-button:active {
     background-color: var(--quaternary-color);
+    opacity: 0.9;
+    color: white;
+}
+.text-button:hover {
+    background-color: var(--quaternary-color);
+    opacity: 0.9;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
     #image-wrapper {
-        height: 50%;
+        height: 60%;
         width: 100%;
-        left: 0%;
-        top: 20px;
+        left: 0;
+        top: 0;
     }
     #artwork-img {
         max-height: 75vh;
@@ -292,12 +323,18 @@ hr {
     #wrapper-header {
         top: -40px;
         background-color: black;
+        padding: 0px;
+        margin: 0;
     }
     #wrapper-header * {
         padding: 0px;
+        margin: 0;
     }
     #info-text {
         padding: 0px;
+    }
+    .page-title-section {
+        margin-bottom: 40px;
     }
 }
 
