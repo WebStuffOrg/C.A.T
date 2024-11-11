@@ -394,6 +394,66 @@
 
             <h5>2.3 Technical Design</h5><br>
 
+            <p>Give the simplicity of our website, we opted to store all the data needed to run the website in JSON, one of the most widely used data formats on the Web. The JSON is structured to describe both individual artworks (items) and curated narratives (thematic groupings) that offer viewers different perspectives on the artworks based on specific themes.</p>
+            <p>The JSON has three sections:</p>
+            <ul>
+                <li>Meta: General information about the exhibition.</li>
+                <li>Items: Detailed descriptions of each artwork included in the exhibition.</li>
+                <li>Narratives: Thematic groupings of items to convey different aspects of cats in art history.</li>
+            </ul>
+
+            <h6>2.3.1 <code>meta</code> Object</h6>
+            <p>The meta object contains the exhibition's metadata, which provides context for the JSON structure and supports front-end application display options.</p>
+            <ul>
+                <li>title: String - The name of the exhibition, "Cats Art Exhibition."</li>
+                <li>description: String - A summary of the exhibition’s focus, emphasizing the theme of cats represented in art globally and historically.</li>
+                <li>narrativesList: Array - Lists available narrative themes, such as geographic regions ("Europe," "Asia"), themes of behavior ("Playing," "Hunting"), and symbolic roles ("Supernatural," "Religion").</li>
+                <li>defaultNarrative: String - Sets the default viewing narrative to "Timeline," presenting the artworks in chronological order.</li>
+                <li>defaultStart: Number - Index position for the default start item.</li>
+                <li>defaultText: String - Sets the default text level, here "basic," which displays basic descriptive text for each artwork.</li>
+            </ul>
+            <h6>2.3.2 <code>items</code> Object</h6>
+
+            <p>The items object holds all the artworks included in the exhibition, each uniquely identified by a numerical key. Each item represents an artwork and contains detailed properties describing it.</p>
+            <p>Each artwork object contains:</p>
+            <ul>
+                <li>title: String - The name of the artwork.</li>
+                <li>creator: String - Artist or creator of the artwork. If unknown, listed as "Unknown."</li>
+                <li>time: String - Date or period when the artwork was created.</li>
+                <li>origin: String - The cultural or geographic origin of the artwork.</li>
+                <li>type: String - The category or form of the artwork (e.g., "Textile," "Sculpture," "Painting").</li>
+                <li>medium: String - Materials used in creating the artwork.</li>
+                <li>dimensions: String - Physical dimensions of the artwork; may be "Unknown" if unspecified.</li>
+                <li>img: String - Path to an image file representing the artwork.</li>
+                <li>text: Object - Contains three text levels (basic, extended, long) to provide different depths of information about the artwork.</li>
+                <li>basic: Concise information about the artwork.</li>
+                <li>extended: A more detailed description, adding context or additional interpretive information.</li>
+                <li>long: A comprehensive description, often including historical and cultural insights.</li>
+                <li>includedIn: Array - Lists the narrative themes in which the artwork appears. This allows each artwork to be included in multiple narratives and helps structure the user’s thematic experience.</li> 
+            </ul> 
+            <p>The first seven are the fields used for the metadata description of the artworks in the exhibition. We chose these given how they align with some of the most important standards used in visual arts resource description, like CDWA and DC.</p>
+
+
+            <p>Example
+                An example of the structure of an item:
+            </p>
+
+            <img src="images/doc/json_example.png" alt="" width="1200">
+                
+            <br><br>
+            
+            <h6>2.3.3 <code>narratives</code> Object</h6>
+
+            <p>The narratives object defines thematic groupings of artworks, helping present items in various thematic arrangements. Each key is a theme name, and its value is an array of item IDs referencing artworks in the items section.</p>
+            <p>Available narratives include:</p>
+            <ul>
+                <li>Timeline: Chronological arrangement of artworks.</li>
+                <li>Geography: Arranges artworks by origin (e.g., "Europe," "Asia").</li>
+                <li>Thematic Categories: Includes behavioral (e.g., "Daily," "Playing"), symbolic (e.g., "Supernatural," "Religion"), and cultural (e.g., "Folklore," "Superstition") themes that highlight specific representations of cats.</li>
+            </ul>
+            <p>This way, the suggested pathways through the exhibition are clearly defined in a non-redundant way, leveraging the IDs defined in the "items" section. Using arrays facilitates the adaptability of the project to any changes curators or the institution may want to apply in the future.</p>
+
+
             <h4>3. Attribution Information</h4>
 
             <p>The purpose of this website is to explore historical artifacts related to cats as an end-of-course project for the "Information Modeling and Web Technologies" course in the Master’s Degree program in <strong>Digital Humanities and Digital Knowledge</strong> at the University of Bologna, under Prof. Fabio Vitali. Each item has been selected for educational purposes, showcasing cat imagery across cultures.</p>
