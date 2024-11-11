@@ -1,36 +1,121 @@
 body, html {
     font-size: 16px;
-    background-color: #FAF3EF; 
+    background-color: #FAF3EF;
     overflow-x: hidden;
     font-family: Nunito;
 }
 
-h1, h3, h4, h5, p {
-    color: #000000;
-    padding-bottom: 30px;
+@media (max-width: 768px) {
+    html {
+        font-size: 0.8rem;
+    }
+    h1 {
+        font-size: 2.1rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.3rem;
+    }
+    h5 {
+        font-size: 1.1rem;
+    }
+    h6 {
+        font-size: 0.9rem;
+    }
+    p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 0.75rem;
+    }
+    h1 {
+        font-size: 1.9rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: 0.85rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+h1 {
+    font-size: 2.986rem;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h2 {
+    font-size: 2.488rem;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h3 {
+    font-size: 2.074rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+h4 {
+    font-size: 1.728rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+h5 {
+    font-size: 1.44rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+h6 {
+    font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
 }
 
 .collection-title {
     text-align: center;
-    margin-top: 50px;
-    padding-bottom: 20px;
+    margin-top: 3.125rem;
+    padding-bottom: 1.25rem;
 }
 
 .collection-title h1 {
-    font-size: 48px;
-    font-family: 'Comfortaa', sans-serif; 
-    display: inline-block; 
+    font-size: 2.986rem;
+    font-family: 'Comfortaa', sans-serif;
+    display: inline-block;
     position: relative;
-    margin: 0; 
-    padding-bottom: 0px; 
+    margin: 0;
+    padding-bottom: 0;
 }
+
 .collection-title h1::after {
     content: '';
     position: absolute;
-    width: 100%; 
-    height: 4px;
+    width: 100%;
+    height: 0.25rem;
     background-color: rgb(107, 26, 16);
-    bottom: -10px;
+    bottom: -0.625rem;
     left: 0;
     animation: lineGrow 1.5s ease-in-out forwards;
 }
@@ -46,19 +131,19 @@ h1, h3, h4, h5, p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 15px;
-    padding: 20px;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    grid-gap: 0.9375rem;
+    padding: 1.25rem;
+    max-width: 87.5rem;
     margin: 0 auto;
     grid-auto-flow: dense;
 }
 
 .gallery-item {
     overflow: hidden;
-    border-radius: 10px;
-    margin: 10px;
-    position: relative; 
+    border-radius: 0.625rem;
+    margin: 0.625rem;
+    position: relative;
 }
 
 .gallery-item img {
@@ -96,14 +181,14 @@ h1, h3, h4, h5, p {
     opacity: 0;
     transition: opacity 0.3s ease;
     position: absolute;
-    top: 10px; 
-    left: 50%; 
-    transform: translate(-50%); 
+    top: 0.625rem;
+    left: 50%;
+    transform: translate(-50%);
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 80%; 
-    padding: 10px; 
-    border-radius: 5px; 
+    width: 80%;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
 }
 
 .gallery-item:hover .carousel-caption {
@@ -112,7 +197,7 @@ h1, h3, h4, h5, p {
 
 .carousel-caption h5 {
     color: white !important;
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
 }
 
 .carousel-caption .btn {
@@ -122,7 +207,7 @@ h1, h3, h4, h5, p {
     border: none;
     padding: 0.5rem 1rem;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 0.25rem;
 }
 
 .carousel-caption .btn:hover {
@@ -146,8 +231,8 @@ h1, h3, h4, h5, p {
 
 .scroll-buttons {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25rem;
+    right: 1.25rem;
     display: flex;
     flex-direction: column;
     z-index: 99;
@@ -157,22 +242,21 @@ h1, h3, h4, h5, p {
     background-color: #ffffff;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 0.625rem;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.125rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 40px !important;
-    height: 40px !important;
-    padding: 10px !important;    
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    width: 2.5rem !important;
+    height: 2.5rem !important;
 }
 
 .scroll-button svg {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: black;
 }
 
@@ -188,15 +272,22 @@ h1, h3, h4, h5, p {
 
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .horizontal, .vertical, .square, .small {
+    .horizontal {
+        grid-column: span 2;
+    }
+
+    .vertical {
         grid-column: span 1;
-        grid-row: span 1;
+    }
+
+    .square, .small {
+        grid-column: span 1;
     }
 
     .gallery-item:nth-child(-n+4) {
-        grid-column: span 2 !important; 
+        grid-column: span 2 !important;
     }
 }
