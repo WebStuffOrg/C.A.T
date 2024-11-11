@@ -10,6 +10,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Migliora il rendering su Safari */
+    -moz-osx-font-smoothing: grayscale;  /* Per Firefox su Mac */
 }
 
 /* Corpo della pagina */
