@@ -1,121 +1,24 @@
-body, html {
-    font-size: 16px;
-    background-color: #FAF3EF;
-    overflow-x: hidden;
-    font-family: Nunito;
-}
-
-@media (max-width: 768px) {
-    html {
-        font-size: 0.8rem;
-    }
-    h1 {
-        font-size: 2.1rem;
-    }
-    h2 {
-        font-size: 1.75rem;
-    }
-    h3 {
-        font-size: 1.5rem;
-    }
-    h4 {
-        font-size: 1.3rem;
-    }
-    h5 {
-        font-size: 1.1rem;
-    }
-    h6 {
-        font-size: 0.9rem;
-    }
-    p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 0.75rem;
-    }
-    h1 {
-        font-size: 1.9rem;
-    }
-    h2 {
-        font-size: 1.6rem;
-    }
-    h3 {
-        font-size: 1.4rem;
-    }
-    h4 {
-        font-size: 1.2rem;
-    }
-    h5 {
-        font-size: 1rem;
-    }
-    h6 {
-        font-size: 0.85rem;
-    }
-    p {
-        font-size: 0.8rem;
-    }
-}
-
-h1 {
-    font-size: 2.986rem;
+.page-title {
+    color: black;
+    font-weight: bold;
     font-family: 'Comfortaa', sans-serif;
-}
-
-h2 {
-    font-size: 2.488rem;
-    font-family: 'Comfortaa', sans-serif;
-}
-
-h3 {
-    font-size: 2.074rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-h4 {
-    font-size: 1.728rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-h5 {
-    font-size: 1.44rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-h6 {
-    font-size: 1.2rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-p {
-    font-size: 1rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-.collection-title {
-    text-align: center;
-    margin-top: 3.125rem;
-    padding-bottom: 1.25rem;
-}
-
-.collection-title h1 {
-    font-size: 2.986rem;
-    font-family: 'Comfortaa', sans-serif;
-    display: inline-block;
     position: relative;
-    margin: 0;
-    padding-bottom: 0;
+    display: inline-block;
+    overflow: wrap;
 }
 
-.collection-title h1::after {
+.page-title-section {
+    padding: 35px;
+    text-align: center;
+}
+
+.page-title::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 0.25rem;
-    background-color: rgb(107, 26, 16);
-    bottom: -0.625rem;
+    width: 0;
+    height: 4px;
+    background-color:rgb(107, 26, 16);; 
+    bottom: -10px; 
     left: 0;
     animation: lineGrow 1.5s ease-in-out forwards;
 }
@@ -203,7 +106,7 @@ p {
 .carousel-caption .btn {
     background-color: #6B1A10;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     border: none;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -213,20 +116,6 @@ p {
 .carousel-caption .btn:hover {
     background-color: #5a150e;
     color: #fff;
-}
-
-.footer {
-    background-color: black;
-    color: white;
-    padding: 0;
-}
-
-.footer a {
-    color: white;
-}
-
-.footer p {
-    color: white;
 }
 
 .scroll-buttons {

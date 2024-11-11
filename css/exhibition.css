@@ -1,128 +1,24 @@
-body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #FAF3EF !important;
-}
-
-h1, h2 {
-    font-family: 'Comfortaa', sans-serif;  
-}
-
-h1, h2, h3, h4, h5 {
-    color: #333 !important;
-}
-
-h1 {
-    font-size: 3rem; 
-    font-weight: bold;
-    text-align: center;  
-    color: #000;  
-}
-
-/* Navbar */
-.navbar .navbar-nav .nav-link,
-.nav-link:hover,
-.navbar-brand,
-.nav-item.active .nav-link {
-    color: rgb(250, 243, 239) !important; 
-    font-family: 'Nunito', sans-serif;
-}
-
-.navbar-toggler {
-    border-color: rgb(250, 243, 239); /* Pink border color */
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z'/%3E%3C/svg%3E");
-}
-
-/* Dropdown menu styles */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: #000000;
-    list-style: none;
-    z-index: 1000;
-}
-
-.dropdown-item {
-    color: #ffffff;
-    font-family: 'Comfortaa';
-    font-size: 14px;
-}
-
-/* Responsive navbar */
-
-@media (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-    }
-
-    .navbar-item {
-        margin: 10px 0;
-    }
-
-    .navbar-toggle {
-        display: flex;
-    }
-}
-
-@media (max-width: 760px) {
-    body {
-        font-size: 0.875rem; /* Reduce base font size */
-    }
-
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-    }
-
-    h4 {
-        font-size: 1.125rem;
-    }
-
-    h5 {
-        font-size: 1rem; /* Smaller font size for h5 */
-    }
-
-    h6 {
-        font-size: 0.875rem;
-    }
-
-    p {
-        font-size: 0.625rem;
-    }
-}
-
-.page-title-wrapper {
-    display: flex;
-    justify-content: center; 
-    align-items: center;      
-}
-
 .page-title {
+    color: black;
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif;
     position: relative;
-    display: inline-block;  
-    text-align: center;     
+    display: inline-block;
+    overflow: wrap;
+}
+
+.page-title-section {
+    padding: 35px;
+    text-align: center;
 }
 
 .page-title::after {
     content: '';
     position: absolute;
-    width: 100%; 
-    height: 0.25rem;
-    background-color: rgb(107, 26, 16);
-    bottom: -0.625rem;
+    width: 0;
+    height: 4px;
+    background-color:rgb(107, 26, 16);; 
+    bottom: -10px; 
     left: 0;
     animation: lineGrow 1.5s ease-in-out forwards;
 }
@@ -178,7 +74,7 @@ h1 {
 .view-collection-btn, .view-more-btn {
     background-color: #6B1A10;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     border: none;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -188,24 +84,6 @@ h1 {
 .view-collection-btn:hover, .view-more-btn:hover {
     background-color: #5a150e;
     color: #fff;
-}
-
-#backToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    z-index: 99;
-    background-color: #6B1A10;
-    color: white;
-    border: none;
-    padding: 0.625rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#backToTopBtn:hover {
-    background-color: #5a150e;
 }
 
 section {
@@ -262,7 +140,7 @@ p.card-text {
     margin-top: 0.625rem;
     background-color: #6B1A10; 
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     border: none;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -285,47 +163,4 @@ p.card-text {
     width: 100%; 
     height: 20.9375rem; 
     object-fit: contain; 
-}
-
-.scroll-buttons {
-    position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 99;
-}
-
-.scroll-button {
-    background-color: #ffffff;
-    border: none;
-    color: white;
-    padding: 0.625rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.125rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
-}
-
-.scroll-button svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: black;
-}
-
-.scroll-button:hover {
-    background-color: #f0f0f0;
-}
-
-.footer {
-    background: #000; 
-    padding: 0;
-}
-
-.footer a {
-    text-decoration: none; 
-    color: #fff;  
 }
