@@ -2,17 +2,17 @@
         .content-container {
             flex-grow: 1;
             height: fit-content;
-            padding-bottom: 20px;
+            padding-bottom: 50px;
             background-color: rgb(250, 243, 239);
         }
         
         .page-title {
             color: black;
-            font-size: 2.986rem	!important;
             font-weight: bold;
             font-family: 'Comfortaa', sans-serif;
             position: relative;
             display: inline-block;
+            overflow: wrap;
         }
 
         .page-title-section {
@@ -105,10 +105,12 @@
         }
 
         .info-panel {
-            max-height: 70vh;
+            max-height: calc(100vh - 150px);
             overflow-y: auto;
             padding-left: 10px;
+            box-sizing: border-box;
         }
+
 
         #info-image {
             width: 100%; 
