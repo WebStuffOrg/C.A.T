@@ -11,8 +11,7 @@
 
 .hero_content {
   width: 100%;
-  min-height: fit-content;
-  max-width: 1350px;
+  min-height: fit-content; 
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -49,7 +48,7 @@
 /* Poster */
 #poster {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -155,6 +154,7 @@
  .admission-list li{
   width: 100%;
   line-height: 1.4;
+  font-size:0.625rem;
 }
 .notes {
   font-size: 0.5rem;
