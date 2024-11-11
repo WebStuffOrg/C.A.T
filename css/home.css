@@ -130,7 +130,7 @@
 .bg-cover_text b {
   display: block;
   margin-top: 1rem;
-  border-bottom: 2px solid rgba(73, 37, 54, 0.899);
+  border-bottom: 1px solid rgba(73, 37, 54, 0.899);
 }
 
  .bg-cover_text ul,  .bg-cover_text p {
