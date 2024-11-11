@@ -131,7 +131,7 @@
     width: 70px;
     height: 70px; /* Maintain circle shape */
     border-radius: 50%; /* Ensure perfect circle */
-    right: -38px;
+    right: -35px;
     top: 32px;
     z-index: 2; /* Ensure images are above the line and content */
     object-fit: cover; /* Ensure image fits correctly */
