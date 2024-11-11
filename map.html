@@ -12,8 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="images/icons/pets.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Exhibition map</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/map.css">
@@ -59,69 +58,68 @@
     </header>
 
 
-<div class = "page-title-section">
-    <h1 class="page-title">Exhibition Map</h1>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="search-menu">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Search by</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#searchNavbar" aria-controls="searchNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="searchNavbar">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="filterMapPoints('all', 'all')">All Exhibits</a>
-                </li>
-                
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="timePeriodDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        By Time Period
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="timePeriodDropdown">
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Prehistoric')">Prehistoric</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Ancient')">Ancient</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Medieval')">Medieval</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Early Modern')">Early Modern</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Modern')">Modern</a></li>
-                    </ul>
-                </li>
-
-                <!-- Narratives -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="narrativesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        By Narratives
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="narrativesDropdown">
-                        <!-- Geographical -->
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Geographical</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Asia')">Asia</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Europe')">Europe</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Africa')">Africa</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'America')">America</a></li>
-                            </ul>
-                        </li>
-                        <!-- Cats and Spirituality -->
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Cats and Spirituality</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Religion')">Religion</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Folklore')">Folklore</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Superstition')">Superstition</a></li>
-                            </ul>
-                        </li>
-                        <!-- Cats in Daily Life -->
-                        <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Cats in Daily Life')">Cats in Daily Life</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <div class = "page-title-section">
+        <h1 class="page-title">Exhibition Map</h1>
     </div>
-</nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="search-menu">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Search by</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#searchNavbar" aria-controls="searchNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="searchNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filterMapPoints('all', 'all')">All Exhibits</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="timePeriodDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            By Time Period
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="timePeriodDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Prehistoric')">Prehistoric</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Ancient')">Ancient</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Medieval')">Medieval</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterMapPoints('period', 'Contemporary')">Contemporary</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Narratives -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="narrativesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            By Narratives
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="narrativesDropdown">
+                            <!-- Geographical -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Geographical</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Asia')">Asia</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Europe')">Europe</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Africa')">Africa</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'America')">America</a></li>
+                                </ul>
+                            </li>
+                            <!-- Cats and Spirituality -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Cats and Spirituality</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Religion')">Religion</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Folklore')">Folklore</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Superstition')">Superstition</a></li>
+                                </ul>
+                            </li>
+                            <!-- Cats in Daily Life -->
+                            <li><a class="dropdown-item" href="#" onclick="filterMapPoints('narrative', 'Cats in Daily Life')">Cats in Daily Life</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 <!--main content-->
 <div class="content-container container-fluid mt-4">
@@ -195,19 +193,13 @@
     </div>
 </div>
 
-<div class="button" id="info-link-2">
-    <button class ="link" onclick="showInfo()"></button>
-</div>
-
-
 <div class="scroll-buttons">
     <button class="scroll-button" onclick="scrollToTop()">
-        <svg viewBox="0 0 24 24">
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+         <svg viewBox="0 0 24 24">
+             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
         </svg>
     </button>
 </div>
-
 
 <footer class="footer" aria-label="Footer">
     <div class="text-center p-3 text-white">
@@ -233,7 +225,7 @@
         description: "Originates in: China, Kanton <br>Period: c.1760 - c.1770</br> Medium: porcelain, glaze </br>Type: figure ",
         image: "images/narr/img-4.png",
         link: "gallery.html",
-        period: "Modern",
+        period: "Contemporary",
         narrative: ["Asia", "Cats in Daily Life"]
     },
     6: {
@@ -241,7 +233,7 @@
         description: "Originates in: India, Calcutta <br>Period: ca. 1885</br> Medium: opaque watercolour on paper </br>Type: painting ",
         image: "images/narr/img-6.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Asia", "Religion"]
     },
     11: {
@@ -249,7 +241,7 @@
         description: "Originates in: Japan <br>Period: 1847</br> Medium: woodblock print </br>Type: painting",
         image: "images/narr/img-11.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Asia", "Folklore"]
     },
     12: {
@@ -273,7 +265,7 @@
         description: "Originates in: England <br>Period: ca. 1850s </br> Medium: paper (letterpress printing) </br>Type: religious card ",
         image: "images/narr/img-7.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Europe", "Religion"]
     },
     14: {
@@ -281,7 +273,7 @@
         description: "Originates in: Russia <br>Period: 1881 </br> Medium: paper </br>Type: book ",
         image: "images/narr/img-14.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Europe", "Folklore"]
     },
     5: {
@@ -289,7 +281,7 @@
         description: "Originates in: France <br>Period: ca. 1896 </br> Medium: paper </br>Type: poster ",
         image: "images/narr/img-5.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Europe", "Folklore"]
     },
     9: {
@@ -297,7 +289,7 @@
         description: "Originates in: England <br>Period:1909 </br> Medium: watercolor and gouache on paper </br>Type: drawing ",
         image: "images/narr/img-9.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["Europe", "Cats in Daily Life"]
     },
     10: {
@@ -313,7 +305,7 @@
         description: "Originates in: Italy <br>Period: ca. 1478-1481 </br> Medium: paper </br>Type: drawing ",
         image: "images/narr/img-13.jpg",
         link: "gallery.html",
-        period:"Early Modern",
+        period:"Contemporary",
         narrative: ["Europe", "Religion"]
     },
     3: {
@@ -361,7 +353,7 @@
         description: "Originates in: America <br>Period: ca. 1920</br> Medium: painted canvas with leather, wood and metal </br>Type: sculpture ",
         image: "images/narr/img-2.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["America", "Superstition"]
     },
     17: {
@@ -369,7 +361,7 @@
         description: "Originates in: America <br>Period: 1954 </br> Medium: printed paper </br>Type: book ",
         image: "images/narr/img-17.jpg",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["America", "Cats in Daily Life"]
     },
     18: {
@@ -377,7 +369,7 @@
         description: "Originates in: America <br>Period: ca. 1960s</br> Medium: b/w negative </br>Type: photography ",
         image: "images/narr/img-18.png",
         link: "gallery.html",
-        period:"Modern",
+        period:"Contemporary",
         narrative: ["America", "Cats in Daily Life"]
     }
 };
@@ -449,9 +441,30 @@
     document.getElementById('info-link').style.display = 'none';
     };
 
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.addEventListener('DOMContentLoaded', () => {
+    const contentContainer = document.querySelector('.content-container');
+    const footer = document.querySelector('.footer');
+    const header = document.querySelector('header');
+    const navbar = document.querySelector('.navbar'); // Include the navbar
+
+    const viewportHeight = window.innerHeight;
+    const headerHeight = header ? header.offsetHeight : 0;
+    const navbarHeight = navbar ? navbar.offsetHeight : 0; // Include navbar height
+    const footerHeight = footer ? footer.offsetHeight : 0;
+
+
+    const calculatedHeight = viewportHeight - headerHeight - footerHeight - navbarHeight;
+
+    if (calculatedHeight > 0) {
+        contentContainer.style.minHeight = `${calculatedHeight}px`;
     }
+});
+
+    function scrollToTop() {
+    document.body.scrollTo({ top: 0, behavior: 'smooth' }); 
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 </script>
 </body>
 </html>
