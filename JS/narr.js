@@ -231,10 +231,6 @@ window.addEventListener("resize", () => {
 
 mainImage.addEventListener("load", () => {
     spinner.classList.add("hide-loading");
-    
-    //     spinner.addEventListener("transitionend", () => {
-    //         spinner.remove();
-    // });
 })
 
 // narrative switch
@@ -311,7 +307,6 @@ document.querySelector(".scroll-button").addEventListener("click", (e) => {
     } else {
         mainImage.parentElement.scrollIntoView({behavior : "smooth"});
     };
-    e.target.setAttribute("transform", `rotate(${rotation})`);
     });
 
 // Offcanvas buttons
@@ -320,8 +315,9 @@ artworksList.addEventListener("click", async (e) => {
         currentIdx = +e.target.value;
         disableCurrSideItem(currentIdx);
         await setContent(items[currentNarrativeArr[currentIdx]]);
+        const offcanvasClasses = document.querySelector(".offcanvas").classList;
+        offcanvasClasses.remove("show");
+        document.querySelector(".offcanvas-backdrop").classList.remove("show");
+        mainImage.parentElement.scrollIntoView()
     }
-    const offcanvasClasses = document.querySelector(".offcanvas").classList;
-    offcanvasClasses.remove("show");
-    document.querySelector(".offcanvas-backdrop").classList.remove("show");
 })

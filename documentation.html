@@ -439,25 +439,48 @@
                 <li><b>Responsive Grid</b>: The mosaic layout is responsive, switching to smaller grid columns or a single-column format on mobile, ensuring that artifacts remain accessible and visible on smaller screens.</li>
                 <li><b>Interaction Consistency</b>: All interactive elements, including hover effects and tooltips, are preserved on mobile through equivalent tap actions, ensuring a seamless experience for all users.</li>
             </ul>
-            <h5>2.2.4 Gallery Page</h5>
-            <h6>2.2.3.3 Layout</h6>
-            <p>The layout is mainly based on the Bootstrap grid sytem and is composed by two main components: a row for the image display and one for the display of information relative to the current artwork</p>
-            <p>The image display consists in an image container spanning the entire hight on the viewport and 95% of the viewport width from medium screens onwards. This way, we intend to centralize the focus on the artwork as soon as the user is directed to the gallery, without creating a separate row ins</p>
-            <p>The image container also provides the necessary navigational features for a gallery: browsing buttons for </p>
-            
-            <p>The layout of the gallery page is designed to focus the attention of the user on the image, while still ensuring that information is not overshadowed by the images.</p>
+            <h5>2.2.5 Gallery Page</h5>
+            <h6>2.2.5.1 Overview</h6>
+            <p>The gallery page is meant to browse the artworks of the exhibition with a high focus on the images themselves, accompanying them with useful and interesting information. That's way it's the endpoint of all the other pages</p>
+            <h6>2.2.5.2 Visual design</h6>
+            <ul>
+                <li><b>Color Scheme</b>: The Collection page employs the same palette as the rest of the site—light beige (#FAF3EF) backgrounds with accent colors such as Deep Red (#6B1A10) for buttons. The consistent color use aligns with the overall theme, making the page feel part of the broader experience.</li>
+                <li><b>Typography</b>: ‘Comfortaa’ is used for headings, reinforcing a friendly aesthetic, while the body text uses ‘Nunito’ to maintain readability (especially important in the description of the artworks). Font sizes are set to provide contrast between headings, descriptions, and captions.</li>
+            </ul>
+            <h6>2.2.5.3 Layout</h6>
+            <p>The layout of the gallery page is designed to focus the attention of the user on the image, while still ensuring that other information is not overshadowed by the images.</p>
+            <p>The layout is mainly based on the <strong>Bootstrap grid system</strong> and is composed by two main components: a row for the image display and one for the <strong>information display</strong> about the current artwork</p>
+            <p>The image display consists in an image container spanning the entire hight on the viewport and 95% of the viewport width from medium screens onwards. This way, we intend to centralize the focus on the artwork as soon as the user is directed to the gallery.</p>
+            <p>The image container is also provided with the necessary navigational features for a gallery:</p>
+            <ul>
+                <li>browsing buttons to navigate sequentially through narratives;</li>
+                <li>an offcanvas that provides the list of artworks included in the current narrative, to navigate them non-sequentially;</li>
+                <li>a button which redirects to the Narratives page.</li>
+            </ul>
+            <p>Scrolling down or using the scroll button on the right-bottom side leads the user to the information display. It consists of a series of three rows that span for 8/12 of the viewport, comprising:</p>
+            <ul>
+                <li>an <strong>HTML table</strong> with metadata about the artwork</li>
+                <li>a column-oriented <strong>narrative-switch buttons container</strong>, organized by main narratives</li>
+                <li>a <strong>description</strong> of the artwork, offering three different raeding levels</li>
+            </ul>
+            <p>On the remaining space to the right of this section, a sticky card gets visible as soon as the main image disappears from the viewport, to relay the importance of image even when the image container is not visible. The sticky card has the same sequential navigation buttons and a header stating the current narrative.</p>
 
-            <h6>2.2.3.4 Interactive Design</h6>
-            
 
-            <h6>2.2.3.5 User Experience and Accessibility</h6>
-           
-
-            <h6>2.2.3.6 Mobile-Specific Adjustments</h6>
-            
-
-
-
+            <h6>2.2.5.4 Interactive Design and User Experience</h6>
+            <p>The gallery uses two main types of buttons, using clear visual cues to lead the user:</p>
+            <ul>
+                <li>the <strong>red buttons</strong> signal navigational interactions</li>
+                <li>the <strong>violet buttons</strong> instead indicate interactions that only affect part of the layout or temporary overlays (like the offcanvas being toggled)</li>
+            </ul>
+            <p>The design of the gallery allows it to be a full single page application, allowing the user to swiftly switch between narratives and subnarratives through the button in the info section. Nonetheless, it is also efficiently linked to other pages like the Narratives one, but also the Timeline, using the button in the table.</p>           
+            <p>As alredy mentioned, the page reacts to the user moving inside it, with an fade-in fade-out animation assigned to the lateral image to give a more reactive feel to the page.</p>
+            <h6>2.2.5.5 Mobile-Specific Adjustments</h6>
+            <p>To adapt to small screen sizes, the gallery page layout undergoes a series of modifications:</p>
+            <ul>
+                <li>reduced image container: the height is limited to 75vh for screens under 760px;</li>
+                <li>image header translation: the image container header, transparent on medium screens, gets pushed out the image container by applying negative margin on it, to prevent it from covering too much of the reduced size image container</li>
+                <li>lateral card removal: this is done to give more space to the rest of the content, which occupies the entire viewport width on small screens.</li>
+            </ul>
 
             <h5>2.2.5 Timeline Page</h5>
             <h6>2.2.5.1 Overview</h6>
