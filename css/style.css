@@ -117,7 +117,7 @@ p {
     right: 20px;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .scroll-button {
@@ -160,7 +160,7 @@ p {
 /* Footer */
 .footer {
     background: #000;
-    padding: 0;
+    padding:  10px 20px;
     position: relative;
 }
 
