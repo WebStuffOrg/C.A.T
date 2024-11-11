@@ -6,7 +6,6 @@ let narrativeTitle = ""
 let currentIdx = 0
 let textState = 0
 let rotation = 0
-let narrImages
 
 const navButtons = document.querySelectorAll(".back-button, .next-button")
 const altNarrative = document.getElementById("alt-narr");
@@ -21,7 +20,6 @@ const text = document.getElementById("info-text");
 const arrowSvg = document.querySelector(".scroll-button > svg")
 const spinner = document.getElementById('loading-spinner');
 
-const setImage = async () => {mainImage.src = sideImage.src = narrImages[currentIdx].src};
 const showLoading = () => {spinner.classList.remove("hide-loading");}
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -38,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         narrativeTitle = data.meta.defaultNarrative
         currentNarrativeArr = narratives[narrativeTitle];
     };
-    narrImages = await preloadNarrImages();
     const itemData = items[currentNarrativeArr[currentIdx]];
     await setContent(itemData);
     await Promise.all([
@@ -46,6 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         setSidebarList(currentNarrativeArr, currentIdx)
     ]);
     mainImage.parentElement.scrollIntoView();
+    await preloadNarrImages();
 });
 
 
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function setContent(data) {
     buttonsCheck();
-    await setImage();
+    mainImage.src = sideImage.src = data.img;
     await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),
@@ -174,8 +172,8 @@ async function switchNarrative(narrative) {
     narrativeTitle = narrative;
     currentIdx = 0;
     showLoading();
-    narrImages = await preloadNarrImages();
     await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
+    await preloadNarrImages();
 }
 
 async function setSidebarList(narrative = currentNarrativeArr) {
