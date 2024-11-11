@@ -140,7 +140,7 @@
 }
 
 .notes {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 
@@ -155,11 +155,9 @@
  .admission-list li{
   width: 100%;
   line-height: 1.4;
-  font-size:0.625rem;
+  font-size: clamp(1rem, 0.8rem + 1vw, 1rem);
 }
-.notes {
-  font-size: 0.5rem;
-}
+
 
 }
 
