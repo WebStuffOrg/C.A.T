@@ -25,7 +25,7 @@ body {
 
 @media (max-width: 599px) {
     html {
-        font-size: 14px; /* Adjust font sizes for small screens */
+        font-size: 15px; /* Adjust font sizes for small screens */
     }
 }
 

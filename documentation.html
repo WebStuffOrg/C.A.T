@@ -391,15 +391,34 @@
                 <li><b>Responsive Grid</b>: The mosaic layout is responsive, switching to smaller grid columns or a single-column format on mobile, ensuring that artifacts remain accessible and visible on smaller screens.</li>
                 <li><b>Interaction Consistency</b>: All interactive elements, including hover effects and tooltips, are preserved on mobile through equivalent tap actions, ensuring a seamless experience for all users.</li>
             </ul>
+            <h5>2.2.4 Gallery Page</h5>
+            <h6>2.2.3.3 Layout</h6>
+            <p>The layout is mainly based on the Bootstrap grid sytem and is composed by two main components: a row for the image display and one for the display of information relative to the current artwork</p>
+            <p>The image display consists in an image container spanning the entire hight on the viewport and 95% of the viewport width from medium screens onwards. This way, we intend to centralize the focus on the artwork as soon as the user is directed to the gallery, without creating a separate row ins</p>
+            <p>The image container also provides the necessary navigational features for a gallery: browsing buttons for </p>
+            
+            <p>The layout of the gallery page is designed to focus the attention of the user on the image, while still ensuring that information is not overshadowed by the images.</p>
+
+            <h6>2.2.3.4 Interactive Design</h6>
+            
+
+            <h6>2.2.3.5 User Experience and Accessibility</h6>
+           
+
+            <h6>2.2.3.6 Mobile-Specific Adjustments</h6>
+            
+
+
+
 
             <h5>2.3 Technical Design</h5><br>
 
             <p>Give the simplicity of our website, we opted to store all the data needed to run the website in JSON, one of the most widely used data formats on the Web. The JSON is structured to describe both individual artworks (items) and curated narratives (thematic groupings) that offer viewers different perspectives on the artworks based on specific themes.</p>
             <p>The JSON has three sections:</p>
             <ul>
-                <li>Meta: General information about the exhibition.</li>
-                <li>Items: Detailed descriptions of each artwork included in the exhibition.</li>
-                <li>Narratives: Thematic groupings of items to convey different aspects of cats in art history.</li>
+                <li><strong>Meta</strong>: General information about the exhibition.</li>
+                <li><strong>Items</strong>: Detailed descriptions of each artwork included in the exhibition.</li>
+                <li><strong>Narratives</strong>: Thematic groupings of items to convey different aspects of cats in art history.</li>
             </ul>
 
             <h6>2.3.1 <code>meta</code> Object</h6>
@@ -445,13 +464,16 @@
             <h6>2.3.3 <code>narratives</code> Object</h6>
 
             <p>The narratives object defines thematic groupings of artworks, helping present items in various thematic arrangements. Each key is a theme name, and its value is an array of item IDs referencing artworks in the items section.</p>
-            <p>Available narratives include:</p>
+            <p>Narratives can have a certain number of subnarratives, which can be seen as subclasses of the narrative's theme, allowing the visitor for a more granular pathway selection, based on their interests</p>
+            <p>The four main narratives with their respective sub-narratiives are:</p>
             <ul>
-                <li>Timeline: Chronological arrangement of artworks.</li>
-                <li>Geography: Arranges artworks by origin (e.g., "Europe," "Asia").</li>
-                <li>Thematic Categories: Includes behavioral (e.g., "Daily," "Playing"), symbolic (e.g., "Supernatural," "Religion"), and cultural (e.g., "Folklore," "Superstition") themes that highlight specific representations of cats.</li>
+                <li><strong>Timeline</strong>: chronological arrangement of artworks, following the Timeline page.</li>
+                <li><strong>Geography</strong>: it's the narrative chosen for the exhibition display. It displays the artworks by continents (<strong>Asia, Europe, Africa, Americas</strong>), to highlight cultural differences.</li>
+                <li><strong>Daily</strong>: a thematic narrative focused on showing artworks portaing the everyday-life of cats, comprising <strong>Hunting, Chilling, Playing</strong></li>
+                <li><strong>Supernatural</strong>: another thematic narrative centered around the commonly otherwordly and mysterious features attributed to cat among cultures and in different times. The subnarratives for Supernatural are <strong>Folklore, Religion and Superstition</strong></li>
             </ul>
-            <p>This way, the suggested pathways through the exhibition are clearly defined in a non-redundant way, leveraging the IDs defined in the "items" section. Using arrays facilitates the adaptability of the project to any changes curators or the institution may want to apply in the future.</p>
+
+            <p>By structuring the narratives this way, the suggested pathways through the exhibition are clearly defined in a non-redundant way, leveraging the IDs defined in the "items" section. Using arrays facilitates the adaptability of the project to any changes curators or the institution may want to apply in the future.</p>
 
 
             <h4>3. Attribution Information</h4>
