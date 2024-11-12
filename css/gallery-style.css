@@ -27,10 +27,11 @@
     position: absolute;
     width: 0;
     height: 4px;
-    background-color: var(--tertiary-color); 
-    bottom: -10px; 
+    background-color: var(--tertiary-color);
+    bottom: -10px;
     left: 0;
     animation: lineGrow 1.5s ease-in-out forwards;
+    -webkit-animation: lineGrow 1.5s ease-in-out forwards;
 }
 
 @keyframes lineGrow {
@@ -69,7 +70,6 @@ main {
     display: flex;
     align-self: center;
 }
-
 
 #wrapper-header {
     position: absolute;
@@ -118,11 +118,11 @@ main {
 }
 
 .back-button {
-    left: 10px;
+    left: 8px;
 }
 
 .next-button {
-    right: 10px;
+    right: 8px;
 } 
 
 .back-button:hover, .next-button:hover, 
@@ -144,7 +144,6 @@ main {
 
 #side-image {
     padding: 1rem; /* matching the bs col padding (16px) */
-    height: 100;
 }
 
 /* Initially hidden */
@@ -189,7 +188,7 @@ main {
     background-color: black;
     position: sticky;
     width: fit-content;
-    top: 10px;
+    top:8px;
     right: 0px;
     border-radius: 5px;
 }
@@ -216,18 +215,21 @@ button.table-data li.dropdown-item {
 
 tbody {
     --bs-table-bg: var(--quinary-color);
+    --bs-table-hover-bg: white;
 }
 
 th, td {
     text-align: center;
     text-wrap:pretty;
     width: 50%;
+    border-bottom: 1px dotted black !important;
 }
-/* 
+
 tbody, td, tfoot, th, thead, tr {
     border: 0px;
 }
-
+    
+    /* 
 tr {
     position: relative;
 }
@@ -260,6 +262,12 @@ tr::after {
     align-self: center;
     overflow-wrap: break-word;
 }
+#alt-narr .sub-narr button:hover,
+#alt-narr .sub-narr button:active {
+    color: white;
+    background-color: var(--tertiary-color);
+    opacity: 0.8;
+}
 
 
 #alt-narr p {
@@ -267,7 +275,7 @@ tr::after {
     color: black;
     font-style: italic;
     font-size: 0.9rem;
-    margin-bottom:0.5rem;
+    margin-bottom:0.25rem;
 }
 
 
@@ -288,6 +296,9 @@ tr::after {
     padding: 4px;
     background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px var(--secondary-color);
+}
+.narr-icon button:hover {
+    border-color: var(--tertiary-color);
 }
 
 
@@ -315,12 +326,12 @@ hr {
 
 .text-button:active {
     background-color: var(--quaternary-color);
-    opacity: 0.9;
+    opacity: 0.6;
     color: white;
 }
 .text-button:hover {
     background-color: var(--quaternary-color);
-    opacity: 0.9;
+    opacity: 0.8;
     color: white;
 }
 
@@ -330,7 +341,12 @@ hr {
         width: 100%;
         left: 0;
         top: 0;
-    }
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+}
     #artwork-img {
         max-height: 60vh;
     }
@@ -340,7 +356,7 @@ hr {
     #wrapper-header {
         top: -35px;
         background-color: black;
-        padding: 0px;
+        padding: 0.25rem 0px 0.25rem 0px;
         margin: 0;
     }
     #wrapper-header h6 {
