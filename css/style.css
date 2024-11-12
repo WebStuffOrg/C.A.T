@@ -108,6 +108,9 @@ p {
     font-family: 'Comfortaa';
     font-size: 14px;
 }
+.dropdown-item:active {
+    --bs-dropdown-link-active-bg: var(--tertiary-color);
+}
 
 /* Responsive navbar */
 

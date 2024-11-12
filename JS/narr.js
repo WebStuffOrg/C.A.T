@@ -20,7 +20,7 @@ const text = document.getElementById("info-text");
 const arrowSvg = document.querySelector(".scroll-button > svg")
 const spinner = document.getElementById('loading-spinner');
 
-const showLoading = () => {spinner.classList.remove("hide-loading");}
+const showLoading = () => spinner.classList.remove("hide-loading");
 
 document.addEventListener("DOMContentLoaded", async () => {
     const data = await fetch('data/narr.json').then(response => response.json());
@@ -57,11 +57,6 @@ async function setContent(data) {
 
     mainImage.src = sideImage.src = data.img;
 
-    mainImage.classList.remove("fade-out");
-    mainImage.classList.add("fade-in");
-    setTimeout(() => {
-        mainImage.classList.remove("fade-in");
-    }, 500);
     await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),
@@ -180,7 +175,7 @@ async function switchNarrative(narrative) {
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
     currentIdx = 0;
-    // showLoading();
+    showLoading();
     await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
     await preloadNarrImages();
 }
@@ -237,7 +232,19 @@ window.addEventListener("resize", () => {
 
 
 mainImage.addEventListener("load", () => {
-    spinner.classList.add("hide-loading");
+    if (!spinner.classList.contains("hide-loading")) spinner.classList.add("hide-loading");
+    mainImage.classList.remove("fade-out");
+    mainImage.classList.add("fade-in");
+    setTimeout(() => {
+        mainImage.classList.remove("fade-in");
+    }, 500);
+})
+
+sideImage.addEventListener("click", (e) => {
+    const button = e.target.closest(".next-button, .back-button");
+    if (button) {
+        showLoading();
+    }
 })
 
 // narrative switch
@@ -303,6 +310,7 @@ textButtons.addEventListener("click", async (e) => {
         setTimeout(() => {
             text.classList.remove("fade-in");
         }, 500);
+        document.getElementById("description").scrollIntoView()
     }
 });
 
