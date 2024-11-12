@@ -37,13 +37,6 @@
   }
 }
 
-@media (max-width: 760px) {
-  #hero .hero_content h1 {
-    width: 100%;
-    line-height: 1.4;
-  }
-}
-
 /* Poster */
 #poster {
   display: flex;
@@ -154,7 +147,6 @@
  .bg-cover_text, 
  .admission-list li{
   width: 100%;
-  line-height: 1.4;
   font-size: clamp(1rem, 0.8rem + 1vw, 1rem);
 }
 
