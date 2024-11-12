@@ -202,11 +202,10 @@ main {
 button.table-data {
     border: solid 1px var(--primary-color); 
     background-color: rgba(255, 255, 255, 0.5); 
-    margin-left: -13px;
     width: fit-content;
     text-wrap: pretty;
     text-align: center;
-    font-size: 1rem;
+    padding: 0.25rem;
 }
 
 button.table-data li.dropdown-item {
@@ -256,7 +255,7 @@ tr::after {
 #alt-narr .sub-narr button {
     color: white;
     background-color: var(--tertiary-color);
-    min-width: 50%;
+    min-width: 4.5rem;
     padding: 4px;
     margin-top: 1rem;
     align-self: center;
