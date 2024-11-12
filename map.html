@@ -443,20 +443,19 @@
 
     document.addEventListener('DOMContentLoaded', () => {
     const contentContainer = document.querySelector('.content-container');
-    const footer = document.querySelector('.footer');
     const header = document.querySelector('header');
-    const navbar = document.querySelector('.navbar'); // Include the navbar
+    const footer = document.querySelector('.footer');
+    const navbar = document.querySelector('.navbar');
 
     const viewportHeight = window.innerHeight;
     const headerHeight = header ? header.offsetHeight : 0;
-    const navbarHeight = navbar ? navbar.offsetHeight : 0; // Include navbar height
     const footerHeight = footer ? footer.offsetHeight : 0;
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
+    const availableHeight = viewportHeight - headerHeight - footerHeight - navbarHeight;
 
-    const calculatedHeight = viewportHeight - headerHeight - footerHeight - navbarHeight;
-
-    if (calculatedHeight > 0) {
-        contentContainer.style.minHeight = `${calculatedHeight}px`;
+    if (contentContainer) {
+        contentContainer.style.minHeight = `${availableHeight}px`;
     }
 });
 
