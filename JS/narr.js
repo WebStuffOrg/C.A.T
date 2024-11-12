@@ -51,12 +51,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function setContent(data) {
     buttonsCheck();
+
+    mainImage.classList.add("fade-out");
+    await new Promise(resolve => setTimeout(resolve, 500));  // 0.5s matches CSS
+
     mainImage.src = sideImage.src = data.img;
+
+    mainImage.classList.remove("fade-out");
+    mainImage.classList.add("fade-in");
+    setTimeout(() => {
+        mainImage.classList.remove("fade-in");
+    }, 500);
     await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),
         setNarrativeSwitch(data)
     ]);
+
     text.innerHTML = data.text.basic;
     textState = 0;
 }
@@ -107,14 +118,12 @@ async function preloadNarrImages() {
 
 async function nextItem() {
     currentIdx += 1;
-    showLoading();
     await setContent(items[currentNarrativeArr[currentIdx]]);
     disableCurrSideItem(currentIdx);
 }
 
 async function prevItem() {
     currentIdx -= 1;
-    showLoading();
     await setContent(items[currentNarrativeArr[currentIdx]]);
     disableCurrSideItem(currentIdx);
 }
@@ -171,7 +180,7 @@ async function switchNarrative(narrative) {
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
     currentIdx = 0;
-    showLoading();
+    // showLoading();
     await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
     await preloadNarrImages();
 }
@@ -263,9 +272,11 @@ document.getElementById("timeline-switch").addEventListener("click", async (e) =
 
 // text switching 
 
-textButtons.addEventListener("click", (e) => {
+textButtons.addEventListener("click", async (e) => {
     const button = e.target.closest("button");
     if (button) {
+        text.classList.add("fade-out");
+        await new Promise(resolve => setTimeout(resolve, 500));
         text.innerHTML = ""
         let textType
         textState += +button.value
@@ -286,7 +297,12 @@ textButtons.addEventListener("click", (e) => {
                 lessButton.disabled = true;
         };
         const item = currentNarrativeArr[currentIdx];
-        text.innerHTML = items[item]["text"][textType]
+        text.innerHTML = items[item]["text"][textType];
+        text.classList.remove("fade-out");
+        text.classList.add("fade-in");
+        setTimeout(() => {
+            text.classList.remove("fade-in");
+        }, 500);
     }
 });
 

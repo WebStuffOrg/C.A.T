@@ -37,13 +37,6 @@
   }
 }
 
-@media (max-width: 760px) {
-  #hero .hero_content h1 {
-    width: 100%;
-    line-height: 1.4;
-  }
-}
-
 /* Poster */
 #poster {
   display: flex;
@@ -57,8 +50,8 @@
 }
 
 .poster_content {
-  width: 100%;
-  max-width: 600px;
+  width: 50%;
+  padding-top: 20rem;
   text-align: left;
   padding: 1rem;
 }
@@ -70,34 +63,33 @@
   min-height: 50vh;
   max-height: 80vh;
   object-fit: cover;
-
 }
 
 .button {
-  margin-top: 1.5rem;
-  padding: 1vh 1.5vh;
+  padding: 1.5vh;
   background: #6B1A10;
   color: #fff;
   display: inline-block;
   border-radius: 4px;
-  font-size: 0.7rem;
-  text-decoration: none; /* Remove underline */
+  font-size: 1rem;
+  text-decoration: none;
 }
 
-/* Responsive Poster */
 @media (max-width: 760px) {
   #poster {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;    
+    padding: 1rem;            
   }
-
+  .poster_content {
+    width: 90%;                
+    padding: 1rem;            
+  }
   #video-back {
-    min-height: 30vh;
+    min-height: 30vh;         
     max-height: 50vh;
   }
-
   .button {
-    font-size: 0.8rem;
+    font-size: 0.8rem;        
     padding: 0.5rem 1rem;
   }
 }
@@ -113,6 +105,7 @@
   box-sizing: border-box;
   background: var(--tertiary-color);
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .bg-cover_title, .bg-cover_text {
@@ -153,7 +146,6 @@
  .bg-cover_text, 
  .admission-list li{
   width: 100%;
-  line-height: 1.4;
   font-size: clamp(1rem, 0.8rem + 1vw, 1rem);
 }
 
@@ -180,6 +172,7 @@
 /* Carousel */
 #end-cover {
   background: rgb(250, 243, 239);
+  overflow: hidden;
 }
 
 .carousel {
