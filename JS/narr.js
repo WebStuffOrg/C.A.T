@@ -272,9 +272,11 @@ document.getElementById("timeline-switch").addEventListener("click", async (e) =
 
 // text switching 
 
-textButtons.addEventListener("click", (e) => {
+textButtons.addEventListener("click", async (e) => {
     const button = e.target.closest("button");
     if (button) {
+        text.classList.add("fade-out");
+        await new Promise(resolve => setTimeout(resolve, 500));
         text.innerHTML = ""
         let textType
         textState += +button.value
@@ -295,7 +297,12 @@ textButtons.addEventListener("click", (e) => {
                 lessButton.disabled = true;
         };
         const item = currentNarrativeArr[currentIdx];
-        text.innerHTML = items[item]["text"][textType]
+        text.innerHTML = items[item]["text"][textType];
+        text.classList.remove("fade-out");
+        text.classList.add("fade-in");
+        setTimeout(() => {
+            text.classList.remove("fade-in");
+        }, 500);
     }
 });
 
