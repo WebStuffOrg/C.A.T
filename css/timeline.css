@@ -121,7 +121,7 @@
 .content {
     z-index: 1;
     position: relative;
-    padding: 10px 50px;
+    padding: 20px 60px;
     width: 50%;
     animation: movedown 0.1s linear forwards;
     opacity: 0;
@@ -220,12 +220,12 @@
     }
 
     .content img {
-        width: 60px;  /* Reduce size for smaller screens */
+        width: 60px;  
         height: 60px;
     }
 
     .right-content img, .left-content img {
-        left: 2px; /* Adjust left positioning for consistency */
+        left: 2px; 
     }
 
     .text-box {
@@ -240,7 +240,6 @@
         left: 0;
     }
 
-   
 
     .left-content-arrow,
     .right-content-arrow{
