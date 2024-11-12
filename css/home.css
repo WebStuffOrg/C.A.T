@@ -66,13 +66,12 @@
 }
 
 .button {
-  margin-top: 1.5rem;
-  padding: 1vh 1.5vh;
+  padding: 1.5vh;
   background: #6B1A10;
   color: #fff;
   display: inline-block;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
