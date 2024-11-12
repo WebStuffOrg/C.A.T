@@ -51,12 +51,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function setContent(data) {
     buttonsCheck();
+
+    mainImage.classList.add("fade-out");
+    await new Promise(resolve => setTimeout(resolve, 500));  // 0.5s matches CSS
+
     mainImage.src = sideImage.src = data.img;
+
+    mainImage.classList.remove("fade-out");
+    mainImage.classList.add("fade-in");
+    setTimeout(() => {
+        mainImage.classList.remove("fade-in");
+    }, 500);
     await Promise.all([
         updateElements('.current-artwork', data.title),
         updateElements('.table-data', el => data[el.id]),
         setNarrativeSwitch(data)
     ]);
+
     text.innerHTML = data.text.basic;
     textState = 0;
 }
@@ -107,14 +118,12 @@ async function preloadNarrImages() {
 
 async function nextItem() {
     currentIdx += 1;
-    showLoading();
     await setContent(items[currentNarrativeArr[currentIdx]]);
     disableCurrSideItem(currentIdx);
 }
 
 async function prevItem() {
     currentIdx -= 1;
-    showLoading();
     await setContent(items[currentNarrativeArr[currentIdx]]);
     disableCurrSideItem(currentIdx);
 }
@@ -171,7 +180,7 @@ async function switchNarrative(narrative) {
     currentNarrativeArr = narratives[narrative];
     narrativeTitle = narrative;
     currentIdx = 0;
-    showLoading();
+    // showLoading();
     await Promise.all([updateElements('.current-narrative', narrativeTitle), setContent(items[currentNarrativeArr[0]]), setSidebarList()]);
     await preloadNarrImages();
 }
