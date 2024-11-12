@@ -94,7 +94,7 @@
     border: 1px solid rgb(107, 26, 16);
     background-color: rgba(250, 243, 239, 0.461);
     box-shadow: 0 2px 5px rgba(107, 26, 16, 0.9);
-    animation: pulse 4s infinite; /* Add pulse animation */
+    animation: pulse 4s infinite; 
 }
 
 .bottom {
@@ -118,7 +118,7 @@
 }
 
 .content {
-    z-index: 1; /* Ensure content is above the line */
+    z-index: 1;
     position: relative;
     padding: 10px 50px;
     width: 50%;
@@ -129,17 +129,17 @@
 .content img {
     position: absolute;
     width: 70px;
-    height: 70px; /* Maintain circle shape */
-    border-radius: 50%; /* Ensure perfect circle */
+    height: 70px; 
+    border-radius: 50%; 
     right: -35px;
     top: 32px;
-    z-index: 2; /* Ensure images are above the line and content */
-    object-fit: cover; /* Ensure image fits correctly */
+    z-index: 2; 
+    object-fit: cover; 
 }
 
 .content img:hover {
-    transform: scale(2); /* Enlarge image */
-    z-index: 3; /* Ensure hovered image is above everything */
+    transform: scale(2); 
+    z-index: 3; 
     transition: 0.5s;
 }
 
@@ -158,7 +158,7 @@
     left: 50%;
     margin-left: -3px;
     z-index: 0;
-    animation: moveline 8s ease-in-out forwards; /* Increased speed */
+    animation: moveline 8s ease-in-out forwards;
 }
 
 @keyframes moveline {
