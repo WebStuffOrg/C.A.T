@@ -6,7 +6,7 @@ This project, titled "Cats, Art, Traditions", is designed for an exhibition on t
 ## 📚 Academic Context
 This project is developed as part of the Information Modeling and Web Tachnologies (Academic Year 2023/2024) within the Digital Humanities and Digital Knowledge Master’s Degree at Alma Mater Studiorum - University of Bologna.
 
-## Collaboratos
+## Collaborators
 Martina Chiara
 
 Valentino Casagna 
